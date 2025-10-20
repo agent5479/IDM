@@ -3,32 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Full-Page Grizzly Screen Advert</title>
+  <title>Full-Page Grizzly Screen Advert – Exclusive NZ Importer</title>
   <style>
-    /* Full-page A4 bleed safe zone CSS */
-    @page {
-      size: A4 portrait;
-      margin: 0;
-    }
+    @page { size: A4 portrait; margin: 0; }
     body {
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
-      color: #333;
+      background: #fff; color: #333;
     }
     .bleed {
-      /* full bleed: approx 210mm x 297mm + bleed 3mm each side */
-      width: 216mm; /* 210 + 6mm bleed */
-      height: 303mm; /* 297 + 6mm bleed */
+      width: 216mm; /* 210mm + 3mm bleed each side */
+      height: 303mm; /* 297mm + 3mm bleed each side */
       overflow: hidden;
       position: relative;
     }
     .container {
-      /* safe zone inside bleed */
       width: 200mm;
       margin: 15mm auto 0;
       padding-bottom: 15mm;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 12pt;
+    }
+    .logo img {
+      max-width: 150px;
+      height: auto;
+    }
+    .exclusive-tag {
+      font-size: 10pt;
+      font-weight: bold;
+      color: #e60000;
+      text-align: center;
+      margin-bottom: 12pt;
     }
     .headline {
       font-size: 32pt;
@@ -36,11 +43,13 @@
       text-transform: uppercase;
       color: #222;
       margin: 0 0 8pt 0;
+      text-align: center;
     }
     .sub-headline {
       font-size: 14pt;
       color: #555;
       margin: 0 0 20pt 0;
+      text-align: center;
     }
     .image-row {
       display: flex;
@@ -64,6 +73,7 @@
       font-weight: bold;
       margin-bottom: 12pt;
       color: #222;
+      text-align: center;
     }
     .qr-block {
       width: 40mm;
@@ -83,12 +93,25 @@
       border-top: 1pt solid #ddd;
       padding-top: 8pt;
       margin-top: 20pt;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="bleed">
     <div class="container">
+
+      <!-- Logo -->
+      <div class="logo">
+        <img src="IDM-logo-placeholder.png" alt="IDM Logo" />
+      </div>
+
+      <!-- Exclusive import tag -->
+      <div class="exclusive-tag">
+        Exclusive New Zealand Importer for IDM Screening Solutions
+      </div>
+
+      <!-- Headline & Sub-headline -->
       <div class="headline">
         Introducing Our Latest Grizzly Screens
       </div>
@@ -96,26 +119,31 @@
         Heavy-Duty Pre-Screening Engineered for Maximum Throughput and Minimal Downtime
       </div>
 
+      <!-- Images -->
       <div class="image-row">
-        <img src="https://idmcabc.com/wp-content/uploads/PLACEHOLDER1.jpg" alt="Grizzly screen machine on site">
-        <img src="https://idmcabc.com/wp-content/uploads/PLACEHOLDER2.jpg" alt="Grizzly screen machine close up">
-        <img src="https://idmcabc.com/wp-content/uploads/PLACEHOLDER3.jpg" alt="Grizzly screen machine feeding loader">
+        <img src="https://www.sitemachinery.nz/path-to-image1.jpg" alt="Grizzly Screen Machine On-Site" />
+        <img src="https://www.sitemachinery.nz/path-to-image2.jpg" alt="Grizzly Screen Close-Up Detail" />
+        <img src="https://www.sitemachinery.nz/path-to-image3.jpg" alt="Grizzly Screen Feeding Loader" />
       </div>
 
+      <!-- Body Text -->
       <div class="body-text">
         Our new grizzly screening machines are built to take the abuse. With heavy-duty grizzly bars, rugged frame construction, adjustable spacing and high-capacity feed capability, they remove oversized material, reduce screen plugging and protect your downstream crushing or processing equipment.<br><br>
         Whether you’re processing rock, rubble, recycled concrete or soil/aggregate mixes — this machine is the one to make your operation smoother, faster and more profitable.<br><br>
         Contact us now to arrange a demonstration, view full specs or place your order. Don’t let costly downtime, screen damage, material block-ups or landfill fees eat into your margin.
       </div>
 
+      <!-- Call to Action -->
       <div class="cta">
         <div class="qr-block">Scan for machine info & video</div>
-        <span>View full machine range, specs & video online</span>
+        View full machine range, specs & video online
       </div>
 
+      <!-- Footer -->
       <div class="footer">
-        IDM Screening Solutions • Phone: [XXX-XXX-XXXX] • Email: info@idmcabc.com • Web: www.idmcabc.com
+        SITE Machinery • info@sitemachinery.nz • Web: https://www.sitemachinery.nz/
       </div>
+
     </div>
   </div>
 </body>
