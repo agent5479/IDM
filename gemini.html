@@ -3,130 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grizzly Screen Full-Page Magazine Advert</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>IDM PROSCREEN SLG-108VFRB Advert</title>
+    <!-- NOTE: This design uses custom CSS, not Tailwind CSS. -->
     <style>
-        /* Custom styles for the full-page magazine advert look */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Font: Using Inter as requested previously, but falling back to Arial/Helvetica */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background to simulate page bleed */
+            font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+            background: #f5f5f5;
             display: flex;
             justify-content: center;
-            /* Allow the container to define height, remove min-height here */
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
-
-        /* Simulating a premium magazine page layout */
-        .advert-container {
+        
+        /* Standard US Full-Page Magazine Ad: 8.375" x 10.875" (bleed size) */
+        .ad-container {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            width: 8.375in;
+            height: 10.875in;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .hero-section {
+            height: 48%;
+            /* Placeholder for the main product image */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.75)),
+                        url('https://placehold.co/850x520/1a1a1a/ffa500?text=SLG-108VFRB+PRODUCT+IMAGE+HERE');
+            background-size: cover;
+            background-position: center 40%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 35px;
+        }
+        
+        .logo-area {
+            position: absolute;
+            top: 25px;
+            left: 35px;
+            background: rgba(255,255,255,0.97);
+            padding: 12px 22px;
+            border-radius: 5px;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: 4px;
+            color: #ff6600;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border: 3px solid #ff6600;
+        }
+        
+        .headline {
+            color: #fff;
+            font-size: 44px;
+            font-weight: 900;
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-shadow: 4px 4px 12px rgba(0,0,0,0.9);
+            max-width: 90%;
+            letter-spacing: -1px;
+        }
+        
+        .subheadline {
+            color: #ffa500;
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 1.4;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+            max-width: 85%;
+        }
+        
+        .content-section {
+            background: #fff;
+            padding: 30px 35px;
+            height: 32%;
+            position: relative;
+        }
+        
+        .body-text {
+            font-size: 12.5px;
+            line-height: 1.65;
+            color: #2a2a2a;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 20px 0 18px 0;
+        }
+        
+        .feature-item {
+            background: linear-gradient(135deg, #ff6600 0%, #ff8533 100%);
+            color: #fff;
+            padding: 12px 10px;
+            border-radius: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(255,102,0,0.35);
+            letter-spacing: 0.3px;
+        }
+        
+        .product-showcase {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 180px;
+            height: 100%;
+            opacity: 0.12;
+            /* Placeholder for a product detail image */
+            background: url('https://placehold.co/300x700/ffffff/ff6600?text=DETAIL+IMAGE');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #ff6600 0%, #cc5200 100%);
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 35px;
+            position: relative;
+        }
+        
+        .cta-content {
+            flex: 1;
+            color: #fff;
+            padding-right: 25px;
+        }
+        
+        .cta-headline {
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-text {
+            font-size: 14.5px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+        
+        .qr-section {
+            background: #fff;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+        }
+        
+        .qr-code {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 8px;
+            border: 3px solid #f0f0f0;
+        }
+        
+        .qr-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .mini-images {
+            position: absolute;
+            bottom: 25px;
+            right: 35px;
+            display: flex;
+            gap: 8px;
+        }
+        
+        .mini-img {
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 0 35px;
+            font-size: 10.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: calc(100% - 48% - 32% - 20%);
+        }
+        
+        .footer-left {
+            text-align: left;
+            flex: 1;
+        }
+        
+        .footer-right {
+            text-align: right;
+            flex: 1;
+        }
+        
+        .company-name {
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 4px;
+            color: #ff6600;
+            letter-spacing: 1px;
+        }
+        
+        .contact-info {
+            font-size: 10px;
+            line-height: 1.7;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: #ffa500;
+            font-weight: 600;
+        }
+        
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            max-width: 800px; /* Wider for full-page, prominent display */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            min-height: 95vh; /* Ensure it looks like a full page in the preview */
+            height: 4px;
+            background: linear-gradient(90deg, #ff6600, #ffa500, #ff6600);
         }
-
-        .cta-button {
-            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-            background-image: linear-gradient(to right, #ea580c, #f97316);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(234, 88, 12, 0.5);
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .ad-container {
+                box-shadow: none;
+                page-break-after: always;
+            }
         }
     </style>
 </head>
-<body class="p-4 sm:p-10">
-
-    <!-- ADVERT CONTAINER: Full-page layout simulation -->
-    <div class="advert-container bg-white rounded-xl overflow-hidden flex flex-col">
+<body>
+    <div class="ad-container">
+        <!-- HERO SECTION (48% Height) -->
+        <div class="hero-section">
+            <div class="logo-area">IDM PROSCREEN</div>
+            <div class="headline">
+                Introducing the new<br>SLG-108VFRB GRIZZLY
+            </div>
+            <div class="subheadline">
+                Heavy-Duty Pre-Screening Done Right — Engineered for maximum throughput, minimal downtime and rugged operation in demanding New Zealand conditions.
+            </div>
+        </div>
         
-        <!-- HEADER / MAIN HEADLINE -->
-        <header class="p-8 pb-4 text-center">
-             <!-- IDM Logo Placeholder (Adjust this to your actual logo image if available) -->
-            <div class="mb-4 flex justify-center items-center space-x-2">
-                <div class="text-3xl font-black text-orange-600">IDM</div>
-                <div class="text-3xl font-light text-gray-900">PROSCREEN</div>
+        <!-- CONTENT SECTION (32% Height) -->
+        <div class="content-section">
+            <div class="product-showcase"></div>
+            <div class="body-text">
+                Our new grizzly screening machines are built to take the abuse. With heavy-duty grizzly bars, rugged frame construction, adjustable spacing and high-capacity feed capability, they remove oversized material, reduce screen plugging and protect your downstream crushing or processing equipment. Whether you're dealing with rock, rubble, recycled concrete or soil and aggregate mixes — this is the machine to make your operation smoother, faster and more profitable.
             </div>
-             <h1 class="text-4xl sm:text-6xl font-black text-gray-900 tracking-tighter leading-none uppercase">
-                Introducing the SLG-108VFRB
-            </h1>
-            <h2 class="text-2xl sm:text-3xl font-light text-orange-600 mt-2">
-                Heavy-Duty Pre-Screening Done Right
-            </h2>
-        </header>
-
-        <!-- IMAGE BLOCK - Primary Visual Focus (More prominent, industrial look) -->
-        <div class="relative h-96 bg-blue-900 overflow-hidden shadow-2xl">
-            <!-- Updated Image Reference - Using a placeholder that explicitly mimics a file path from the NZ site for printing context -->
-            <img 
-                src="https://placehold.co/1200x600/1e3a8a/ffffff?text=sitemachinery.nz/IDM/SLG-108VFRB-HD.jpg" 
-                alt="High-Capacity Grizzly Screening Machine SLG-108VFRB in operation" 
-                class="w-full h-full object-cover opacity-90"
-                onerror="this.onerror=null;this.src='https://placehold.co/1200x600/000000/ffffff?text=IMAGE+FILE+TO+BE+INSERTED+BY+PRINTER';"
-            >
-            <!-- Highlight Element -->
-            <div class="absolute bottom-0 right-0 p-4 bg-orange-600 text-white font-extrabold text-xl rounded-tl-xl shadow-lg">
-                MAX THROUGHPUT
+            
+            <div class="features-grid">
+                <div class="feature-item">✓ HEAVY-DUTY CONSTRUCTION</div>
+                <div class="feature-item">✓ ADJUSTABLE DECK SLOPE (45°)</div>
+                <div class="feature-item">✓ LOW MAINTENANCE DESIGN</div>
+                <div class="feature-item">✓ PROTECT DOWNSTREAM GEAR</div>
+            </div>
+            
+            <div class="body-text" style="margin-top: 18px; font-weight: 700; color: #ff6600; font-size: 13px;">
+                Contact the exclusive New Zealand importer now to arrange a demonstration, view specs or place your order. Don't let costly downtime, screen damage, material blockups or landfill fees eat your margin.
             </div>
         </div>
-
-        <!-- TEXT & CTA GRID BLOCK -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 flex-grow">
-            
-            <!-- BODY TEXT (2/3 width) -->
-            <div class="md:col-span-2 space-y-5">
-                <p class="text-gray-600 text-lg leading-relaxed border-l-4 border-orange-500 pl-4">
-                    Our new grizzly screening machines are built to take the abuse. With heavy-duty grizzly bars, rugged frame construction, adjustable spacing and high-capacity feed capability, they remove oversized material, reduce screen plugging and protect your downstream crushing or processing equipment.
-                </p>
-
-                <p class="text-gray-800 text-xl font-medium leading-relaxed">
-                    Whether you’re dealing with rock, rubble, recycled concrete or soil/aggregate mixes — this is the machine to make your operation smoother, faster and more profitable.
-                </p>
-                <p class="text-base text-gray-500 italic">
-                    Contact us now to arrange a demonstration, view specs or place your order. Don’t let costly downtime, screen damage, material block-ups or landfill fees eat your margin.
-                </p>
-            </div>
-
-            <!-- QR CODE & CTA BLOCK (1/3 width) -->
-            <div class="md:col-span-1 flex flex-col items-center justify-start bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-inner space-y-5">
-                
-                <div class="w-32 h-32 bg-white border-4 border-gray-300 flex items-center justify-center rounded-lg shadow-xl">
-                    <!-- Placeholder QR Code - Insert the actual SM QR code URL here -->
-                    <img 
-                        src="https://placehold.co/150x150/000000/ffffff?text=SCAN+FOR+VIDEO" 
-                        alt="QR Code for Social Media and Video" 
-                        class="w-28 h-28 p-1"
-                    >
+        
+        <!-- CTA SECTION (20% Height) -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <div class="cta-headline">Ready to Upgrade?</div>
+                <div class="cta-text">
+                    Scan the QR code to view the full SLG-108VFRB specifications,<br>
+                    video demonstrations, and contact us directly
                 </div>
-                
-                <h3 class="text-base text-center font-bold text-gray-700">
-                    Scan for machine info & video
-                </h3>
-                
-                <a href="https://www.sitemachinery.nz" target="_blank" class="block w-full text-center px-6 py-3 text-white font-extrabold rounded-full shadow-lg cta-button uppercase tracking-wider">
-                    View Specs & Contact Us
-                </a>
             </div>
-            
+            <div class="qr-section">
+                <!-- IMPORTANT: QR Code must be updated to link to https://www.sitemachinery.nz/ -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.sitemachinery.nz/" 
+                     alt="QR Code Scan for Site Machinery NZ Website" class="qr-code">
+                <div class="qr-label">Scan for Info</div>
+            </div>
+            <div class="mini-images">
+                <img src="https://placehold.co/60x60/ffa500/1a1a1a?text=DETAIL+1" class="mini-img" alt="Product Feature Detail 1">
+                <img src="https://placehold.co/60x60/ffa500/1a1a1a?text=DETAIL+2" class="mini-img" alt="Product Feature Detail 2">
+            </div>
         </div>
-
-        <!-- FOOTER LINE (Company Info) -->
-        <footer class="bg-gray-900 p-5 text-center mt-auto rounded-b-xl">
-            <p class="text-lg font-bold text-white mb-1">
-                EXCLUSIVE NEW ZEALAND IMPORTER: SITE MACHINERY NZ
-            </p>
-            <p class="text-md text-gray-300 font-light space-y-1">
-                <span class="block sm:inline-block">Ph: (03) 970 7602</span>
-                <span class="hidden sm:inline">•</span> 
-                <!-- Updated Email Address -->
-                <span class="block sm:inline-block">info@sitemachinery.nz</span>
-                <span class="hidden sm:inline">•</span> 
-                <a href="https://www.sitemachinery.nz/" target="_blank" class="underline hover:text-orange-400 block sm:inline-block">www.sitemachinery.nz</a>
-            </p>
-        </footer>
-
+        
+        <!-- FOOTER (Remaining Height) -->
+        <div class="footer">
+            <div class="footer-left">
+                <div class="company-name">EXCLUSIVE NZ IMPORTER: SITE MACHINERY NZ</div>
+                <div class="contact-info">
+                    <span class="tagline">Engineered to Perform • Built to Last</span>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="contact-info">
+                    Ph: (03) 970 7602 &bull; Email: info@sitemachinery.nz<br>
+                    Website: www.sitemachinery.nz
+                </div>
+            </div>
+        </div>
+        <div class="accent-bar"></div>
     </div>
-
 </body>
 </html>
