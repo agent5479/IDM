@@ -1,340 +1,231 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeSite Grizzly Screens – Heavy-Duty Pre-Screening</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial','Helvetica',sans-serif;
-            background: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .ad-container {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            width: 8.375in;
-            height: 10.875in;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        
-        .hero-section {
-            height: 48%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.75)),
-                        url('https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp');
-            background-size: cover;
-            background-position: center 40%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 35px;
-        }
-        
-        .logo-area {
-            position: absolute;
-            top: 25px;
-            left: 35px;
-            background: rgba(255,255,255,0.97);
-            padding: 12px 22px;
-            border-radius: 5px;
-            font-weight: 900;
-            font-size: 28px;
-            letter-spacing: 4px;
-            color: #ff6600;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-            border: 3px solid #ff6600;
-        }
-        
-        .exclusive-tag {
-            position: absolute;
-            top: 25px;
-            right: 35px;
-            background: rgba(255,255,255,0.90);
-            padding: 8px 16px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 12px;
-            color: #222;
-            letter-spacing: 1px;
-        }
-        
-        .headline {
-            color: #fff;
-            font-size: 44px;
-            font-weight: 900;
-            line-height: 1.05;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            text-shadow: 4px 4px 12px rgba(0,0,0,0.9);
-            max-width: 90%;
-            letter-spacing: -1px;
-        }
-        
-        .subheadline {
-            color: #ffa500;
-            font-size: 19px;
-            font-weight: 600;
-            line-height: 1.4;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
-            max-width: 85%;
-        }
-        
-        .content-section {
-            background: #fff;
-            padding: 30px 35px;
-            height: 32%;
-            position: relative;
-        }
-        
-        .body-text {
-            font-size: 12.5px;
-            line-height: 1.65;
-            color: #2a2a2a;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 12px;
-            margin: 20px 0 18px 0;
-        }
-        
-        .feature-item {
-            background: linear-gradient(135deg,#ff6600 0%,#ff8533 100%);
-            color: #fff;
-            padding: 12px 10px;
-            border-radius: 6px;
-            font-size: 11.5px;
-            font-weight: 700;
-            text-align: center;
-            box-shadow: 0 3px 12px rgba(255,102,0,0.35);
-            letter-spacing: 0.3px;
-        }
-        
-        .product-showcase {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 180px;
-            height: 100%;
-            opacity: 0.12;
-            background: url('https://idmcabc.com/wp-content/uploads/2024/06/TILTING-SCREEN-DECK-108VFRB-scaled.webp');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .cta-section {
-            background: linear-gradient(135deg,#ff6600 0%,#cc5200 100%);
-            height: 20%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 35px;
-            position: relative;
-        }
-        
-        .cta-content {
-            flex: 1;
-            color: #fff;
-            padding-right: 25px;
-        }
-        
-        .cta-headline {
-            font-size: 30px;
-            font-weight: 900;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .cta-text {
-            font-size: 14.5px;
-            font-weight: 500;
-            line-height: 1.5;
-        }
-        
-        .qr-section {
-            background: #fff;
-            padding: 18px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-        }
-        
-        .qr-code {
-            width: 140px;
-            height: 140px;
-            margin-bottom: 8px;
-            border: 3px solid #f0f0f0;
-        }
-        
-        .qr-label {
-            font-size: 11px;
-            font-weight: 700;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .mini-images {
-            position: absolute;
-            bottom: 25px;
-            right: 35px;
-            display: flex;
-            gap: 8px;
-        }
-        
-        .mini-img {
-            width: 60px;
-            height: 60px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 4px;
-            object-fit: cover;
-        }
-        
-        .footer {
-            background: #1a1a1a;
-            color: #fff;
-            text-align: center;
-            padding: 0 35px;
-            font-size: 10.5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: calc(100% - 48% - 32% - 20%);
-        }
-        
-        .footer-left {
-            text-align: left;
-            flex: 1;
-        }
-        
-        .footer-right {
-            text-Align: right;
-            flex: 1;
-        }
-        
-        .company-name {
-            font-size: 16px;
-            font-weight: 900;
-            margin-bottom: 4px;
-            color: #ff6600;
-            letter-spacing: 1px;
-        }
-        
-        .contact-info {
-            font-size: 10px;
-            line-height: 1.7;
-        }
-        
-        .tagline {
-            font-style: italic;
-            color: #ffa500;
-            font-weight: 600;
-        }
-        
-        .accent-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg,#ff6600,#ffa500,#ff6600);
-        }
-        
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            .ad-container {
-                box-shadow: none;
-                page-break-after: always;
-            }
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeSite Grizzly Screens – Heavy-Duty Pre-Screening</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+    display:flex;justify-content:center;align-items:center;
+    min-height:100vh;padding:20px;
+  }
+
+  /* Full-page ad (bleed included) */
+  .ad-container{
+    width:8.375in; height:10.875in;
+    background:linear-gradient(135deg,#1a1a1a,#2d2d2d);
+    position:relative; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.3);
+    color:#222;
+  }
+
+  /* HERO */
+  .hero-section{
+    height:48%;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
+      url('https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp');
+    background-size:cover; background-position:center 40%;
+    position:relative; display:flex; flex-direction:column; justify-content:flex-end;
+    padding:35px;
+  }
+
+  .logo-area{
+    position:absolute; top:25px; left:35px;
+    background:rgba(255,255,255,0.97); padding:10px 18px; border-radius:5px;
+    font-weight:900; font-size:26px; letter-spacing:3px; color:#ff6600;
+    border:3px solid #ff6600; box-shadow:0 4px 20px rgba(0,0,0,.4);
+  }
+
+  .exclusive-tag{
+    position:absolute; top:25px; right:35px;
+    background:rgba(255,255,255,0.92); padding:8px 14px; border-radius:4px;
+    font-weight:700; font-size:12px; color:#222; letter-spacing:1px;
+  }
+
+  .headline{
+    color:#fff; font-size:44px; font-weight:900; line-height:1.05;
+    text-transform:uppercase; margin-bottom:12px; max-width:70%;
+    text-shadow:4px 4px 12px rgba(0,0,0,.9); letter-spacing:-1px;
+  }
+
+  .subheadline{
+    color:#ffa500; font-size:18px; font-weight:600; max-width:72%;
+    text-shadow:2px 2px 10px rgba(0,0,0,.9);
+  }
+
+  /* BODY + RIGHT SHOWCASE COLUMN */
+  .main-row{
+    display:flex; gap:20px;
+    padding:30px 35px 0 35px;
+    background:#fff; height:32%; position:relative;
+  }
+
+  .content-left{
+    flex:1.25; padding-right:10px;
+  }
+
+  .body-text{
+    font-size:12.5px; line-height:1.65; color:#2a2a2a; text-align:justify;
+    margin-bottom:16px;
+  }
+
+  .features-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:14px 0;
+  }
+  .feature-item{
+    background:linear-gradient(135deg,#ff6600,#ff8533); color:#fff;
+    padding:10px; border-radius:6px; font-size:11.5px; font-weight:700;
+    text-align:center; box-shadow:0 3px 12px rgba(255,102,0,.35);
+  }
+
+  /* The new attention-grabbing right column */
+  .showcase-column{
+    width:320px; /* strong visual presence */
+    display:flex; flex-direction:column; gap:12px;
+    align-items:flex-end; /* keeps images flush to right */
+    position:relative;
+    margin-top:-20px; /* gentle overlap into hero for drama */
+  }
+
+  .showcase-card{
+    width:100%;
+    background:#fff; border-radius:6px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    overflow:hidden; border:3px solid rgba(255,255,255,.85);
+  }
+
+  .showcase-img{
+    width:100%; height:170px; object-fit:cover; display:block;
+  }
+
+  .showcase-caption{
+    padding:10px; font-weight:800; font-size:12px; color:#ff6600;
+    background:#111; color:#fff; text-align:center;
+  }
+
+  /* faded background product showcase retained but muted */
+  .product-showcase{
+    position:absolute; right:35px; top:10px; width:220px; height:100%;
+    opacity:.08; background:url('https://idmcabc.com/wp-content/uploads/2024/06/TILTING-SCREEN-DECK-108VFRB-scaled.webp');
+    background-size:cover; background-position:center; pointer-events:none;
+  }
+
+  /* CTA row */
+  .cta-section{
+    background:linear-gradient(135deg,#ff6600,#cc5200);
+    height:20%; display:flex; align-items:center; padding:0 35px; gap:20px;
+  }
+
+  .cta-content{ flex:1; color:#fff; }
+  .cta-headline{ font-size:30px; font-weight:900; margin-bottom:8px; text-transform:uppercase; }
+  .cta-text{ font-size:14.5px; font-weight:500; line-height:1.5; }
+
+  .qr-section{ background:#fff; padding:12px; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,.35); }
+  .qr-code{ width:140px; height:140px; display:block; border:3px solid #f0f0f0; }
+  .qr-label{ font-size:11px; font-weight:700; text-align:center; margin-top:6px; }
+
+  /* FOOTER */
+  .footer{
+    background:#111; color:#fff; display:flex; justify-content:space-between; align-items:center;
+    padding:14px 35px; font-size:10.5px;
+  }
+  .company-name{ font-size:16px; font-weight:900; color:#ff6600; }
+  .tagline{ font-style:italic; color:#ffa500; font-weight:600; display:block; margin-bottom:4px; }
+  .contact-info{ line-height:1.6; color:#ddd; }
+
+  .accent-bar{ position:absolute; bottom:0; left:0; width:100%; height:4px;
+    background:linear-gradient(90deg,#ff6600,#ffa500,#ff6600);
+  }
+
+  @media print{
+    .ad-container{ box-shadow:none; }
+  }
+</style>
 </head>
 <body>
-    <div class="ad-container">
-        <div class="hero-section">
-            <div class="logo-area">IDM</div>
-            <div class="exclusive-tag">Exclusive NZ Importer – SITE Machinery NZ</div>
-            <div class="headline">
-                Introducing our Latest<br>Grizzly Screens
-            </div>
-            <div class="subheadline">
-                Heavy-Duty Pre-Screening Done Right — Engineered for maximum throughput, minimal downtime and rugged operation in demanding environments
-            </div>
-        </div>
-        
-        <div class="content-section">
-            <div class="product-showcase"></div>
-            <div class="body-text">
-                Our new grizzly screening machines are built to take the abuse. With heavy-duty grizzly bars, rugged frame construction, adjustable spacing and high-capacity feed capability, they remove oversized material, reduce screen plugging and protect your downstream crushing or processing equipment. Whether you’re dealing with rock, rubble, recycled concrete or soil and aggregate mixes — this is the machine to make your operation smoother, faster and more profitable.
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-item">✓ HEAVY-DUTY CONSTRUCTION</div>
-                <div class="feature-item">✓ 45° ADJUSTABLE DECK SLOPE</div>
-                <div class="feature-item">✓ LOW-MAINTENANCE DESIGN</div>
-                <div class="feature-item">✓ NZ-BASED SUPPORT & PARTS</div>
-            </div>
-            
-            <div class="body-text" style="margin-top:18px; font-weight:700; color:#ff6600; font-size:13px;">
-                Contact us now to arrange a demonstration, view specs or place your order. Don’t let costly downtime, screen damage, material block-ups or landfill fees eat into your margin.
-            </div>
-        </div>
-        
-        <div class="cta-section">
-            <div class="cta-content">
-                <div class="cta-headline">Ready to Upgrade?</div>
-                <div class="cta-text">
-                    Scan the QR code to view our full machine range,<br>
-                    video demonstrations, specifications & contact us
-                </div>
-            </div>
-            <div class="qr-section">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://beliefmastery.github.io/site/IDM/sales.html" 
-                     alt="QR Code" class="qr-code">
-                <div class="qr-label">Scan for Info</div>
-            </div>
-            <div class="mini-images">
-                <img src="https://idmcabc.com/wp-content/uploads/2024/06/VIBRATORY-MOTOS-108VFRB-scaled.webp" class="mini-img" alt="Vibratory System">
-                <img src="https://idmcabc.com/wp-content/uploads/2024/06/FEED-DEFLECTOR-SYSTEM-108VFRB-scaled.webp" class="mini-img" alt="Feed System">
-            </div>
-        </div>
-        
-        <div class="footer">
-            <div class="footer-left">
-                <div class="company-name">SITE Machinery NZ</div>
-                <div class="contact-info">
-                    <span class="tagline">NZ Distributor of IDM Screening Solutions</span><br>
-                    Email: info@sitemachinery.nz
-                </div>
-            </div>
-            <div class="footer-right">
-                <div class="contact-info">
-                    Web: https://www.sitemachinery.nz/ <br>
-                    Phone: 03 970 7602 • 0800 21 21 26
-                </div>
-            </div>
-        </div>
-        <div class="accent-bar"></div>
+  <div class="ad-container">
+    <div class="hero-section">
+      <div class="logo-area">
+        <!-- Replace with <img src="path/to/logo.png" alt="IDM Logo" style="height:44px"> when available -->
+        IDM
+      </div>
+      <div class="exclusive-tag">Exclusive NZ Importer – SITE Machinery NZ</div>
+
+      <div class="headline">Introducing our Latest<br>Grizzly Screens</div>
+      <div class="subheadline">Heavy-Duty Pre-Screening Done Right — Engineered for maximum throughput, minimal downtime and rugged operation</div>
     </div>
+
+    <!-- body row with left content and right showcase column -->
+    <div class="main-row">
+      <div class="content-left">
+        <div class="product-showcase"></div>
+
+        <p class="body-text">
+          Our new grizzly screening machines are built to take the abuse. With heavy-duty grizzly bars, rugged frame construction, adjustable spacing and high-capacity feed capability, they remove oversized material, reduce screen plugging and protect your downstream crushing or processing equipment. Whether you’re dealing with rock, rubble, recycled concrete or soil and aggregate mixes — this is the machine to make your operation smoother, faster and more profitable.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-item">✓ HEAVY-DUTY CONSTRUCTION</div>
+          <div class="feature-item">✓ 45° ADJUSTABLE DECK SLOPE</div>
+          <div class="feature-item">✓ LOW-MAINTENANCE DESIGN</div>
+          <div class="feature-item">✓ NZ-BASED SUPPORT & PARTS</div>
+        </div>
+
+        <p style="font-weight:800;color:#ff6600;margin-top:12px;font-size:13px;">
+          Contact us now to arrange a demonstration, view specs or place your order. Don’t let costly downtime, screen damage, material block-ups or landfill fees eat into your margin.
+        </p>
+      </div>
+
+      <!-- NEW: attention-grabbing right column -->
+      <div class="showcase-column" aria-hidden="false">
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="Grizzly Screener - In Action">
+          <div class="showcase-caption">Model: SLG-78 — In Action</div>
+        </div>
+
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Spring Suspension Detail">
+          <div class="showcase-caption">Spring Suspension – Low Vibration</div>
+        </div>
+
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Bucket Transport Lugs">
+          <div class="showcase-caption">Robust Feed & Transport Details</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <div class="cta-content">
+        <div class="cta-headline">Ready to Upgrade?</div>
+        <div class="cta-text">Scan the QR code to view our full machine range, video demonstrations, specifications & contact us</div>
+      </div>
+
+      <div class="qr-section" role="img" aria-label="QR code linking to sales page">
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://beliefmastery.github.io/site/IDM/sales.html" alt="Scan for machine info">
+        <div class="qr-label">Scan for Info</div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <div>
+        <div class="company-name">SITE Machinery NZ</div>
+        <div class="tagline">NZ Distributor of IDM Screening Solutions</div>
+        <div class="contact-info">Email: info@sitemachinery.nz</div>
+      </div>
+
+      <div style="text-align:right;">
+        <div class="contact-info">Web: https://www.sitemachinery.nz/</div>
+        <div class="contact-info">Phone: 03 970 7602 • 0800 21 21 26</div>
+      </div>
+    </div>
+
+    <div class="accent-bar"></div>
+  </div>
 </body>
 </html>
