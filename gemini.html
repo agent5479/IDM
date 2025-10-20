@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDM PROSCREEN SLG-108VFRB Advert</title>
-    <!-- NOTE: This design uses custom CSS, not Tailwind CSS. -->
-    <style>
+    <!-- NOTE: This design uses custom CSS, not Tailwind CSS. --><style>
         * {
             margin: 0;
             padding: 0;
@@ -39,7 +38,7 @@
             height: 48%;
             /* Placeholder for the main product image */
             background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.75)),
-                        url('https://placehold.co/850x520/1a1a1a/ffa500?text=SLG-108VFRB+PRODUCT+IMAGE+HERE');
+                        url('https://placehold.co/850x520/1a1a1a/ffa500?text=SLG-108VFRB+MAIN+PRODUCT+IMAGE+HERE');
             background-size: cover;
             background-position: center 40%;
             position: relative;
@@ -90,13 +89,16 @@
             padding: 30px 35px;
             height: 32%;
             position: relative;
+            display: flex; /* Use flexbox for internal layout */
+            flex-direction: column;
+            justify-content: space-between; /* Distribute space */
         }
         
         .body-text {
             font-size: 12.5px;
             line-height: 1.65;
             color: #2a2a2a;
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Reduced margin to make space */
             text-align: justify;
         }
         
@@ -104,7 +106,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            margin: 20px 0 18px 0;
+            margin: 15px 0 15px 0; /* Adjusted margin */
         }
         
         .feature-item {
@@ -119,17 +121,49 @@
             letter-spacing: 0.3px;
         }
         
-        .product-showcase {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 180px;
-            height: 100%;
-            opacity: 0.12;
-            /* Placeholder for a product detail image */
-            background: url('https://placehold.co/300x700/ffffff/ff6600?text=DETAIL+IMAGE');
-            background-size: cover;
-            background-position: center;
+        .product-showcase { /* This was an opacity background image, repurposed */
+            display: none; /* Hide the old product-showcase ghost image */
+        }
+
+        /* NEW: Key Feature Visuals Section */
+        .key-features-visuals {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Space between images */
+            margin-top: 20px; /* Space above these images */
+            margin-bottom: 10px; /* Space below these images */
+        }
+
+        .feature-visual {
+            flex: 1; /* Each image takes equal space */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .feature-visual img {
+            width: 100%;
+            height: 120px; /* Make images prominent */
+            object-fit: cover;
+            object-position: center;
+            border-bottom: 3px solid #ff6600; /* Accent bar */
+        }
+
+        .feature-caption {
+            font-size: 11px;
+            font-weight: 800;
+            color: #333;
+            padding: 8px 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #fff;
+            width: 100%;
         }
         
         .cta-section {
@@ -183,22 +217,6 @@
             color: #333;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-        }
-        
-        .mini-images {
-            position: absolute;
-            bottom: 25px;
-            right: 35px;
-            display: flex;
-            gap: 8px;
-        }
-        
-        .mini-img {
-            width: 60px;
-            height: 60px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 4px;
-            object-fit: cover;
         }
         
         .footer {
@@ -265,8 +283,7 @@
 </head>
 <body>
     <div class="ad-container">
-        <!-- HERO SECTION (48% Height) -->
-        <div class="hero-section">
+        <!-- HERO SECTION (48% Height) --><div class="hero-section">
             <div class="logo-area">IDM PROSCREEN</div>
             <div class="headline">
                 Introducing the new<br>SLG-108VFRB GRIZZLY
@@ -276,9 +293,7 @@
             </div>
         </div>
         
-        <!-- CONTENT SECTION (32% Height) -->
-        <div class="content-section">
-            <div class="product-showcase"></div>
+        <!-- CONTENT SECTION (32% Height) --><div class="content-section">
             <div class="body-text">
                 Our new grizzly screening machines are built to take the abuse. With heavy-duty grizzly bars, rugged frame construction, adjustable spacing and high-capacity feed capability, they remove oversized material, reduce screen plugging and protect your downstream crushing or processing equipment. Whether you're dealing with rock, rubble, recycled concrete or soil and aggregate mixes — this is the machine to make your operation smoother, faster and more profitable.
             </div>
@@ -289,14 +304,24 @@
                 <div class="feature-item">✓ LOW MAINTENANCE DESIGN</div>
                 <div class="feature-item">✓ PROTECT DOWNSTREAM GEAR</div>
             </div>
+
+            <!-- NEW: Prominent Key Feature Visuals --><div class="key-features-visuals">
+                <div class="feature-visual">
+                    <!-- Placeholder: Use a high-res image of the vibrating screen or deck --><img src="https://placehold.co/400x250/333/fff?text=VIBRATING+SCREEN+DETAIL" alt="Precision Vibrating Screen">
+                    <div class="feature-caption">PRECISION SCREENING</div>
+                </div>
+                <div class="feature-visual">
+                    <!-- Placeholder: Use a high-res image of the grizzly bars --><img src="https://placehold.co/400x250/333/fff?text=RUGGED+GRIZZLY+BARS" alt="Rugged Grizzly Bars">
+                    <div class="feature-caption">RUGGED GRIZZLY BARS</div>
+                </div>
+            </div>
             
-            <div class="body-text" style="margin-top: 18px; font-weight: 700; color: #ff6600; font-size: 13px;">
+            <div class="body-text" style="margin-top: 15px; font-weight: 700; color: #ff6600; font-size: 13px;">
                 Contact the exclusive New Zealand importer now to arrange a demonstration, view specs or place your order. Don't let costly downtime, screen damage, material blockups or landfill fees eat your margin.
             </div>
         </div>
         
-        <!-- CTA SECTION (20% Height) -->
-        <div class="cta-section">
+        <!-- CTA SECTION (20% Height) --><div class="cta-section">
             <div class="cta-content">
                 <div class="cta-headline">Ready to Upgrade?</div>
                 <div class="cta-text">
@@ -305,19 +330,13 @@
                 </div>
             </div>
             <div class="qr-section">
-                <!-- IMPORTANT: QR Code must be updated to link to https://www.sitemachinery.nz/ -->
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.sitemachinery.nz/" 
+                <!-- IMPORTANT: QR Code must be updated to link to https://www.sitemachinery.nz/ --><img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.sitemachinery.nz/" 
                      alt="QR Code Scan for Site Machinery NZ Website" class="qr-code">
                 <div class="qr-label">Scan for Info</div>
             </div>
-            <div class="mini-images">
-                <img src="https://placehold.co/60x60/ffa500/1a1a1a?text=DETAIL+1" class="mini-img" alt="Product Feature Detail 1">
-                <img src="https://placehold.co/60x60/ffa500/1a1a1a?text=DETAIL+2" class="mini-img" alt="Product Feature Detail 2">
-            </div>
-        </div>
+            <!-- Removed .mini-images as they are replaced by .key-features-visuals --></div>
         
-        <!-- FOOTER (Remaining Height) -->
-        <div class="footer">
+        <!-- FOOTER (Remaining Height) --><div class="footer">
             <div class="footer-left">
                 <div class="company-name">EXCLUSIVE NZ IMPORTER: SITE MACHINERY NZ</div>
                 <div class="contact-info">
