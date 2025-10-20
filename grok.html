@@ -166,14 +166,21 @@
             bottom: 25px;
             right: 35px;
             display: flex;
-            gap: 8px;
+            flex-direction: column; /* Stack vertically for better visibility in tight space */
+            gap: 12px;
+            align-items: flex-end;
         }
         .mini-img {
-            width: 60px;
-            height: 60px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-radius: 4px;
+            width: 120px;
+            height: 90px; /* Slightly rectangular for action shots */
+            border: 3px solid rgba(255,255,255,0.6);
+            border-radius: 8px;
             object-fit: cover;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5); /* Add glow/shadow for attention */
+            transition: transform 0.3s ease; /* Subtle hover effect for demo */
+        }
+        .mini-img:hover {
+            transform: scale(1.05);
         }
         .footer {
             background: #1a1a1a;
@@ -231,6 +238,9 @@
             .ad-container {
                 box-shadow: none;
                 page-break-after: always;
+            }
+            .mini-img:hover {
+                transform: none; /* Disable hover in print */
             }
         }
     </style>
