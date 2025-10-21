@@ -1,154 +1,209 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IDM Magazine Ad</title>
-  <style>
-    body {
-      margin: 0;
-      width: 2550px;       /* 8.375" at 300dpi */
-      height: 3300px;      /* 10.875" at 300dpi */
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: white;
-      display: flex;
-      flex-direction: column;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IDM — Grid Layout (Print-ready)</title>
+<style>
+  /* Page dimensions: 8.375in x 10.875in */
+  :root {
+    --page-w: 8.375in;
+    --page-h: 10.875in;
+  }
 
-    .hero {
-      padding: 80px 100px 20px;
-    }
-    .hero h1 {
-      font-size: 78px;
-      margin: 0;
-      line-height: 1.05;
-      color: #f97316;
-      text-transform: uppercase;
-      font-weight: 900;
-    }
-    .hero h2 {
-      font-size: 40px;
-      font-weight: 300;
-      margin-top: 10px;
-      max-width: 70%;
-    }
+  html,body{height:100%;margin:0;background:#222;font-family:Arial,Helvetica,sans-serif}
+  /* Canvas centered in browser for preview */
+  .canvas-wrap{display:flex;align-items:center;justify-content:center;padding:20px}
+  .ad {
+    width:var(--page-w);
+    height:var(--page-h);
+    background:#fff;
+    box-shadow:0 12px 40px rgba(0,0,0,.45);
+    color:#111;
+    display:grid;
+    /* Grid rows chosen to exactly fit the page height (sum ≈ 10.875in) */
+    grid-template-rows:
+      2.6in   /* hero */
+      0.65in  /* headline subtext */
+      0.95in  /* paragraph */
+      0.75in  /* painpoint bullets */
+      2.05in  /* image grid row 1 (2 images side-by-side) */
+      2.05in  /* image grid row 2 (2 images side-by-side) */
+      0.8in   /* full-width feature image */
+      0.7in;  /* CTA + footer */
+    gap:0;
+    overflow:hidden;
+  }
 
-    .content {
-      padding: 10px 100px;
-      font-size: 28px;
-      line-height: 1.35;
-      max-width: 80%;
-    }
+  /* HERO */
+  .hero {
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.6)),
+      url('https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp') center/cover no-repeat;
+    color:#fff;
+    padding:22px 26px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+  }
+  .hero .title {
+    font-weight:900;
+    color:#ff6600;
+    text-transform:uppercase;
+    font-size:40px;
+    line-height:1.02;
+    margin:0;
+    letter-spacing:1px;
+  }
 
-    .pain-points {
-      padding: 0 100px;
-      font-size: 26px;
-      margin-top: 10px;
-    }
-    .pain-points b {
-      color: #f97316;
-    }
-    .pain-points ul {
-      margin: 10px 0;
-      padding-left: 20px;
-    }
+  .subtitle {
+    padding:8px 26px;
+    font-size:18px;
+    color:#222;
+    background:#fff;
+    align-self:start;
+    margin-top:-18px;
+    width:calc(100% - 52px);
+    box-shadow:0 6px 20px rgba(0,0,0,.18);
+    font-weight:700;
+  }
 
-    .image-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 50px;
-      gap: 20px;
-    }
-    .image-row img {
-      width: 48%;
-      height: 450px; /* Smaller height to ensure total page fits */
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    .image-center {
-      padding: 10px 50px;
-    }
-    .image-center img {
-      width: 100%;
-      height: 430px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
+  /* paragraph + bullets */
+  .para {
+    padding:10px 26px;
+    font-size:14.5px;
+    line-height:1.5;
+    color:#222;
+  }
+  .bullets {
+    padding:6px 40px;
+    font-size:14px;
+    color:#222;
+    display:flex;
+    align-items:center;
+  }
+  .bullets ul { margin:0; padding-left:18px; }
+  .bullets li { margin:6px 0; font-weight:700; color:#ff6600; }
 
-    .cta {
-      margin-top: auto;
-      text-align: center;
-      padding: 40px 0;
-    }
-    .cta h3 {
-      font-size: 36px;
-      color: #f97316;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
-    .cta .qr {
-      width: 250px;
-      height: 250px;
-      margin: 0 auto;
-      background: white url('qr-placeholder.png') center/cover no-repeat;
-    }
-    .footer {
-      text-align: center;
-      font-size: 22px;
-      color: #aaa;
-      padding-bottom: 20px;
-    }
-  </style>
+  /* Image grid rows: each row contains two image cells */
+  .img-row {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    padding:6px 10px;
+  }
+  .img-box {
+    background:#000;
+    border-radius:3px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:6px;
+  }
+  .img-box img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain; /* show full image without cropping */
+    display:block;
+  }
+
+  /* Full-width feature image */
+  .feature {
+    padding:6px 10px;
+  }
+  .feature .img-box{ height:100%; }
+
+  /* CTA / footer row */
+  .cta {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 18px;
+    background:linear-gradient(90deg,#ff6600,#cc5200);
+    color:#fff;
+    gap:14px;
+  }
+  .cta .left { font-weight:900; font-size:18px; text-transform:uppercase; }
+  .cta .right { text-align:right; font-size:12px; }
+  .qr {
+    width:90px; height:90px; background:#fff; display:inline-block;
+  }
+
+  /* Small, print-friendly type adjustments */
+  @media print {
+    body,html{background:#fff}
+    .canvas-wrap{box-shadow:none}
+    .ad{box-shadow:none}
+  }
+</style>
 </head>
-
 <body>
+  <div class="canvas-wrap">
+    <article class="ad" role="document" aria-label="IDM full-page ad">
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>INDUSTRIAL DESIGN & MAINTENANCE</h1>
-    <h2>Engineered screening equipment that lasts — built to outperform & outlast everything in its class.</h2>
-  </section>
+      <!-- hero -->
+      <header class="hero">
+        <h1 class="title">Industrial Design & Maintenance — Grizzly Screens</h1>
+      </header>
 
-  <!-- BODY TEXT -->
-  <section class="content">
-    When your operation is shut down, every hour costs you. IDM builds heavy-duty screening machines 
-    and material handlers that keep working where others fail — no cracked frames, no warped decks, 
-    no endless repairs. Built by operators, for operators.
-  </section>
+      <!-- subtitle (small white band overlapping hero) -->
+      <div class="subtitle">Engineered screening equipment that lasts — built to outperform & outlast.</div>
 
-  <!-- PAIN POINTS -->
-  <section class="pain-points">
-    <ul>
-      <li><b>Lost profit every hour your screen is blocked or broken.</b></li>
-      <li><b>Paying landfill fees because it can't separate material properly.</b></li>
-      <li><b>Frames cracking, welds failing, hydraulics blowing under real work conditions.</b></li>
-      <li><b>Waiting weeks for overseas parts and support that never arrives.</b></li>
-    </ul>
-  </section>
+      <!-- paragraph -->
+      <section class="para">
+        When your operation stops, every hour is lost margin. IDM Grizzly Screens remove oversized material,
+        reduce plugging and protect downstream crushers. Bolt-on replaceable bars, adjustable deck angles and
+        NZ-based support keep you working — not repairing.
+      </section>
 
-  <!-- STAGGERED IMAGES -->
-  <div class="image-row">
-    <img src="image1.jpg" alt="Machine 1">
-    <img src="image2.jpg" alt="Machine 2">
+      <!-- targeted pain-point bullets -->
+      <aside class="bullets" aria-hidden="false">
+        <ul>
+          <li>Lost profit from screen block-ups and downtime.</li>
+          <li>Landfill & disposal fees because separation fails.</li>
+          <li>Welds, frames and hydraulics failing under worksite strain.</li>
+          <li>Long wait times for overseas parts & costly shipping.</li>
+        </ul>
+      </aside>
+
+      <!-- image grid row 1 -->
+      <div class="img-row" aria-hidden="false">
+        <figure class="img-box">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="SLG-78 in action">
+        </figure>
+        <figure class="img-box" style="align-self:end; padding-bottom:8px;">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Spring suspension">
+        </figure>
+      </div>
+
+      <!-- image grid row 2 -->
+      <div class="img-row" aria-hidden="false">
+        <figure class="img-box" style="padding-top:8px;">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Transport lugs">
+        </figure>
+        <figure class="img-box">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/06/TILTING-SCREEN-DECK-108VFRB-scaled.webp" alt="Tilting deck">
+        </figure>
+      </div>
+
+      <!-- full-width feature image -->
+      <div class="feature">
+        <div class="img-box" style="height:100%;">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp" alt="Feature image">
+        </div>
+      </div>
+
+      <!-- CTA + footer -->
+      <div class="cta">
+        <div class="left">Ready to upgrade? Scan for demos, specs & pricing.</div>
+        <div class="right">
+          <div class="qr" aria-hidden="true"></div>
+          SITE Machinery NZ • info@sitemachinery.nz
+        </div>
+      </div>
+
+    </article>
   </div>
-  <div class="image-row">
-    <img src="image3.jpg" alt="Machine 3">
-    <img src="image4.jpg" alt="Machine 4">
-  </div>
-  <div class="image-center">
-    <img src="image5.jpg" alt="Machine Front">
-  </div>
-
-  <!-- CTA -->
-  <section class="cta">
-    <h3>Scan to see full builds in action</h3>
-    <div class="qr"></div>
-  </section>
-
-  <div class="footer">
-    © IDM Engineering — Custom Screens & Industrial Machinery
-  </div>
-
 </body>
 </html>
