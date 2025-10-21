@@ -23,7 +23,7 @@
 
   /* HERO */
   .hero-section{
-    height:48%;
+    height:45%;
     background:
       linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
       url('https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp');
@@ -59,13 +59,13 @@
   /* BODY */
   .main-row{
     display:flex; flex-direction:column;
-    padding:30px 35px 0 35px;
-    background:#fff; height:32%; position:relative;
+    padding:20px 35px 0 35px;
+    background:#fff; height:35%; position:relative;
   }
 
   .content-left{
     flex:1; padding-right:0;
-    display: grid; grid-template-rows: auto 1fr auto; gap: 15px;
+    display: grid; grid-template-rows: auto auto auto 1fr auto; gap: 10px;
   }
 
   .body-text{
@@ -73,33 +73,47 @@
     margin-bottom:0;
   }
 
+  .pain-points-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:8px 0;
+  }
+  .pain-item{
+    background:linear-gradient(135deg,#cc0000,#ff3333); color:#fff;
+    padding:8px; border-radius:6px; font-size:10.5px; font-weight:600;
+    text-align:center; box-shadow:0 3px 12px rgba(204,0,0,.35);
+    line-height:1.3;
+  }
+  .pain-solution{
+    font-weight:900; color:#ffff00; display:block; margin-top:2px;
+  }
+
   .integrated-images {
-    display: flex; flex-direction: column; gap: 12px;
-    align-items: center;
+    display: flex; flex-direction: row; gap: 8px;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .showcase-card{
-    width: 100%; max-width: 500px;
+    flex:1; max-width: 48%;
     background:#fff; border-radius:6px;
     box-shadow:0 10px 30px rgba(0,0,0,.35);
     overflow:hidden; border:3px solid rgba(255,255,255,.85);
   }
 
   .showcase-img{
-    width:100%; height:180px; object-fit:cover; display:block;
+    width:100%; height:150px; object-fit:cover; display:block;
   }
 
   .showcase-caption{
-    padding:10px; font-weight:800; font-size:12px; color:#ff6600;
+    padding:8px; font-weight:800; font-size:11px; color:#ff6600;
     background:#111; color:#fff; text-align:center;
   }
 
   .features-grid{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:14px 0;
+    display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin:8px 0;
   }
   .feature-item{
     background:linear-gradient(135deg,#ff6600,#ff8533); color:#fff;
-    padding:10px; border-radius:6px; font-size:11.5px; font-weight:700;
+    padding:8px; border-radius:6px; font-size:10.5px; font-weight:700;
     text-align:center; box-shadow:0 3px 12px rgba(255,102,0,.35);
   }
 
@@ -112,13 +126,13 @@
 
   /* Third image positioned to spread */
   .spread-image {
-    position: absolute; right: 35px; bottom: 20px; width: 200px; height: 150px;
+    position: absolute; right: 35px; bottom: 15px; width: 220px; height: 160px;
     object-fit: cover; border-radius: 6px; box-shadow: 0 8px 25px rgba(0,0,0,.3);
     z-index: 2;
   }
 
   .spread-caption {
-    position: absolute; right: 35px; bottom: -25px; width: 200px;
+    position: absolute; right: 35px; bottom: -20px; width: 220px;
     background: #111; color: #fff; text-align: center; font-size: 11px; font-weight: 700;
     padding: 4px; border-radius: 4px; opacity: 0.9;
   }
@@ -174,8 +188,15 @@
         <div class="product-showcase"></div>
 
         <p class="body-text">
-          Tired of skyrocketing landfill fees over $266/tonne, endless manual sorting delays, and equipment breakdowns halting your jobs? Our DeSite Grizzly Screens crush these pain points head-on. Heavy-duty grizzly bars swiftly remove oversize material from rock, rubble, recycled concrete, or contaminated soil—preventing plugging, protecting downstream crushers, and turning waste into sellable aggregates on-site. No more high transport costs or lost revenue from discarded materials; just faster throughput, lower labor, and boosted profits for your crew.
+          Tired of skyrocketing landfill fees, endless manual sorting, and equipment breakdowns killing your profits? Our DeSite Grizzly Screens tackle these head-on. Heavy-duty grizzly bars remove oversize material from rock, rubble, recycled concrete, or contaminated soil—preventing plugging, protecting crushers, and turning waste into sellable aggregates on-site. Cut costs, speed up jobs, and boost revenue with rugged, low-maintenance screening built for NZ conditions.
         </p>
+
+        <div class="pain-points-grid">
+          <div class="pain-item">High landfill fees >$266/tonne eating margins<span class="pain-solution">→ On-Site Screening Slashes Disposal</span></div>
+          <div class="pain-item">Manual sorting delays wasting crew hours<span class="pain-solution">→ Automate & Cut Labor by 60%</span></div>
+          <div class="pain-item">Project hold-ups from contamination risks<span class="pain-solution">→ Quick Oversize Removal Speeds Flow</span></div>
+          <div class="pain-item">Revenue loss dumping usable waste<span class="pain-solution">→ Recycle into Sellable Products +15-25%</span></div>
+        </div>
 
         <div class="integrated-images">
           <div class="showcase-card">
@@ -196,8 +217,8 @@
           <div class="feature-item">✓ Local Support – Fast Fixes & Parts</div>
         </div>
 
-        <p style="font-weight:800;color:#ff6600;margin-top:12px;font-size:13px;">
-          Don't let dump fees, sorting delays, contamination risks, or transport hassles drain your margins. Contact us now for a demo, specs, or order!
+        <p style="font-weight:800;color:#ff6600;margin-top:8px;font-size:13px;">
+          Don't let fees, delays, or waste drain your margins. Contact us now for a demo, specs, or order!
         </p>
 
         <!-- Spread third image to the side for better visibility -->
