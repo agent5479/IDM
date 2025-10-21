@@ -82,6 +82,13 @@
     padding:6px; border-radius:6px; font-size:10px; font-weight:600;
     text-align:center; box-shadow:0 3px 12px rgba(204,0,0,.35);
     line-height:1.2;
+    position: relative;
+  }
+  .pain-item::before {
+    content: '✗';
+    font-size: 14px;
+    margin-right: 4px;
+    display: inline-block;
   }
   .pain-solution{
     font-weight:900; color:#ffff00; display:block; margin-top:1px;
@@ -94,6 +101,13 @@
     background:linear-gradient(135deg,#ff6600,#ff8533); color:#fff;
     padding:6px; border-radius:6px; font-size:10px; font-weight:700;
     text-align:center; box-shadow:0 3px 12px rgba(255,102,0,.35);
+    position: relative;
+  }
+  .feature-item::before {
+    content: '✓';
+    font-size: 14px;
+    margin-right: 4px;
+    display: inline-block;
   }
 
   /* Right column: stacked images */
@@ -185,10 +199,10 @@
         </div>
 
         <div class="features-grid">
-          <div class="feature-item">✓ Rugged Build – Ends Downtime</div>
-          <div class="feature-item">✓ Adjustable Slope – Boosts Throughput</div>
-          <div class="feature-item">✓ Low-Maintenance – Cuts Labor Costs</div>
-          <div class="feature-item">✓ Local Support – Fast Fixes & Parts</div>
+          <div class="feature-item">Rugged Build – Ends Downtime</div>
+          <div class="feature-item">Adjustable Slope – Boosts Throughput</div>
+          <div class="feature-item">Low-Maintenance – Cuts Labor Costs</div>
+          <div class="feature-item">Local Support – Fast Fixes & Parts</div>
         </div>
 
         <p style="font-weight:800;color:#ff6600;margin-top:6px;font-size:12px;">
