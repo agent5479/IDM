@@ -13,41 +13,40 @@
     min-height:100vh;padding:20px;
   }
 
-  /* Full-page ad (bleed included) */
   .ad-container{
     width:8.375in; height:10.875in;
     background:linear-gradient(135deg,#1a1a1a,#2d2d2d);
     position:relative; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.3);
-    color:#222;
+    color:#222; display:flex; flex-direction:column;
   }
 
-  /* HERO */
+  /* HERO - 28% */
   .hero-section{
-    height:35%;
+    height:28%;
     background:
       linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
       url('https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp');
     background-size:cover; background-position:center 40%;
     position:relative; display:flex; flex-direction:column; justify-content:flex-end;
-    padding:35px;
+    padding:24px 35px;
   }
 
   .logo-area{
-    position:absolute; top:25px; left:35px;
-    background:rgba(255,255,255,0.97); padding:10px 18px; border-radius:5px;
+    position:absolute; top:20px; left:35px;
+    background:rgba(255,255,255,0.97); padding:8px 16px; border-radius:5px;
     font-weight:900; font-size:24px; letter-spacing:3px; color:#ff6600;
     border:3px solid #ff6600; box-shadow:0 4px 20px rgba(0,0,0,.4);
   }
 
   .exclusive-tag{
-    position:absolute; top:25px; right:35px;
-    background:rgba(255,255,255,0.92); padding:8px 14px; border-radius:4px;
-    font-weight:700; font-size:12px; color:#222; letter-spacing:1px;
+    position:absolute; top:20px; right:35px;
+    background:rgba(255,255,255,0.92); padding:6px 12px; border-radius:4px;
+    font-weight:700; font-size:11px; color:#222; letter-spacing:1px;
   }
 
   .headline{
     color:#fff; font-size:40px; font-weight:900; line-height:1.05;
-    text-transform:uppercase; margin-bottom:12px; max-width:70%;
+    text-transform:uppercase; margin-bottom:10px; max-width:70%;
     text-shadow:4px 4px 12px rgba(0,0,0,.9); letter-spacing:-1px;
   }
 
@@ -56,111 +55,119 @@
     text-shadow:2px 2px 10px rgba(0,0,0,.9);
   }
 
-  /* BODY GRID */
-  .main-row{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 15px;
-    padding:15px 35px 0 35px;
-    background:#fff; height:45%; position:relative;
+  /* MAIN GRID SECTION - 46% */
+  .main-grid{
+    height:46%; background:#fff; padding:20px 35px;
+    display:grid; grid-template-columns:1fr 280px; gap:20px;
   }
 
-  .content-left{
-    display: flex; flex-direction: column; gap: 8px;
+  /* Left column content */
+  .content-column{}
+
+  .pain-points{
+    background:linear-gradient(135deg,#fff3e6,#ffe6cc);
+    border-left:4px solid #ff6600; padding:10px 12px; margin-bottom:12px;
+    border-radius:4px; box-shadow:0 3px 12px rgba(255,102,0,.15);
+  }
+
+  .pain-points-title{
+    font-size:14px; font-weight:900; color:#ff6600; margin-bottom:8px;
+    text-transform:uppercase; letter-spacing:0.5px;
+  }
+
+  .pain-point{
+    display:flex; align-items:flex-start; gap:7px; margin-bottom:7px;
+  }
+
+  .pain-point:last-child{ margin-bottom:0; }
+
+  .pain-icon{
+    color:#ff6600; font-size:14px; font-weight:900; flex-shrink:0; margin-top:1px;
+  }
+
+  .pain-text{
+    font-size:10.5px; line-height:1.4; color:#2a2a2a;
+  }
+
+  .pain-highlight{
+    font-weight:800; color:#cc5200;
+  }
+
+  .solution-section{
+    margin-bottom:12px;
+  }
+
+  .solution-title{
+    font-size:13px; font-weight:900; color:#222; margin-bottom:6px;
+    border-bottom:3px solid #ff6600; padding-bottom:3px; display:inline-block;
   }
 
   .body-text{
-    font-size:12px; line-height:1.55; color:#2a2a2a; text-align:justify;
-    margin-bottom:0;
-  }
-
-  .pain-points-grid{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:6px; margin:0;
-  }
-  .pain-item{
-    background:linear-gradient(135deg,#cc0000,#ff3333); color:#fff;
-    padding:6px; border-radius:6px; font-size:10px; font-weight:600;
-    text-align:center; box-shadow:0 3px 12px rgba(204,0,0,.35);
-    line-height:1.2;
-    position: relative;
-  }
-  .pain-item::before {
-    content: '✗';
-    font-size: 14px;
-    margin-right: 4px;
-    display: inline-block;
-  }
-  .pain-solution{
-    font-weight:900; color:#ffff00; display:block; margin-top:1px;
+    font-size:10.5px; line-height:1.5; color:#2a2a2a; margin-bottom:10px;
   }
 
   .features-grid{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:6px; margin:6px 0;
-  }
-  .feature-item{
-    background:linear-gradient(135deg,#ff6600,#ff8533); color:#fff;
-    padding:6px; border-radius:6px; font-size:10px; font-weight:700;
-    text-align:center; box-shadow:0 3px 12px rgba(255,102,0,.35);
-    position: relative;
-  }
-  .feature-item::before {
-    content: '✓';
-    font-size: 14px;
-    margin-right: 4px;
-    display: inline-block;
+    display:grid; grid-template-columns:repeat(2,1fr); gap:7px; margin-bottom:10px;
   }
 
-  /* Right column: stacked images */
-  .image-column {
-    display: flex; flex-direction: column; gap: 8px;
+  .feature-item{
+    background:linear-gradient(135deg,#ff6600,#ff8533); color:#fff;
+    padding:7px; border-radius:4px; font-size:9.5px; font-weight:700;
+    text-align:center; box-shadow:0 3px 10px rgba(255,102,0,.35);
+  }
+
+  .cta-text-inline{
+    font-weight:800;color:#ff6600;font-size:11px;line-height:1.4;
+  }
+
+  /* Right column - images */
+  .images-column{
+    display:flex; flex-direction:column; gap:8px;
   }
 
   .showcase-card{
-    background:#fff; border-radius:6px;
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
-    overflow:hidden; border:3px solid rgba(255,255,255,.85);
+    flex:1; border-radius:5px; overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.3); border:2px solid #f0f0f0;
   }
 
   .showcase-img{
-    width:100%; height:100px; object-fit:cover; display:block;
+    width:100%; height:100%; object-fit:cover; display:block;
+    background:#e0e0e0;
   }
 
   .showcase-caption{
-    padding:6px; font-weight:800; font-size:10px; color:#ff6600;
-    background:#111; color:#fff; text-align:center;
+    padding:5px; font-weight:800; font-size:8.5px; color:#fff;
+    background:#111; text-align:center; line-height:1.2; position:absolute;
+    bottom:0; left:0; right:0;
   }
 
-  /* faded background product showcase retained but muted */
-  .product-showcase{
-    position:absolute; right:35px; top:10px; width:220px; height:100%;
-    opacity:.08; background:url('https://idmcabc.com/wp-content/uploads/2024/06/TILTING-SCREEN-DECK-108VFRB-scaled.webp');
-    background-size:cover; background-position:center; pointer-events:none;
-  }
+  .showcase-card{position:relative;}
 
-  /* CTA row */
+  /* CTA SECTION - 14% */
   .cta-section{
-    background:linear-gradient(135deg,#ff6600,#cc5200);
-    height:15%; display:flex; align-items:center; padding:0 35px; gap:20px;
+    height:14%; background:linear-gradient(135deg,#ff6600,#cc5200);
+    display:flex; align-items:center; padding:0 35px; gap:18px;
   }
 
   .cta-content{ flex:1; color:#fff; }
-  .cta-headline{ font-size:28px; font-weight:900; margin-bottom:8px; text-transform:uppercase; }
+  .cta-headline{ font-size:26px; font-weight:900; margin-bottom:6px; text-transform:uppercase; }
   .cta-text{ font-size:13px; font-weight:500; line-height:1.4; }
 
-  .qr-section{ background:#fff; padding:12px; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,.35); }
-  .qr-code{ width:140px; height:140px; display:block; border:3px solid #f0f0f0; }
-  .qr-label{ font-size:11px; font-weight:700; text-align:center; margin-top:6px; }
+  .qr-section{ background:#fff; padding:10px; border-radius:6px; box-shadow:0 5px 20px rgba(0,0,0,.35); }
+  .qr-code{ width:110px; height:110px; display:block; border:2px solid #f0f0f0; }
+  .qr-label{ font-size:10px; font-weight:700; text-align:center; margin-top:5px; }
 
-  /* FOOTER */
+  /* FOOTER - 8% */
   .footer{
-    background:#111; color:#fff; display:flex; justify-content:space-between; align-items:center;
-    padding:12px 35px; font-size:10px;
+    height:8%; background:#111; color:#fff; display:flex; 
+    justify-content:space-between; align-items:center;
+    padding:0 35px; font-size:10px;
   }
   .company-name{ font-size:15px; font-weight:900; color:#ff6600; }
-  .tagline{ font-style:italic; color:#ffa500; font-weight:600; display:block; margin-bottom:4px; }
+  .tagline{ font-style:italic; color:#ffa500; font-weight:600; display:block; margin-bottom:3px; }
   .contact-info{ line-height:1.5; color:#ddd; }
 
-  .accent-bar{ position:absolute; bottom:0; left:0; width:100%; height:4px;
+  .accent-bar{ position:absolute; bottom:0; left:0; width:100%; height:3px;
     background:linear-gradient(90deg,#ff6600,#ffa500,#ff6600);
   }
 
@@ -171,59 +178,76 @@
 </head>
 <body>
   <div class="ad-container">
+    <!-- HERO -->
     <div class="hero-section">
-      <div class="logo-area">
-        <!-- Replace with <img src="path/to/logo.png" alt="IDM Logo" style="height:44px"> when available -->
-        IDM
-      </div>
+      <div class="logo-area">IDM</div>
       <div class="exclusive-tag">Exclusive NZ Importer – SITE Machinery NZ</div>
-
-      <div class="headline">Introducing our Latest<br>Grizzly Screens</div>
-      <div class="subheadline">Heavy-Duty Pre-Screening Done Right — Engineered for maximum throughput, minimal downtime and rugged operation</div>
+      <div class="headline">Turn Waste into<br>Profit On-Site</div>
+      <div class="subheadline">Screen, grade and repurpose material right where you are with static or powered grizzly screens and a variety of aperture meshes — eliminate tip fees, reduce buy-in costs and create saleable products</div>
     </div>
 
-    <!-- body grid with left content and right images -->
-    <div class="main-row">
-      <div class="content-left">
-        <div class="product-showcase"></div>
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+      <div class="content-column">
+        <div class="pain-points">
+          <div class="pain-points-title">⚠ Stop Throwing Money Away</div>
+          
+          <div class="pain-point">
+            <div class="pain-icon">✗</div>
+            <div class="pain-text"><span class="pain-highlight">Paying tip fees</span> to dump material that could be screened and reused on-site?</div>
+          </div>
+          
+          <div class="pain-point">
+            <div class="pain-icon">✗</div>
+            <div class="pain-text"><span class="pain-highlight">Buying aggregate and fill</span> when you've got perfectly good material going to landfill?</div>
+          </div>
+          
+          <div class="pain-point">
+            <div class="pain-icon">✗</div>
+            <div class="pain-text"><span class="pain-highlight">Missing revenue opportunities</span> from graded soil, stone and recycled products you could be selling?</div>
+          </div>
+          
+          <div class="pain-point">
+            <div class="pain-icon">✗</div>
+            <div class="pain-text"><span class="pain-highlight">Hauling costs eating profits</span> — trucking material away then trucking new material back in?</div>
+          </div>
+        </div>
 
-        <p class="body-text">
-          Tired of skyrocketing landfill fees, endless manual sorting, and equipment breakdowns killing your profits? Our DeSite Grizzly Screens tackle these head-on. Heavy-duty grizzly bars remove oversize material from rock, rubble, recycled concrete, or contaminated soil—preventing plugging, protecting crushers, and turning waste into sellable aggregates on-site. Cut costs, speed up jobs, and boost revenue with rugged, low-maintenance screening built for NZ conditions.
-        </p>
-
-        <div class="pain-points-grid">
-          <div class="pain-item">High landfill fees >$266/tonne eating margins<span class="pain-solution">→ On-Site Screening Slashes Disposal</span></div>
-          <div class="pain-item">Manual sorting delays wasting crew hours<span class="pain-solution">→ Automate & Cut Labor by 60%</span></div>
-          <div class="pain-item">Project hold-ups from contamination risks<span class="pain-solution">→ Quick Oversize Removal Speeds Flow</span></div>
-          <div class="pain-item">Revenue loss dumping usable waste<span class="pain-solution">→ Recycle into Sellable Products +15-25%</span></div>
+        <div class="solution-section">
+          <div class="solution-title">✓ Screen, Grade & Sell Material On-Site</div>
+          <p class="body-text">
+            Transform demolition rubble, excavation spoil and mixed material into graded, saleable products with our versatile grizzly screens — available in static models for large-scale yard processing (75-100mm+ apertures) or electrically powered vibrating versions for on-site Reuse, Recycle, Reduce operations (smaller apertures). Separate oversize from usable stone, soil and aggregate — creating clean fill, road base and stockpile material you can reuse or sell. Stop paying to dump valuable material. Start generating revenue from every load while slashing your aggregate purchase costs.
+          </p>
         </div>
 
         <div class="features-grid">
-          <div class="feature-item">Rugged Build – Ends Downtime</div>
-          <div class="feature-item">Adjustable Slope – Boosts Throughput</div>
-          <div class="feature-item">Low-Maintenance – Cuts Labor Costs</div>
-          <div class="feature-item">Local Support – Fast Fixes & Parts</div>
+          <div class="feature-item">✓ HEAVY-DUTY CONSTRUCTION</div>
+          <div class="feature-item">✓ 45° ADJUSTABLE DECK SLOPE</div>
+          <div class="feature-item">✓ LOW-MAINTENANCE DESIGN</div>
+          <div class="feature-item">✓ NZ-BASED SUPPORT & PARTS</div>
+          <div class="feature-item">✓ ADJUST DECK ANGLE WITH BUCKET CUTTING EDGE</div>
+          <div class="feature-item">✓ BUCKET CUTTING EDGE LIFT EXTENSIONS</div>
         </div>
 
-        <p style="font-weight:800;color:#ff6600;margin-top:6px;font-size:12px;">
-          Don't let fees, delays, or waste drain your margins. Contact us now for a demo, specs, or order!
+        <p class="cta-text-inline">
+          Perfect for quarries, demolition contractors, earthmoving operations and material supply yards. Stop dumping profits — start screening them.
         </p>
       </div>
 
-      <div class="image-column">
+      <div class="images-column">
         <div class="showcase-card">
-          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="Grizzly Screener - In Action">
-          <div class="showcase-caption">Model: SLG-78 — In Action</div>
+          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="Grizzly in Action">
+          <div class="showcase-caption">HIGH PRODUCTIVITY SCREENING</div>
         </div>
 
         <div class="showcase-card">
-          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Spring Suspension Detail">
-          <div class="showcase-caption">Spring Suspension – Low Vibration</div>
+          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Spring Suspension">
+          <div class="showcase-caption">RUGGED SCREEN DECK SUSPENSION</div>
         </div>
 
         <div class="showcase-card">
-          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Bucket Transport Lugs">
-          <div class="showcase-caption">Robust Feed & Transport Details</div>
+          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Transport Details">
+          <div class="showcase-caption">PICK UP AND SHIFT USING BUCKET CUTTING EDGE LIFT EXTENSIONS</div>
         </div>
       </div>
     </div>
@@ -235,13 +259,13 @@
         <div class="cta-text">Scan the QR code to view our full machine range, video demonstrations, specifications & contact us</div>
       </div>
 
-      <div class="qr-section" role="img" aria-label="QR code linking to sales page">
+      <div class="qr-section">
         <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://beliefmastery.github.io/site/IDM/sales.html" alt="Scan for machine info">
         <div class="qr-label">Scan for Info</div>
       </div>
     </div>
 
-    <!-- footer -->
+    <!-- FOOTER -->
     <div class="footer">
       <div>
         <div class="company-name">SITE Machinery NZ</div>
