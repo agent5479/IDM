@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DeSite Grizzly Screens – Heavy-Duty Pre-Screening | SITE Machinery NZ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header.hero {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.78)), url('https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp');
+            background-size: cover;
+            background-position: center 40%;
+            color: #fff;
+            padding: 100px 20px 60px;
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,255,255,0.97);
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: 900;
+            font-size: 24px;
+            letter-spacing: 3px;
+            color: #ff6600;
+            border: 3px solid #ff6600;
+        }
+        .exclusive {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.92);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 11px;
+            color: #222;
+            letter-spacing: 1px;
+        }
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            text-shadow: 4px 4px 12px rgba(0,0,0,.9);
+        }
+        .hero p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffa500;
+            text-shadow: 2px 2px 10px rgba(0,0,0,.9);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        section {
+            padding: 40px 0;
+        }
+        h2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ff6600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .pain-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .pain-card {
+            background: linear-gradient(135deg, #fff3e6, #ffe6cc);
+            border-left: 4px solid #ff6600;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 3px 12px rgba(255,102,0,.15);
+            max-width: 300px;
+            flex: 1 1 300px;
+        }
+        .pain-card h3 {
+            font-size: 14px;
+            font-weight: 900;
+            color: #ff6600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .pain-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 7px;
+            margin-bottom: 7px;
+            font-size: 12px;
+            color: #2a2a2a;
+        }
+        .pain-icon {
+            color: #ff6600;
+            font-weight: 900;
+        }
+        .pain-highlight {
+            font-weight: 800;
+            color: #cc5200;
+        }
+        .solution {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .solution p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 14px;
+            color: #2a2a2a;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+            max-width: 300px;
+            flex: 1 1 300px;
+            overflow: hidden;
+        }
+        .feature-card summary {
+            background: linear-gradient(135deg, #ff6600, #ff8533);
+            color: #fff;
+            padding: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+        }
+        .feature-card summary::-webkit-details-marker {
+            display: none;
+        }
+        .feature-card details[open] summary {
+            background: linear-gradient(135deg, #cc5200, #ff6600);
+        }
+        .feature-detail {
+            padding: 15px;
+            font-size: 12px;
+            color: #2a2a2a;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery-item {
+            position: relative;
+            max-width: 300px;
+            flex: 1 1 300px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,.3);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #111;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 12px;
+        }
+        .cta {
+            background: linear-gradient(135deg, #ff6600, #cc5200);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .cta h2 {
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .cta p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .qr-container {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(0,0,0,.35);
+        }
+        .qr-code {
+            width: 150px;
+            height: 150px;
+            display: block;
+            border: 2px solid #f0f0f0;
+        }
+        .qr-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 5px;
+            color: #222;
+        }
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .company-name {
+            font-size: 18px;
+            font-weight: 900;
+            color: #ff6600;
+        }
+        .tagline {
+            font-style: italic;
+            color: #ffa500;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            font-size: 12px;
+            color: #ddd;
+            margin-bottom: 5px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 14px;
+            }
+            .cta h2 {
+                font-size: 24px;
+            }
+            .cta p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="logo">IDM</div>
+        <div class="exclusive">Exclusive NZ Importer – SITE Machinery NZ</div>
+        <h1>Turn Waste into<br>Profit On-Site</h1>
+        <p>Screen, grade and repurpose material right where you are — eliminate tip fees, reduce buy-in costs and create saleable products</p>
+    </header>
+
+    <section class="problems container">
+        <h2>Stop Throwing Money Away</h2>
+        <div class="pain-points">
+            <div class="pain-card">
+                <h3>⚠ Common Challenges</h3>
+                <div class="pain-item">
+                    <span class="pain-icon">✗</span>
+                    <span><span class="pain-highlight">Paying tip fees</span> to dump material that could be screened and reused on-site?</span>
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">✗</span>
+                    <span><span class="pain-highlight">Buying aggregate and fill</span> when you've got perfectly good material going to landfill?</span>
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">✗</span>
+                    <span><span class="pain-highlight">Missing revenue opportunities</span> from graded soil, stone and recycled products you could be selling?</span>
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">✗</span>
+                    <span><span class="pain-highlight">Hauling costs eating profits</span> — trucking material away then trucking new material back in?</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="container">
+            <h2>Screen, Grade & Sell Material On-Site</h2>
+            <p>Transform demolition rubble, excavation spoil and mixed material into graded, saleable products. Our grizzly screens separate oversize from usable stone, soil and aggregate — creating clean fill, road base and stockpile material you can reuse or sell. Stop paying to dump valuable material. Start generating revenue from every load while slashing your aggregate purchase costs.</p>
+            <p>Perfect for quarries, demolition contractors, earthmoving operations and material supply yards. Stop dumping profits — start screening them.</p>
+        </div>
+    </section>
+
+    <section class="features-section container">
+        <h2>Key Features of IDM Grizzly Screens</h2>
+        <div class="features">
+            <details class="feature-card">
+                <summary>✓ HEAVY-DUTY CONSTRUCTION</summary>
+                <div class="feature-detail">Built with ultra-rugged materials to handle New Zealand's toughest conditions, ensuring long-lasting performance in demanding environments.</div>
+            </details>
+            <details class="feature-card">
+                <summary>✓ 45° ADJUSTABLE DECK SLOPE</summary>
+                <div class="feature-detail">Easily adjust the deck angle for optimal screening efficiency across various materials and moisture levels.</div>
+            </details>
+            <details class="feature-card">
+                <summary>✓ LOW-MAINTENANCE DESIGN</summary>
+                <div class="feature-detail">Minimal upkeep required, with durable components that reduce downtime and operational costs.</div>
+            </details>
+            <details class="feature-card">
+                <summary>✓ NZ-BASED SUPPORT & PARTS</summary>
+                <div class="feature-detail">Local support ensures quick access to parts and service, keeping your operations running smoothly.</div>
+            </details>
+            <details class="feature-card">
+                <summary>✓ FINE MESH SCREENING OPTIONS</summary>
+                <div class="feature-detail">Capable of fine screening for precise grading, allowing you to produce high-quality materials for specialized applications.</div>
+            </details>
+            <details class="feature-card">
+                <summary>✓ EASY TRACTOR HITCH MOBILITY</summary>
+                <div class="feature-detail">Quickly hitch to tractors for effortless on-site movement, enhancing flexibility and reducing setup time.</div>
+            </details>
+        </div>
+    </section>
+
+    <section class="gallery-section container">
+        <h2>See It in Action</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="Grizzly in Action">
+                <div class="gallery-caption">HIGH-CAPACITY SCREENING</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Spring Suspension">
+                <div class="gallery-caption">LOW-VIBRATION SUSPENSION</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Transport Details">
+                <div class="gallery-caption">ROBUST FEED SYSTEM</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Upgrade?</h2>
+        <p>Scan the QR code to view our full machine range, video demonstrations, specifications & contact us</p>
+        <div class="qr-container">
+            <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://beliefmastery.github.io/site/IDM/sales.html" alt="Scan for machine info">
+            <div class="qr-label">Scan for Info</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="company-name">SITE Machinery NZ</div>
+        <div class="tagline">NZ Distributor of IDM Screening Solutions</div>
+        <div class="contact-info">Email: info@sitemachinery.nz</div>
+        <div class="contact-info">Web: https://www.sitemachinery.nz/</div>
+        <div class="contact-info">Phone: 03 970 7602 • 0800 21 21 26</div>
+    </footer>
+</body>
+</html
