@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDM Grizzly Screens - Turn Waste Into Profit</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
+              url('https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255,255,255,0.95);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 4px;
+  color: #ff6600;
+  border: 3px solid #ff6600;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero-badge {
+  background: rgba(255,166,0,0.95);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.9);
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  max-width: 800px;
+  margin-bottom: 40px;
+  color: #ffa500;
+  font-weight: 600;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+}
+
+.hero-cta {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 25px rgba(255,102,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255,102,0,0.6);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  color: #ffa500;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* Problem-Solution Section */
+.problem-solution-section {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  padding: 80px 20px;
+}
+
+.ps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.ps-problem, .ps-solution {
+  background: #2a2a2a;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.ps-problem {
+  border-left: 5px solid #dc2626;
+}
+
+.ps-solution {
+  border-left: 5px solid #16a34a;
+}
+
+.ps-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.ps-problem .ps-tag {
+  background: rgba(220, 38, 38, 0.2);
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-tag {
+  background: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+}
+
+.ps-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.ps-problem .ps-title {
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-title {
+  color: #4ade80;
+}
+
+.ps-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+.ps-item:last-child {
+  margin-bottom: 0;
+}
+
+.ps-icon {
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ps-problem .ps-icon {
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-icon {
+  color: #4ade80;
+}
+
+.ps-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.ps-solution-intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+}
+
+/* Features Section */
+.features-section {
+  background: #0a0a0a;
+  padding: 80px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #ff6600;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid #2a2a2a;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(255,102,0,0.4);
+  border-color: #ff6600;
+}
+
+.feature-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-content {
+  padding: 25px;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #ff6600;
+  font-weight: 800;
+}
+
+.feature-card p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.98rem;
+}
+
+.feature-expand {
+  display: none;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #333;
+}
+
+.feature-expand.active {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-expand ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-expand li {
+  padding: 10px 0;
+  color: #aaa;
+  border-bottom: 1px solid #2a2a2a;
+  font-size: 0.95rem;
+}
+
+.feature-expand li:before {
+  content: "✓ ";
+  color: #ff6600;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.expand-btn {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 0.9rem;
+}
+
+.expand-btn:hover {
+  background: linear-gradient(135deg, #ff8533, #ffa500);
+}
+
+/* Advantages Section */
+.advantages-section {
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  padding: 80px 20px;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.advantage-card {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(255,102,0,0.3);
+  transition: transform 0.3s;
+}
+
+.advantage-card:hover {
+  transform: scale(1.03);
+}
+
+.advantage-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.advantage-card p {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+/* CTA Section */
+.final-cta {
+  background: #0a0a0a;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 30px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.final-cta p {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.cta-primary, .cta-secondary {
+  padding: 20px 50px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(255,102,0,0.4);
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255,102,0,0.6);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: #ff6600;
+  border: 3px solid #ff6600;
+}
+
+.cta-secondary:hover {
+  background: rgba(255,102,0,0.1);
+  transform: translateY(-3px);
+}
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.qr-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(255,102,0,0.3);
+}
+
+.qr-box img {
+  width: 180px;
+  height: 180px;
+  display: block;
+}
+
+.qr-text {
+  color: #aaa;
+  font-size: 1.1rem;
+  max-width: 300px;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  padding: 60px 20px 30px;
+  border-top: 3px solid #ff6600;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer h3 {
+  color: #ff6600;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.footer p, .footer a {
+  color: #aaa;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #ff6600;
+}
+
+.footer-tagline {
+  color: #ffa500;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .ps-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    font-size: 20px;
+    padding: 8px 15px;
+  }
+  
+  .container {
+    padding: 60px 15px;
+  }
+  
+  .problem-solution-section, .features-section, .advantages-section {
+    padding: 60px 15px;
+  }
+  
+  .ps-problem, .ps-solution {
+    padding: 30px 25px;
+  }
+  
+  .ps-title {
+    font-size: 1.6rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-primary, .cta-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-logo">IDM</div>
+  <div class="hero-badge">Exclusive NZ Importer – SITE Machinery NZ</div>
+  <h1>Turn Waste Into<br>Profit On-Site</h1>
+  <p class="hero-subtitle">Screen, grade and repurpose material right where you are — eliminate tip fees, reduce buy-in costs and create saleable products</p>
+  <a href="#contact" class="hero-cta">Get Started Today</a>
+  <div class="scroll-indicator">↓</div>
+</section>
+
+<!-- Problem-Solution Section -->
+<section class="problem-solution-section">
+  <div class="ps-container">
+    <div class="ps-problem">
+      <span class="ps-tag">The Problem</span>
+      <h2 class="ps-title">Lost Revenue</h2>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✗</div>
+        <div class="ps-text">Are you paying tip fees to dump material that could be screened and reused on-site?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✗</div>
+        <div class="ps-text">Are you buying aggregate and fill when you've got perfectly good material going to waste?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✗</div>
+        <div class="ps-text">Are hauling costs eating into your profits — trucking material away then trucking new material back in?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✗</div>
+        <div class="ps-text">Are you missing revenue opportunities from graded soil, stone and recycled products you could be selling?</div>
+      </div>
+    </div>
+    
+    <div class="ps-solution">
+      <span class="ps-tag">The Solution</span>
+      <h2 class="ps-title">IDM Screens</h2>
+      
+      <p class="ps-solution-intro">Transform demolition rubble, excavation spoil, and mixed material into graded, saleable products. Our screens create clean fill, road base, and stockpile material, slashing purchase costs and generating new revenue streams.</p>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✓</div>
+        <div class="ps-text"><strong>Stop paying to dump</strong> valuable material — screen and reuse it on-site</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✓</div>
+        <div class="ps-text"><strong>Reduce aggregate costs</strong> by repurposing material you already have</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✓</div>
+        <div class="ps-text"><strong>Generate new revenue</strong> by selling graded products and quality fill</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✓</div>
+        <div class="ps-text"><strong>Cut transport costs</strong> by processing material where it sits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="container">
+    <h2 class="section-title">Built Tough. Built Smart.</h2>
+    <p class="section-subtitle">IDM screening equipment delivers unmatched durability and performance</p>
+    
+    <div class="features-grid">
+      <div class="feature-card" onclick="toggleExpand(this)">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="High Capacity Screening" class="feature-image">
+        <div class="feature-content">
+          <h3>High-Capacity Screening</h3>
+          <p>Process massive volumes quickly with industrial-grade construction designed for the toughest conditions.</p>
+          <button class="expand-btn">Learn More</button>
+          <div class="feature-expand">
+            <ul>
+              <li>Heavy-duty construction handles extreme workloads</li>
+              <li>Rugged build quality for years of reliable operation</li>
+              <li>Designed for high-volume commercial applications</li>
+              <li>Proven performance in demanding environments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="feature-card" onclick="toggleExpand(this)">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Low Vibration" class="feature-image">
+        <div class="feature-content">
+          <h3>Advanced Suspension System</h3>
+          <p>Low-vibration design with 45° adjustable deck slope for optimal material separation and flow.</p>
+          <button class="expand-btn">Learn More</button>
+          <div class="feature-expand">
+            <ul>
+              <li>Adjustable angle for different material types</li>
+              <li>Reduced operator fatigue and machine wear</li>
+              <li>Superior separation efficiency</li>
+              <li>Low-maintenance spring suspension</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="feature-card" onclick="toggleExpand(this)">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Robust Feed" class="feature-image">
+        <div class="feature-content">
+          <h3>Tractor-Ready Mobility</h3>
+          <p>Easily hitch to tractors for quick repositioning around your site. Move where the work is.</p>
+          <button class="expand-btn">Learn More</button>
+          <div class="feature-expand">
+            <ul>
+              <li>Quick-hitch compatibility with standard tractors</li>
+              <li>No specialized transport equipment required</li>
+              <li>Reposition between jobs in minutes</li>
+              <li>Robust feed system handles varied material</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Advantages Section -->
+<section class="advantages-section">
+  <div class="container">
+    <h2 class="section-title">Why Choose IDM?</h2>
+    <p class="section-subtitle">Superior engineering, backed by local support</p>
+    
+    <div class="advantages-grid">
+      <div class="advantage-card">
+        <h3>Heavy-Duty Construction</h3>
+        <p>Built to handle NZ's toughest conditions with industrial-grade components</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>45° Adjustable Deck</h3>
+        <p>Optimize separation for any material type with easy angle adjustment</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Low-Maintenance Design</h3>
+        <p>Spend more time screening, less time on repairs and servicing</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>NZ-Based Support</h3>
+        <p>Local parts availability and expert technical support when you need it</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Tractor-Compatible</h3>
+        <p>Easy mobility with standard tractor hitches - no specialized transport</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Rugged Reliability</h3>
+        <p>Proven performance in quarries, demolition sites and earthmoving operations</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="contact">
+  <div class="container">
+    <h2>Ready to Upgrade Your Operation?</h2>
+    <p>Stop dumping profits. Start screening them. Perfect for quarries, demolition contractors, earthmoving operations and material supply yards.</p>
+    
+    <div class="cta-buttons">
+      <a href="tel:0800212126" class="cta-primary">Call 0800 21 21 26</a>
+      <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
+    </div>
+    
+    <div class="qr-container">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://beliefmastery.github.io/site/IDM/sales.html" alt="Scan for more info">
+      </div>
+      <div class="qr-text">
+        <strong style="color:#ff6600;">Scan for instant access</strong><br>
+        View our full machine range, video demonstrations, specifications and contact information
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div>
+      <h3>SITE Machinery NZ</h3>
+      <p class="footer-tagline">NZ Distributor of IDM Screening Solutions</p>
+      <p>Exclusive importers of premium IDM equipment</p>
+    </div>
+    
+    <div>
+      <h3>Contact</h3>
+      <a href="tel:039707602">Phone: 03 970 7602</a>
+      <a href="tel:0800212126">Toll Free: 0800 21 21 26</a>
+      <a href="mailto:info@sitemachinery.nz">Email: info@sitemachinery.nz</a>
+    </div>
+    
+    <div>
+      <h3>Visit Us</h3>
+      <a href="https://www.sitemachinery.nz/" target="_blank">www.sitemachinery.nz</a>
+      <p>Serving quarries, contractors and earthmoving operations across New Zealand</p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2024 SITE Machinery NZ. All rights reserved. IDM is a registered trademark.</p>
+  </div>
+</footer>
+
+<script>
+function toggleExpand(card) {
+  const expandSection = card.querySelector('.feature-expand');
+  const btn = card.querySelector('.expand-btn');
+  
+  if (expandSection.classList.contains('active')) {
+    expandSection.classList.remove('active');
+    btn.textContent = 'Learn More';
+  } else {
+    // Close all other expanded cards
+    document.querySelectorAll('.feature-expand.active').forEach(section => {
+      section.classList.remove('active');
+      section.parentElement.querySelector('.expand-btn').textContent = 'Learn More';
+    });
+    
+    expandSection.classList.add('active');
+    btn.textContent = 'Show Less';
+  }
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
