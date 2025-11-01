@@ -11,7 +11,6 @@
         /* Custom styles for better aesthetics and specific overrides */
         :root {
             --primary-orange: #ff6600;
-            --secondary-orange: #ff8533;
         }
 
         body {
@@ -21,7 +20,8 @@
 
         /* Hero Section Background and Overlay */
         .hero {
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://placehold.co/1920x1080/1a1a1a/ffffff?text=Industrial+Screening+Machine');
+            /* Using a placeholder for the machine image, replace with a high-res image if available */
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://placehold.co/1920x1080/1a1a1a/ffffff?text=IDM+Industrial+Grizzly+Screener');
             background-size: cover;
             background-position: center;
         }
@@ -31,6 +31,7 @@
             position: absolute;
             top: 1.5rem;
             left: 1.5rem;
+            z-index: 10; /* Ensure logo is on top */
         }
         .hero-logo {
             font-weight: 900;
@@ -54,6 +55,7 @@
             opacity: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            border-top: 1px solid #333; /* Tailwind gray-800 equivalent for divider */
         }
         .feature-expand.active {
             max-height: 500px; /* Large enough value to contain content */
@@ -82,7 +84,7 @@
         </h1>
         
         <p class="text-lg sm:text-xl md:text-2xl max-w-3xl mb-10 font-medium text-amber-200/90 drop-shadow-lg">
-            Screen, grade and repurpose material right where you are — eliminate tip fees, reduce buy-in costs and create saleable products.
+            Screen, grade and repurpose material right where you are — eliminate costly tip fees, reduce aggregate buy-in, and create saleable product.
         </p>
         
         <a href="#contact" class="inline-block px-10 py-4 rounded-full text-xl font-bold bg-gradient-to-r from-amber-600 to-orange-500 text-white shadow-2xl shadow-amber-700/50 transition duration-300 hover:scale-[1.02] hover:shadow-amber-500/80">
@@ -101,37 +103,37 @@
                 ⚠ Stop Throwing Money Away
             </h2>
             <p class="text-center text-gray-400 text-lg mb-16 max-w-3xl mx-auto">
-                Are these costly problems impacting your bottom line? Our solutions are engineered to reverse these losses immediately.
+                Are these costly problems impacting your bottom line? Our specialized vibratory screening solutions are engineered to reverse these losses immediately.
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 
-                <!-- Pain Card 1 -->
+                <!-- Pain Card 1: Tip Fees -->
                 <div class="pain-card bg-gray-800 p-6 rounded-xl border-l-4 border-amber-600 shadow-xl transition duration-300 hover:shadow-2xl hover:shadow-amber-700/30 hover:scale-[1.01]">
                     <div class="text-4xl mb-3">💸</div>
                     <h3 class="text-xl font-bold mb-2 text-amber-300">Wasting Money on Tip Fees</h3>
                     <p class="text-gray-400">Paying to dump material that could be screened and reused on-site? Every load to landfill is money thrown away.</p>
                 </div>
                 
-                <!-- Pain Card 2 -->
+                <!-- Pain Card 2: Buying Back -->
                 <div class="pain-card bg-gray-800 p-6 rounded-xl border-l-4 border-amber-600 shadow-xl transition duration-300 hover:shadow-2xl hover:shadow-amber-700/30 hover:scale-[1.01]">
                     <div class="text-4xl mb-3">🚛</div>
                     <h3 class="text-xl font-bold mb-2 text-amber-300">Buying What You Already Have</h3>
                     <p class="text-gray-400">Purchasing aggregate and fill when you've got perfectly good material going to waste? Double the cost, zero sense.</p>
                 </div>
                 
-                <!-- Pain Card 3 -->
+                <!-- Pain Card 3: Missing Revenue -->
                 <div class="pain-card bg-gray-800 p-6 rounded-xl border-l-4 border-amber-600 shadow-xl transition duration-300 hover:shadow-2xl hover:shadow-amber-700/30 hover:scale-[1.01]">
                     <div class="text-4xl mb-3">📉</div>
                     <h3 class="text-xl font-bold mb-2 text-amber-300">Missing Revenue Opportunities</h3>
                     <p class="text-gray-400">Losing out on selling graded soil, stone and recycled products? Turn waste streams into income streams.</p>
                 </div>
                 
-                <!-- Pain Card 4 -->
+                <!-- Pain Card 4: Hauling Costs -->
                 <div class="pain-card bg-gray-800 p-6 rounded-xl border-l-4 border-amber-600 shadow-xl transition duration-300 hover:shadow-2xl hover:shadow-amber-700/30 hover:scale-[1.01]">
                     <div class="text-4xl mb-3">⛽</div>
                     <h3 class="text-xl font-bold mb-2 text-amber-300">Hauling Costs Eating Profits</h3>
-                    <p class="text-gray-400">Trucking material away then trucking new material back in? The fuel costs alone will shock your operations.</p>
+                    <p class="text-gray-400">Trucking material away then trucking new material back in? The fuel and transport costs alone will shock your operations.</p>
                 </div>
             </div>
         </div>
@@ -144,10 +146,10 @@
                 ✓ <span class="text-amber-500">Screen, Grade & Sell</span> Material On-Site
             </h2>
             <p class="text-xl text-gray-300 leading-relaxed mb-8">
-                Transform demolition rubble, excavation spoil, and mixed material into graded, saleable products. Our heavy-duty grizzly screens separate oversize from usable stone, soil, and aggregate — creating clean fill, road base, and stockpile material you can reuse or sell.
+                Transform demolition rubble, excavation spoil, and mixed material into graded, high-demand products. Our heavy-duty grizzly screens efficiently separate oversize from usable stone, soil, and aggregate — creating clean fill, road base, and stockpile material you can reuse or sell.
             </p>
             <p class="text-2xl font-semibold text-amber-500">
-                Stop paying to dump valuable material. Start generating revenue from every load while slashing your aggregate purchase costs.
+                Stop paying to dump valuable material. Start generating revenue from every load and slash your aggregate purchase costs immediately.
             </p>
         </div>
     </section>
@@ -159,7 +161,7 @@
                 Built Tough. Built Smart.
             </h2>
             <p class="text-center text-gray-400 text-lg mb-16 max-w-3xl mx-auto">
-                IDM screening equipment delivers unmatched durability and performance in the field.
+                IDM screening equipment delivers unmatched durability and high-capacity performance in the field.
             </p>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -169,13 +171,13 @@
                     <img src="https://placehold.co/600x400/2a2a2a/ffffff?text=High+Capacity+Screener" alt="High Capacity Screening" class="feature-image w-full h-64 object-cover">
                     <div class="feature-content p-6">
                         <h3 class="text-2xl font-bold mb-3 text-amber-500">High-Capacity Screening</h3>
-                        <p class="text-gray-400 mb-4">Process massive volumes quickly with industrial-grade construction designed for the toughest conditions.</p>
+                        <p class="text-gray-400 mb-4">Process up to 45m³ per hour with industrial-grade construction designed for the toughest site conditions.</p>
                         <button class="expand-btn w-full py-3 rounded-full text-sm font-bold bg-amber-600 text-white hover:bg-amber-700 transition">Learn More</button>
                         <div class="feature-expand">
                             <ul class="list-none p-0">
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Heavy-duty construction handles extreme workloads</li>
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Rugged build quality for years of reliable operation</li>
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Proven performance in demanding environments</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Heavy-duty construction handles extreme workloads</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Screens sand, soil, rock, compost, and more</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Proven performance in demanding environments</li>
                             </ul>
                         </div>
                     </div>
@@ -183,16 +185,16 @@
                 
                 <!-- Feature Card 2 -->
                 <div class="feature-card bg-gray-800 rounded-xl overflow-hidden shadow-2xl cursor-pointer transition duration-300 hover:shadow-amber-700/30 hover:scale-[1.02]" onclick="toggleExpand(this)">
-                    <img src="https://placehold.co/600x400/2a2a2a/ffffff?text=Adjustable+Deck+System" alt="Advanced Suspension" class="feature-image w-full h-64 object-cover">
+                    <img src="https://placehold.co/600x400/2a2a2a/ffffff?text=Low+Vibration+Deck" alt="Advanced Suspension" class="feature-image w-full h-64 object-cover">
                     <div class="feature-content p-6">
-                        <h3 class="text-2xl font-bold mb-3 text-amber-500">Advanced Suspension System</h3>
-                        <p class="text-gray-400 mb-4">Low-vibration design with 45° adjustable deck slope for optimal material separation and flow.</p>
+                        <h3 class="text-2xl font-bold mb-3 text-amber-500">Low-Maintenance System</h3>
+                        <p class="text-gray-400 mb-4">Unique vibratory system with **no engine, belts, or bearings** to maintain or replace.</p>
                         <button class="expand-btn w-full py-3 rounded-full text-sm font-bold bg-amber-600 text-white hover:bg-amber-700 transition">Learn More</button>
                         <div class="feature-expand">
                             <ul class="list-none p-0">
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Adjustable angle for different material types</li>
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Reduced operator fatigue and machine wear</li>
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Superior separation efficiency</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Minimal moving parts ensure maximum uptime</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Adjustable deck slope for optimal material separation</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Simple operation using your existing machinery</li>
                             </ul>
                         </div>
                     </div>
@@ -200,16 +202,16 @@
                 
                 <!-- Feature Card 3 -->
                 <div class="feature-card bg-gray-800 rounded-xl overflow-hidden shadow-2xl cursor-pointer transition duration-300 hover:shadow-amber-700/30 hover:scale-[1.02]" onclick="toggleExpand(this)">
-                    <img src="https://placehold.co/600x400/2a2a2a/ffffff?text=Tractor+Ready+Mobility" alt="Tractor-Ready Mobility" class="feature-image w-full h-64 object-cover">
+                    <img src="https://placehold.co/600x400/2a2a2a/ffffff?text=On-Site+Mobility" alt="Tractor-Ready Mobility" class="feature-image w-full h-64 object-cover">
                     <div class="feature-content p-6">
-                        <h3 class="text-2xl font-bold mb-3 text-amber-500">Tractor-Ready Mobility</h3>
-                        <p class="text-gray-400 mb-4">Easily hitch to tractors for quick repositioning around your site. Move where the work is.</p>
+                        <h3 class="text-2xl font-bold mb-3 text-amber-500">Unmatched On-Site Mobility</h3>
+                        <p class="text-gray-400 mb-4">Easily hitch to tractors or move with excavators for quick repositioning around your job site.</p>
                         <button class="expand-btn w-full py-3 rounded-full text-sm font-bold bg-amber-600 text-white hover:bg-amber-700 transition">Learn More</button>
                         <div class="feature-expand">
                             <ul class="list-none p-0">
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Quick-hitch compatibility with standard tractors</li>
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> No specialized transport equipment required</li>
-                                <li class="text-gray-400 py-2 border-t border-gray-700"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Reposition between jobs in minutes</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Quick-hitch compatibility with standard tractors</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Highly portable—move where the processing needs to happen</li>
+                                <li class="text-gray-400 py-2"><span class="text-amber-500 mr-2 font-bold">&#10003;</span> Built for smaller-scale earthmoving operations</li>
                             </ul>
                         </div>
                     </div>
@@ -218,52 +220,52 @@
         </div>
     </section>
 
-    <!-- Advantages Section -->
+    <!-- Advantages Section (Updated for Specialist Approval) -->
     <section class="bg-gray-950 py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold text-center mb-4 text-amber-500 uppercase tracking-tight">
                 Why Choose IDM?
             </h2>
             <p class="text-center text-gray-400 text-lg mb-16 max-w-3xl mx-auto">
-                Superior engineering, backed by local New Zealand support.
+                Superior engineering, backed by local New Zealand support and specialist field experience.
             </p>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Advantage Card 1 -->
                 <div class="advantage-card bg-gradient-to-br from-amber-600 to-orange-500 p-8 rounded-2xl text-white text-center shadow-2xl transform transition duration-300 hover:scale-[1.03]">
-                    <h3 class="text-2xl font-extrabold mb-2">Heavy-Duty Construction</h3>
-                    <p class="text-sm opacity-90">Built to handle New Zealand's toughest conditions with industrial-grade components.</p>
+                    <h3 class="text-2xl font-extrabold mb-2">Director-Level Guidance</h3>
+                    <p class="text-sm opacity-90">Get specialist advice from our director, ensuring you choose the right model for your specific material and throughput needs.</p>
                 </div>
                 
                 <!-- Advantage Card 2 -->
                 <div class="advantage-card bg-gradient-to-br from-amber-600 to-orange-500 p-8 rounded-2xl text-white text-center shadow-2xl transform transition duration-300 hover:scale-[1.03]">
-                    <h3 class="text-2xl font-extrabold mb-2">45° Adjustable Deck</h3>
-                    <p class="text-sm opacity-90">Optimize separation for any material type with easy angle adjustment.</p>
+                    <h3 class="text-2xl font-extrabold mb-2">Zero Maintenance Costs</h3>
+                    <p class="text-sm opacity-90">No engine, belts, or bearings means low operating costs and maximum uptime compared to traditional screeners.</p>
                 </div>
                 
                 <!-- Advantage Card 3 -->
                 <div class="advantage-card bg-gradient-to-br from-amber-600 to-orange-500 p-8 rounded-2xl text-white text-center shadow-2xl transform transition duration-300 hover:scale-[1.03]">
-                    <h3 class="text-2xl font-extrabold mb-2">Low-Maintenance Design</h3>
-                    <p class="text-sm opacity-90">Spend more time screening, less time on repairs and servicing.</p>
+                    <h3 class="text-2xl font-extrabold mb-2">Instant ROI</h3>
+                    <p class="text-sm opacity-90">Turn expensive waste material into clean, reusable, or saleable product immediately, guaranteeing rapid return on investment.</p>
                 </div>
 
                 <!-- Advantage Card 4 -->
                 <div class="advantage-card bg-gradient-to-br from-amber-600 to-orange-500 p-8 rounded-2xl text-white text-center shadow-2xl transform transition duration-300 hover:scale-[1.03]">
-                    <h3 class="text-2xl font-extrabold mb-2">NZ-Based Support</h3>
-                    <p class="text-sm opacity-90">Local parts availability and expert technical support when you need it.</p>
+                    <h3 class="text-2xl font-extrabold mb-2">High Durability</h3>
+                    <p class="text-sm opacity-90">Built with robust, wear-resistant steel to handle New Zealand's toughest rock, soil, and demolition debris.</p>
                 </div>
                 
                 <!-- Advantage Card 5 -->
                 <div class="advantage-card bg-gradient-to-br from-amber-600 to-orange-500 p-8 rounded-2xl text-white text-center shadow-2xl transform transition duration-300 hover:scale-[1.03]">
-                    <h3 class="text-2xl font-extrabold mb-2">Tractor-Compatible</h3>
-                    <p class="text-sm opacity-90">Easy mobility with standard tractor hitches - no specialized transport.</p>
+                    <h3 class="text-2xl font-extrabold mb-2">Adaptable Mesh Sizes</h3>
+                    <p class="text-sm opacity-90">Various wire sizes available from 3mm up to 150mm to suit every grading requirement.</p>
                 </div>
                 
                 <!-- Advantage Card 6 -->
                 <div class="advantage-card bg-gradient-to-br from-amber-600 to-orange-500 p-8 rounded-2xl text-white text-center shadow-2xl transform transition duration-300 hover:scale-[1.03]">
-                    <h3 class="text-2xl font-extrabold mb-2">Rugged Reliability</h3>
-                    <p class="text-sm opacity-90">Proven performance in quarries, demolition sites and earthmoving operations.</p>
+                    <h3 class="text-2xl font-extrabold mb-2">NZ-Wide Supply</h3>
+                    <p class="text-sm opacity-90">Based in Nelson, we supply, train, and support earthmoving operations anywhere in New Zealand.</p>
                 </div>
             </div>
         </div>
@@ -284,7 +286,7 @@
                     Call 0800 21 21 26
                 </a>
                 <a href="mailto:info@sitemachinery.nz" class="cta-secondary w-full sm:w-auto px-12 py-4 rounded-full text-xl font-bold text-amber-500 border-2 border-amber-500 hover:bg-amber-500/10 transition duration-300 hover:scale-[1.05]">
-                    Email Our Team
+                    Email Our Specialist Team
                 </a>
             </div>
             
@@ -319,14 +321,14 @@
                 </div>
                 
                 <div>
-                    <h3 class="text-xl font-extrabold mb-4 text-amber-500">Quick Links</h3>
-                    <a href="#contact" class="text-gray-400 hover:text-amber-500 block transition mb-2">Contact Sales</a>
-                    <a href="https://www.sitemachinery.nz/" target="_blank" class="text-gray-400 hover:text-amber-500 block transition mb-2">Visit Site Machinery Website</a>
+                    <h3 class="text-xl font-extrabold mb-4 text-amber-500">Visit Us</h3>
+                    <a href="https://www.sitemachinery.nz/" target="_blank" class="text-gray-400 hover:text-amber-500 block transition mb-2">Website: www.sitemachinery.nz</a>
+                    <p class="text-gray-400 mt-2">105 Pascoe Street, Nelson</p>
                 </div>
             </div>
             
             <div class="text-center text-gray-600 text-sm">
-                <p>&copy; 2024 SITE Machinery NZ. All rights reserved. IDM is a registered trademark.</p>
+                <p>&copy; 2024 SITE Machinery NZ. All rights reserved. IDM is a registered trademark. Prices are ex GST and freight.</p>
             </div>
         </div>
     </footer>
