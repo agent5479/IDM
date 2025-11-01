@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IDM Grizzly Screens - Turn Waste Into Profit</title>
+<title>IDM Equipment - Turn Waste Into Profit | Site Machinery NZ</title>
 <style>
 * {
   margin: 0;
@@ -16,6 +16,83 @@ body {
   background: #0a0a0a;
   color: #fff;
   line-height: 1.6;
+}
+
+/* Sticky Navigation */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #ff6600;
+  z-index: 1000;
+  padding: 12px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-logo {
+  background: rgba(255,255,255,0.95);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: #ff6600;
+  border: 2px solid #ff6600;
+}
+
+.nav-tagline {
+  font-size: 13px;
+  color: #ffa500;
+  font-weight: 600;
+  max-width: 350px;
+  line-height: 1.3;
+}
+
+.nav-tagline strong {
+  color: #ff6600;
+  font-weight: 800;
+}
+
+.nav-contact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-phone, .nav-email {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s;
+  background: rgba(255,102,0,0.2);
+  border: 1px solid #ff6600;
+}
+
+.nav-phone:hover, .nav-email:hover {
+  background: #ff6600;
+  transform: translateY(-2px);
 }
 
 /* Hero Section */
@@ -32,21 +109,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 20px;
-}
-
-.hero-logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: rgba(255,255,255,0.95);
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 900;
-  font-size: 28px;
-  letter-spacing: 4px;
-  color: #ff6600;
-  border: 3px solid #ff6600;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  margin-top: 60px;
 }
 
 .hero-badge {
@@ -118,9 +181,115 @@ body {
   padding: 80px 20px;
 }
 
-/* Pain Points Section */
-.pain-section {
+/* Problem-Solution Section */
+.problem-solution-section {
   background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  padding: 80px 20px;
+}
+
+.ps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.ps-problem, .ps-solution {
+  background: #2a2a2a;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+}
+
+.ps-problem {
+  border-left: 5px solid #dc2626;
+}
+
+.ps-solution {
+  border-left: 5px solid #16a34a;
+}
+
+.ps-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.ps-problem .ps-tag {
+  background: rgba(220, 38, 38, 0.2);
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-tag {
+  background: rgba(22, 163, 74, 0.2);
+  color: #4ade80;
+}
+
+.ps-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.ps-problem .ps-title {
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-title {
+  color: #4ade80;
+}
+
+.ps-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+.ps-item:last-child {
+  margin-bottom: 0;
+}
+
+.ps-icon {
+  font-size: 20px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ps-problem .ps-icon {
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-icon {
+  color: #4ade80;
+}
+
+.ps-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.ps-solution-intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+}
+
+/* Equipment Showcase Section */
+.equipment-section {
+  background: #0a0a0a;
   padding: 80px 20px;
 }
 
@@ -144,70 +313,205 @@ body {
   margin-right: auto;
 }
 
-.pain-grid {
+.equipment-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.pain-card {
-  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-  border-left: 4px solid #ff6600;
-  border-radius: 12px;
-  padding: 30px;
+.equipment-card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid #2a2a2a;
 }
 
-.pain-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(255,102,0,0.3);
+.equipment-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(255,102,0,0.4);
+  border-color: #ff6600;
 }
 
-.pain-icon {
-  font-size: 2.5rem;
+.equipment-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.equipment-content {
+  padding: 30px;
+}
+
+.equipment-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
-.pain-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #ffa500;
-}
-
-.pain-card p {
-  color: #ccc;
-  line-height: 1.6;
-}
-
-/* Solution Section */
-.solution-section {
-  background: #0a0a0a;
-  padding: 80px 20px;
-}
-
-.solution-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.solution-content h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 30px;
+.equipment-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
   color: #fff;
   font-weight: 900;
 }
 
-.solution-content p {
-  font-size: 1.2rem;
+.equipment-card p {
   color: #ccc;
-  line-height: 1.8;
-  margin-bottom: 40px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
-/* Features Cards */
+.equipment-specs {
+  background: rgba(255,102,0,0.1);
+  border-left: 3px solid #ff6600;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.equipment-specs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.equipment-specs li {
+  padding: 5px 0;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.equipment-specs li:before {
+  content: "• ";
+  color: #ff6600;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.equipment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.equipment-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.equipment-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255,102,0,0.4);
+}
+
+.equipment-link {
+  display: inline-block;
+  background: transparent;
+  color: #ff6600;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid #ff6600;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.equipment-link:hover {
+  background: rgba(255,102,0,0.15);
+  transform: translateY(-2px);
+}
+
+.qr-code-small {
+  width: 100px;
+  height: 100px;
+  margin: 15px auto 0;
+  display: block;
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* Other Products Card */
+.other-products-card {
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  border: 2px solid #ff6600;
+  position: relative;
+  overflow: hidden;
+}
+
+.other-products-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff6600, #ffa500, #ff6600);
+}
+
+.products-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 280px;
+}
+
+.products-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.other-products-card h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.other-products-card p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.product-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.category-tag {
+  background: rgba(255,102,0,0.2);
+  color: #ffa500;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255,102,0,0.3);
+}
+
+/* Features Section */
 .features-section {
   background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
   padding: 80px 20px;
@@ -215,28 +519,30 @@ body {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .feature-card {
   background: #2a2a2a;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid #333;
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(255,102,0,0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(255,102,0,0.4);
+  border-color: #ff6600;
 }
 
 .feature-image {
   width: 100%;
-  height: 250px;
+  height: 220px;
   object-fit: cover;
   display: block;
 }
@@ -246,8 +552,8 @@ body {
 }
 
 .feature-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
   color: #ff6600;
   font-weight: 800;
 }
@@ -256,6 +562,7 @@ body {
   color: #ccc;
   line-height: 1.6;
   margin-bottom: 15px;
+  font-size: 0.98rem;
 }
 
 .feature-expand {
@@ -289,7 +596,8 @@ body {
 .feature-expand li {
   padding: 10px 0;
   color: #aaa;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #2a2a2a;
+  font-size: 0.95rem;
 }
 
 .feature-expand li:before {
@@ -323,27 +631,27 @@ body {
 
 .advantages-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .advantage-card {
   background: linear-gradient(135deg, #ff6600, #ff8533);
-  padding: 35px;
-  border-radius: 16px;
+  padding: 30px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(255,102,0,0.3);
+  box-shadow: 0 6px 20px rgba(255,102,0,0.3);
   transition: transform 0.3s;
 }
 
 .advantage-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .advantage-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
   font-weight: 800;
 }
@@ -351,11 +659,12 @@ body {
 .advantage-card p {
   font-size: 0.95rem;
   opacity: 0.95;
+  line-height: 1.5;
 }
 
 /* CTA Section */
 .final-cta {
-  background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+  background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
   padding: 100px 20px;
   text-align: center;
 }
@@ -376,11 +685,34 @@ body {
   margin-right: auto;
 }
 
+.human-touch {
+  background: rgba(255,102,0,0.1);
+  border: 2px solid #ff6600;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.human-touch h3 {
+  color: #ffa500;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.human-touch p {
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  margin-bottom: 0;
+}
+
 .cta-buttons {
   display: flex;
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
 .cta-primary, .cta-secondary {
@@ -416,7 +748,6 @@ body {
 }
 
 .qr-container {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -493,18 +824,75 @@ body {
 }
 
 /* Mobile Responsive */
+@media (max-width: 968px) {
+  .nav-content {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .nav-tagline {
+    max-width: 100%;
+  }
+  
+  .ps-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .product-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
-  .hero-logo {
-    font-size: 20px;
-    padding: 8px 15px;
+  .sticky-nav {
+    padding: 10px 15px;
+  }
+  
+  .nav-logo {
+    font-size: 18px;
+    padding: 5px 12px;
+  }
+  
+  .nav-tagline {
+    font-size: 11px;
+  }
+  
+  .nav-contact {
+    width: 100%;
+    justify-content: center;
   }
   
   .container {
     padding: 60px 15px;
   }
   
-  .pain-section, .solution-section, .features-section, .advantages-section {
+  .problem-solution-section, .equipment-section, .features-section, .advantages-section {
     padding: 60px 15px;
+  }
+  
+  .ps-problem, .ps-solution {
+    padding: 30px 25px;
+  }
+  
+  .ps-title {
+    font-size: 1.6rem;
+  }
+  
+  .equipment-grid {
+    grid-template-columns: 1fr;
   }
   
   .cta-buttons {
@@ -516,62 +904,239 @@ body {
     width: 100%;
     max-width: 300px;
   }
+  
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 <body>
 
+<!-- Sticky Navigation -->
+<nav class="sticky-nav">
+  <div class="nav-content">
+    <div class="nav-brand">
+      <div class="nav-logo">IDM</div>
+      <div class="nav-tagline">
+        <strong>Site Machinery NZ</strong> – Exclusive NZ Importer of IDM Equipment | Top Quality Soil Screening Machines at Affordable Prices
+      </div>
+    </div>
+    <div class="nav-contact">
+      <a href="tel:0800212126" class="nav-phone">📞 0800 21 21 26</a>
+      <a href="mailto:info@sitemachinery.nz" class="nav-email">✉ Contact</a>
+    </div>
+  </div>
+</nav>
+
 <!-- Hero Section -->
 <section class="hero">
-  <div class="hero-logo">IDM</div>
-  <div class="hero-badge">Exclusive NZ Importer – SITE Machinery NZ</div>
+  <div class="hero-badge">Proven Performance Across New Zealand</div>
   <h1>Turn Waste Into<br>Profit On-Site</h1>
-  <p class="hero-subtitle">Screen, grade and repurpose material right where you are — eliminate tip fees, reduce buy-in costs and create saleable products</p>
-  <a href="#contact" class="hero-cta">Get Started Today</a>
+  <p class="hero-subtitle">Screen, grade and repurpose material right where you are — eliminate tip fees, reduce aggregate costs and create saleable products</p>
+  <a href="#equipment" class="hero-cta">View Our Equipment Range</a>
   <div class="scroll-indicator">↓</div>
 </section>
 
-<!-- Pain Points Section -->
-<section class="pain-section">
-  <div class="container">
-    <h2 class="section-title">⚠ Stop Throwing Money Away</h2>
-    <p class="section-subtitle">Are these costly problems impacting your bottom line?</p>
+<!-- Problem-Solution Section -->
+<section class="problem-solution-section">
+  <div class="ps-container">
+    <div class="ps-problem">
+      <span class="ps-tag">The Problem</span>
+      <h2 class="ps-title">Lost Revenue</h2>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✗</div>
+        <div class="ps-text">Are you paying tip fees to dump material that could be screened and reused on-site?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✗</div>
+        <div class="ps-text">Are you buying aggregate and fill when you've got perfectly good material going to waste?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✗</div>
+        <div class="ps-text">Are trucking costs eating into your profits — carting material away then carting new material back in?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✗</div>
+        <div class="ps-text">Are you missing revenue opportunities from graded soil, stone and recycled products you could be selling?</div>
+      </div>
+    </div>
     
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">💸</div>
-        <h3>Wasting Money on Tip Fees</h3>
-        <p>Paying to dump material that could be screened and reused on-site? Every load to landfill is money thrown away.</p>
+    <div class="ps-solution">
+      <span class="ps-tag">The Solution</span>
+      <h2 class="ps-title">IDM Screens</h2>
+      
+      <p class="ps-solution-intro">Transform demolition rubble, excavation spoil, and mixed material into graded, saleable products. Our screens create clean fill, road base, and stockpile material, slashing purchase costs and generating new revenue streams.</p>
+      
+      <div class="ps-item">
+        <div class="ps-icon">✓</div>
+        <div class="ps-text"><strong>Stop paying to dump</strong> valuable material — screen and reuse it on-site</div>
       </div>
       
-      <div class="pain-card">
-        <div class="pain-icon">🚛</div>
-        <h3>Buying What You Already Have</h3>
-        <p>Purchasing aggregate and fill when you've got perfectly good material going to waste? Double the cost, zero sense.</p>
+      <div class="ps-item">
+        <div class="ps-icon">✓</div>
+        <div class="ps-text"><strong>Reduce aggregate costs</strong> by repurposing material you already have</div>
       </div>
       
-      <div class="pain-card">
-        <div class="pain-icon">📉</div>
-        <h3>Missing Revenue Opportunities</h3>
-        <p>Losing out on selling graded soil, stone and recycled products? Turn waste streams into income streams.</p>
+      <div class="ps-item">
+        <div class="ps-icon">✓</div>
+        <div class="ps-text"><strong>Generate new revenue</strong> by selling graded products and quality fill</div>
       </div>
       
-      <div class="pain-card">
-        <div class="pain-icon">⛽</div>
-        <h3>Hauling Costs Eating Profits</h3>
-        <p>Trucking material away then trucking new material back in? The fuel costs alone will shock you.</p>
+      <div class="ps-item">
+        <div class="ps-icon">✓</div>
+        <div class="ps-text"><strong>Cut transport costs</strong> by processing material where it sits</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Solution Section -->
-<section class="solution-section">
+<!-- Equipment Showcase Section -->
+<section class="equipment-section" id="equipment">
   <div class="container">
-    <div class="solution-content">
-      <h2>✓ Screen, Grade & Sell Material On-Site</h2>
-      <p>Transform demolition rubble, excavation spoil and mixed material into graded, saleable products. Our heavy-duty grizzly screens separate oversize from usable stone, soil and aggregate — creating clean fill, road base and stockpile material you can reuse or sell.</p>
-      <p><strong style="color:#ff6600;">Stop paying to dump valuable material. Start generating revenue from every load while slashing your aggregate purchase costs.</strong></p>
+    <h2 class="section-title">Our IDM Equipment Range</h2>
+    <p class="section-subtitle">Premium screening solutions designed for New Zealand conditions</p>
+    
+    <div class="equipment-grid">
+      <!-- SLG-108VFRB with Feed Deflector -->
+      <div class="equipment-card">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp" alt="IDM SLG-108VFRB with Feed Deflector" class="equipment-image">
+        <div class="equipment-content">
+          <span class="equipment-badge">Heavy Duty</span>
+          <h3>Vibratory Screener with Feed System</h3>
+          <p>Our largest screener with integrated feed deflector. The feed system directs material flow for maximum screening efficiency and production rates.</p>
+          
+          <div class="equipment-specs">
+            <ul>
+              <li>3 Year Structure Warranty</li>
+              <li>Feed deflector distributes material evenly across deck</li>
+              <li>60 sq ft screen deck (10ft × 6ft)</li>
+              <li>Dual vibratory motors for high production</li>
+              <li>For excavators, backhoes and loaders</li>
+              <li>Ideal for quarries and high-volume operations</li>
+            </ul>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Talk to a Human - Get Expert Advice</a>
+            <a href="https://idmcabc.com" target="_blank" class="equipment-link">View Full Specs on IDM Website →</a>
+          </div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.sitemachinery.nz" alt="QR Code" class="qr-code-small">
+        </div>
+      </div>
+      
+      <!-- SLG-78 STATIC Grizzly (No Vibration) -->
+      <div class="equipment-card">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="IDM Static Grizzly Screen" class="equipment-image">
+        <div class="equipment-content">
+          <span class="equipment-badge">No Motors</span>
+          <h3>Static Grizzly Screen</h3>
+          <p>Pre-screening grizzly with NO vibration motors required. Uses gravity and spring suspension to separate oversize material - simple, reliable, maintenance-free.</p>
+          
+          <div class="equipment-specs">
+            <ul>
+              <li>3 Year Structure Warranty</li>
+              <li>No electrical connections or motors</li>
+              <li>Spring suspension creates natural material movement</li>
+              <li>Tilting grizzly bars for easy cleaning</li>
+              <li>Perfect for demolition debris and large aggregate</li>
+              <li>For skidsteers and compact excavators</li>
+            </ul>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Talk to a Human - Get Expert Advice</a>
+            <a href="https://idmcabc.com" target="_blank" class="equipment-link">View Full Specs on IDM Website →</a>
+          </div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.sitemachinery.nz" alt="QR Code" class="qr-code-small">
+        </div>
+      </div>
+      
+      <!-- Spring Suspension Close-up -->
+      <div class="equipment-card">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="IDM Spring Suspension System" class="equipment-image">
+        <div class="equipment-content">
+          <span class="equipment-badge">Innovation</span>
+          <h3>Patented Spring Suspension</h3>
+          <p>The engineering behind IDM's superior performance. This suspension system creates natural harmonic motion while isolating vibration from your machine.</p>
+          
+          <div class="equipment-specs">
+            <ul>
+              <li>Duplexed quad spring design</li>
+              <li>Creates controlled deck movement</li>
+              <li>Reduces wear on machine and operator</li>
+              <li>300mm+ deck travel for material agitation</li>
+              <li>No bearings or bushings to maintain</li>
+              <li>Featured across the entire SLG range</li>
+            </ul>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Talk to a Human - Get Expert Advice</a>
+            <a href="https://idmcabc.com" target="_blank" class="equipment-link">View Full Specs on IDM Website →</a>
+          </div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.sitemachinery.nz" alt="QR Code" class="qr-code-small">
+        </div>
+      </div>
+      
+      <!-- Bucket Transport System -->
+      <div class="equipment-card">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="IDM Bucket Transport Lugs" class="equipment-image">
+        <div class="equipment-content">
+          <span class="equipment-badge">Easy Moving</span>
+          <h3>Bucket Transport System</h3>
+          <p>Unique fork pockets let you pick up and move the screener with your machine's bucket. No wheels, no axles, no maintenance - just slide your bucket in and shift it.</p>
+          
+          <div class="equipment-specs">
+            <ul>
+              <li>Built-in fork pockets on all models</li>
+              <li>Move equipment with your bucket or forks</li>
+              <li>Keep screener close to material stockpiles</li>
+              <li>No tyres, bearings, or hitches to service</li>
+              <li>Reposition in seconds, not minutes</li>
+              <li>Reduces site downtime and setup costs</li>
+            </ul>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Talk to a Human - Get Expert Advice</a>
+            <a href="https://idmcabc.com" target="_blank" class="equipment-link">View Full Specs on IDM Website →</a>
+          </div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.sitemachinery.nz" alt="QR Code" class="qr-code-small">
+        </div>
+      </div>
+      
+      <!-- Other Products Card -->
+      <div class="equipment-card other-products-card">
+        <div class="products-gallery">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/07/one_yard_debris_bin-2.webp" alt="Debris Bins">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="Screening Equipment">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp" alt="Vibratory Screeners">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Quality Construction">
+        </div>
+        <div class="equipment-content">
+          <span class="equipment-badge">Full Range Available</span>
+          <h3>Complete IDM Product Line</h3>
+          <p>We carry the full IDM range for all your material handling and site equipment needs</p>
+          
+          <div class="product-categories">
+            <div class="category-tag">Topsoil Screeners</div>
+            <div class="category-tag">Skidsteer Attachments</div>
+            <div class="category-tag">Construction Debris Bins</div>
+            <div class="category-tag">Dump Trailers</div>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Discuss Your Requirements</a>
+            <a href="https://idmcabc.com" target="_blank" class="equipment-link">Browse Full IDM Catalog →</a>
+          </div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://idmcabc.com" alt="IDM Catalog QR Code" class="qr-code-small">
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -579,56 +1144,56 @@ body {
 <!-- Features Section -->
 <section class="features-section">
   <div class="container">
-    <h2 class="section-title">Built Tough. Built Smart.</h2>
-    <p class="section-subtitle">IDM screening equipment delivers unmatched durability and performance</p>
+    <h2 class="section-title">Why IDM Equipment?</h2>
+    <p class="section-subtitle">Built tough, designed smart, backed by local expertise</p>
     
     <div class="features-grid">
       <div class="feature-card" onclick="toggleExpand(this)">
-        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="High Capacity Screening" class="feature-image">
-        <div class="feature-content">
-          <h3>High-Capacity Screening</h3>
-          <p>Process massive volumes quickly with industrial-grade construction designed for the toughest conditions.</p>
-          <button class="expand-btn">Learn More</button>
-          <div class="feature-expand">
-            <ul>
-              <li>Heavy-duty construction handles extreme workloads</li>
-              <li>Rugged build quality for years of reliable operation</li>
-              <li>Designed for high-volume commercial applications</li>
-              <li>Proven performance in demanding environments</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="feature-card" onclick="toggleExpand(this)">
-        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Low Vibration" class="feature-image">
-        <div class="feature-content">
-          <h3>Advanced Suspension System</h3>
-          <p>Low-vibration design with 45° adjustable deck slope for optimal material separation and flow.</p>
-          <button class="expand-btn">Learn More</button>
-          <div class="feature-expand">
-            <ul>
-              <li>Adjustable angle for different material types</li>
-              <li>Reduced operator fatigue and machine wear</li>
-              <li>Superior separation efficiency</li>
-              <li>Low-maintenance spring suspension</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
-      <div class="feature-card" onclick="toggleExpand(this)">
-        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Robust Feed" class="feature-image">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="Easy Site Mobility" class="feature-image">
         <div class="feature-content">
           <h3>Tractor-Ready Mobility</h3>
-          <p>Easily hitch to tractors for quick repositioning around your site. Move where the work is.</p>
+          <p>Unlike competitors, IDM screens can be hitched to standard farm tractors. Move equipment around your site in minutes without specialised transport.</p>
           <button class="expand-btn">Learn More</button>
           <div class="feature-expand">
             <ul>
-              <li>Quick-hitch compatibility with standard tractors</li>
-              <li>No specialized transport equipment required</li>
-              <li>Reposition between jobs in minutes</li>
-              <li>Robust feed system handles varied material</li>
+              <li>Quick-hitch compatibility with farm tractors</li>
+              <li>No need for dedicated transport equipment</li>
+              <li>Reposition between jobs effortlessly</li>
+              <li>Save thousands on transport costs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="feature-card" onclick="toggleExpand(this)">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Rugged Construction" class="feature-image">
+        <div class="feature-content">
+          <h3>Rugged Construction</h3>
+          <p>Built tougher than the competition. IDM's heavy-duty design handles the harshest New Zealand conditions year after year.</p>
+          <button class="expand-btn">Learn More</button>
+          <div class="feature-expand">
+            <ul>
+              <li>Industrial-grade steel construction</li>
+              <li>Reinforced stress points for longevity</li>
+              <li>3 Year Structure Warranty on most models</li>
+              <li>Proven reliability in demanding environments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="feature-card" onclick="toggleExpand(this)">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Adjustable Configuration" class="feature-image">
+        <div class="feature-content">
+          <h3>Adjustable Screening</h3>
+          <p>Change your screening angle quickly to optimise for any material type. No special tools required - adjust on the fly.</p>
+          <button class="expand-btn">Learn More</button>
+          <div class="feature-expand">
+            <ul>
+              <li>Quick angle adjustment for different materials</li>
+              <li>Tool-free configuration changes</li>
+              <li>Maximise efficiency for topsoil, aggregates, or compost</li>
+              <li>Superior separation compared to fixed-angle screens</li>
             </ul>
           </div>
         </div>
@@ -640,38 +1205,38 @@ body {
 <!-- Advantages Section -->
 <section class="advantages-section">
   <div class="container">
-    <h2 class="section-title">Why Choose IDM?</h2>
-    <p class="section-subtitle">Superior engineering, backed by local support</p>
+    <h2 class="section-title">Site Machinery NZ Advantage</h2>
+    <p class="section-subtitle">Local support, expert knowledge, proven results</p>
     
     <div class="advantages-grid">
       <div class="advantage-card">
-        <h3>Heavy-Duty Construction</h3>
-        <p>Built to handle New Zealand's toughest conditions with industrial-grade components</p>
-      </div>
-      
-      <div class="advantage-card">
-        <h3>45° Adjustable Deck</h3>
-        <p>Optimize separation for any material type with easy angle adjustment</p>
-      </div>
-      
-      <div class="advantage-card">
-        <h3>Low-Maintenance Design</h3>
-        <p>Spend more time screening, less time on repairs and servicing</p>
-      </div>
-      
-      <div class="advantage-card">
         <h3>NZ-Based Support</h3>
-        <p>Local parts availability and expert technical support when you need it</p>
+        <p>Talk to real people who understand your operation. Local parts and expert technical support</p>
       </div>
       
       <div class="advantage-card">
-        <h3>Tractor-Compatible</h3>
-        <p>Easy mobility with standard tractor hitches - no specialized transport</p>
+        <h3>Competitive Pricing</h3>
+        <p>Top quality equipment at affordable prices. Better value than importing yourself</p>
       </div>
       
       <div class="advantage-card">
-        <h3>Rugged Reliability</h3>
-        <p>Proven performance in quarries, demolition sites and earthmoving operations</p>
+        <h3>Fast Delivery</h3>
+        <p>Stock held in New Zealand. Get your equipment faster with local inventory</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Expert Guidance</h3>
+        <p>We help you choose the right machine for your specific needs and operation</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Warranty Backed</h3>
+        <p>3 Year Structure Warranty on most models. Buy with confidence</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Proven Track Record</h3>
+        <p>Serving NZ quarries, contractors and earthmoving operations with reliable equipment</p>
       </div>
     </div>
   </div>
@@ -680,8 +1245,13 @@ body {
 <!-- Final CTA -->
 <section class="final-cta" id="contact">
   <div class="container">
-    <h2>Ready to Upgrade Your Operation?</h2>
-    <p>Stop dumping profits. Start screening them. Perfect for quarries, demolition contractors, earthmoving operations and material supply yards.</p>
+    <div class="human-touch">
+      <h3>👋 Let's Talk About Your Project</h3>
+      <p>We're real people who understand screening equipment. Call us to discuss your specific needs, get expert advice, and find the perfect solution for your operation.</p>
+    </div>
+    
+    <h2>Ready to Stop Wasting Money?</h2>
+    <p>Contact Site Machinery NZ today. We're here to answer your questions and help you choose the right equipment.</p>
     
     <div class="cta-buttons">
       <a href="tel:0800212126" class="cta-primary">Call 0800 21 21 26</a>
@@ -690,11 +1260,11 @@ body {
     
     <div class="qr-container">
       <div class="qr-box">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://beliefmastery.github.io/site/IDM/sales.html" alt="Scan for more info">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.sitemachinery.nz" alt="Scan for more info">
       </div>
       <div class="qr-text">
         <strong style="color:#ff6600;">Scan for instant access</strong><br>
-        View our full machine range, video demonstrations, specifications and contact information
+        Visit our website for more information, specifications and contact details
       </div>
     </div>
   </div>
@@ -704,9 +1274,10 @@ body {
 <footer class="footer">
   <div class="footer-content">
     <div>
-      <h3>SITE Machinery NZ</h3>
-      <p class="footer-tagline">NZ Distributor of IDM Screening Solutions</p>
-      <p>Exclusive importers of premium IDM equipment</p>
+      <h3>Site Machinery NZ</h3>
+      <p class="footer-tagline">Exclusive NZ Importer of IDM Equipment</p>
+      <p>Top quality soil screening machines at affordable prices</p>
+      <p style="margin-top:15px; color:#e0e0e0;">We're proud to partner with IDM to bring world-class screening equipment to New Zealand operations.</p>
     </div>
     
     <div>
@@ -714,17 +1285,21 @@ body {
       <a href="tel:039707602">Phone: 03 970 7602</a>
       <a href="tel:0800212126">Toll Free: 0800 21 21 26</a>
       <a href="mailto:info@sitemachinery.nz">Email: info@sitemachinery.nz</a>
+      <a href="https://www.sitemachinery.nz" target="_blank">Web: sitemachinery.nz</a>
     </div>
     
     <div>
-      <h3>Visit Us</h3>
-      <a href="https://www.sitemachinery.nz/" target="_blank">www.sitemachinery.nz</a>
-      <p>Serving quarries, contractors and earthmoving operations across New Zealand</p>
+      <h3>Product Information</h3>
+      <a href="https://idmcabc.com" target="_blank">IDM Equipment Catalog</a>
+      <a href="https://idmcabc.com/topsoil-screeners/" target="_blank">Soil Screeners</a>
+      <a href="https://idmcabc.com/skidsteer-attachments/" target="_blank">Skidsteer Attachments</a>
+      <a href="https://idmcabc.com/debris-bins/" target="_blank">Debris Bins</a>
+      <a href="https://idmcabc.com/dump-trailers/" target="_blank">Dump Trailers</a>
     </div>
   </div>
   
   <div class="footer-bottom">
-    <p>&copy; 2024 SITE Machinery NZ. All rights reserved. IDM is a registered trademark.</p>
+    <p>&copy; 2024 Site Machinery NZ - Exclusive NZ Importer of IDM Equipment. All rights reserved.</p>
   </div>
 </footer>
 
