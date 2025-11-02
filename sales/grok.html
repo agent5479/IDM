@@ -228,4 +228,1240 @@ body {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff6600" fill-opacity="0.03" d="M0 50L50 0l50 50-50 50z"/></svg>') repeat;
+  pointer-events: none;
+}
+
+.ps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.ps-problem, .ps-solution {
+  background: #1e1e1e;
+  border-radius: 18px;
+  padding: 45px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.ps-problem::before, .ps-solution::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, #ff6600, #ffa500, #ff6600);
+}
+
+.ps-problem {
+  border-left: 6px solid #dc2626;
+}
+
+.ps-solution {
+  border-left: 6px solid #16a34a;
+}
+
+.ps-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.ps-problem .ps-tag {
+  background: rgba(220, 38, 38, 0.25);
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-tag {
+  background: rgba(22, 163, 74, 0.25);
+  color: #4ade80;
+}
+
+.ps-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 28px;
+  line-height: 1.15;
+}
+
+.ps-problem .ps-title {
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-title {
+  color: #4ade80;
+}
+
+.ps-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 22px;
+  padding-left: 12px;
+}
+
+.ps-item:last-child {
+  margin-bottom: 0;
+}
+
+.ps-icon {
+  font-size: 22px;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.ps-problem .ps-icon {
+  color: #ff6b6b;
+}
+
+.ps-solution .ps-icon {
+  color: #4ade80;
+}
+
+.ps-text {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: #cccccc;
+}
+
+.ps-solution-intro {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: #e0e0e0;
+  margin-bottom: 28px;
+}
+
+/* Equipment Showcase Section */
+.equipment-section {
+  background: #0a0a0a;
+  padding: 100px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.3rem, 6vw, 3.3rem);
+  font-weight: 900;
+  margin-bottom: 24px;
+  color: #ff6600;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6600, #ffa500);
+  margin: 18px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.28rem;
+  color: #bbbbbb;
+  margin-bottom: 70px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 35px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.equipment-card {
+  background: #1e1e1e;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 2px solid #2a2a2a;
+  position: relative;
+}
+
+.equipment-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, #ff6600, #ffa500, #ff6600);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.equipment-card:hover::before {
+  transform: scaleX(1);
+}
+
+.equipment-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(255,102,0,0.3);
+  border-color: #ff6600;
+}
+
+.equipment-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.equipment-card:hover .equipment-image {
+  transform: scale(1.05);
+}
+
+.equipment-content {
+  padding: 35px;
+}
+
+.equipment-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.equipment-card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 16px;
+  color: #fff;
+  font-weight: 900;
+}
+
+.equipment-card p {
+  color: #cccccc;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  font-size: 1.05rem;
+}
+
+.equipment-specs {
+  background: rgba(255,102,0,0.12);
+  border-left: 4px solid #ff6600;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 22px;
+}
+
+.equipment-specs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.equipment-specs li {
+  padding: 6px 0;
+  color: #e0e0e0;
+  font-size: 0.98rem;
+  position: relative;
+  padding-left: 22px;
+}
+
+.equipment-specs li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ff6600;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.equipment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.equipment-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  padding: 16px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.equipment-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255,102,0,0.4);
+}
+
+.equipment-link {
+  display: inline-block;
+  background: transparent;
+  color: #ff6600;
+  padding: 14px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  border: 2.5px solid #ff6600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.equipment-link:hover {
+  background: rgba(255,102,0,0.15);
+  transform: translateY(-3px);
+}
+
+/* Other Products Card */
+.other-products-card {
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+  border: 2.5px solid #ff6600;
+  position: relative;
+  overflow: hidden;
+}
+
+.other-products-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff6600, #ffa500, #ff6600);
+}
+
+.products-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 300px;
+}
+
+.products-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.other-products-card:hover .products-gallery img {
+  transform: scale(1.08);
+}
+
+.other-products-card h3 {
+  font-size: 2.1rem;
+  text-align: center;
+  margin: 25px 0 18px;
+}
+
+.other-products-card p {
+  text-align: center;
+  font-size: 1.15rem;
+  margin-bottom: 28px;
+  color: #cccccc;
+}
+
+.product-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding: 0 20px;
+}
+
+.category-tag {
+  background: rgba(255,102,0,0.25);
+  color: #ffa500;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1.5px solid rgba(255,102,0,0.35);
+  transition: all 0.3s ease;
+}
+
+.category-tag:hover {
+  background: rgba(255,102,0,0.4);
+  transform: translateY(-2px);
+}
+
+/* Features Section */
+.features-section {
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  padding: 100px 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 35px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: #1e1e1e;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 2px solid #333;
+}
+
+.feature-card:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 28px 65px rgba(255,102,0,0.35);
+  border-color: #ff6600;
+}
+
+.feature-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature-card:hover .feature-image {
+  transform: scale(1.06);
+}
+
+.feature-content {
+  padding: 32px;
+}
+
+.feature-card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 16px;
+  color: #ff6600;
+  font-weight: 800;
+}
+
+.feature-card p {
+  color: #cccccc;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  font-size: 1.05rem;
+}
+
+.expand-btn {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.98rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.expand-btn:hover {
+  background: linear-gradient(135deg, #ff8533, #ffa500);
+  transform: translateY(-3px);
+}
+
+.feature-expand {
+  display: none;
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 2px dashed #333;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.feature-expand.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feature-expand ul {
+  list-style: none;
+}
+
+.feature-expand li {
+  padding: 13px 0;
+  color: #aaaaaa;
+  border-bottom: 1px solid #2a2a2a;
+  position: relative;
+  padding-left: 30px;
+}
+
+.feature-expand li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ff6600;
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+/* Advantages Section */
+.advantages-section {
+  background: #0a0a0a;
+  padding: 100px 20px;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.advantage-card {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  padding: 42px 32px;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 14px 40px rgba(255,102,0,0.35);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.advantage-card::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  transition: 0.6s;
+  opacity: 0;
+}
+
+.advantage-card:hover::before {
+  opacity: 1;
+  transform: rotate(30deg);
+}
+
+.advantage-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.advantage-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.advantage-card p {
+  font-size: 1.02rem;
+  opacity: 0.95;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.final-cta {
+  background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+  padding: 130px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="none" stroke="%23ff6600" stroke-width="1" opacity="0.05"/></svg>') center/200px repeat;
+}
+
+.human-touch {
+  background: rgba(255,102,0,0.12);
+  border: 2.5px solid #ff6600;
+  border-radius: 20px;
+  padding: 35px;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  box-shadow: 0 12px 35px rgba(255,102,0,0.2);
+}
+
+.human-touch h3 {
+  color: #ffa500;
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  font-weight: 800;
+}
+
+.human-touch p {
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  margin-bottom: 0;
+}
+
+.final-cta h2 {
+  font-size: clamp(2.9rem, 7vw, 4.6rem);
+  margin-bottom: 35px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.final-cta p {
+  font-size: 1.38rem;
+  color: #cccccc;
+  margin-bottom: 55px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 65px;
+}
+
+.cta-btn {
+  padding: 24px 60px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  min-width: 240px;
+}
+
+.cta-primary {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #fff;
+  box-shadow: 0 14px 40px rgba(255,102,0,0.5);
+}
+
+.cta-primary:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 55px rgba(255,102,0,0.7);
+}
+
+.cta-secondary {
+  background: transparent;
+  color: #ff6600;
+  border: 3px solid #ff6600;
+}
+
+.cta-secondary:hover {
+  background: rgba(255,102,0,0.18);
+  transform: translateY(-6px);
+}
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  flex-wrap: wrap;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.qr-box {
+  background: #fff;
+  padding: 28px;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(255,102,0,0.35);
+  transition: transform 0.3s ease;
+}
+
+.qr-box:hover {
+  transform: scale(1.06);
+}
+
+.qr-box img {
+  width: 210px;
+  height: 210px;
+  display: block;
+  border: 3px solid #f0f0f0;
+  border-radius: 10px;
+}
+
+.qr-text {
+  color: #cccccc;
+  font-size: 1.25rem;
+  max-width: 360px;
+  text-align: left;
+}
+
+.qr-text strong {
+  color: #ff6600;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  padding: 90px 20px 45px;
+  border-top: 4px solid #ff6600;
+}
+
+.footer-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 55px;
+  margin-bottom: 55px;
+}
+
+.footer-col h3 {
+  color: #ff6600;
+  font-size: 1.7rem;
+  margin-bottom: 26px;
+  font-weight: 900;
+}
+
+.footer-col p, .footer-col a {
+  color: #aaaaaa;
+  text-decoration: none;
+  margin-bottom: 14px;
+  display: block;
+  transition: color 0.3s ease;
+  font-size: 1.08rem;
+}
+
+.footer-col a:hover {
+  color: #ff6600;
+}
+
+.footer-tagline {
+  color: #ffa500;
+  font-style: italic;
+  font-weight: 600;
+  margin: 14px 0 22px;
+  font-size: 1.15rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 45px;
+  border-top: 1px solid #222;
+  color: #666666;
+  font-size: 0.98rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .nav-content {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .nav-tagline {
+    max-width: 100%;
+  }
+  
+  .ps-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .advantages-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .product-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sticky-nav {
+    padding: 12px 15px;
+  }
+  
+  .nav-logo {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+  
+  .nav-tagline {
+    font-size: 12px;
+  }
+  
+  .nav-contact {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .container {
+    padding: 70px 15px;
+  }
+  
+  .problem-solution-section, .equipment-section, .features-section, .advantages-section, .final-cta {
+    padding: 70px 15px;
+  }
+  
+  .ps-problem, .ps-solution {
+    padding: 35px 28px;
+  }
+  
+  .ps-title {
+    font-size: 1.8rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .qr-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .qr-text {
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Sticky Navigation -->
+<nav class="sticky-nav">
+  <div class="nav-content">
+    <div class="nav-brand">
+      <div class="nav-logo">PRO</div>
+      <div class="nav-tagline">
+        <strong>Site Machinery NZ</strong> – Specialist Supplier of Proscreen Soil Screeners | Nelson-Based, Nationwide Delivery
+      </div>
+    </div>
+    <div class="nav-contact">
+      <a href="tel:0800212126" class="nav-phone">Phone 0800 21 21 26</a>
+      <a href="mailto:info@sitemachinery.nz" class="nav-email">Email Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-badge">Make Up to $500/hr with Your Digger</div>
+  <h1>Turn Waste Into<br>Profit On-Site</h1>
+  <p class="hero-subtitle">Screen sand, soil, rock, compost, wood debris, landscape and construction debris and more!</p>
+  <a href="#equipment" class="hero-cta">View Proscreen Range</a>
+  <div class="scroll-hint">Down Arrow</div>
+</section>
+
+<!-- Problem-Solution Section -->
+<section class="problem-solution-section">
+  <div class="ps-container">
+    <div class="ps-problem">
+      <span class="ps-tag">The Problem</span>
+      <h2 class="ps-title">Lost Revenue</h2>
+      
+      <div class="ps-item">
+        <div class="ps-icon">Cross</div>
+        <div class="ps-text">Paying tip fees to dump material that could be screened and reused on-site?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">Cross</div>
+        <div class="ps-text">Buying aggregate when you've got perfectly good material going to waste?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">Cross</div>
+        <div class="ps-text">Material movement costs eating into your profits?</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">Cross</div>
+        <div class="ps-text">Missing revenue from graded soil, stone and recycled products?</div>
+      </div>
+    </div>
+    
+    <div class="ps-solution">
+      <span class="ps-tag">The Solution</span>
+      <h2 class="ps-title">Proscreen Soil Screeners</h2>
+      
+      <p class="ps-solution-intro">The unique vibratory screening system on the Pro-screens is only available on machines designed and manufactured by DeSite and supplied in New Zealand by Site Machinery Ltd.</p>
+      
+      <div class="ps-item">
+        <div class="ps-icon">Check</div>
+        <div class="ps-text"><strong>Stop paying to dump</strong> – screen and reuse on-site</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">Check</div>
+        <div class="ps-text"><strong>Reduce aggregate costs</strong> by repurposing material</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">Check</div>
+        <div class="ps-text"><strong>Generate new revenue</strong> selling graded products</div>
+      </div>
+      
+      <div class="ps-item">
+        <div class="ps-icon">Check</div>
+        <div class="ps-text"><strong>Cut movement costs</strong> – process where it sits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Equipment Showcase Section -->
+<section class="equipment-section" id="equipment">
+  <div class="container">
+    <h2 class="section-title">Proscreen Soil Screeners</h2>
+    <p class="section-subtitle">Specialist supplier of smaller scale earthmoving and soils & gravel processing equipment</p>
+    
+    <div class="equipment-grid">
+      <!-- SLG-108VFRB -->
+      <div class="equipment-card">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp" alt="Proscreen SLG-108VFRB with Vibratory Feeder" class="equipment-image">
+        <div class="equipment-content">
+          <span class="equipment-badge">High Capacity</span>
+          <h3>Proscreen SLG-108VFRB</h3>
+          <p>Topsoil & Rock Screener with <strong>vibratory feeder</strong>. Screens up to 45m³ an hour.</p>
+          
+          <div class="equipment-specs">
+            <ul>
+              <li>Capable of screening multiple mediums</li>
+              <li>Low maintenance (no engine, belts or bearings)</li>
+              <li>Screens up to 45m³ an hour</li>
+              <li>25–40m³/hour depending on bucket size</li>
+            </ul>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Call 0800 21 21 26</a>
+            <a href="https://www.sitemachinery.nz/proscreen-slg-108vfrb/" target="_blank" class="equipment-link">View Full Specs →</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SLG-78VF-II -->
+      <div class="equipment-card">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="Proscreen SLG-78VF-II Portable Screener" class="equipment-image">
+        <div class="equipment-content">
+          <span class="equipment-badge">Best Seller</span>
+          <h3>Proscreen SLG-78VF-II</h3>
+          <p>Portable Topsoil & Rock Screener. <strong>No vibration, no feeder</strong>. 907kg.</p>
+          
+          <div class="equipment-specs">
+            <ul>
+              <li>Portable screen (907kg)</li>
+              <li>Screens up to 22m³ topsoil an hour</li>
+              <li>Multiple mesh sizes available</li>
+              <li>15–25m³/hour depending on bucket</li>
+            </ul>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Call 0800 21 21 26</a>
+            <a href="https://www.sitemachinery.nz/proscreen-slg-78vf-ii/" target="_blank" class="equipment-link">View Full Specs →</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SLG-68V -->
+      <div class="equipment-card">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Proscreen SLG-68V Compact Screener" class="equipment-image">
+        <div class="equipment-content">
+          <span class="equipment-badge">Compact</span>
+          <h3>Proscreen SLG-68V</h3>
+          <p>Compact Portable Screener. <strong>Easily moved</strong> around site. 544kg.</p>
+          
+          <div class="equipment-specs">
+            <ul>
+              <li>Easily moved around a worksite (544kg)</li>
+              <li>Low maintenance</li>
+              <li>Built to last</li>
+              <li>15–20m³/hour capacity</li>
+            </ul>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Call 0800 21 21 26</a>
+            <a href="https://www.sitemachinery.nz/proscreen-slg-68v/" target="_blank" class="equipment-link">View Full Specs →</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Telehandler Bins -->
+      <div class="equipment-card">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/07/one_yard_debris_bin-2.webp" alt="Telehandler Bins" class="equipment-image">
+        <div class="equipment-content">
+          <span class="equipment-badge">Site Essential</span>
+          <h3>Telehandler Bins</h3>
+          <p>Strong, durable bins for construction sites. <strong>Removable sides</strong>.</p>
+          
+          <div class="equipment-specs">
+            <ul>
+              <li>2.1m wide × 1.5m deep × 1.2m tall</li>
+              <li>Sturdy construction</li>
+              <li>Removable sides</li>
+              <li>Great on construction sites</li>
+            </ul>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Enquire Now</a>
+            <a href="https://www.sitemachinery.nz/telehandler-bins/" target="_blank" class="equipment-link">View Details →</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Other Products Card -->
+      <div class="equipment-card other-products-card">
+        <div class="products-gallery">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/07/one_yard_debris_bin-2.webp" alt="Debris Bin">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="SLG-78 in Action">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp" alt="SLG-108VFRB">
+          <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Spring Suspension">
+        </div>
+        <div class="equipment-content">
+          <span class="equipment-badge">Full Range</span>
+          <h3>More Proscreen Solutions</h3>
+          <p>View all models at 105 Pascoe Street, Nelson</p>
+          
+          <div class="product-categories">
+            <div class="category-tag">Mesh Sizes 3mm–150mm</div>
+            <div class="category-tag">Flow Control Options</div>
+            <div class="category-tag">Nationwide Delivery</div>
+            <div class="category-tag">Ex GST + Freight</div>
+          </div>
+          
+          <div class="equipment-actions">
+            <a href="tel:0800212126" class="equipment-cta">Talk to Dick</a>
+            <a href="https://www.sitemachinery.nz/" target="_blank" class="equipment-link">Visit sitemachinery.nz →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="container">
+    <h2 class="section-title">Why Choose Proscreen</h2>
+    <p class="section-subtitle">Built for NZ conditions – low maintenance, high output</p>
+    
+    <div class="features-grid">
+      <div class="feature-card" onclick="toggleFeature(this)">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Easy Transport" class="feature-image">
+        <div class="feature-content">
+          <h3>Grab and Go</h3>
+          <p><strong>Easily moved around a worksite</strong> with bucket lift lugs and fork pockets.</p>
+          <button class="expand-btn">Learn More</button>
+          <div class="feature-expand">
+            <ul>
+              <li>Reposition in under 5 minutes</li>
+              <li>Save on transport costs</li>
+              <li>Keep screener close to the pile</li>
+              <li>Higher production, higher profits</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="feature-card" onclick="toggleFeature(this)">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="No Vibration" class="feature-image">
+        <div class="feature-content">
+          <h3>No Vibration Needed</h3>
+          <p><strong>Heavy-duty grizzly bars</strong> handle rocks, roots, rebar. Quiet operation.</p>
+          <button class="expand-btn">Learn More</button>
+          <div class="feature-expand">
+            <ul>
+              <li>No motors, no electrics</li>
+              <li>Low maintenance design</li>
+              <li>Built to last in tough conditions</li>
+              <li>3 Year Structure Warranty</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="feature-card" onclick="toggleFeature(this)">
+        <img src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Spring Suspension" class="feature-image">
+        <div class="feature-content">
+          <h3>Spring Suspension</h3>
+          <p><strong>Cantilevered coil springs</strong> enhance harmonic motion for efficient screening.</p>
+          <button class="expand-btn">Learn More</button>
+          <div class="feature-expand">
+            <ul>
+              <li>Stable on slopes</li>
+              <li>Reduces component wear</li>
+              <li>Longer machine life</li>
+              <li>Standard on all models</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Advantages Section -->
+<section class="advantages-section">
+  <div class="container">
+    <h2 class="section-title">Site Machinery NZ</h2>
+    <p class="section-subtitle">Nelson-based, nationwide service</p>
+    
+    <div class="advantages-grid">
+      <div class="advantage-card">
+        <h3>View In Person</h3>
+        <p>See all models at 105 Pascoe Street, Nelson</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Expert Advice</h3>
+        <p>Talk to Dick – the specialist in soil screening</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Nationwide Delivery</h3>
+        <p>We supply anywhere in New Zealand</p>
+      </div>
+      
+      <div class="advantage-card">
+        <h3>Competitive Prices</h3>
+        <p>Prices ex GST + freight. Very reasonable rates</ pleas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="contact">
+  <div class="container">
+    <div class="human-touch">
+      <h3>Talk to Dick Today</h3>
+      <p>We're real operators who know these machines inside out. Call to discuss your site and how to turn waste into profit.</p>
+    </div>
+    
+    <h2>Ready to Make $500/hr?</h2>
+    <p>Contact Site Machinery NZ. Based in Nelson, supplying nationwide.</p>
+    
+    <div class="cta-buttons">
+      <a href="tel:0800212126" class="cta-btn cta-primary">Call 0800 21 21 26</a>
+      <a href="mailto:info@sitemachinery.nz" class="cta-btn cta-secondary">Email Us Now</a>
+    </div>
+    
+    <div class="qr-container">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.sitemachinery.nz" alt="QR Code for Site Machinery NZ">
+      </div>
+      <div class="qr-text">
+        <strong>Scan for Instant Access</strong>
+        Full specs, videos, pricing, and direct contact with Dick
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-col">
+      <h3>Site Machinery NZ</h3>
+      <p class="footer-tagline">Specialist Supplier of Proscreen Soil Screeners</p>
+      <p>105 Pascoe Street, Nelson | Ph 03 970 7602 | 0800 21 21 26</p>
+    </div>
+    
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <a href="tel:039707602">03 970 7602</a>
+      <a href="tel:0800212126">0800 21 21 26</a>
+      <a href="mailto:info@sitemachinery.nz">info@sitemachinery.nz</a>
+    </div>
+    
+    <div class="footer-col">
+      <h3>Online</h3>
+      <a href="https://www.sitemachinery.nz/" target="_blank">www.sitemachinery.nz</a>
+      <a href="https://idmcabc.com" target="_blank">DeSite Proscreen (IDM)</a>
+      <p>Serving all of Aotearoa</p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>© 2025 Site Machinery NZ. All rights reserved. Proscreen® by DeSite.</p>
+  </div>
+</footer>
+
+<script>
+function toggleFeature(card) {
+  const expand = card.querySelector('.feature-expand');
+  const btn = card.querySelector('.expand-btn');
+  
+  document.querySelectorAll('.feature-expand.active').forEach(el => {
+    if (el !== expand) {
+      el.classList.remove('active');
+      el.closest('.feature-card').querySelector('.expand-btn').textContent = 'Learn More';
+    }
+  });
+  
+  if (expand.classList.contains('active')) {
+    expand.classList.remove('active');
+    btn.textContent = 'Learn More';
+  } else {
+    expand.classList.add('active');
+    btn.textContent = 'Show Less';
+  }
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
