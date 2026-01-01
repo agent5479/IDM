@@ -47,19 +47,33 @@
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 40px;">
       <div class="product-description">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/videoseries?list=UUIdmcabc_inc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        <div class="video-container" data-video-id="playlist-1" data-video-src="https://www.youtube.com/embed/videoseries?list=UUIdmcabc_inc">
+          <iframe 
+            id="youtube-playlist-1"
+            src="https://www.youtube.com/embed/videoseries?list=UUIdmcabc_inc" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy"
+            title="Equipment Playlist"></iframe>
         </div>
         <h3 style="color: #ffa500; margin-top: 20px; margin-bottom: 10px;">Equipment Playlist</h3>
         <p style="color: #ccc;">Browse through our complete video collection showing equipment demonstrations and real-world applications</p>
+        <p style="color: #666; font-size: 0.8rem; margin-top: 10px;">Debug: Check console (F12) for loading status</p>
       </div>
       
       <div class="product-description">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=Idmcabc_inc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        <div class="video-container" data-video-id="uploads-1" data-video-src="https://www.youtube.com/embed?listType=user_uploads&list=Idmcabc_inc">
+          <iframe 
+            id="youtube-uploads-1"
+            src="https://www.youtube.com/embed?listType=user_uploads&list=Idmcabc_inc" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen 
+            loading="lazy"
+            title="Latest Uploads"></iframe>
         </div>
         <h3 style="color: #ffa500; margin-top: 20px; margin-bottom: 10px;">Latest Uploads</h3>
         <p style="color: #ccc;">See the most recent videos from our YouTube channel</p>
+        <p style="color: #666; font-size: 0.8rem; margin-top: 10px;">Debug: Check console (F12) for loading status</p>
       </div>
     </div>
   </div>
