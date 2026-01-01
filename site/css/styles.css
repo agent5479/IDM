@@ -341,14 +341,35 @@ body {
   background: #1a1a1a;
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   border: 2px solid #2a2a2a;
+  cursor: pointer;
+  position: relative;
+  will-change: transform;
 }
 
 .equipment-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 40px rgba(255,102,0,0.4);
   border-color: #ff6600;
+}
+
+.equipment-card:active {
+  transform: translateY(-4px) scale(1.01);
+  transition: transform 0.1s ease;
+}
+
+/* Mobile touch optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .equipment-card:active {
+    transform: translateY(-4px) scale(0.98);
+  }
+  
+  .equipment-card:focus {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(255,102,0,0.3);
+    border-color: #ff6600;
+  }
 }
 
 .equipment-image {
@@ -356,6 +377,11 @@ body {
   height: 280px;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.equipment-card:hover .equipment-image {
+  transform: scale(1.05);
 }
 
 .equipment-content {
@@ -967,6 +993,32 @@ body {
   margin-bottom: 10px;
 }
 
+/* Enhanced Mobile Card Animations */
+@media (max-width: 968px) {
+  .equipment-card {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.2s ease;
+  }
+  
+  .equipment-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 5px 15px rgba(255,102,0,0.2);
+  }
+  
+  .equipment-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .equipment-image {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .equipment-card:active .equipment-image {
+    transform: scale(1.02);
+  }
+}
+
 /* Mobile Responsive */
 @media (max-width: 968px) {
   .nav-content {
@@ -985,6 +1037,7 @@ body {
   
   .equipment-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .features-grid {
