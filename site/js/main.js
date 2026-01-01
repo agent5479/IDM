@@ -32,3 +32,30 @@ function toggleExpand(card) {
 // Make toggleExpand available globally
 window.toggleExpand = toggleExpand;
 
+// YouTube iframe error handling
+document.addEventListener('DOMContentLoaded', function() {
+  const iframes = document.querySelectorAll('iframe[src*="youtube"]');
+  
+  iframes.forEach(iframe => {
+    iframe.addEventListener('error', function() {
+      const container = this.closest('.video-container') || this.parentElement;
+      if (container) {
+        container.innerHTML = `
+          <div class="video-error">
+            <p>Video could not be loaded</p>
+            <a href="https://www.youtube.com/c/Idmcabc_inc" target="_blank">Visit YouTube Channel</a>
+          </div>
+        `;
+      }
+    });
+    
+    // Add loading state
+    iframe.addEventListener('load', function() {
+      this.style.opacity = '1';
+    });
+    
+    iframe.style.opacity = '0';
+    iframe.style.transition = 'opacity 0.3s';
+  });
+});
+
