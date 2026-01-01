@@ -334,32 +334,139 @@
 <!-- Productivity Section -->
 <section class="advantages-section">
   <div class="container">
-    <h2 class="section-title">Production Rates</h2>
-    <p class="section-subtitle">Soil Screened per hour (depending on the size of the bucket you are using)</p>
+    <h2 class="section-title">Production Rates & Profit Calculator</h2>
+    <p class="section-subtitle">Estimate your potential revenue from screening operations</p>
     
-    <div class="advantages-grid">
-      <div class="advantage-card">
-        <h3>Pro Screen SLG-68V</h3>
-        <p>15 – 20m³/hour</p>
+    <!-- Production Rate Cards -->
+    <div class="advantages-grid" style="margin-bottom: 40px;">
+      <div class="advantage-card" style="background: linear-gradient(135deg, rgba(255,102,0,0.15) 0%, rgba(255,102,0,0.05) 100%); border: 2px solid rgba(255,102,0,0.3);">
+        <h3 style="color: #ffa500; margin-bottom: 10px;">Pro Screen SLG-68V</h3>
+        <p style="font-size: 1.2rem; font-weight: 700; color: #fff;">15 – 20m³/hour</p>
+        <p style="color: #888; font-size: 0.9rem; margin-top: 5px;">Compact & Portable</p>
       </div>
       
-      <div class="advantage-card">
-        <h3>Pro Screen SLG-78</h3>
-        <p>15 – 25m³/hour</p>
+      <div class="advantage-card" style="background: linear-gradient(135deg, rgba(255,102,0,0.15) 0%, rgba(255,102,0,0.05) 100%); border: 2px solid rgba(255,102,0,0.3);">
+        <h3 style="color: #ffa500; margin-bottom: 10px;">Pro Screen SLG-78</h3>
+        <p style="font-size: 1.2rem; font-weight: 700; color: #fff;">15 – 25m³/hour</p>
+        <p style="color: #888; font-size: 0.9rem; margin-top: 5px;">Best Seller</p>
       </div>
       
-      <div class="advantage-card">
-        <h3>Pro Screen SLG-108</h3>
-        <p>25 – 40m³/hour</p>
+      <div class="advantage-card" style="background: linear-gradient(135deg, rgba(255,102,0,0.15) 0%, rgba(255,102,0,0.05) 100%); border: 2px solid rgba(255,102,0,0.3);">
+        <h3 style="color: #ffa500; margin-bottom: 10px;">Pro Screen SLG-108</h3>
+        <p style="font-size: 1.2rem; font-weight: 700; color: #fff;">25 – 40m³/hour</p>
+        <p style="color: #888; font-size: 0.9rem; margin-top: 5px;">Heavy Duty</p>
       </div>
       
-      <div class="advantage-card">
-        <h3>Mesh Sizes</h3>
-        <p>Various wire sizes available from 3mm up to 150mm</p>
+      <div class="advantage-card" style="background: linear-gradient(135deg, rgba(255,102,0,0.15) 0%, rgba(255,102,0,0.05) 100%); border: 2px solid rgba(255,102,0,0.3);">
+        <h3 style="color: #ffa500; margin-bottom: 10px;">Mesh Sizes</h3>
+        <p style="font-size: 1.1rem; color: #fff;">3mm up to 150mm</p>
+        <p style="color: #888; font-size: 0.9rem; margin-top: 5px;">Various wire sizes available</p>
       </div>
+    </div>
+
+    <!-- Profit Calculator -->
+    <div style="max-width: 900px; margin: 0 auto; background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 40px;">
+      <h3 style="color: #ff6600; text-align: center; margin-bottom: 30px; font-size: 1.8rem;">Profit Calculator</h3>
+      <p style="color: #ccc; text-align: center; margin-bottom: 30px; line-height: 1.6;">
+        Estimate your potential revenue. Based on industry standards, approximately <strong style="color: #ffa500;">50% of screened material</strong> becomes saleable product.
+      </p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 30px;">
+        <div>
+          <label style="display: block; color: #ffa500; font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">Production Rate (m³/hour)</label>
+          <input type="number" id="productionRate" min="5" max="50" value="20" step="1" style="width: 100%; padding: 12px; background: rgba(10,10,10,0.8); border: 2px solid #ff6600; border-radius: 8px; color: #fff; font-size: 1.1rem; text-align: center;">
+          <p style="color: #888; font-size: 0.85rem; margin-top: 5px; text-align: center;">Select your model's rate above</p>
+        </div>
+        
+        <div>
+          <label style="display: block; color: #ffa500; font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">Price per m³ (NZD)</label>
+          <input type="number" id="pricePerCubic" min="20" max="45" value="32" step="1" style="width: 100%; padding: 12px; background: rgba(10,10,10,0.8); border: 2px solid #ff6600; border-radius: 8px; color: #fff; font-size: 1.1rem; text-align: center;">
+          <p style="color: #888; font-size: 0.85rem; margin-top: 5px; text-align: center;">Range: $20 - $45 per m³</p>
+        </div>
+      </div>
+
+      <!-- Results Display -->
+      <div id="calculatorResults" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+        <div style="background: rgba(10,10,10,0.6); padding: 20px; border-radius: 12px; border-left: 4px solid #ff6600; text-align: center;">
+          <h4 style="color: #888; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase;">Saleable Material</h4>
+          <p id="saleableMaterial" style="color: #ffa500; font-size: 1.8rem; font-weight: 700; margin: 0;">10 m³/hr</p>
+        </div>
+        
+        <div style="background: rgba(10,10,10,0.6); padding: 20px; border-radius: 12px; border-left: 4px solid #ff6600; text-align: center;">
+          <h4 style="color: #888; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase;">Revenue per Hour</h4>
+          <p id="revenuePerHour" style="color: #ffa500; font-size: 1.8rem; font-weight: 700; margin: 0;">$320</p>
+        </div>
+        
+        <div style="background: rgba(10,10,10,0.6); padding: 20px; border-radius: 12px; border-left: 4px solid #ff6600; text-align: center;">
+          <h4 style="color: #888; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase;">Revenue per Day (8hrs)</h4>
+          <p id="revenuePerDay" style="color: #ffa500; font-size: 1.8rem; font-weight: 700; margin: 0;">$2,560</p>
+        </div>
+        
+        <div style="background: rgba(10,10,10,0.6); padding: 20px; border-radius: 12px; border-left: 4px solid #ff6600; text-align: center;">
+          <h4 style="color: #888; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase;">Revenue per Week (5 days)</h4>
+          <p id="revenuePerWeek" style="color: #ffa500; font-size: 1.8rem; font-weight: 700; margin: 0;">$12,800</p>
+        </div>
+      </div>
+
+      <p style="color: #888; font-size: 0.9rem; text-align: center; margin-top: 25px; font-style: italic;">
+        * Calculations assume 50% of screened material becomes saleable product. Actual results may vary based on material type and market conditions.
+      </p>
     </div>
   </div>
 </section>
+
+<script>
+// Profit Calculator Functionality
+(function() {
+  const productionRateInput = document.getElementById('productionRate');
+  const pricePerCubicInput = document.getElementById('pricePerCubic');
+  
+  function calculateProfit() {
+    const productionRate = parseFloat(productionRateInput.value) || 0;
+    const pricePerCubic = parseFloat(pricePerCubicInput.value) || 0;
+    
+    // 50% of production becomes saleable material
+    const saleableMaterial = productionRate * 0.5;
+    const revenuePerHour = saleableMaterial * pricePerCubic;
+    const revenuePerDay = revenuePerHour * 8;
+    const revenuePerWeek = revenuePerDay * 5;
+    
+    // Update display
+    document.getElementById('saleableMaterial').textContent = saleableMaterial.toFixed(1) + ' m³/hr';
+    document.getElementById('revenuePerHour').textContent = '$' + revenuePerHour.toLocaleString('en-NZ', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+    document.getElementById('revenuePerDay').textContent = '$' + revenuePerDay.toLocaleString('en-NZ', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+    document.getElementById('revenuePerWeek').textContent = '$' + revenuePerWeek.toLocaleString('en-NZ', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+  }
+  
+  // Add event listeners
+  productionRateInput.addEventListener('input', calculateProfit);
+  pricePerCubicInput.addEventListener('input', calculateProfit);
+  
+  // Add click handlers to production rate cards to set values
+  document.querySelectorAll('.advantage-card').forEach((card, index) => {
+    if (index < 3) { // Only first 3 cards are production rate cards
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function() {
+        const rates = [
+          {min: 15, max: 20, avg: 17.5},
+          {min: 15, max: 25, avg: 20},
+          {min: 25, max: 40, avg: 32.5}
+        ];
+        productionRateInput.value = rates[index].avg;
+        calculateProfit();
+        // Visual feedback
+        card.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+          card.style.transform = 'scale(1)';
+        }, 150);
+      });
+    }
+  });
+  
+  // Initial calculation
+  calculateProfit();
+})();
+</script>
 
 <!-- About Section -->
 <section class="problem-solution-section">
