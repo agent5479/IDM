@@ -1,0 +1,41 @@
+name: Sync to site directory
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Copy files to site directory
+        run: |
+          mkdir -p site
+          # Copy all files except .git and .github to site directory
+          rsync -av --exclude='.git' --exclude='.github' --exclude='site' ./ site/
+          # Or use cp for Windows compatibility
+          # Remove old site directory contents (except .git)
+          # Copy current directory contents to site/
+      
+      - name: Commit and push to site directory
+        run: |
+          git add site/
+          git diff --staged --quiet || git commit -m "Update site files from main branch [skip ci]"
+          git push origin main
+
