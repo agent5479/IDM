@@ -324,15 +324,30 @@
     <!-- Profit Calculator -->
     <div style="max-width: 900px; margin: 0 auto; background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 40px;">
       <h3 style="color: #ff6600; text-align: center; margin-bottom: 30px; font-size: 1.8rem;">Profit Calculator</h3>
-      <p style="color: #ccc; text-align: center; margin-bottom: 30px; line-height: 1.6;">
+      <p style="color: #ccc; text-align: center; margin-bottom: 20px; line-height: 1.6;">
         Estimate your potential revenue. Based on industry standards, approximately <strong style="color: #ffa500;">50% of screened material</strong> becomes saleable product.
       </p>
+      <p style="color: #ffa500; text-align: center; margin-bottom: 30px; line-height: 1.6; font-weight: 600;">
+        💡 <strong>Pro Tip:</strong> Dual screen setups (grizzly + standard soil screen) with large buckets can achieve $900+ revenue per hour in optimal conditions!
+      </p>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 30px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
         <div>
-          <label style="display: block; color: #ffa500; font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">Production Rate (m³/hour)</label>
-          <input type="number" id="productionRate" min="5" max="50" value="20" step="1" style="width: 100%; padding: 12px; background: rgba(10,10,10,0.8); border: 2px solid #ff6600; border-radius: 8px; color: #fff; font-size: 1.1rem; text-align: center;">
-          <p style="color: #888; font-size: 0.85rem; margin-top: 5px; text-align: center;">Select your model's rate above</p>
+          <label style="display: block; color: #ffa500; font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">Model</label>
+          <select id="modelSelect" style="width: 100%; padding: 12px; background: rgba(10,10,10,0.8); border: 2px solid #ff6600; border-radius: 8px; color: #fff; font-size: 1.1rem; text-align: center; cursor: pointer;">
+            <option value="">Select Model</option>
+            <option value="68">SLG-68V (Compact)</option>
+            <option value="78">SLG-78 (Best Seller)</option>
+            <option value="108">SLG-108 (Heavy Duty)</option>
+            <option value="dual78">Dual 78 Setup (Grizzly + Soil Screen)</option>
+          </select>
+        </div>
+        
+        <div>
+          <label style="display: block; color: #ffa500; font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;">Bucket Size</label>
+          <select id="bucketSelect" style="width: 100%; padding: 12px; background: rgba(10,10,10,0.8); border: 2px solid #ff6600; border-radius: 8px; color: #fff; font-size: 1.1rem; text-align: center; cursor: pointer;" disabled>
+            <option value="">Select Model First</option>
+          </select>
         </div>
         
         <div>
@@ -340,6 +355,18 @@
           <input type="number" id="pricePerCubic" min="20" max="45" value="32" step="1" style="width: 100%; padding: 12px; background: rgba(10,10,10,0.8); border: 2px solid #ff6600; border-radius: 8px; color: #fff; font-size: 1.1rem; text-align: center;">
           <p style="color: #888; font-size: 0.85rem; margin-top: 5px; text-align: center;">Range: $20 - $45 per m³</p>
         </div>
+      </div>
+
+      <!-- Dual Screen Setup Image -->
+      <div style="margin: 30px 0; text-align: center;">
+        <img src="images/dual78-screen-setup-900-riserbox.png" alt="Dual 78 DeSite screen setup with grizzly and soil screen" style="max-width: 100%; border-radius: 12px; border: 2px solid rgba(255,102,0,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+        <p style="color: #888; font-size: 0.9rem; margin-top: 10px; font-style: italic;">Dual 78 setup: Grizzly screen (oversize removal) + Standard soil screen (60x20mm mesh) for maximum production</p>
+      </div>
+      
+      <!-- Production Rate Display -->
+      <div style="background: rgba(10,10,10,0.6); padding: 15px; border-radius: 12px; border-left: 4px solid #ff6600; margin-bottom: 20px; text-align: center;">
+        <p style="color: #888; font-size: 0.9rem; margin-bottom: 5px;">Estimated Production Rate</p>
+        <p id="productionRateDisplay" style="color: #ffa500; font-size: 1.5rem; font-weight: 700; margin: 0;">Select model and bucket size</p>
       </div>
 
       <!-- Results Display -->
@@ -366,7 +393,7 @@
       </div>
 
       <p style="color: #888; font-size: 0.9rem; text-align: center; margin-top: 25px; font-style: italic;">
-        * Calculations assume 50% of screened material becomes saleable product. Actual results may vary based on material type and market conditions.
+        * Calculations assume 50% of screened material becomes saleable product. Actual results may vary based on material type, market conditions, and setup configuration. Dual screen setups (grizzly + standard soil screen with 60x20mm mesh) can significantly increase production rates and revenue potential.
       </p>
     </div>
   </div>
@@ -375,12 +402,109 @@
 <script>
 // Profit Calculator Functionality
 (function() {
-  const productionRateInput = document.getElementById('productionRate');
+  const modelSelect = document.getElementById('modelSelect');
+  const bucketSelect = document.getElementById('bucketSelect');
   const pricePerCubicInput = document.getElementById('pricePerCubic');
+  const productionRateDisplay = document.getElementById('productionRateDisplay');
+  
+  // Production rates based on model and bucket size (m³/hour)
+  const productionRates = {
+    '68': {
+      'small': 15,    // Mini skidsteer bucket (1.4-1.5m)
+      'medium': 18,   // Standard compact bucket (1.6-1.7m)
+      'large': 20     // Large compact bucket (1.7m+)
+    },
+    '78': {
+      'small': 18,    // Standard skidsteer bucket (1.5-1.8m)
+      'medium': 22,   // Large skidsteer bucket (1.8-2.0m)
+      'large': 25     // Extra large bucket (2.0-2.5m)
+    },
+    '108': {
+      'small': 25,    // Standard loader bucket (2.0-2.3m)
+      'medium': 32,   // Large loader bucket (2.3-2.6m)
+      'large': 40     // Extra large bucket (2.6-2.8m)
+    },
+    'dual78': {
+      'small': 35,    // Standard setup
+      'medium': 45,   // Large bucket setup
+      'large': 60     // Optimal setup with large buckets
+    }
+  };
+  
+  // Bucket size options for each model
+  const bucketOptions = {
+    '68': [
+      {value: 'small', text: 'Small (1.4-1.5m) - Mini Skidsteer'},
+      {value: 'medium', text: 'Medium (1.6-1.7m) - Compact'},
+      {value: 'large', text: 'Large (1.7m+) - Compact'}
+    ],
+    '78': [
+      {value: 'small', text: 'Small (1.5-1.8m) - Standard Skidsteer'},
+      {value: 'medium', text: 'Medium (1.8-2.0m) - Large Skidsteer'},
+      {value: 'large', text: 'Large (2.0-2.5m) - Extra Large'}
+    ],
+    '108': [
+      {value: 'small', text: 'Small (2.0-2.3m) - Standard Loader'},
+      {value: 'medium', text: 'Medium (2.3-2.6m) - Large Loader'},
+      {value: 'large', text: 'Large (2.6-2.8m) - Extra Large'}
+    ],
+    'dual78': [
+      {value: 'small', text: 'Standard Setup'},
+      {value: 'medium', text: 'Large Bucket Setup'},
+      {value: 'large', text: 'Optimal Setup (Large Buckets)'}
+    ]
+  };
+  
+  function updateBucketOptions() {
+    const model = modelSelect.value;
+    bucketSelect.innerHTML = '<option value="">Select Bucket Size</option>';
+    
+    if (model && bucketOptions[model]) {
+      bucketSelect.disabled = false;
+      bucketOptions[model].forEach(option => {
+        const opt = document.createElement('option');
+        opt.value = option.value;
+        opt.textContent = option.text;
+        bucketSelect.appendChild(opt);
+      });
+    } else {
+      bucketSelect.disabled = true;
+    }
+    
+    calculateProfit();
+  }
+  
+  function getProductionRate() {
+    const model = modelSelect.value;
+    const bucket = bucketSelect.value;
+    
+    if (model && bucket && productionRates[model] && productionRates[model][bucket]) {
+      return productionRates[model][bucket];
+    }
+    return 0;
+  }
   
   function calculateProfit() {
-    const productionRate = parseFloat(productionRateInput.value) || 0;
+    const productionRate = getProductionRate();
     const pricePerCubic = parseFloat(pricePerCubicInput.value) || 0;
+    
+    // Update production rate display
+    if (productionRate > 0) {
+      productionRateDisplay.textContent = productionRate + ' m³/hour';
+      productionRateDisplay.style.color = '#ffa500';
+    } else {
+      productionRateDisplay.textContent = 'Select model and bucket size';
+      productionRateDisplay.style.color = '#888';
+    }
+    
+    if (productionRate === 0 || pricePerCubic === 0) {
+      // Reset displays if no valid selection
+      document.getElementById('saleableMaterial').textContent = '0 m³/hr';
+      document.getElementById('revenuePerHour').textContent = '$0';
+      document.getElementById('revenuePerDay').textContent = '$0';
+      document.getElementById('revenuePerWeek').textContent = '$0';
+      return;
+    }
     
     // 50% of production becomes saleable material
     const saleableMaterial = productionRate * 0.5;
@@ -396,7 +520,8 @@
   }
   
   // Add event listeners
-  productionRateInput.addEventListener('input', calculateProfit);
+  modelSelect.addEventListener('change', updateBucketOptions);
+  bucketSelect.addEventListener('change', calculateProfit);
   pricePerCubicInput.addEventListener('input', calculateProfit);
   
   // Add click handlers to production rate cards to set values
@@ -404,13 +529,14 @@
     if (index < 3) { // Only first 3 cards are production rate cards
       card.style.cursor = 'pointer';
       card.addEventListener('click', function() {
-        const rates = [
-          {min: 15, max: 20, avg: 17.5},
-          {min: 15, max: 25, avg: 20},
-          {min: 25, max: 40, avg: 32.5}
-        ];
-        productionRateInput.value = rates[index].avg;
-        calculateProfit();
+        const models = ['68', '78', '108'];
+        modelSelect.value = models[index];
+        updateBucketOptions();
+        // Select medium bucket by default
+        setTimeout(() => {
+          bucketSelect.value = 'medium';
+          calculateProfit();
+        }, 100);
         // Visual feedback
         card.style.transform = 'scale(0.98)';
         setTimeout(() => {
@@ -420,7 +546,7 @@
     }
   });
   
-  // Initial calculation
+  // Initial state
   calculateProfit();
 })();
 </script>
