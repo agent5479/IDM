@@ -1,3 +1,36 @@
+// Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.mobile-menu-toggle');
+  const navMenu = document.getElementById('navMenu');
+  
+  if (menuToggle && navMenu) {
+    // Toggle menu on button click
+    menuToggle.addEventListener('click', function() {
+      menuToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+    
+    // Auto-hide menu when a link is clicked
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Close menu
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInsideNav = navMenu.contains(event.target) || menuToggle.contains(event.target);
+      if (!isClickInsideNav && navMenu.classList.contains('active')) {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+});
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -5,6 +38,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Close mobile menu if open
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.getElementById('navMenu');
+      if (menuToggle && navMenu && navMenu.classList.contains('active')) {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
     }
   });
 });
