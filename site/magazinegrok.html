@@ -5,345 +5,344 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Machinery NZ Magazine Ad</title>
     <link href="https://fonts.googleapis.com/css2?family=Impact&family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/agent5479/IDM/main/site/css/styles.css">
     <style>
-        /* Print Styles for A4 Trim (210mm x 297mm) with Bleed Consideration */
+        /* Custom Overrides for A4 Magazine Print (210mm x 297mm Trim, 216mm x 303mm Bleed) */
         @media print {
             @page {
-                size: 210mm 297mm; /* Portrait A4 */
+                size: 210mm 297mm portrait;
                 margin: 0;
-                bleed: 3mm; /* For bleed area */
+                bleed: 3mm;
             }
             body {
-                width: 210mm;
-                height: 297mm;
-                margin: 0;
-                padding: 0;
-                font-size: 10pt; /* Compact for print */
-                overflow: hidden; /* No scroll, fit exactly */
+                width: 210mm !important;
+                height: 297mm !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                font-size: 9pt !important;
+                line-height: 1.2 !important;
+                overflow: hidden !important;
+                background: #0a0a0a !important;
+                color: #fff !important;
             }
             .container {
-                width: 210mm;
-                height: 297mm;
-                position: relative;
-                box-sizing: border-box;
+                width: 210mm !important;
+                height: 297mm !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+                box-sizing: border-box !important;
             }
-            /* Extend hero background for bleed */
+            /* Bleed Extension for Hero Background */
             .hero {
-                width: 216mm;
-                height: 303mm;
-                margin: -3mm 0 0 -3mm; /* Offset for bleed */
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 0;
+                width: 216mm !important;
+                height: 303mm !important; /* Full bleed */
+                margin: -3mm 0 0 -3mm !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                z-index: 0 !important;
+                padding: 2mm !important;
             }
             .hero-content {
-                position: relative;
-                z-index: 1;
-                padding: 10mm;
-                box-sizing: border-box;
+                position: relative !important;
+                z-index: 1 !important;
+                padding: 3mm !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
             }
-            /* Compact sections */
-            section {
-                padding: 2mm 3mm;
-                font-size: 9pt;
-                line-height: 1.2;
+            /* Compact Section Heights & Layouts */
+            .hero { flex: 0 0 25% !important; height: auto !important; }
+            .benefits { flex: 0 0 20% !important; padding: 2mm 3mm !important; }
+            .products { flex: 0 0 30% !important; padding: 2mm 3mm !important; }
+            .profit { flex: 0 0 15% !important; padding: 2mm 3mm !important; }
+            .cta { flex: 0 0 10% !important; padding: 2mm 3mm !important; }
+            h1 { font-size: 14pt !important; margin: 1mm 0 !important; }
+            h2 { font-size: 11pt !important; margin: 1mm 0 !important; }
+            h3 { font-size: 10pt !important; margin: 0.5mm 0 !important; }
+            .benefit-grid, .equipment-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1mm !important;
             }
-            h1 { font-size: 14pt; margin: 1mm 0; }
-            h2 { font-size: 11pt; margin: 1mm 0; }
-            h3 { font-size: 10pt; margin: 0.5mm 0; }
-            .benefit-grid, .product-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1mm;
+            .benefit-item {
+                background: rgba(255,102,0,0.1) !important;
+                padding: 1mm !important;
+                border-radius: 4px !important;
+                border-left: 3px solid #ff6600 !important;
             }
-            .benefit-item, .product-card {
-                flex: 1 1 45%; /* Two columns, compact */
-                padding: 1mm;
-                min-width: 90mm;
+            .equipment-card {
+                background: #1a1a1a !important;
+                border: 1px solid #ff6600 !important;
+                padding: 1mm !important;
+                margin: 0 !important;
+                min-height: 0 !important;
             }
-            .profit-highlight { font-size: 12pt; }
+            .equipment-image {
+                height: 15mm !important;
+            }
+            .profit-highlight { font-size: 12pt !important; color: #ff6600 !important; }
             .contact-info {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1mm;
-                font-size: 8pt;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1mm !important;
+                font-size: 8pt !important;
             }
-            .contact-item { flex: 1 1 100mm; }
-            /* Hide screen-only elements if any */
+            .contact-item { padding: 0.5mm !important; }
+            /* Hide non-print elements */
+            .scroll-indicator { display: none !important; }
         }
 
-        /* Screen Styles (Fallback for Web Preview) */
+        /* Screen Preview Styles (Web Fallback, Dark/Orange Aesthetic Match) */
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: white;
-            color: #333;
-            overflow: hidden;
-            height: 100vh;
-            width: 100vw;
+            background: #0a0a0a !important;
+            color: #fff !important;
+            overflow: hidden !important;
+            height: 100vh !important;
+            width: 100vw !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
         }
         .container {
-            max-width: 210mm;
-            height: 297mm;
-            margin: 0 auto;
-            background: white;
-            position: relative;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            page-break-after: avoid;
+            max-width: 210mm !important;
+            height: 297mm !important;
+            margin: 0 auto !important;
+            background: #0a0a0a !important;
+            position: relative !important;
+            display: flex !important;
+            flex-direction: column !important;
+            box-shadow: none !important;
         }
         .hero {
-            height: 25%; /* Compact hero for full page fit */
-            background-image: url('https://desiteproducts.com/wp-content/uploads/2024/09/SLG-108-VFRB-WRB-Desktop-in-action-3_.webp');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            position: relative;
+            flex: 0 0 25% !important;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
+                        url('https://desiteproducts.com/wp-content/uploads/2024/09/SLG-108-VFRB-WRB-Desktop-in-action-3_.webp') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            position: relative !important;
         }
         .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 90%;
-            padding: 0 10px;
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+            background: rgba(0,0,0,0.6) !important;
         }
         .hero h1 {
-            font-family: 'Impact', sans-serif;
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-            color: #FFD700;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            font-family: Impact, sans-serif !important;
+            font-size: 2rem !important;
+            color: #fff !important;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.9) !important;
+            letter-spacing: -1px !important;
         }
         .hero p {
-            font-size: 1rem;
-            margin: 5px 0;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            font-size: 1rem !important;
+            color: #ffa500 !important;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.9) !important;
         }
         .benefits {
-            background: #2c5f2d;
-            color: white;
-            height: 20%;
-            display: flex;
-            flex-direction: column;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d) !important;
+            flex: 0 0 20% !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
         .benefits h2 {
-            font-family: 'Impact', sans-serif;
-            font-size: 1.2rem;
-            color: #FFD700;
-            margin: 5px 0;
-            text-align: center;
+            font-size: 1.2rem !important;
+            color: #ff6600 !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            letter-spacing: -0.5px !important;
+            margin: 5px 0 !important;
         }
         .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5px;
-            flex: 1;
-            padding: 0 10px;
-        }
-        .benefit-item {
-            background: rgba(255,255,255,0.1);
-            padding: 5px;
-            border-radius: 3px;
-            font-size: 0.8rem;
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 5px !important;
+            flex: 1 !important;
+            padding: 0 10px !important;
         }
         .benefit-item h3 {
-            font-size: 0.9rem;
-            margin: 2px 0;
+            color: #ff6600 !important;
+            font-weight: 900 !important;
         }
         .checkmark {
-            color: #FFD700;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 2px;
+            color: #ff6600 !important;
+            font-weight: bold !important;
+            display: block !important;
+            margin-bottom: 2px !important;
         }
         .products {
-            height: 30%;
-            display: flex;
-            flex-direction: column;
-            background: white;
+            background: #0a0a0a !important;
+            flex: 0 0 30% !important;
+            display: flex !important;
+            flex-direction: column !important;
         }
         .products h2 {
-            text-align: center;
-            font-family: 'Impact', sans-serif;
-            font-size: 1.2rem;
-            color: #2c5f2d;
-            margin: 5px 0;
+            font-size: 1.2rem !important;
+            color: #ff6600 !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            margin: 5px 0 !important;
         }
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
-            flex: 1;
-            padding: 0 10px;
+        .equipment-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 5px !important;
+            flex: 1 !important;
+            padding: 0 10px !important;
+            max-width: none !important;
         }
-        .product-card {
-            text-align: center;
-            border: 1px solid #4a7c59;
-            border-radius: 3px;
-            padding: 3px;
-            font-size: 0.7rem;
+        .equipment-card {
+            border-color: #ff6600 !important;
+            background: #1a1a1a !important;
+            transition: none !important; /* Disable hover for print fit */
         }
-        .product-card img {
-            width: 100%;
-            height: 20px;
-            object-fit: cover;
-            border-radius: 2px;
-            margin-bottom: 2px;
+        .equipment-card h3 {
+            color: #ff6600 !important;
+            font-weight: 900 !important;
+            font-size: 0.8rem !important;
         }
-        .product-card h3 {
-            font-family: 'Impact', sans-serif;
-            color: #2c5f2d;
-            font-size: 0.8rem;
-            margin: 2px 0;
+        .equipment-card p {
+            color: #fff !important;
+            font-size: 0.7rem !important;
         }
-        .product-card p {
-            font-weight: bold;
-            color: #FFD700;
-            font-size: 0.7rem;
-            margin: 0;
+        .equipment-image {
+            height: 40px !important; /* Compact for screen preview */
         }
         .profit {
-            background: #FFD700;
-            color: #2c5f2d;
-            height: 15%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10px;
+            background: linear-gradient(135deg, #ff6600, #ff8533) !important;
+            color: #000 !important;
+            flex: 0 0 15% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+            padding: 0 10px !important;
         }
         .profit h2 {
-            font-family: 'Impact', sans-serif;
-            font-size: 1.1rem;
-            margin: 2px 0;
+            font-size: 1.1rem !important;
+            color: #000 !important;
+            margin: 2px 0 !important;
         }
         .profit-highlight {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 2px 0;
+            font-size: 1.5rem !important;
+            font-weight: bold !important;
+            color: #000 !important;
+            margin: 2px 0 !important;
         }
         .cta {
-            background: #2c5f2d;
-            color: white;
-            height: 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 10px;
-            font-size: 0.8rem;
+            background: #1a1a1a !important;
+            color: #fff !important;
+            flex: 0 0 10% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+            padding: 0 10px !important;
+            font-size: 0.8rem !important;
         }
         .cta h2 {
-            font-family: 'Impact', sans-serif;
-            font-size: 1rem;
-            color: #FFD700;
-            margin: 2px 0;
+            font-size: 1rem !important;
+            color: #ff6600 !important;
+            margin: 2px 0 !important;
         }
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-            width: 100%;
-            font-size: 0.7rem;
-        }
-        .contact-item {
-            text-align: center;
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 2px !important;
+            width: 100% !important;
+            font-size: 0.7rem !important;
         }
         .contact-item strong {
-            display: block;
-            color: #FFD700;
-            font-size: 0.8rem;
+            color: #ff6600 !important;
+            font-size: 0.8rem !important;
         }
 
-        /* Mobile adjustments for screen preview */
+        /* Mobile Screen Adjustments */
         @media (max-width: 600px) {
-            .product-grid { grid-template-columns: repeat(2, 1fr); }
-            .benefit-grid { grid-template-columns: 1fr; }
+            .equipment-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .benefit-grid { grid-template-columns: 1fr !important; }
+            .contact-info { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Hero Section: Compact, Bleed-Extended -->
+        <!-- Hero Section: Adapted from Site CSS -->
         <section class="hero">
             <div class="hero-content">
                 <h1>Turn Waste into Profit On-Site</h1>
-                <p>Stop Throwing Money Away — Screen, Grade & Sell Material On-Site</p>
+                <p class="hero-subtitle">Stop Throwing Money Away — Screen, Grade & Sell Material On-Site</p>
             </div>
         </section>
 
-        <!-- Benefits: Tight Grid -->
-        <section class="benefits">
-            <h2>Why Choose Site Machinery NZ?</h2>
+        <!-- Benefits: Custom Grid with CSS-Inspired Dark/Orange -->
+        <section class="benefits problem-solution-section">
+            <h2 class="section-title">Why Choose Site Machinery NZ?</h2>
             <div class="benefit-grid">
-                <div class="benefit-item">
+                <div class="benefit-item ps-solution">
                     <span class="checkmark">✓</span>
                     <h3>Generate New Revenue</h3>
-                    <p>Create saleable products from waste material on-site</p>
+                    <p class="ps-text">Create saleable products from waste material on-site</p>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-item ps-solution">
                     <span class="checkmark">✓</span>
                     <h3>Heavy-Duty Construction</h3>
-                    <p>Built tough for New Zealand conditions</p>
+                    <p class="ps-text">Built tough for New Zealand conditions</p>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-item ps-solution">
                     <span class="checkmark">✓</span>
                     <h3>Low-Maintenance Design</h3>
-                    <p>No engine, belts or bearings to maintain</p>
+                    <p class="ps-text">No engine, belts or bearings to maintain</p>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-item ps-solution">
                     <span class="checkmark">✓</span>
                     <h3>NZ-Based Support</h3>
-                    <p>Local expertise and fast service</p>
+                    <p class="ps-text">Local expertise and fast service</p>
                 </div>
             </div>
         </section>
 
-        <!-- Products: Compact 3-Column Grid -->
-        <section class="products">
-            <h2>Our Equipment Range — Premium Screening Solutions</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://desiteproducts.com/wp-content/uploads/2024/08/Screener-SLG68.webp" alt="SLG-68V Compact Screener">
-                    <h3>Proscreen SLG-68V</h3>
-                    <p>Compact Portable Screener<br>15-20m³/hr<br>Weight: 544kg<br>Perfect for smaller operations</p>
+        <!-- Products: Using .equipment-grid & .equipment-card from CSS -->
+        <section class="products equipment-section">
+            <h2 class="section-title">Our Equipment Range — Premium Screening Solutions</h2>
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <img class="equipment-image" src="https://desiteproducts.com/wp-content/uploads/2024/08/Screener-SLG68.webp" alt="SLG-68V Compact Screener">
+                    <div class="equipment-content">
+                        <h3>Proscreen SLG-68V</h3>
+                        <p>Compact Portable Screener<br>15-20m³/hr<br>Weight: 544kg<br>Perfect for smaller operations</p>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <img src="https://desiteproducts.com/wp-content/uploads/2024/08/Screener-SLG78.webp" alt="SLG-78VF Portable Screener">
-                    <h3>Proscreen SLG-78VF</h3>
-                    <p>Portable Topsoil & Rock Screener<br>Up to 22m³/hr<br>Multi-slope deck (45° to 30°)<br>Quiet, low vibration</p>
+                <div class="equipment-card">
+                    <img class="equipment-image" src="https://desiteproducts.com/wp-content/uploads/2024/08/Screener-SLG78.webp" alt="SLG-78VF Portable Screener">
+                    <div class="equipment-content">
+                        <h3>Proscreen SLG-78VF</h3>
+                        <p>Portable Topsoil & Rock Screener<br>Up to 22m³/hr<br>Multi-slope deck (45° to 30°)<br>Quiet, low vibration</p>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <img src="https://desiteproducts.com/wp-content/uploads/2024/09/SLG-108-VFRB-WRB-Desktop-in-action-3_.webp" alt="SLG-108VFRB Heavy Duty Screener">
-                    <h3>Proscreen SLG-108VFRB</h3>
-                    <p>Topsoil & Rock Screener<br>Up to 45m³/hr<br>45° Adjustable Deck Slope<br>Heavy-Duty for NZ conditions</p>
+                <div class="equipment-card">
+                    <img class="equipment-image" src="https://desiteproducts.com/wp-content/uploads/2024/09/SLG-108-VFRB-WRB-Desktop-in-action-3_.webp" alt="SLG-108VFRB Heavy Duty Screener">
+                    <div class="equipment-content">
+                        <h3>Proscreen SLG-108VFRB</h3>
+                        <p>Topsoil & Rock Screener<br>Up to 45m³/hr<br>45° Adjustable Deck Slope<br>Heavy-Duty for NZ conditions</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Profit: Bold, Centered -->
+        <!-- Profit: Orange Gradient Block */
         <section class="profit">
             <h2>Production Rates & Profit Calculator</h2>
             <p class="profit-highlight">$900+ Revenue Per Hour</p>
             <p>Dual screen setups achieve $900+ in optimal conditions! Approximately 50% of screened material becomes saleable at $20-45/m³. Stop dumping profits — start screening them.</p>
         </section>
 
-        <!-- CTA: Bottom Strip -->
+        <!-- CTA: Dark Footer with Orange Accents -->
         <section class="cta">
             <h2>Ready to Make Profits?</h2>
             <p>Exclusive NZ Supplier of DeSite Equipment. Screen gravel, rocks, topsoil, compost & more.</p>
@@ -365,7 +364,7 @@
                     Supply Anywhere in New Zealand
                 </div>
             </div>
-            <p style="font-size: 0.6rem; margin-top: 2px;">View machines in action at our Nelson yard. Prices ex GST & freight.</p>
+            <p style="font-size: 0.6rem; margin-top: 2px; color: #aaa;">View machines in action at our Nelson yard. Prices ex GST & freight.</p>
         </section>
     </div>
 </body>
