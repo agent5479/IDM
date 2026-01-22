@@ -1,130 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Site Machinery NZ • Magazine Ad</title>
-<style>
-  html, body { margin: 0; padding: 0; width: 100%; height: 100%; }
-  body {
-    font-family: "Helvetica Neue", Arial, sans-serif;
-    color: #111;
-    padding: 0;
-    margin: 0;
-  }
-  .container {
-    width: 303mm; height: 216mm; /* bleed size */
-    padding: 10mm; /* safe area */
-    box-sizing: border-box;
-  }
-  .hero {
-    text-align: center;
-    padding-top: 5mm;
-    padding-bottom: 4mm;
-  }
-  .hero h1 {
-    font-size: 28pt;
-    margin: 0;
-    line-height: 1.05;
-    font-weight: bold;
-  }
-  .hero p {
-    font-size: 14pt;
-    margin-top: 3mm;
-    margin-bottom: 4mm;
-  }
-  .features {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6mm;
-  }
-  .feature {
-    width: 32%;
-    font-size: 10pt;
-    line-height: 1.3;
-  }
-  .feature h3 { margin: 0 0 3mm 0; font-size: 12pt; }
-  .products {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6mm;
-  }
-  .product-card {
-    width: 32%;
-    text-align: center;
-    font-size: 10pt;
-  }
-  .product-card h4 {
-    font-size: 12pt;
-    margin: 3mm 0 2mm 0;
-  }
-  .cta {
-    text-align: center;
-    margin-top: 6mm;
-    font-size: 12pt;
-  }
-  .cta .phone { font-weight: bold; font-size: 14pt; }
-  .footer {
-    text-align: center;
-    font-size: 9pt;
-    margin-top: 8mm;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <title>IDM – On-Site Screening Solutions</title>
+
+  <!-- Existing site CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Print + A4 Overrides -->
+  <style>
+    @page {
+      size: 210mm 297mm;
+      margin: 0;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+
+    /* Bleed canvas */
+    .magazine-page {
+      width: 216mm;
+      height: 303mm;
+      padding: 9mm;
+      box-sizing: border-box;
+      background: #0a0a0a;
+      color: #fff;
+
+      display: grid;
+      grid-template-rows:
+        auto
+        auto
+        1fr
+        auto;
+      gap: 10mm;
+    }
+
+    /* Disable screen-only effects */
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    /* Typography tightening for print */
+    h1, h2, h3 {
+      line-height: 1.15;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    /* Compact cards */
+    .equipment-card,
+    .ps-problem,
+    .ps-solution,
+    .advantage-card {
+      box-shadow: none;
+    }
+
+    .equipment-image {
+      height: 160px;
+    }
+  </style>
 </head>
+
 <body>
+  <main class="magazine-page">
 
-<div class="container">
+    <!-- HERO -->
+    <section class="hero" style="
+      height: auto;
+      margin: 0;
+      padding: 25mm 10mm;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
+        url('images/108-WROKING.webp');
+      background-size: cover;
+      background-position: center;
+    ">
+      <div class="hero-badge">
+        On-Site Screening • Waste Reduction • Material Recovery
+      </div>
 
-  <!-- Hero/Headline -->
-  <section class="hero">
-    <h1>Turn Waste Into Profit On-Site</h1>
-    <p>Screen, grade and repurpose material right where you are — eliminate tip fees, reduce buy-in costs and create saleable products.</p>
-  </section>
+      <h1>
+        Turn Waste Into<br>
+        <span style="color:#ff6600;">Saleable Material</span>
+      </h1>
 
-  <!-- Feature Benefits -->
-  <section class="features">
-    <div class="feature">
-      <h3>Stop Throwing Money Away</h3>
-      <p>Needing more income? Paying tip fees to dump material that could be screened and reused on-site? Missing revenue opportunities from graded soil, stone and recycled products?</p>
-    </div>
-    <div class="feature">
-      <h3>The Solution</h3>
-      <p>Transform demolition rubble, excavation spoil and mixed material into graded, saleable products you can reuse or sell. Stop paying to dump valuable material.</p>
-    </div>
-    <div class="feature">
-      <h3>Built For NZ Conditions</h3>
-      <p>Heavy-duty construction made for contractors, quarries and earthmoving operations. 45° adjustable deck slope optimizes screening for any material or moisture level.</p>
-    </div>
-  </section>
+      <p class="hero-subtitle">
+        Screen, grade and repurpose soil, rubble and aggregate
+        directly on-site. Eliminate disposal costs and recover value
+        from material you already own.
+      </p>
+    </section>
 
-  <!-- Product Showcase -->
-  <section class="products">
-    <div class="product-card">
-      <h4>Proscreen SLG-108VFRB</h4>
-      <p>Heavy-Duty Screener — up to 45m³/hr<br>Screen sand, soil, rock, compost, wood debris & more.</p>
-    </div>
-    <div class="product-card">
-      <h4>Proscreen SLG-78VF</h4>
-      <p>Portable Topsoil & Rock Screener — up to 22m³/hr<br>Quiet operation & low vibration — contractors’ favourite.</p>
-    </div>
-    <div class="product-card">
-      <h4>Proscreen SLG-68V</h4>
-      <p>Compact Screener — 15–20m³/hr<br>Portable, easy to move around site, low maintenance design.</p>
-    </div>
-  </section>
+    <!-- PROBLEM / SOLUTION -->
+    <section class="problem-solution-section" style="padding:0;">
+      <div class="ps-container">
 
-  <!-- Call To Action -->
-  <section class="cta">
-    <p class="phone">Call Today: 0800 21 21 26</p>
-    <p>Email: info@sitemachinery.nz</p>
-  </section>
+        <div class="ps-problem">
+          <span class="ps-tag">The Problem</span>
+          <h2 class="ps-title">You’re Paying to Lose Money</h2>
 
-  <!-- Footer / Contact -->
-  <footer class="footer">
-    Site Machinery Ltd — Exclusive New Zealand supplier of DeSite screening equipment.<br>
-    105 Pascoe Street, Nelson | www.sitemachinery.nz | © 2026 SITE MACHINERY. All rights reserved.
-  </footer>
+          <div class="ps-item">
+            <span class="ps-icon">✕</span>
+            <p class="ps-text">Tip fees, transport and replacement material quietly erode margin.</p>
+          </div>
 
-</div>
+          <div class="ps-item">
+            <span class="ps-icon">✕</span>
+            <p class="ps-text">Perfectly usable material is dumped due to time and processing limits.</p>
+          </div>
+        </div>
 
+        <div class="ps-solution">
+          <span class="ps-tag">The Solution</span>
+          <h2 class="ps-title">Process It Where It Lands</h2>
+
+          <p class="ps-solution-intro">
+            IDM screening equipment allows contractors, quarries and operators
+            to convert waste into graded product immediately—without engines,
+            hydraulics or complex maintenance.
+          </p>
+
+          <div class="ps-item">
+            <span class="ps-icon">✓</span>
+            <p class="ps-text">Reduce disposal and haulage costs.</p>
+          </div>
+
+          <div class="ps-item">
+            <span class="ps-icon">✓</span>
+            <p class="ps-text">Create reusable or saleable material on-site.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EQUIPMENT -->
+    <section class="equipment-section" style="padding:0;">
+      <h2 class="section-title">Equipment Range</h2>
+      <p class="section-subtitle">
+        Proven designs. No engines. Built for New Zealand conditions.
+      </p>
+
+      <div class="equipment-grid">
+
+        <div class="equipment-card">
+          <img class="equipment-image" src="images/108-WROKING.webp" alt="">
+          <div class="equipment-content">
+            <span class="equipment-badge">Heavy Duty</span>
+            <h3>SLG-108VFRB</h3>
+            <p>High-capacity screener for soil, rubble and aggregate.</p>
+            <div class="equipment-specs">
+              <ul>
+                <li>Up to 45 m³ / hr</li>
+                <li>Adjustable deck angle</li>
+                <li>No hydraulics or engines</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="equipment-card">
+          <img class="equipment-image" src="images/78.webp" alt="">
+          <div class="equipment-content">
+            <span class="equipment-badge">Portable</span>
+            <h3>SLG-78VF</h3>
+            <p>Versatile screener for contractors and landscapers.</p>
+            <div class="equipment-specs">
+              <ul>
+                <li>Up to 22 m³ / hr</li>
+                <li>Compact footprint</li>
+                <li>Low maintenance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ADVANTAGES -->
+    <section class="advantages-section" style="padding:0;">
+      <div class="advantages-grid">
+
+        <div class="advantage-card">
+          <h3>No Engine</h3>
+          <p>Runs from existing machinery. No fuel, no servicing.</p>
+        </div>
+
+        <div class="advantage-card">
+          <h3>Low Wear</h3>
+          <p>Fewer moving parts. Built to survive harsh sites.</p>
+        </div>
+
+        <div class="advantage-card">
+          <h3>Immediate ROI</h3>
+          <p>Save on disposal. Reuse or sell recovered material.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta" style="padding:0;">
+      <h2>Stop Paying to Dump Value</h2>
+
+      <p>
+        IDM equipment is supplied and supported in New Zealand.
+        Speak directly with a specialist—not a sales script.
+      </p>
+
+      <div class="cta-buttons">
+        <span class="cta-primary">0800 21 21 26</span>
+        <span class="cta-secondary">sitemachinery.nz</span>
+      </div>
+
+    </section>
+
+  </main>
 </body>
 </html>
