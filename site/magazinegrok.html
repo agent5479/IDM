@@ -81,9 +81,21 @@
                 padding: 1mm !important;
                 margin: 0 !important;
                 min-height: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
             }
             .equipment-image {
-                height: 15mm !important;
+                width: 100% !important;
+                height: 18mm !important; /* Optimized height for A4: proportional to ~70mm card width (210mm/3), assuming ~1:1 aspect for machines; prevents distortion */
+                object-fit: cover !important; /* Crops to fit without stretching */
+                border-radius: 2mm !important;
+                margin-bottom: 1mm !important;
+            }
+            .equipment-content {
+                flex: 1 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
             }
             .profit-highlight { font-size: 12pt !important; color: #ff6600 !important; }
             .contact-info {
@@ -198,6 +210,8 @@
             border-color: #ff6600 !important;
             background: #1a1a1a !important;
             transition: none !important; /* Disable hover for print fit */
+            display: flex !important;
+            flex-direction: column !important;
         }
         .equipment-card h3 {
             color: #ff6600 !important;
@@ -209,7 +223,17 @@
             font-size: 0.7rem !important;
         }
         .equipment-image {
-            height: 40px !important; /* Compact for screen preview */
+            width: 100% !important;
+            height: 45px !important; /* Scaled up slightly from 40px for better screen aesthetics: ~1:2 aspect ratio for machine photos, fills card without overflow */
+            object-fit: cover !important; /* Maintains aspect, crops edges */
+            border-radius: 4px !important;
+            margin-bottom: 5px !important;
+        }
+        .equipment-content {
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
         }
         .profit {
             background: linear-gradient(135deg, #ff6600, #ff8533) !important;
@@ -267,6 +291,7 @@
             .equipment-grid { grid-template-columns: repeat(2, 1fr) !important; }
             .benefit-grid { grid-template-columns: 1fr !important; }
             .contact-info { grid-template-columns: 1fr !important; }
+            .equipment-image { height: 60px !important; } /* Slightly taller on mobile for thumb-friendliness */
         }
     </style>
 </head>
