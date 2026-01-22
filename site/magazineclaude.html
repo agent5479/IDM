@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Machinery - Full Page Magazine Ad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: 216mm 303mm;
+            margin: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .magazine-page {
+            width: 216mm;
+            height: 303mm;
+            position: relative;
+            background: #000;
+            overflow: hidden;
+        }
+        
+        /* Hero section with dramatic imagery */
+        .hero-section {
+            position: relative;
+            height: 145mm;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%),
+                        url('images/SLG108VFRB.jpg') center center / cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 15mm;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.5) 100%);
+        }
+        
+        .logo-top {
+            position: absolute;
+            top: 12mm;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .logo-top h1 {
+            font-size: 16mm;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.9);
+            letter-spacing: 1mm;
+            margin: 0;
+        }
+        
+        .logo-top p {
+            font-size: 4mm;
+            color: #ffd700;
+            font-weight: 600;
+            margin: 1mm 0 0 0;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+        
+        .headline {
+            position: relative;
+            z-index: 5;
+            margin-top: 25mm;
+        }
+        
+        .headline h2 {
+            font-size: 24mm;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -0.8mm;
+            line-height: 0.95;
+            text-shadow: 0 4px 25px rgba(0,0,0,0.9);
+            margin-bottom: 4mm;
+        }
+        
+        .headline .highlight {
+            color: #ffd700;
+            display: block;
+            font-size: 28mm;
+            text-shadow: 0 4px 25px rgba(0,0,0,0.9), 0 0 20px rgba(255,215,0,0.3);
+        }
+        
+        .subheadline {
+            font-size: 6.5mm;
+            color: #fff;
+            font-weight: 600;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+            max-width: 170mm;
+            margin: 0 auto;
+            line-height: 1.35;
+        }
+        
+        /* Content section - maximized space */
+        .content-section {
+            position: relative;
+            height: 158mm;
+            background: #fff;
+            padding: 10mm 12mm 8mm 12mm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Problem/Solution */
+        .value-prop {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 6mm 8mm;
+            border-radius: 2mm;
+            margin-bottom: 6mm;
+        }
+        
+        .value-prop h3 {
+            font-size: 7mm;
+            color: #ffd700;
+            font-weight: 800;
+            margin-bottom: 2mm;
+            text-transform: uppercase;
+        }
+        
+        .value-prop p {
+            font-size: 4mm;
+            color: #fff;
+            line-height: 1.4;
+        }
+        
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4mm 6mm;
+            margin-bottom: 6mm;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 3mm;
+        }
+        
+        .feature-icon {
+            width: 7mm;
+            height: 7mm;
+            background: #ffd700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 4.5mm;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .feature-text h4 {
+            font-size: 4.2mm;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 0.5mm;
+        }
+        
+        .feature-text p {
+            font-size: 3.3mm;
+            color: #444;
+            line-height: 1.3;
+        }
+        
+        /* Product showcase */
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4mm;
+            margin-bottom: 6mm;
+        }
+        
+        .product-card {
+            background: linear-gradient(to bottom, #f8f8f8 0%, #ececec 100%);
+            border-radius: 2mm;
+            overflow: hidden;
+            border: 1.5px solid #ddd;
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 30mm;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 3mm 3mm 3.5mm 3mm;
+        }
+        
+        .product-tag {
+            display: inline-block;
+            background: #ffd700;
+            color: #000;
+            font-size: 2.8mm;
+            font-weight: 700;
+            padding: 1mm 2mm;
+            border-radius: 1mm;
+            margin-bottom: 1.5mm;
+        }
+        
+        .product-info h5 {
+            font-size: 4.2mm;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 1mm;
+        }
+        
+        .product-info p {
+            font-size: 3mm;
+            color: #555;
+            line-height: 1.3;
+            margin-bottom: 0.5mm;
+        }
+        
+        .product-rate {
+            font-size: 3.3mm;
+            font-weight: 700;
+            color: #000;
+            margin-top: 1mm;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            padding: 6mm 8mm 7mm 8mm;
+            border-radius: 2mm;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .cta-content h3 {
+            font-size: 8mm;
+            color: #ffd700;
+            font-weight: 900;
+            margin-bottom: 3mm;
+            text-transform: uppercase;
+            letter-spacing: 0.5mm;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 8mm;
+            flex-wrap: wrap;
+            margin-bottom: 3mm;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 2mm;
+            color: #fff;
+            font-size: 4.5mm;
+            font-weight: 700;
+        }
+        
+        .contact-icon {
+            font-size: 4mm;
+        }
+        
+        .location {
+            color: #ccc;
+            font-size: 3.8mm;
+            margin-bottom: 3mm;
+            font-weight: 500;
+        }
+        
+        .bottom-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5mm;
+        }
+        
+        .desite-logo img {
+            height: 10mm;
+        }
+        
+        .tagline {
+            color: #999;
+            font-size: 3mm;
+            max-width: 110mm;
+            line-height: 1.4;
+            text-align: left;
+        }
+        
+        @media print {
+            body {
+                background: #fff;
+            }
+            .magazine-page {
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="magazine-page">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="logo-top">
+                <h1>SITE MACHINERY</h1>
+                <p>NEW ZEALAND</p>
+            </div>
+            
+            <div class="headline">
+                <h2>
+                    TURN WASTE<br>
+                    <span class="highlight">INTO PROFIT</span>
+                </h2>
+            </div>
+            <p class="subheadline">
+                Screen, grade and repurpose material right where you are — eliminate tip fees, reduce buy-in costs and create saleable products
+            </p>
+        </div>
+        
+        <!-- Content Section -->
+        <div class="content-section">
+            <!-- Value Proposition -->
+            <div class="value-prop">
+                <h3>Stop Throwing Money Away</h3>
+                <p>Transform demolition rubble, excavation spoil and mixed material into graded, saleable products. Stop paying to dump valuable material. Start generating revenue from every load while slashing your aggregate purchase costs.</p>
+            </div>
+            
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">
+                        <h4>Generate New Revenue</h4>
+                        <p>Create saleable products from waste material on-site</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">
+                        <h4>Heavy-Duty Construction</h4>
+                        <p>Built tough for New Zealand conditions</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">
+                        <h4>Low-Maintenance Design</h4>
+                        <p>No engine, belts or bearings to maintain</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">
+                        <h4>NZ-Based Support & Parts</h4>
+                        <p>Local expertise and fast service</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Showcase -->
+            <div class="product-showcase">
+                <div class="product-card">
+                    <img src="images/Proscreen_68.jpg" alt="SLG-68V Compact Screener">
+                    <div class="product-info">
+                        <span class="product-tag">Compact Power</span>
+                        <h5>Proscreen SLG-68V</h5>
+                        <p>Compact Portable Screener</p>
+                        <p>Easily moved around a worksite (544kg). Low maintenance. Built to last.</p>
+                        <p class="product-rate">15-20m³/hour</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="images/Proscreen_SLG78VFII_home.jpg" alt="SLG-78VF Best Seller">
+                    <div class="product-info">
+                        <span class="product-tag">Best Seller</span>
+                        <h5>Proscreen SLG-78VF</h5>
+                        <p>Portable Topsoil & Rock Screener</p>
+                        <p>Multi-slope adjustable deck. One of the quietest operating screeners.</p>
+                        <p class="product-rate">15-25m³/hour</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="images/SLG108VFRB.jpg" alt="SLG-108VFRB Heavy Duty">
+                    <div class="product-info">
+                        <span class="product-tag">Heavy Duty</span>
+                        <h5>Proscreen SLG-108VFRB</h5>
+                        <p>Topsoil & Rock Screener</p>
+                        <p>Capable of screening multiple mediums. Dual centre & side tensioned mesh.</p>
+                        <p class="product-rate">25-40m³/hour</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h3>Ready to Make Profits?</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>0800 21 21 26</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉</span>
+                            <span>info@sitemachinery.nz</span>
+                        </div>
+                    </div>
+                    <p class="location">📍 105 Pascoe Street, Nelson | www.sitemachinery.nz</p>
+                    <div class="bottom-row">
+                        <div class="desite-logo">
+                            <img src="images/DeSite-logo-white-r44a2pmbn2yn6hl0yhaaq77s2xxzv9y262cgg8smho.webp" alt="DeSite Logo">
+                        </div>
+                        <p class="tagline">Exclusive specialist supplier of DeSite small and medium scale soil, gravel and earthmoving processing equipment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
