@@ -1,298 +1,504 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DeSite Grizzly Screens – Heavy-Duty Pre-Screening</title>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f5f5;
-    display:flex;justify-content:center;align-items:center;
-    min-height:100vh;padding:20px;
-  }
-
-  .ad-container{
-    width:8.375in; height:10.875in;
-    background:linear-gradient(135deg,#1a1a1a,#2d2d2d);
-    position:relative; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.3);
-    color:#222; display:flex; flex-direction:column;
-  }
-
-  /* HERO - 28% */
-  .hero-section{
-    height:28%;
-    background:
-      linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
-      url('https://idmcabc.com/wp-content/uploads/2024/03/108-WROKING.webp');
-    background-size:cover; background-position:center 40%;
-    position:relative; display:flex; flex-direction:column; justify-content:flex-end;
-    padding:24px 35px;
-  }
-
-  .logo-area{
-    position:absolute; top:20px; left:35px;
-    background:rgba(255,255,255,0.97); padding:8px 16px; border-radius:5px;
-    font-weight:900; font-size:24px; letter-spacing:3px; color:#ff6600;
-    border:3px solid #ff6600; box-shadow:0 4px 20px rgba(0,0,0,.4);
-  }
-
-  .exclusive-tag{
-    position:absolute; top:20px; right:35px;
-    background:rgba(255,255,255,0.92); padding:6px 12px; border-radius:4px;
-    font-weight:700; font-size:11px; color:#222; letter-spacing:1px;
-  }
-
-  .headline{
-    color:#fff; font-size:40px; font-weight:900; line-height:1.05;
-    text-transform:uppercase; margin-bottom:10px; max-width:70%;
-    text-shadow:4px 4px 12px rgba(0,0,0,.9); letter-spacing:-1px;
-  }
-
-  .subheadline{
-    color:#ffa500; font-size:16px; font-weight:600; max-width:72%;
-    text-shadow:2px 2px 10px rgba(0,0,0,.9);
-  }
-
-  /* MAIN GRID SECTION - 46% */
-  .main-grid{
-    height:46%; background:#fff; padding:20px 35px;
-    display:grid; grid-template-columns:1fr 280px; gap:20px;
-  }
-
-  /* Left column content */
-  .content-column{}
-
-  .pain-points{
-    background:linear-gradient(135deg,#fff3e6,#ffe6cc);
-    border-left:4px solid #ff6600; padding:10px 12px; margin-bottom:12px;
-    border-radius:4px; box-shadow:0 3px 12px rgba(255,102,0,.15);
-  }
-
-  .pain-points-title{
-    font-size:14px; font-weight:900; color:#ff6600; margin-bottom:8px;
-    text-transform:uppercase; letter-spacing:0.5px;
-  }
-
-  .pain-point{
-    display:flex; align-items:flex-start; gap:7px; margin-bottom:7px;
-  }
-
-  .pain-point:last-child{ margin-bottom:0; }
-
-  .pain-icon{
-    color:#ff6600; font-size:14px; font-weight:900; flex-shrink:0; margin-top:1px;
-  }
-
-  .pain-text{
-    font-size:10.5px; line-height:1.4; color:#2a2a2a;
-  }
-
-  .pain-highlight{
-    font-weight:800; color:#cc5200;
-  }
-
-  .solution-section{
-    margin-bottom:12px;
-  }
-
-  .solution-title{
-    font-size:13px; font-weight:900; color:#222; margin-bottom:6px;
-    border-bottom:3px solid #ff6600; padding-bottom:3px; display:inline-block;
-  }
-
-  .body-text{
-    font-size:10.5px; line-height:1.5; color:#2a2a2a; margin-bottom:10px;
-  }
-
-  .features-grid{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:7px; margin-bottom:10px;
-  }
-
-  .feature-item{
-    background:linear-gradient(135deg,#ff6600,#ff8533); color:#fff;
-    padding:7px; border-radius:4px; font-size:9.5px; font-weight:700;
-    text-align:center; box-shadow:0 3px 10px rgba(255,102,0,.35);
-  }
-
-  .cta-text-inline{
-    font-weight:800;color:#ff6600;font-size:11px;line-height:1.4;
-  }
-
-  /* Right column - images */
-  .images-column{
-    display:flex; flex-direction:column; gap:8px;
-  }
-
-  .showcase-card{
-    flex:1; border-radius:5px; overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.3); border:2px solid #f0f0f0;
-    position: relative; /* Ensures absolute positioning context for caption */
-    display: flex; flex-direction: column; /* Stack image and content vertically */
-  }
-
-  .showcase-img{
-    width:100%; 
-    height: 100%; /* Fills the card's flex space */
-    flex: 1; /* Takes available space above caption */
-    object-fit: cover; /* Crops to fit without distortion, maintaining aspect ratio */
-    display:block;
-    background:#e0e0e0;
-  }
-
-  .showcase-caption{
-    padding:5px; font-weight:800; font-size:8.5px; color:#fff;
-    background:rgba(0,0,0,0.75); /* Semi-transparent black for better readability over image */
-    text-align:center; line-height:1.2;
-    position: absolute; /* Overlay on bottom of image */
-    bottom: 0; left: 0; right: 0;
-    /* Improved alignment: subtle fade or just centered text */
-    background: linear-gradient(transparent, rgba(0,0,0,0.8)); /* Gradient fade-up for seamless overlay */
-    margin: 0; /* Remove any inherited margins */
-  }
-
-  /* CTA SECTION - 14% */
-  .cta-section{
-    height:14%; background:linear-gradient(135deg,#ff6600,#cc5200);
-    display:flex; align-items:center; padding:0 35px; gap:18px;
-  }
-
-  .cta-content{ flex:1; color:#fff; }
-  .cta-headline{ font-size:26px; font-weight:900; margin-bottom:6px; text-transform:uppercase; }
-  .cta-text{ font-size:13px; font-weight:500; line-height:1.4; }
-
-  .qr-section{ background:#fff; padding:10px; border-radius:6px; box-shadow:0 5px 20px rgba(0,0,0,.35); }
-  .qr-code{ width:110px; height:110px; display:block; border:2px solid #f0f0f0; }
-  .qr-label{ font-size:10px; font-weight:700; text-align:center; margin-top:5px; }
-
-  /* FOOTER - 8% */
-  .footer{
-    height:8%; background:#111; color:#fff; display:flex; 
-    justify-content:space-between; align-items:center;
-    padding:0 35px; font-size:10px;
-  }
-  .company-name{ font-size:15px; font-weight:900; color:#ff6600; }
-  .tagline{ font-style:italic; color:#ffa500; font-weight:600; display:block; margin-bottom:3px; }
-  .contact-info{ line-height:1.5; color:#ddd; }
-
-  .accent-bar{ position:absolute; bottom:0; left:0; width:100%; height:3px;
-    background:linear-gradient(90deg,#ff6600,#ffa500,#ff6600);
-  }
-
-  @media print{
-    .ad-container{ box-shadow:none; }
-    .showcase-caption { /* Print-specific: Ensure captions don't bleed oddly */
-      background: rgba(0,0,0,0.9) !important; /* Solid for ink */
-    }
-  }
-
-  /* Responsive tweaks for preview (non-print) */
-  @media (max-width: 8.5in) {
-    .main-grid { grid-template-columns: 1fr; gap: 10px; } /* Stack on smaller screens */
-    .images-column { flex-direction: row; justify-content: space-between; }
-    .showcase-card { flex: 1 1 30%; } /* Horizontal on mobile preview */
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Machinery - Full Page Magazine Ad</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+       
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+       
+        /* A4 Magazine page - 210mm x 297mm with 3mm bleed = 216mm x 303mm */
+        .ad-container {
+            width: 216mm;
+            height: 303mm;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            color: #222;
+            display: flex;
+            flex-direction: column;
+        }
+       
+        /* HERO SECTION - 30% */
+        .hero-section {
+            height: 30%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.75)),
+                        url('images/SLG108VFRB.jpg');
+            background-size: cover;
+            background-position: center 40%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px 40px;
+        }
+       
+        .logo-area {
+            position: absolute;
+            top: 22px;
+            left: 40px;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 8px 18px;
+            border-radius: 5px;
+            font-weight: 900;
+            font-size: 26px;
+            letter-spacing: 3px;
+            color: #ff6600;
+            border: 3px solid #ff6600;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+       
+        .tagline-badge {
+            position: absolute;
+            top: 22px;
+            right: 40px;
+            background: rgba(255, 166, 0, 0.95);
+            padding: 7px 14px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 11px;
+            color: #000;
+            letter-spacing: 0.5px;
+            max-width: 200px;
+            line-height: 1.3;
+        }
+       
+        .headline {
+            color: #fff;
+            font-size: 44px;
+            font-weight: 900;
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            max-width: 70%;
+            text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.9);
+            letter-spacing: -1px;
+        }
+       
+        .subheadline {
+            color: #ffa500;
+            font-size: 17px;
+            font-weight: 600;
+            max-width: 72%;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+            line-height: 1.35;
+        }
+       
+        /* MAIN GRID SECTION - 46% */
+        .main-grid {
+            height: 46%;
+            background: #fff;
+            padding: 18px 35px; /* Tightened from 22px 40px to pull content up */
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 18px; /* Tightened from 22px */
+        }
+       
+        /* Left column content */
+        .content-column {}
+       
+        .pain-points {
+            background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+            border-left: 4px solid #dc2626;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            border-radius: 4px;
+            box-shadow: 0 3px 12px rgba(220, 38, 38, 0.15);
+        }
+       
+        .pain-points-title {
+            font-size: 15px;
+            font-weight: 900;
+            color: #dc2626;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+       
+        .pain-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+       
+        .pain-point:last-child {
+            margin-bottom: 0;
+        }
+       
+        .pain-icon {
+            color: #dc2626;
+            font-size: 15px;
+            font-weight: 900;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+       
+        .pain-text {
+            font-size: 11px;
+            line-height: 1.45;
+            color: #2a2a2a;
+        }
+       
+        .pain-highlight {
+            font-weight: 800;
+            color: #991b1b;
+        }
+       
+        .solution-section {
+            background: linear-gradient(135deg, #e6fff0, #ccffe6);
+            border-left: 4px solid #16a34a;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            border-radius: 4px;
+            box-shadow: 0 3px 12px rgba(22, 163, 74, 0.15);
+        }
+       
+        .solution-title {
+            font-size: 15px;
+            font-weight: 900;
+            color: #16a34a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+       
+        .body-text {
+            font-size: 11px;
+            line-height: 1.55;
+            color: #2a2a2a;
+            margin-bottom: 12px;
+        }
+       
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+       
+        .feature-item {
+            background: linear-gradient(135deg, #ff6600, #ff8533);
+            color: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(255, 102, 0, 0.35);
+            line-height: 1.3;
+        }
+       
+        .cta-text-inline {
+            font-weight: 800;
+            color: #ff6600;
+            font-size: 11.5px;
+            line-height: 1.5;
+        }
+       
+        /* Right column - product images */
+        .images-column {
+            display: flex;
+            flex-direction: column;
+            gap: 6px; /* Tightened from 10px to compress stack */
+        }
+       
+        .product-card {
+            flex: 1;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 2px solid #e0e0e0;
+            position: relative;
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column; /* Ensures vertical stacking within card */
+        }
+       
+        .product-img {
+            width: 100%;
+            height: 100%;
+            flex: 1; /* Fills available space above info */
+            object-fit: cover;
+            display: block;
+        }
+       
+        .product-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: linear-gradient(135deg, #ff6600, #ff8533);
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+       
+        .product-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.7));
+            color: #fff;
+            padding: 6px 8px; /* Tightened from 8px 10px */
+        }
+       
+        .product-name {
+            font-weight: 900;
+            font-size: 11px;
+            margin-bottom: 2px;
+            color: #ffa500;
+        }
+       
+        .product-spec {
+            font-size: 9px;
+            line-height: 1.3;
+            color: #e0e0e0;
+        }
+       
+        /* CTA SECTION - 14% */
+        .cta-section {
+            height: 14%;
+            background: linear-gradient(135deg, #ff6600, #cc5200);
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            gap: 20px;
+        }
+       
+        .cta-content {
+            flex: 1;
+            color: #fff;
+        }
+       
+        .cta-headline {
+            font-size: 30px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+       
+        .cta-text {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.45;
+        }
+       
+        .qr-section {
+            background: #fff;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+       
+        .qr-code {
+            width: 120px;
+            height: 120px;
+            display: block;
+            border: 2px solid #f0f0f0;
+        }
+       
+        .qr-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 6px;
+            color: #222;
+        }
+       
+        /* FOOTER - 10% */
+        .footer {
+            height: 10%;
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            font-size: 11px;
+        }
+       
+        .company-name {
+            font-size: 18px;
+            font-weight: 900;
+            color: #ff6600;
+            margin-bottom: 4px;
+        }
+       
+        .tagline {
+            font-style: italic;
+            color: #ffa500;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 10px;
+        }
+       
+        .contact-info {
+            line-height: 1.6;
+            color: #ddd;
+            font-size: 10px;
+        }
+       
+        .accent-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6600, #ffa500, #ff6600);
+        }
+       
+        @media print {
+            body {
+                background: #fff;
+            }
+            .ad-container {
+                box-shadow: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="ad-container">
-    <div class="hero-section">
-      <div class="logo-area">IDM</div>
-      <div class="exclusive-tag">Exclusive NZ Importer – SITE Machinery NZ</div>
-      <div class="headline">Turn Waste into<br>Profit On-Site</div>
-      <div class="subheadline">Screen, grade and repurpose material right where you are — eliminate tip fees, reduce buy-in costs and create saleable products</div>
+    <div class="ad-container">
+        <!-- HERO SECTION -->
+        <div class="hero-section">
+            <div class="logo-area">SITE MACHINERY</div>
+            <div class="tagline-badge">Affordable, top quality soil screening machines</div>
+            <div class="headline">Turn Waste Into<br>Profit On-Site</div>
+            <div class="subheadline">Screen, grade and repurpose material right where you are — eliminate tip fees, reduce buy-in costs and create saleable products</div>
+        </div>
+       
+        <!-- MAIN GRID SECTION -->
+        <div class="main-grid">
+            <div class="content-column">
+                <!-- Pain Points -->
+                <div class="pain-points">
+                    <div class="pain-points-title">⚠ Stop Throwing Money Away</div>
+                   
+                    <div class="pain-point">
+                        <div class="pain-icon">✗</div>
+                        <div class="pain-text"><span class="pain-highlight">Paying tip fees</span> to dump material that could be screened and reused on-site?</div>
+                    </div>
+                   
+                    <div class="pain-point">
+                        <div class="pain-icon">✗</div>
+                        <div class="pain-text"><span class="pain-highlight">Buying aggregate and fill</span> when you've got perfectly good material going to landfill?</div>
+                    </div>
+                   
+                    <div class="pain-point">
+                        <div class="pain-icon">✗</div>
+                        <div class="pain-text"><span class="pain-highlight">Missing revenue opportunities</span> from graded soil, stone and recycled products you could be selling?</div>
+                    </div>
+                   
+                    <div class="pain-point">
+                        <div class="pain-icon">✗</div>
+                        <div class="pain-text"><span class="pain-highlight">Hauling costs eating profits</span> — trucking material away then trucking new material back in?</div>
+                    </div>
+                </div>
+               
+                <!-- Solution Section -->
+                <div class="solution-section">
+                    <div class="solution-title">✓ Screen, Grade & Sell Material On-Site</div>
+                    <p class="body-text">
+                        Transform demolition rubble, excavation spoil and mixed material into graded, saleable products. Our screens separate oversize from usable stone, soil and aggregate — creating clean fill, road base and stockpile material you can reuse or sell. Stop paying to dump valuable material. Start generating revenue from every load while slashing your aggregate purchase costs.
+                    </p>
+                </div>
+               
+                <!-- Features Grid -->
+                <div class="features-grid">
+                    <div class="feature-item">✓ HEAVY-DUTY CONSTRUCTION<br>Built tough for NZ conditions</div>
+                    <div class="feature-item">✓ 45° ADJUSTABLE DECK SLOPE<br>Optimize for any material type</div>
+                    <div class="feature-item">✓ LOW-MAINTENANCE DESIGN<br>No engine, belts or bearings</div>
+                    <div class="feature-item">✓ NZ-BASED SUPPORT & PARTS<br>Local expertise and fast service</div>
+                </div>
+               
+                <p class="cta-text-inline">
+                    Perfect for quarries, demolition contractors, earthmoving operations and material supply yards. Stop dumping profits — start screening them.
+                </p>
+            </div>
+           
+            <!-- Images Column -->
+            <div class="images-column">
+                <div class="product-card">
+                    <img class="product-img" src="images/Proscreen_68.jpg" alt="SLG-68V">
+                    <div class="product-badge">Compact Power</div>
+                    <div class="product-info">
+                        <div class="product-name">Proscreen SLG-68V</div>
+                        <div class="product-spec">Compact (544kg) • 15-20m³/hour</div>
+                    </div>
+                </div>
+               
+                <div class="product-card">
+                    <img class="product-img" src="images/Proscreen_SLG78VFII_home.jpg" alt="SLG-78VF">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-info">
+                        <div class="product-name">Proscreen SLG-78VF</div>
+                        <div class="product-spec">Portable (907kg) • Up to 22m³/hour</div>
+                    </div>
+                </div>
+               
+                <div class="product-card">
+                    <img class="product-img" src="images/SLG108VFRB.jpg" alt="SLG-108VFRB">
+                    <div class="product-badge">Heavy Duty</div>
+                    <div class="product-info">
+                        <div class="product-name">Proscreen SLG-108VFRB</div>
+                        <div class="product-spec">Heavy-Duty • Up to 45m³/hour</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- CTA SECTION -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <div class="cta-headline">Ready to Make Profits?</div>
+                <div class="cta-text">Contact us today to discuss your screening needs and choose the right equipment for your operation</div>
+            </div>
+           
+            <div class="qr-section">
+                <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://agent5479.github.io/IDM/site/" alt="Visit our website">
+                <div class="qr-label">Scan for Details</div>
+            </div>
+        </div>
+       
+        <!-- FOOTER -->
+        <div class="footer">
+            <div>
+                <div class="company-name">SITE MACHINERY NZ</div>
+                <div class="tagline">Exclusive specialist supplier of DeSite equipment</div>
+                <div class="contact-info">Email: info@sitemachinery.nz</div>
+            </div>
+           
+            <div style="text-align: right;">
+                <div class="contact-info">Showroom: 105 Pascoe St, Nelson</div>
+                <div class="contact-info">Phone: 03 970 7602 • 0800 21 21 26</div>
+            </div>
+        </div>
+       
+        <div class="accent-bar"></div>
     </div>
-
-    <div class="main-grid">
-      <div class="content-column">
-        <div class="pain-points">
-          <div class="pain-points-title">⚠ Stop Throwing Money Away</div>
-          
-          <div class="pain-point">
-            <div class="pain-icon">✗</div>
-            <div class="pain-text"><span class="pain-highlight">Paying tip fees</span> to dump material that could be screened and reused on-site?</div>
-          </div>
-          
-          <div class="pain-point">
-            <div class="pain-icon">✗</div>
-            <div class="pain-text"><span class="pain-highlight">Buying aggregate and fill</span> when you've got perfectly good material going to landfill?</div>
-          </div>
-          
-          <div class="pain-point">
-            <div class="pain-icon">✗</div>
-            <div class="pain-text"><span class="pain-highlight">Missing revenue opportunities</span> from graded soil, stone and recycled products you could be selling?</div>
-          </div>
-          
-          <div class="pain-point">
-            <div class="pain-icon">✗</div>
-            <div class="pain-text"><span class="pain-highlight">Hauling costs eating profits</span> — trucking material away then trucking new material back in?</div>
-          </div>
-        </div>
-
-        <div class="solution-section">
-          <div class="solution-title">✓ Screen, Grade & Sell Material On-Site</div>
-          <p class="body-text">
-            Transform demolition rubble, excavation spoil and mixed material into graded, saleable products. We offer a **variety of screens and meshes** — from the large-aperture **Grizzly Screens** for heavy pre-screening (perfect for high-scale processing yards) to electrically powered **vibratory screens** for finer **Reuse, Recycle, Reduce** operations. Stop paying to dump valuable material. Start generating revenue from every load while slashing your aggregate purchase costs.
-          </p>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-item">✓ HEAVY-DUTY CONSTRUCTION</div>
-          <div class="feature-item">Adjust deck angle with bucket cutting edge</div>
-          <div class="feature-item">✓ LOW-MAINTENANCE DESIGN</div>
-          <div class="feature-item">✓ NZ-BASED SUPPORT & PARTS</div>
-        </div>
-
-        <p class="cta-text-inline">
-          Perfect for quarries, demolition contractors, earthmoving operations and material supply yards. Stop dumping profits — start screening them.
-        </p>
-      </div>
-
-      <div class="images-column">
-        <div class="showcase-card">
-          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Grizzly-Screener-in-action-Gallery-1.webp" alt="Grizzly in Action">
-          <div class="showcase-caption">High productivity screening</div>
-        </div>
-
-        <div class="showcase-card">
-          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Spring-suspension-system-1.webp" alt="Spring Suspension">
-          <div class="showcase-caption">Rugged Screen Deck Suspension</div>
-        </div>
-
-        <div class="showcase-card">
-          <img class="showcase-img" src="https://idmcabc.com/wp-content/uploads/2024/08/SLG-78-STATIC-Bucket-Trasport-Lugs-2.webp" alt="Transport Details">
-          <div class="showcase-caption">Pick up and shift using Bucket Cutting edge Lift Extensions</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cta-section">
-      <div class="cta-content">
-        <div class="cta-headline">Ready to Upgrade?</div>
-        <div class="cta-text">Scan the QR code to view our full machine range, video demonstrations, specifications & contact us</div>
-      </div>
-
-      <div class="qr-section">
-        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://beliefmastery.github.io/site/IDM/sales.html" alt="Scan for machine info">
-        <div class="qr-label">Scan for Info</div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>
-        <div class="company-name">SITE Machinery NZ</div>
-        <div class="tagline">NZ Distributor of IDM Screening Solutions</div>
-        <div class="contact-info">Email: info@sitemachinery.nz</div>
-      </div>
-
-      <div style="text-align:right;">
-        <div class="contact-info">Web: https://www.sitemachinery.nz/</div>
-        <div class="contact-info">Phone: 03 970 7602 • 0800 21 21 26</div>
-      </div>
-    </div>
-
-    <div class="accent-bar"></div>
-  </div>
 </body>
 </html>
