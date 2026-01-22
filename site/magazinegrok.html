@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Machinery NZ - Turn Waste Into PROFIT!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Impact&family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .hero {
+            height: 100vh;
+            background-image: url('https://desiteproducts.com/wp-content/uploads/2024/09/SLG-108-VFRB-WRB-Desktop-in-action-3_.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 90%;
+        }
+        .hero h1 {
+            font-family: 'Impact', sans-serif;
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            color: #FFD700; /* Gold for profit */
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 10px 0 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        .benefits {
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, #2c5f2d, #4a7c59); /* Earthy green */
+            color: white;
+            text-align: center;
+        }
+        .benefits h2 {
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FFD700;
+        }
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .benefit-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            margin: 0 0 10px;
+        }
+        .checkmark {
+            font-size: 2rem;
+            color: #FFD700;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .products {
+            padding: 40px 20px;
+            background: white;
+        }
+        .products h2 {
+            text-align: center;
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5rem;
+            color: #2c5f2d;
+            margin-bottom: 40px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            text-align: center;
+            border: 2px solid #4a7c59;
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .product-card h3 {
+            font-family: 'Impact', sans-serif;
+            color: #2c5f2d;
+            margin: 10px 0;
+        }
+        .product-card p {
+            font-weight: bold;
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+        .profit {
+            background: #FFD700;
+            color: #2c5f2d;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .profit h2 {
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .profit-highlight {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 10px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .cta {
+            padding: 40px 20px;
+            background: #2c5f2d;
+            color: white;
+            text-align: center;
+        }
+        .cta h2 {
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .contact-item {
+            font-size: 1.1rem;
+        }
+        .contact-item strong {
+            display: block;
+            font-size: 1.3rem;
+            color: #FFD700;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .profit-highlight { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Turn Waste Into PROFIT!</h1>
+                <p>Screen, Grade & Repurpose On-Site — Eliminate Tip Fees & Create Saleable Products</p>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <h2>Why Choose Site Machinery NZ?</h2>
+            <div class="benefit-grid">
+                <div class="benefit-item">
+                    <span class="checkmark">✓</span>
+                    <h3>Generate Revenue</h3>
+                    <p>Create saleable products from waste material — up to $900+/hr with dual setups!</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✓</span>
+                    <h3>Heavy-Duty Build</h3>
+                    <p>Tough construction for rugged NZ conditions — screens gravel, rocks, recycled asphalt & more.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✓</span>
+                    <h3>Low Maintenance</h3>
+                    <p>No engine, belts or bearings — quiet, efficient vibratory screening that just works.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="checkmark">✓</span>
+                    <h3>NZ-Based Support</h3>
+                    <p>Local expertise, fast parts & service — exclusive supplier of DeSite equipment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products">
+            <h2>Our Premium Screening Solutions</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://desiteproducts.com/wp-content/uploads/2024/08/Screener-SLG48.webp" alt="SLG-68V Compact Screener in action">
+                    <h3>SLG-68V</h3>
+                    <p>Compact & Portable<br>15-20m³/hr</p>
+                    <p>Perfect for mini equipment & tight sites</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://i.ytimg.com/vi/cqIWROF4W0Y/maxresdefault.jpg" alt="SLG-78VF Best Seller Screener">
+                    <h3>SLG-78VF</h3>
+                    <p>Best Seller<br>15-25m³/hr</p>
+                    <p>Multi-slope deck for topsoil & aggregates</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://desiteproducts.com/wp-content/uploads/2024/09/SLG-108-VFRB-WRB-Desktop-in-action-3_.webp" alt="SLG-108VFRB Heavy Duty Screener">
+                    <h3>SLG-108VFRB</h3>
+                    <p>Heavy Duty<br>25-40m³/hr</p>
+                    <p>High-volume rock & demolition processing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profit Section -->
+        <section class="profit">
+            <h2>Unlock Massive Profits</h2>
+            <p class="profit-highlight">$320/hr from a single machine*</p>
+            <p>*Based on 10m³/hr saleable at $20-45/m³. Scale up for quarries & demo sites!</p>
+            <p>💡 Pro Tip: Dual screens = $900+ revenue per hour. Stop hauling — start selling!</p>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <h2>Ready to Make PROFITS?</h2>
+            <p>Exclusive NZ Supplier of DeSite Screening Equipment</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Call Now</strong>
+                    0800 21 21 26
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    info@sitemachinery.nz
+                </div>
+                <div class="contact-item">
+                    <strong>Visit</strong>
+                    105 Pascoe Street, Nelson
+                </div>
+                <div class="contact-item">
+                    <strong>Online</strong>
+                    www.sitemachinery.nz
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.9rem;">View machines in action at our Nelson yard. NZ-wide delivery.</p>
+        </section>
+    </div>
+</body>
+</html>
