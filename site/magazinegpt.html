@@ -1,230 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>IDM – On-Site Screening Solutions</title>
+<meta charset="UTF-8">
+<title>IDM Screening Systems – Magazine Ad</title>
 
-  <!-- Existing site CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="https://raw.githubusercontent.com/agent5479/IDM/main/site/css/styles.css">
 
-  <!-- Print + A4 Overrides -->
-  <style>
-    @page {
-      size: 210mm 297mm;
-      margin: 0;
-    }
+<style>
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 210mm;
-      height: 297mm;
-      overflow: hidden;
-      background: #0a0a0a;
-    }
+/* =========================
+   A4 PRINT SETUP
+   ========================= */
+@page {
+  size: 210mm 297mm;
+  margin: 0;
+}
 
-    /* Bleed canvas */
-    .magazine-page {
-      width: 216mm;
-      height: 303mm;
-      padding: 9mm;
-      box-sizing: border-box;
-      background: #0a0a0a;
-      color: #fff;
+html, body {
+  width: 210mm;
+  height: 297mm;
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+}
 
-      display: grid;
-      grid-template-rows:
-        auto
-        auto
-        1fr
-        auto;
-      gap: 10mm;
-    }
+/* =========================
+   PAGE GRID
+   ========================= */
+.page {
+  width: 216mm;       /* bleed */
+  height: 303mm;
+  margin: -3mm;
+  display: grid;
+  grid-template-rows:
+    90mm   /* HERO IMAGE */
+    48mm   /* VALUE BLOCK */
+    92mm   /* MACHINES */
+    40mm   /* PROFIT */
+    33mm;  /* CTA */
+  background: #0a0a0a;
+}
 
-    /* Disable screen-only effects */
-    * {
-      animation: none !important;
-      transition: none !important;
-    }
+/* =========================
+   HERO
+   ========================= */
+.hero {
+  position: relative;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.85)),
+    url("https://desiteproducts.com/wp-content/uploads/2024/09/SLG-108-VFRB-WRB-Desktop-in-action-3_.webp");
+  background-size: cover;
+  background-position: center;
+}
 
-    /* Typography tightening for print */
-    h1, h2, h3 {
-      line-height: 1.15;
-    }
+.hero-content {
+  position: absolute;
+  bottom: 16mm;
+  left: 14mm;
+  max-width: 150mm;
+}
 
-    p {
-      line-height: 1.5;
-    }
+.hero h1 {
+  font-size: 22pt;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin: 0 0 3mm 0;
+}
 
-    /* Compact cards */
-    .equipment-card,
-    .ps-problem,
-    .ps-solution,
-    .advantage-card {
-      box-shadow: none;
-    }
+.hero p {
+  font-size: 10pt;
+  color: #f2b705;
+}
 
-    .equipment-image {
-      height: 160px;
-    }
-  </style>
+.hero-tag {
+  position: absolute;
+  top: 10mm;
+  left: 14mm;
+  font-size: 9pt;
+  letter-spacing: .12em;
+  opacity: .85;
+}
+
+/* =========================
+   VALUE STRIP
+   ========================= */
+.value {
+  padding: 10mm 14mm;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8mm;
+  background: #111;
+}
+
+.value h3 {
+  font-size: 11pt;
+  color: #ff6600;
+  margin-bottom: 2mm;
+}
+
+.value p {
+  font-size: 9pt;
+  line-height: 1.4;
+}
+
+/* =========================
+   MACHINES
+   ========================= */
+.machines {
+  padding: 10mm 14mm;
+}
+
+.machine-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 6mm;
+}
+
+/* HERO MACHINE */
+.machine.hero-machine {
+  grid-row: 1 / span 2;
+}
+
+.machine {
+  background: #141414;
+  padding: 4mm;
+  border: 1px solid #ff6600;
+}
+
+.machine img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #000;
+  padding: 3mm;
+}
+
+.machine h4 {
+  font-size: 11pt;
+  color: #ff6600;
+  margin: 3mm 0 1mm 0;
+}
+
+.machine p {
+  font-size: 9pt;
+  line-height: 1.35;
+}
+
+/* =========================
+   PROFIT
+   ========================= */
+.profit {
+  background: linear-gradient(135deg, #ff6600, #ff8533);
+  color: #000;
+  padding: 8mm 14mm;
+}
+
+.profit h2 {
+  font-size: 16pt;
+  margin: 0;
+}
+
+.profit strong {
+  font-size: 20pt;
+  display: block;
+  margin: 2mm 0;
+}
+
+/* =========================
+   CTA
+   ========================= */
+.cta {
+  padding: 8mm 14mm;
+  background: #111;
+  font-size: 9pt;
+}
+
+.cta strong {
+  font-size: 11pt;
+  color: #ff6600;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+  margin-top: 3mm;
+}
+
+</style>
 </head>
 
 <body>
-  <main class="magazine-page">
 
-    <!-- HERO -->
-    <section class="hero" style="
-      height: auto;
-      margin: 0;
-      padding: 25mm 10mm;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
-        url('images/108-WROKING.webp');
-      background-size: cover;
-      background-position: center;
-    ">
-      <div class="hero-badge">
-        On-Site Screening • Waste Reduction • Material Recovery
+<div class="page">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">INDUSTRIAL SCREENING SYSTEMS</div>
+    <div class="hero-content">
+      <h1>Turn Waste<br>Into Saleable Material</h1>
+      <p>On-site screening. No engine. No hydraulics. Serious throughput.</p>
+    </div>
+  </section>
+
+  <!-- VALUE -->
+  <section class="value">
+    <div>
+      <h3>Stop Paying Tip Fees</h3>
+      <p>Screen and recover usable material where it lands. Reduce haulage and disposal instantly.</p>
+    </div>
+    <div>
+      <h3>Built for Harsh Feed</h3>
+      <p>Designed for soil, rubble, aggregate and oversize without babysitting or downtime.</p>
+    </div>
+    <div>
+      <h3>NZ-Based Support</h3>
+      <p>Local supply, parts and real technical advice. No offshore runaround.</p>
+    </div>
+  </section>
+
+  <!-- MACHINES -->
+  <section class="machines">
+    <div class="machine-grid">
+
+      <div class="machine hero-machine">
+        <img src="https://desiteproducts.com/wp-content/uploads/2024/09/SLG-108-VFRB-WRB-Desktop-in-action-3_.webp">
+        <h4>SLG-108VFRB</h4>
+        <p>
+          High-throughput pre-screening<br>
+          Up to 45m³/hr<br>
+          Adjustable deck • Heavy-duty build
+        </p>
       </div>
 
-      <h1>
-        Turn Waste Into<br>
-        <span style="color:#ff6600;">Saleable Material</span>
-      </h1>
-
-      <p class="hero-subtitle">
-        Screen, grade and repurpose soil, rubble and aggregate
-        directly on-site. Eliminate disposal costs and recover value
-        from material you already own.
-      </p>
-    </section>
-
-    <!-- PROBLEM / SOLUTION -->
-    <section class="problem-solution-section" style="padding:0;">
-      <div class="ps-container">
-
-        <div class="ps-problem">
-          <span class="ps-tag">The Problem</span>
-          <h2 class="ps-title">You’re Paying to Lose Money</h2>
-
-          <div class="ps-item">
-            <span class="ps-icon">✕</span>
-            <p class="ps-text">Tip fees, transport and replacement material quietly erode margin.</p>
-          </div>
-
-          <div class="ps-item">
-            <span class="ps-icon">✕</span>
-            <p class="ps-text">Perfectly usable material is dumped due to time and processing limits.</p>
-          </div>
-        </div>
-
-        <div class="ps-solution">
-          <span class="ps-tag">The Solution</span>
-          <h2 class="ps-title">Process It Where It Lands</h2>
-
-          <p class="ps-solution-intro">
-            IDM screening equipment allows contractors, quarries and operators
-            to convert waste into graded product immediately—without engines,
-            hydraulics or complex maintenance.
-          </p>
-
-          <div class="ps-item">
-            <span class="ps-icon">✓</span>
-            <p class="ps-text">Reduce disposal and haulage costs.</p>
-          </div>
-
-          <div class="ps-item">
-            <span class="ps-icon">✓</span>
-            <p class="ps-text">Create reusable or saleable material on-site.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EQUIPMENT -->
-    <section class="equipment-section" style="padding:0;">
-      <h2 class="section-title">Equipment Range</h2>
-      <p class="section-subtitle">
-        Proven designs. No engines. Built for New Zealand conditions.
-      </p>
-
-      <div class="equipment-grid">
-
-        <div class="equipment-card">
-          <img class="equipment-image" src="images/108-WROKING.webp" alt="">
-          <div class="equipment-content">
-            <span class="equipment-badge">Heavy Duty</span>
-            <h3>SLG-108VFRB</h3>
-            <p>High-capacity screener for soil, rubble and aggregate.</p>
-            <div class="equipment-specs">
-              <ul>
-                <li>Up to 45 m³ / hr</li>
-                <li>Adjustable deck angle</li>
-                <li>No hydraulics or engines</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="equipment-card">
-          <img class="equipment-image" src="images/78.webp" alt="">
-          <div class="equipment-content">
-            <span class="equipment-badge">Portable</span>
-            <h3>SLG-78VF</h3>
-            <p>Versatile screener for contractors and landscapers.</p>
-            <div class="equipment-specs">
-              <ul>
-                <li>Up to 22 m³ / hr</li>
-                <li>Compact footprint</li>
-                <li>Low maintenance</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ADVANTAGES -->
-    <section class="advantages-section" style="padding:0;">
-      <div class="advantages-grid">
-
-        <div class="advantage-card">
-          <h3>No Engine</h3>
-          <p>Runs from existing machinery. No fuel, no servicing.</p>
-        </div>
-
-        <div class="advantage-card">
-          <h3>Low Wear</h3>
-          <p>Fewer moving parts. Built to survive harsh sites.</p>
-        </div>
-
-        <div class="advantage-card">
-          <h3>Immediate ROI</h3>
-          <p>Save on disposal. Reuse or sell recovered material.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="final-cta" style="padding:0;">
-      <h2>Stop Paying to Dump Value</h2>
-
-      <p>
-        IDM equipment is supplied and supported in New Zealand.
-        Speak directly with a specialist—not a sales script.
-      </p>
-
-      <div class="cta-buttons">
-        <span class="cta-primary">0800 21 21 26</span>
-        <span class="cta-secondary">sitemachinery.nz</span>
+      <div class="machine">
+        <img src="https://desiteproducts.com/wp-content/uploads/2024/08/Screener-SLG78.webp">
+        <h4>SLG-78VF</h4>
+        <p>
+          Portable screening<br>
+          Up to 22m³/hr
+        </p>
       </div>
 
-    </section>
+      <div class="machine">
+        <img src="https://desiteproducts.com/wp-content/uploads/2024/08/Screener-SLG68.webp">
+        <h4>SLG-68V</h4>
+        <p>
+          Compact screener<br>
+          15–20m³/hr
+        </p>
+      </div>
 
-  </main>
+    </div>
+  </section>
+
+  <!-- PROFIT -->
+  <section class="profit">
+    <h2>Recovered Material = Revenue</h2>
+    <strong>$900+ per hour potential</strong>
+    <p>Dual-screen setups routinely convert waste into saleable product at scale.</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <strong>Screen more. Dump less. Control your margins.</strong>
+    <div class="cta-grid">
+      <div>
+        IDM NZ<br>
+        Industrial Screening Specialists
+      </div>
+      <div>
+        idm.co.nz<br>
+        NZ-wide supply & support
+      </div>
+    </div>
+  </section>
+
+</div>
+
 </body>
 </html>
