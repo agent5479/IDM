@@ -160,7 +160,7 @@
     font-weight:800;color:#ff6600;font-size:11px;line-height:1.4;
   }
 
-  /* CTA SECTION - 14% */
+  /* CTA SECTION - 15% */
   .cta-section{
     height:15%; background:linear-gradient(135deg,#ff6600,#cc5200);
     display:flex; align-items:center; padding:0 20px 0 20px; gap:18px;
@@ -190,7 +190,12 @@
 
   /* FOOTER - 8% */
   .footer{
-    height:8%; background:#111; color:#fff; display:flex; 
+    height:9%; background:#111;
+    color:#fff;
+    display:flex;
+    background-clip: border-box;  /* Ensures background covers padding explicitly (default, but reinforces) */
+    position: relative;  /* Lifts it slightly above parent stacking if needed */
+    z-index: 1;  /* Optional: Ensures it renders atop any parent effects */
     justify-content:space-between; align-items:center;
     padding-left:20px;
     padding-right:280px;
