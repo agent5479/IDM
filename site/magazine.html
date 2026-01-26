@@ -55,14 +55,48 @@
     text-shadow:2px 2px 10px rgba(0,0,0,.9);
   }
 
+  /* Image column positioned in hero */
+  .images-column{
+    position:absolute;
+    top:70px;
+    right:35px;
+    width:240px;
+    display:flex; 
+    flex-direction:column; 
+    gap:8px;
+    z-index:10;
+  }
+
+  .showcase-card{
+    height:155px;
+    border-radius:5px; 
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.3); 
+    border:2px solid #f0f0f0;
+    position:relative;
+  }
+
+  .showcase-img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    background:#e0e0e0;
+  }
+
+  .showcase-caption{
+    padding:5px; font-weight:800; font-size:8.5px; color:#fff;
+    background:#111; text-align:center; line-height:1.2; position:absolute;
+    bottom:0; left:0; right:0;
+  }
+
   /* MAIN GRID SECTION - 46% */
   .main-grid{
     height:46%; background:#fff; padding:20px 35px;
-    display:grid; grid-template-columns:1fr 280px; gap:20px;
+    display:block;
   }
 
   /* Left column content */
-  .content-column{}
+  .content-column{
+    max-width:calc(100% - 260px);
+  }
 
   .pain-points{
     background:linear-gradient(135deg,#fff3e6,#ffe6cc);
@@ -120,41 +154,33 @@
     font-weight:800;color:#ff6600;font-size:11px;line-height:1.4;
   }
 
-  /* Right column - images */
-  .images-column{
-    display:flex; flex-direction:column; gap:8px;
-  }
-
-  .showcase-card{
-    flex:1; border-radius:5px; overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.3); border:2px solid #f0f0f0;
-    position:relative;
-  }
-
-  .showcase-img{
-    width:100%; height:100%; object-fit:cover; display:block;
-    background:#e0e0e0;
-  }
-
-  .showcase-caption{
-    padding:5px; font-weight:800; font-size:8.5px; color:#fff;
-    background:#111; text-align:center; line-height:1.2; position:absolute;
-    bottom:0; left:0; right:0;
-  }
-
   /* CTA SECTION - 14% */
   .cta-section{
     height:14%; background:linear-gradient(135deg,#ff6600,#cc5200);
-    display:flex; align-items:center; padding:0 35px; gap:18px;
+    display:flex; align-items:center; padding:0 35px 0 35px; gap:18px;
   }
 
-  .cta-content{ flex:1; color:#fff; }
+  .cta-content{ 
+    flex:1; 
+    color:#fff;
+    max-width:calc(100% - 280px);
+  }
+  
   .cta-headline{ font-size:26px; font-weight:900; margin-bottom:6px; text-transform:uppercase; }
   .cta-text{ font-size:13px; font-weight:500; line-height:1.4; }
 
-  .qr-section{ background:#fff; padding:10px; border-radius:6px; box-shadow:0 5px 20px rgba(0,0,0,.35); flex-shrink:0; }
-  .qr-code{ width:110px; height:110px; display:block; border:2px solid #f0f0f0; }
-  .qr-label{ font-size:10px; font-weight:700; text-align:center; margin-top:5px; }
+  .qr-section{ 
+    background:#fff; 
+    padding:8px; 
+    border-radius:6px; 
+    box-shadow:0 5px 20px rgba(0,0,0,.35); 
+    flex-shrink:0;
+    margin-left:auto;
+    margin-right:240px;
+  }
+  
+  .qr-code{ width:80px; height:80px; display:block; border:2px solid #f0f0f0; }
+  .qr-label{ font-size:9px; font-weight:700; text-align:center; margin-top:4px; }
 
   /* FOOTER - 8% */
   .footer{
@@ -182,6 +208,23 @@
       <div class="exclusive-tag">Exclusive NZ Importer DeSite Machinery NZ</div>
       <div class="headline">Turn Waste into<br>Profit On-Site</div>
       <div class="subheadline">Screen, grade and repurpose material right where you are - eliminate tip fees, reduce buy-in costs and create saleable products</div>
+      
+      <div class="images-column">
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/screen2.jpg" alt="In Action">
+          <div class="showcase-caption">High productivity screening</div>
+        </div>
+
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/78-flow-control2.jpg" alt="Flow Control">
+          <div class="showcase-caption">Flow Control Flaps</div>
+        </div>
+
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/SLG108VFRB.jpg" alt="VFR">
+          <div class="showcase-caption">Spring-Loaded Vibrating Feeders</div>
+        </div>
+      </div>
     </div>
 
     <div class="main-grid">
@@ -228,23 +271,6 @@
           Perfect for quarries, demolition contractors, earthmoving operations and material supply yards. Stop dumping profits - start screening them.
         </p>
       </div>
-
-      <div class="images-column">
-        <div class="showcase-card">
-          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/screen2.jpg" alt="In Action">
-          <div class="showcase-caption">High productivity screening</div>
-        </div>
-
-        <div class="showcase-card">
-          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/78-flow-control2.jpg" alt="Flow Control">
-          <div class="showcase-caption">Flow Control Flaps</div>
-        </div>
-
-        <div class="showcase-card">
-          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/SLG108VFRB.jpg" alt="VFR">
-          <div class="showcase-caption">Spring-Loaded Vibrating Feeders</div>
-        </div>
-      </div>
     </div>
 
     <div class="cta-section">
@@ -254,7 +280,7 @@
       </div>
 
       <div class="qr-section">
-        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.sitemachinery.nz" alt="Visit our website">
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.sitemachinery.nz" alt="Visit our website">
         <div class="qr-label">Scan for Info</div>
       </div>
     </div>
