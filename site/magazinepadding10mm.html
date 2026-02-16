@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeSite Grizzly Screens and Heavy-Duty Soil-Screening</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f5f5;
+    display:flex;justify-content:center;align-items:center;
+    min-height:100vh;padding:20px;
+  }
+
+  .ad-container{
+    width:236mm; height:323mm; /* Expanded for 10mm bleed on all sides */
+    background:linear-gradient(135deg,#1a1a1a,#2d2d2d);
+    position:relative; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.3);
+    color:#222; display:flex; flex-direction:column;
+  }
+
+  /* HERO*/
+  .hero-section{
+    height:44%;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
+      url('https://agent5479.github.io/IDM/site/images/banner2.jpg');
+    background-size:cover; background-position:center 40%;
+    position:relative; display:flex; flex-direction:column; justify-content:flex-end;
+    padding:30px 20px; /* Increased from 20px 10px */
+  }
+
+  .logo-area{
+    position:absolute; top:30px; left:30px; /* Increased from 20px */
+    background:rgba(255,255,255,0.97); padding:8px 16px; border-radius:5px;
+    font-weight:900; font-size:24px; letter-spacing:3px; color:#ff6600;
+    border:3px solid #ff6600; box-shadow:0 4px 20px rgba(0,0,0,.4);
+  }
+
+  .exclusive-tag{
+    position:absolute; top:30px; right:30px; /* Increased from 20px */
+    background:rgba(255,255,255,0.92); padding:6px 12px; border-radius:4px;
+    font-weight:700; font-size:11px; color:#222; letter-spacing:1px;
+  }
+
+  .headline{
+    color:#fff; font-size:46px; font-weight:900; line-height:1.05;
+    text-transform:uppercase; margin-bottom:5px; max-width:60%;
+    text-shadow:4px 4px 12px rgba(0,0,0,.9); letter-spacing:-1px;
+    padding-left:40px; /* Increased from 30px */
+    padding-bottom:20px;
+    padding-top:20px;
+  }
+
+  .subheadline{
+    color:#ffa500; font-size:20px; font-weight:600; max-width:60%;
+    text-shadow:2px 2px 10px rgba(0,0,0,.9);
+    padding-left:35px; /* Increased from 25px */
+    padding-bottom:10px;
+   
+  }
+
+  /* Image column positioned in hero */
+  .images-column{
+    position:absolute;
+    top:40px; /* Increased from 30px */
+    right:30px; /* Increased from 20px */
+    width:250px;
+    display:flex; 
+    flex-direction:column; 
+    gap:8px;
+    z-index:10;
+  }
+
+  .showcase-card{
+    height:265px;
+    border-radius:5px; 
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.3); 
+    border:2px solid #f0f0f0;
+    position:relative;
+  }
+
+  .showcase-img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    background:#e0e0e0;
+  }
+
+  .showcase-caption{
+    padding:5px; font-weight:800; font-size:8.5px; color:#fff;
+    background:#111; text-align:center; line-height:1.2; position:absolute;
+    bottom:0; left:0; right:0;
+  }
+
+  /* MAIN GRID SECTION - 46% */
+  .main-grid{
+    height:46%; background:#fff; padding:30px 30px; /* Increased from 20px */
+    display:block;
+  }
+
+  /* Left column content */
+  .content-column{
+    max-width:calc(100% - 260px);
+  }
+
+  .pain-points{
+    background:linear-gradient(135deg,#fff3e6,#ffe6cc);
+    border-left:4px solid #ff6600; padding:10px 12px; margin-bottom:12px;
+    border-radius:4px; box-shadow:0 3px 12px rgba(255,102,0,.15);
+  }
+
+  .pain-points-title{
+    font-size:14px; font-weight:900; color:#ff6600; margin-bottom:8px;
+    text-transform:uppercase; letter-spacing:0.5px;
+  }
+
+  .pain-point{
+    display:flex; align-items:flex-start; gap:7px; margin-bottom:7px;
+  }
+
+  .pain-point:last-child{ margin-bottom:0; }
+
+  .pain-icon{
+    color:#ff6600; font-size:14px; font-weight:900; flex-shrink:0; margin-top:1px;
+  }
+
+  .pain-text{
+    font-size:12px; line-height:1.4; color:#2a2a2a;
+  }
+
+  .pain-highlight{
+    font-weight:800; color:#cc5200;
+  }
+
+  .solution-section{
+    margin-bottom:12px;
+  }
+
+  .solution-title{
+    font-size:13px; font-weight:900; color:#222; margin-bottom:6px;
+    border-bottom:3px solid #ff6600; padding-bottom:3px; display:inline-block;
+  }
+
+  .body-text{
+    font-size:12px; line-height:1.5; color:#2a2a2a; margin-bottom:10px;
+  }
+
+  .features-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:7px; margin-bottom:15px;
+  }
+
+  .feature-item{
+    background:linear-gradient(135deg,#ff6600,#ff8533); color:#fff;
+    padding:7px; border-radius:4px; font-size:9.5px; font-weight:700;
+    text-align:center; box-shadow:0 3px 10px rgba(255,102,0,.35);
+  }
+
+  .cta-text-inline{
+    font-weight:800;color:#ff6600;font-size:11px;line-height:1.4;
+  }
+
+  /* CTA SECTION - 15% */
+  .cta-section{
+    height:15%; background:linear-gradient(135deg,#ff6600,#cc5200);
+    display:flex; align-items:center; padding:0 30px 0 30px; gap:18px; /* Increased from 20px */
+  }
+
+  .cta-content{ 
+    flex:1; 
+    color:#fff;
+    max-width:calc(100% - 260px);
+  }
+  
+  .cta-headline{ font-size:26px; font-weight:900; margin-bottom:6px; text-transform:uppercase; }
+  .cta-text{ font-size:13px; font-weight:500; line-height:1.4; }
+
+  .qr-section{ 
+    background:#fff; 
+    padding:8px; 
+    border-radius:6px; 
+    box-shadow:0 5px 20px rgba(0,0,0,.35); 
+    flex-shrink:0;
+    margin-left:auto;
+    margin-right:260px;
+  }
+  
+  .qr-code{ width:80px; height:80px; display:block; border:2px solid #f0f0f0; }
+  .qr-label{ font-size:9px; font-weight:700; text-align:center; margin-top:4px; }
+
+  /* FOOTER - 8% */
+  .footer{
+    height:9%; background:#111;
+    color:#fff;
+    display:flex;
+    background-clip: border-box;
+    position: relative;
+    z-index: 1;
+    justify-content:space-between; align-items:center;
+    padding-left:30px; /* Increased from 20px */
+    padding-right:290px; /* Increased from 280px */
+    font-size:10px;
+  }
+  .company-name{ font-size:15px; font-weight:900; color:#ff6600; }
+  .tagline{ font-style:italic; color:#ffa500; font-weight:600; display:block; margin-bottom:3px; }
+  .contact-info{ line-height:1.5; color:#ddd; }
+
+  .accent-bar{ position:absolute; bottom:0; left:0; width:100%; height:3px;
+    background:linear-gradient(90deg,#ff6600,#ffa500,#ff6600);
+  }
+
+  /* Print crop marks - optional helper for checking bleed */
+  @media print{
+    .ad-container{ box-shadow:none; }
+    /* Uncomment below to see trim lines at 10mm from edge
+    .ad-container::before{
+      content:'';
+      position:absolute;
+      top:10mm; left:10mm; right:10mm; bottom:10mm;
+      border:1px dashed rgba(255,0,0,0.3);
+      pointer-events:none;
+    }
+    */
+  }
+</style>
+</head>
+<body>
+  <div class="ad-container">
+    <div class="hero-section">
+      <div class="logo-area">sitemachinery.nz</div>
+      <div class="headline">Screen, Grade and Repurpose Material Right Where You Are!</div>
+      <div class="subheadline">Eliminate Tip Fees, Reduce Buy-in Costs and Create Saleable Products</div>
+      
+      <div class="images-column">
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/front1.jpg" alt="In Action">
+          <div class="showcase-caption">High Productivity Soil Screening (SLG-108VFRB)</div>
+        </div>
+       
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/SLG68V.jpg" alt="VFR">
+          <div class="showcase-caption">Various Meshes for Desired Grades (SLG-68V)</div>
+        </div>
+       
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/front3.jpg" alt="VFR">
+          <div class="showcase-caption">Spring-Loaded Vibrating Screen Decks</div>
+        </div>
+
+        <div class="showcase-card">
+          <img class="showcase-img" src="https://agent5479.github.io/IDM/site/images/grizzly2.jpg" alt="Grizzly">
+          <div class="showcase-caption">Grizzly Wide-Mesh 100mm (SLG-78)</div>
+        </div> 
+      </div>
+    </div>
+
+    <div class="main-grid">
+      <div class="content-column">
+        <div class="pain-points">
+          <div class="pain-points-title">Save Money by Making Product On-Site</div>
+          
+          <div class="pain-point">
+            <div class="pain-icon">✗</div>
+            <div class="pain-text"><span class="pain-highlight">Paying tip fees</span> to dump material that could be screened and reused on-site?</div>
+          </div>
+          
+          <div class="pain-point">
+            <div class="pain-icon">✗</div>
+            <div class="pain-text"><span class="pain-highlight">Buying aggregate and fill</span> when you've got perfectly good material going to landfill?</div>
+          </div>
+          
+          <div class="pain-point">
+            <div class="pain-icon">✗</div>
+            <div class="pain-text"><span class="pain-highlight">Missing revenue opportunities</span> from graded soil, stone and recycled products you could be selling?</div>
+          </div>
+          
+          <div class="pain-point">
+            <div class="pain-icon">✗</div>
+            <div class="pain-text"><span class="pain-highlight">Trucking costs eating profits</span> - trucking material away then trucking new material back in?</div>
+          </div>
+        </div>
+
+        <div class="solution-section">
+          <div class="solution-title">✓ Screen, Grade & Sell Material On-Site</div>
+          <p class="body-text">
+            Transform demolition rubble, excavation spoil and mixed material into graded, saleable products. We offer a variety of screen mesh sizes - from 100mm square Grizzly Screens for heavy pre-screening (perfect for high-scale processing yards), to powered vibrating screens from 3mm-100mm for all manner of Reusing, Recycling, Reducing and Producing operations. Start generating revenue from potential dump fees, while reducing your aggregate/top-soil purchase costs.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">✓ HEAVY-DUTY CONSTRUCTION</div>
+          <div class="feature-item">Adjust deck angle with bucket cutting edge</div>
+          <div class="feature-item">✓ LOW-MAINTENANCE DESIGN</div>
+          <div class="feature-item">✓ NZ-BASED SUPPORT & PARTS</div>
+        </div>
+
+        <div class="solution-title">✓ Comes in 3 sizes: SLG-68", SLG-78" and SLG-108"
+        </div>
+        <p class="cta-text-inline"><i>(Model number refers to screen width in inches)</i><p>
+        <p class="cta-text-inline"><b>Perfect for quarries, demolition contractors, earthmoving and civil contractors, landscapers, gravel supplies on farms and material supply yards.</b></p>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <div class="cta-content">
+        <div class="cta-text"><i>Stop dumping profits - start screening them.</i></div>
+        <div class="cta-headline">Ready to Upgrade?</div>
+        <div class="cta-text">Scan the QR code to view our full machine range, video demonstrations, specifications & contact us</div>
+      </div>
+
+      <div class="qr-section">
+        <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.sitemachinery.nz" alt="Visit our website">
+        <div class="qr-label">Scan for Info</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <div class="company-name">Site Machinery</div>
+        <div class="tagline">NZ Distributor of DeSite Soil and Gravel Screening Equipment</div>
+        <div class="contact-info">Email: info@sitemachinery.nz</div>
+      </div>
+
+     <div style="text-align:right;">
+         <div class="contact-info">
+           <a href="https://www.sitemachinery.nz" style="color:#ddd; text-decoration:none;">Web: www.sitemachinery.nz</a>
+         </div>
+         <div class="contact-info">
+           <a href="tel:+6439707602" style="color:#ddd; text-decoration:none;">Phone: 03 970 7602 or 0800 21 21 26</a>
+         </div>
+         <div class="contact-info">
+           <a href="https://www.facebook.com/sitemachinery" style="color:#ddd; text-decoration:none; target="_blank" rel="noopener">Facebook: /sitemachinery</a>
+         </div>
+     </div>
+    </div>
+
+    <div class="accent-bar"></div>
+  </div>
+</body>
+</html>
