@@ -209,6 +209,49 @@
     background:linear-gradient(90deg,#ff6600,#ffa500,#ff6600);
   }
 
+/* Utility for full-bleed background extension on sections */
+.bleed-bg {
+  position: relative;
+}
+
+.bleed-bg::before {
+  content: "";
+  position: absolute;
+  top: -3mm;
+  left: -3mm;
+  right: -3mm;
+  bottom: -3mm;
+  z-index: -1;
+  background: inherit;          /* inherits the section's background */
+  background-size: cover;       /* important for hero image continuation */
+  background-position: center;
+}
+
+ .hero-section {
+  /* ... your existing styles ... */
+  class="hero-section bleed-bg"
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
+    url('https://agent5479.github.io/IDM/site/images/banner2.jpg');
+  /* already cover/center — the ::before will extend it */
+}
+
+.main-grid {
+  class="main-grid bleed-bg"
+  /* background: #fff; stays, extends via ::before */
+}
+
+.cta-section {
+  class="cta-section bleed-bg"
+  /* gradient extends */
+}
+
+.footer {
+  class="footer bleed-bg"
+  /* black background extends */
+}
+
+ 
   @media print{
     .ad-container{ box-shadow:none; }
   }
