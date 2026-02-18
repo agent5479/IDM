@@ -13,12 +13,33 @@
     min-height:100vh;padding:20px;
   }
 
-  .ad-container{
-    width:216mm; height:303mm;
-    background:linear-gradient(135deg,#1a1a1a,#2d2d2d);
-    position:relative; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.3);
-    color:#222; display:flex; flex-direction:column;
-  }
+.ad-container{
+  /* original A4 = 216 × 303 */
+  /* + 3mm bleed each side */
+
+  width:222mm;
+  height:309mm;
+
+  /* center visually on screen */
+  margin:auto;
+
+  background:linear-gradient(135deg,#1a1a1a,#2d2d2d);
+  position:relative;
+
+  /* REMOVE overflow hidden (it clips bleed) */
+  overflow:visible;
+
+  color:#222;
+  display:flex;
+  flex-direction:column;
+
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+ @page{
+  size:A4;
+  margin:0;
+}
 
   /* HERO*/
   .hero-section{
@@ -209,27 +230,9 @@
     background:linear-gradient(90deg,#ff6600,#ffa500,#ff6600);
   }
 
-/* Utility for full-bleed background extension on sections */
-.bleed-bg {
-  position: relative;
-}
-
-.bleed-bg::before {
-  content: "";
-  position: absolute;
-  top: -3mm;
-  left: -3mm;
-  right: -3mm;
-  bottom: -3mm;
-  z-index: -1;
-  background: inherit;          /* inherits the section's background */
-  background-size: cover;       /* important for hero image continuation */
-  background-position: center;
-}
 
  .hero-section {
   /* ... your existing styles ... */
-  class="hero-section bleed-bg"
   background: 
     linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
     url('https://agent5479.github.io/IDM/site/images/banner2.jpg');
@@ -237,17 +240,17 @@
 }
 
 .main-grid {
-  class="main-grid bleed-bg"
+  class="main-grid"
   /* background: #fff; stays, extends via ::before */
 }
 
 .cta-section {
-  class="cta-section bleed-bg"
+  class="cta-section"
   /* gradient extends */
 }
 
 .footer {
-  class="footer bleed-bg"
+  class="footer"
   /* black background extends */
 }
 
