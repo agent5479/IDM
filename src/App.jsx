@@ -4,9 +4,12 @@ import Layout from './components/Layout'
 import {
   AboutPage,
   AdditionalProductsPage,
+  CommercialsHubPage,
   ContactPage,
+  GrizzlyCommercialPage,
   HomePage,
   PhotosPage,
+  ScreeningRecommendationPage,
   Slg108Page,
   Slg68Page,
   Slg78FlowPage,
@@ -45,6 +48,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/photos" element={<PhotosPage />} />
           <Route path="/videos" element={<VideosPage />} />
+          <Route path="/screening-recommendation" element={<ScreeningRecommendationPage />} />
           <Route path="/products/slg-108vfrb" element={<Slg108Page />} />
           <Route path="/products/slg-78vf" element={<Slg78Page />} />
           <Route path="/products/slg-78vf-flow" element={<Slg78FlowPage />} />
@@ -52,6 +56,8 @@ export default function App() {
           <Route path="/products/static-grizzly" element={<StaticGrizzlyPage />} />
           <Route path="/products/telehandler-bins" element={<TelehandlerBinsPage />} />
           <Route path="/products/additional-products" element={<AdditionalProductsPage />} />
+          <Route path="/idm/commercials" element={<CommercialsHubPage />} />
+          <Route path="/idm/commercials/grizzly" element={<GrizzlyCommercialPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

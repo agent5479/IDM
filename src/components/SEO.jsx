@@ -14,7 +14,7 @@ export default function SEO({ pathname, jsonLd }) {
       <meta name="keywords" content={seo.keywords} />
       <meta name="author" content="Warwick Marshall" />
       <meta name="creator" content="Warwick Marshall" />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={seo.robots || 'index, follow'} />
       <link rel="canonical" href={seo.canonical} />
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 

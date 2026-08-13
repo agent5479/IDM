@@ -120,6 +120,36 @@ export const routes = [
       'additional products, skidsteer attachments NZ, construction equipment accessories',
     canonical: `${contact.siteUrl}/products/additional-products`,
   },
+  {
+    path: '/screening-recommendation',
+    file: 'screening-recommendation/index.html',
+    title: `Screen Mesh Recommendation Guide - ${siteName}`,
+    description:
+      'Choose the right DeSite screen mesh size for topsoil, compost, mulch, gravel and recycled aggregates. Site Machinery NZ mesh recommendation charts for New Zealand operators.',
+    keywords:
+      'screen mesh size NZ, topsoil mesh recommendation, gravel screening mesh, DeSite mesh guide, elongated mesh, square mesh',
+    canonical: `${contact.siteUrl}/screening-recommendation`,
+  },
+  {
+    path: '/idm/commercials',
+    file: 'idm/commercials/index.html',
+    title: `Commercials Workspace - ${siteName}`,
+    description: 'Internal promotional materials workspace for Site Machinery NZ.',
+    keywords: 'Site Machinery commercials',
+    canonical: `${contact.siteUrl}/idm/commercials`,
+    robots: 'noindex, nofollow',
+    includeInSitemap: false,
+  },
+  {
+    path: '/idm/commercials/grizzly',
+    file: 'idm/commercials/grizzly/index.html',
+    title: `Grizzly Screens Promo Draft - ${siteName}`,
+    description: 'Draft promotional material for DeSite static grizzly screens.',
+    keywords: 'grizzly screener promo',
+    canonical: `${contact.siteUrl}/idm/commercials/grizzly`,
+    robots: 'noindex, nofollow',
+    includeInSitemap: false,
+  },
 ]
 
 export function getSeo(pathname) {

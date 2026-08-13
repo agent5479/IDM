@@ -25,6 +25,7 @@ export default function Footer() {
           <Link to="/products/slg-78vf">Proscreen SLG-78VF</Link>
           <Link to="/products/slg-78vf-flow">Proscreen SLG-78VF with Flow Control</Link>
           <Link to="/products/slg-68v">Proscreen SLG-68V</Link>
+          <Link to="/products/static-grizzly">SLG-78 Static Grizzly</Link>
           <Link to="/products/telehandler-bins">Telehandler Bins</Link>
           <Link to="/products/additional-products">Additional Products</Link>
         </div>
@@ -32,6 +33,7 @@ export default function Footer() {
         <div>
           <h3>Information</h3>
           <Link to="/about">About Us</Link>
+          <Link to="/screening-recommendation">Mesh Size Guide</Link>
           <Link to="/photos">Photos</Link>
           <Link to="/videos">Videos</Link>
           <Link to="/contact">Contact Us</Link>

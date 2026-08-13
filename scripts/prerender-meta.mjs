@@ -25,7 +25,7 @@ function injectMeta(html, route) {
     <meta name="keywords" content="${escapeAttr(route.keywords)}" />
     <meta name="author" content="Warwick Marshall" />
     <meta name="creator" content="Warwick Marshall" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="${escapeAttr(route.robots || 'index, follow')}" />
     <link rel="canonical" href="${escapeAttr(route.canonical)}" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <meta property="og:type" content="website" />
@@ -45,8 +45,19 @@ function injectMeta(html, route) {
   `
 
   let out = html
-  // Replace existing title
-  out = out.replace(/<title>[\s\S]*?<\/title>/i, '')
+  // Strip tags we will re-inject so route-specific robots/canonical win
+  out = out.replace(/<title>[\s\S]*?<\/title>/gi, '')
+  out = out.replace(/<meta\s+name="description"[^>]*>/gi, '')
+  out = out.replace(/<meta\s+name="keywords"[^>]*>/gi, '')
+  out = out.replace(/<meta\s+name="author"[^>]*>/gi, '')
+  out = out.replace(/<meta\s+name="creator"[^>]*>/gi, '')
+  out = out.replace(/<meta\s+name="robots"[^>]*>/gi, '')
+  out = out.replace(/<link\s+rel="canonical"[^>]*>/gi, '')
+  out = out.replace(/<link\s+rel="icon"[^>]*>/gi, '')
+  out = out.replace(/<meta\s+property="og:[^"]*"[^>]*>/gi, '')
+  out = out.replace(/<meta\s+name="twitter:[^"]*"[^>]*>/gi, '')
+  out = out.replace(/<meta\s+name="contact:[^"]*"[^>]*>/gi, '')
+  out = out.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '')
   // Insert tags before </head>
   out = out.replace(/<\/head>/i, `${tags}\n  </head>`)
   return out

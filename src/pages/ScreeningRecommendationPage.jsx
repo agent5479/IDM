@@ -1,0 +1,92 @@
+import { Link } from 'react-router-dom'
+import { contact, emailHref, phoneHref } from '../data/contact'
+import { meshNav, meshSections } from '../data/meshRecommendations'
+
+function MeshTable({ table }) {
+  return (
+    <div className="mesh-table-wrap">
+      <h3>{table.title}</h3>
+      {table.note && <p className="mesh-table-note">{table.note}</p>}
+      <div className="mesh-table-scroll">
+        <table className="mesh-table">
+          <thead>
+            <tr>
+              {table.headers.map((h) => (
+                <th key={h}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row, i) => (
+              <tr key={`${table.title}-${i}`}>
+                {row.map((cell, j) => (
+                  <td key={`${i}-${j}`}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+export default function ScreeningRecommendationPage() {
+  return (
+    <section className="page-content mesh-page">
+      <div className="mesh-hero">
+        <h1>Screen Mesh Recommendation Guide</h1>
+        <p>
+          Choose the right DeSite mesh for topsoil, compost, mulch, gravel and recycled aggregates.
+          Charts below are tailored for Site Machinery NZ operators — imperial openings (industry
+          standard) with approximate metric context where helpful.
+        </p>
+        <p className="mesh-hero-links">
+          Looking for wide grizzly openings? See the{' '}
+          <Link to="/products/static-grizzly">SLG-78 Static Grizzly</Link> or browse{' '}
+          <a href="#aggregates">aggregate recommendations</a>.
+        </p>
+      </div>
+
+      <nav className="mesh-nav" aria-label="Mesh guide sections">
+        {meshNav.map((item) => (
+          <a key={item.id} href={`#${item.id}`}>
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      {meshSections.map((section) => (
+        <section key={section.id} id={section.id} className="mesh-section">
+          <h2>{section.title}</h2>
+          <p className="mesh-section-intro">{section.intro}</p>
+          {section.tables.map((table) => (
+            <MeshTable key={table.title} table={table} />
+          ))}
+        </section>
+      ))}
+
+      <div className="product-description mesh-cta">
+        <h2>Need help picking a mesh?</h2>
+        <p>
+          Tell us what you are screening and which machine you run — we will recommend openings that
+          match your target product size. Nationwide supply from Nelson.
+        </p>
+        <div className="cta-buttons">
+          <a href={phoneHref} className="cta-primary">
+            Call {contact.phoneDisplay}
+          </a>
+          <a href={emailHref} className="cta-secondary">
+            Email {contact.email}
+          </a>
+          <Link to="/products/static-grizzly" className="cta-secondary">
+            Static Grizzly
+          </Link>
+          <Link to="/contact" className="cta-secondary">
+            Contact
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}

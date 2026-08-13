@@ -11,6 +11,9 @@ import { slg68Html } from '../content/slg-68v'
 import { staticGrizzlyHtml } from '../content/static-grizzly'
 import { telehandlerBinsHtml } from '../content/telehandler-bins'
 import { additionalProductsHtml } from '../content/additional-products'
+import ScreeningRecommendationPage from './ScreeningRecommendationPage'
+import CommercialsHubPage from './commercials/CommercialsHubPage'
+import GrizzlyCommercialPage from './commercials/GrizzlyCommercialPage'
 
 function Page({ html }) {
   return <HtmlContent html={html} />
@@ -28,3 +31,4 @@ export const Slg68Page = () => <Page html={slg68Html} />
 export const StaticGrizzlyPage = () => <Page html={staticGrizzlyHtml} />
 export const TelehandlerBinsPage = () => <Page html={telehandlerBinsHtml} />
 export const AdditionalProductsPage = () => <Page html={additionalProductsHtml} />
+export { ScreeningRecommendationPage, CommercialsHubPage, GrizzlyCommercialPage }
