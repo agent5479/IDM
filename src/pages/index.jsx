@@ -14,6 +14,7 @@ import { additionalProductsHtml } from '../content/additional-products'
 import ScreeningRecommendationPage from './ScreeningRecommendationPage'
 import CommercialsHubPage from './commercials/CommercialsHubPage'
 import GrizzlyCommercialPage from './commercials/GrizzlyCommercialPage'
+import VibratoryCommercialPage from './commercials/VibratoryCommercialPage'
 
 function Page({ html }) {
   return <HtmlContent html={html} />
@@ -31,4 +32,9 @@ export const Slg68Page = () => <Page html={slg68Html} />
 export const StaticGrizzlyPage = () => <Page html={staticGrizzlyHtml} />
 export const TelehandlerBinsPage = () => <Page html={telehandlerBinsHtml} />
 export const AdditionalProductsPage = () => <Page html={additionalProductsHtml} />
-export { ScreeningRecommendationPage, CommercialsHubPage, GrizzlyCommercialPage }
+export {
+  ScreeningRecommendationPage,
+  CommercialsHubPage,
+  GrizzlyCommercialPage,
+  VibratoryCommercialPage,
+}

@@ -150,6 +150,16 @@ export const routes = [
     robots: 'noindex, nofollow',
     includeInSitemap: false,
   },
+  {
+    path: '/idm/commercials/vibratory',
+    file: 'idm/commercials/vibratory/index.html',
+    title: `Vibratory Proscreens Promo Draft - ${siteName}`,
+    description: 'Draft promotional material for DeSite vibratory Proscreens.',
+    keywords: 'vibratory proscreen promo',
+    canonical: `${contact.siteUrl}/idm/commercials/vibratory`,
+    robots: 'noindex, nofollow',
+    includeInSitemap: false,
+  },
 ]
 
 export function getSeo(pathname) {

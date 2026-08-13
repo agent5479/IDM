@@ -4,19 +4,18 @@ const promos = [
   {
     slug: 'grizzly',
     title: 'Grizzly Screens',
-    status: 'In progress',
-    blurb:
-      'Wide-mesh durability story for the SLG-78 Static Grizzly — 2″ / 3″ / 4″ setups and aggregate applications.',
+    status: 'Director pick ready',
+    blurb: 'Wide-mesh + durability — 3 phrasing options per blurb.',
     to: '/idm/commercials/grizzly',
     active: true,
   },
   {
-    slug: 'placeholder-vibratory',
+    slug: 'vibratory',
     title: 'Vibratory Proscreens',
-    status: 'Coming soon',
-    blurb: 'Placeholder for future vibratory screener promotional drafts.',
-    to: null,
-    active: false,
+    status: 'Director pick ready',
+    blurb: 'On-site screening story for 68 / 78 / 108 — pick phrasing per section.',
+    to: '/idm/commercials/vibratory',
+    active: true,
   },
   {
     slug: 'placeholder-bins',
@@ -30,17 +29,17 @@ const promos = [
 
 export default function CommercialsHubPage() {
   return (
-    <section className="page-content commercials-page">
-      <div className="commercials-banner">
+    <section className="page-content commercials-page commercials-compact">
+      <div className="commercials-banner commercials-banner-compact">
         <span className="commercials-badge">Internal workspace</span>
         <h1>IDM / Commercials</h1>
-        <p>
-          Draft promotional material for Site Machinery campaigns. These pages are unlisted
-          (<code>noindex</code>) and not linked from the main navigation.
+        <p className="commercials-sub">
+          Unlisted drafts for director review. Open a promo, click the phrasing you like — the other
+          two hide. Compact layout for screenshots.
         </p>
       </div>
 
-      <div className="commercials-grid">
+      <div className="commercials-grid commercials-grid-compact">
         {promos.map((promo) => (
           <article key={promo.slug} className={`commercials-card${promo.active ? ' is-active' : ''}`}>
             <div className="commercials-card-status">{promo.status}</div>

@@ -1,119 +1,89 @@
 import { Link } from 'react-router-dom'
+import PhrasePicker from '../../components/PhrasePicker'
 import { contact, emailHref, phoneHref } from '../../data/contact'
+
+const phrases = {
+  hook: [
+    'Contractors do not want fine topsoil screens for this job — they want wider openings that shrug off rock, recycled concrete and oversize, on a frame built to last with no electrics to babysit.',
+    'Lead with tough, wide-mesh grizzly performance: separate oversize fast, keep the job moving, and skip the power pack.',
+    'The most sought setup is simple — wide square mesh, heavy structure, zero electrics. Built for aggregate, not garden mulch.',
+  ],
+  tagline: [
+    'Wider mesh. Built tough. No power required.',
+    'Screen oversize. Keep working. Stay offline.',
+    '2″ / 3″ / 4″ mesh. Grizzly tough. Static simple.',
+  ],
+  mesh: [
+    '2″ × 2″, 3″ × 3″ and 4″ × 4″ square options — ideal for pre-screening and oversize separation, with quick-change mesh and double-lock crimp weave.',
+    'Wide openings contractors actually ask for. Swap mesh in minutes; keep one machine across multiple aggregate jobs.',
+    'Lead with 4″ / ~100 mm class for the hardest oversize work, then step down to 3″ or 2″ when the product size tightens.',
+  ],
+  durability: [
+    'Rugged static grizzly design — no power required, spring suspension to reduce clogging, tilting deck for control, 3-year structural warranty.',
+    'Durability first: heavy build, low maintenance, and a tilting deck that keeps material moving when traditional bars bind up.',
+    'No engine, no electrics, no babysitting. Suspension + tilt deliver grizzly toughness with cleaner flow than fixed bars.',
+  ],
+  applications: [
+    'Aggregate: road gravel, landscape and decorative stone, erosion rock. Recycled: asphalt, crushed concrete, wood mulch. Fits skid steers, bucket tractors, mid excavators and compact loaders.',
+    'Built for base rock, crushed concrete and decorative stone — the jobs where wide mesh and a tough deck earn their keep.',
+    'One machine for oversize on civil and recycle sites — mid-size gear, wide mesh, contact for pricing.',
+  ],
+  cta: [
+    'Soft close: view the product page, check the mesh guide, then call for the right opening and setup.',
+    'Ready to specify mesh and machine? Talk to Site Machinery — nationwide from Nelson.',
+    'See the SLG-78 Static Grizzly details, then contact us for current pricing and delivery.',
+  ],
+}
 
 export default function GrizzlyCommercialPage() {
   return (
-    <section className="page-content commercials-page">
-      <div className="commercials-banner">
-        <span className="commercials-badge">Promo draft</span>
-        <p className="commercials-kicker">
-          <Link to="/idm/commercials">← Commercials hub</Link>
-        </p>
-        <h1>Grizzly Screens — Wide Mesh &amp; Durability</h1>
-        <p>
-          Working draft for the most sought SLG-78 Static Grizzly setup: wider square mesh
-          (2″ / 3″ / 4″) with rugged, low-maintenance durability for aggregate work.
-        </p>
+    <section className="page-content commercials-page commercials-compact">
+      <div className="commercials-banner commercials-banner-compact">
+        <div className="commercials-banner-row">
+          <Link to="/idm/commercials" className="commercials-kicker-inline">
+            ← Hub
+          </Link>
+          <span className="commercials-badge">Director pick · Grizzly</span>
+        </div>
+        <h1>Grizzly — Wide Mesh &amp; Durability</h1>
+        <p className="commercials-sub">Click a phrasing to keep it; others hide. Use Change to re-pick.</p>
       </div>
 
-      <div className="promo-hero-media">
+      <div className="promo-hero-media promo-hero-compact">
         <img src="/images/grizzly2.jpg" alt="DeSite SLG-78 Static Grizzly screener" />
         <img src="/images/grizzly3.jpg" alt="Grizzly screening dirt, stone and sticks" />
       </div>
 
-      <div className="product-description promo-block">
-        <h2>The hook</h2>
-        <p>
-          Contractors looking for a tough grizzly do not want fine topsoil screens — they want
-          <strong> wider openings</strong> that shrug off rock, recycled concrete and oversize
-          material, paired with a <strong>structure built to last</strong> and no electrics to
-          babysit on site.
-        </p>
-        <p className="promo-callout">
-          Lead message: <em>Wider mesh. Built tough. No power required.</em>
-        </p>
-      </div>
+      <PhrasePicker id="grizzly-hook" label="Hook" options={phrases.hook} />
+      <PhrasePicker id="grizzly-tagline" label="Lead line" options={phrases.tagline} />
+      <PhrasePicker id="grizzly-mesh" label="Wide mesh" options={phrases.mesh} />
+      <PhrasePicker id="grizzly-durability" label="Durability" options={phrases.durability} />
+      <PhrasePicker id="grizzly-apps" label="Applications" options={phrases.applications} />
+      <PhrasePicker id="grizzly-cta" label="Close / CTA" options={phrases.cta} />
 
-      <div className="promo-grid">
-        <div className="product-description promo-block">
-          <h2>Why wider mesh wins</h2>
-          <ul>
-            <li>2″ × 2″, 3″ × 3″ and 4″ × 4″ square grizzly options</li>
-            <li>Ideal for pre-screening and oversize separation</li>
-            <li>Quick-change mesh so one machine covers multiple jobs</li>
-            <li>Double lock crimp weave for strength and stability</li>
-          </ul>
-          <p>
-            Point buyers to the{' '}
-            <Link to="/screening-recommendation#aggregates">mesh recommendation guide</Link> for
-            base rock, crushed concrete and decorative stone charts that use these openings.
-          </p>
-        </div>
-
-        <div className="product-description promo-block">
-          <h2>Durability story</h2>
-          <ul>
-            <li>Rugged grizzly design for aggregate materials</li>
-            <li>Static operation — no electrical power required</li>
-            <li>Spring suspension helps prevent clogging vs traditional bars</li>
-            <li>Tilting deck for precise material control</li>
-            <li>3-year structural warranty</li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="promo-feature-row">
+      <div className="promo-feature-row promo-feature-compact">
         <figure>
           <img src="/images/TILTING-SCREEN-DECK-78STATIC_2.webp" alt="Tilting screen deck" />
-          <figcaption>Tilting screen deck</figcaption>
+          <figcaption>Tilt deck</figcaption>
         </figure>
         <figure>
           <img src="/images/SUSPENSION-78STATIC.webp" alt="Spring suspension system" />
-          <figcaption>Spring suspension system</figcaption>
+          <figcaption>Suspension</figcaption>
         </figure>
       </div>
 
-      <div className="product-description promo-block">
-        <h2>Applications to emphasise</h2>
-        <div className="promo-apps">
-          <div>
-            <h3>Aggregate</h3>
-            <p>Road gravel, landscape stone, decorative stone, erosion control rock</p>
-          </div>
-          <div>
-            <h3>Recycled</h3>
-            <p>Ground asphalt, crushed concrete, wood mulch</p>
-          </div>
-          <div>
-            <h3>Equipment fit</h3>
-            <p>Skid steers, bucket tractors, mid-size excavators, compact loaders</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="product-description promo-block promo-notes">
-        <h2>Draft notes</h2>
-        <ul>
-          <li>Do not publish USD IDM list prices — keep “Contact for pricing”.</li>
-          <li>Lead with 100 mm-class / 4″ wide mesh for “most sought” durability jobs.</li>
-          <li>
-            Soft CTA to product page and contact; hard sell only after mesh/setup conversation.
-          </li>
-        </ul>
-      </div>
-
-      <div className="cta-buttons" style={{ marginTop: 40 }}>
+      <div className="cta-buttons commercials-cta-compact">
         <Link to="/products/static-grizzly" className="cta-primary">
-          View product page
+          Product page
         </Link>
         <Link to="/screening-recommendation" className="cta-secondary">
-          Mesh size guide
+          Mesh guide
         </Link>
         <a href={phoneHref} className="cta-secondary">
-          Call {contact.phoneDisplay}
+          {contact.phoneDisplay}
         </a>
         <a href={emailHref} className="cta-secondary">
-          Email us
+          Email
         </a>
       </div>
     </section>

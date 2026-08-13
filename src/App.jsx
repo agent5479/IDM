@@ -16,6 +16,7 @@ import {
   Slg78Page,
   StaticGrizzlyPage,
   TelehandlerBinsPage,
+  VibratoryCommercialPage,
   VideosPage,
 } from './pages'
 
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="/products/additional-products" element={<AdditionalProductsPage />} />
           <Route path="/idm/commercials" element={<CommercialsHubPage />} />
           <Route path="/idm/commercials/grizzly" element={<GrizzlyCommercialPage />} />
+          <Route path="/idm/commercials/vibratory" element={<VibratoryCommercialPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
