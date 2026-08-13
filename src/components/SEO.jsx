@@ -1,0 +1,42 @@
+import { Helmet } from 'react-helmet-async'
+import { contact } from '../data/contact'
+import { defaultOgImage, getSeo, organizationJsonLd } from '../data/seo'
+
+export default function SEO({ pathname, jsonLd }) {
+  const seo = getSeo(pathname)
+  const payload = jsonLd || (pathname === '/' ? organizationJsonLd : null)
+
+  return (
+    <Helmet>
+      <html lang="en" />
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="keywords" content={seo.keywords} />
+      <meta name="author" content="Warwick Marshall" />
+      <meta name="creator" content="Warwick Marshall" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={seo.canonical} />
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Site Machinery NZ" />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:url" content={seo.canonical} />
+      <meta property="og:image" content={defaultOgImage} />
+      <meta property="og:locale" content="en_NZ" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={defaultOgImage} />
+
+      <meta name="contact:phone_number" content={contact.phoneDisplay} />
+      <meta name="contact:email" content={contact.email} />
+
+      {payload && (
+        <script type="application/ld+json">{JSON.stringify(payload)}</script>
+      )}
+    </Helmet>
+  )
+}

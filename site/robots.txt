@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Keep archive and draft content out of search results
+Disallow: /legacy/
+Disallow: /drafts/
+
+Sitemap: https://sitemachinery.nz/sitemap.xml

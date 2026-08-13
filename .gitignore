@@ -22,6 +22,9 @@ npm-debug.log*
 .env
 .env.local
 
+# Dependencies
+node_modules/
+
 # Build files (if any)
 dist/
 build/
