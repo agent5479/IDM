@@ -1,6 +1,5 @@
 import HtmlContent from '../components/HtmlContent'
 import { homeHtml } from '../content/home'
-import { aboutHtml } from '../content/about'
 import { contactHtml } from '../content/contact'
 import { photosHtml } from '../content/photos'
 import { videosHtml } from '../content/videos'
@@ -15,13 +14,14 @@ import ScreeningRecommendationPage from './ScreeningRecommendationPage'
 import CommercialsHubPage from './commercials/CommercialsHubPage'
 import GrizzlyCommercialPage from './commercials/GrizzlyCommercialPage'
 import VibratoryCommercialPage from './commercials/VibratoryCommercialPage'
+import AboutPage from './AboutPage'
 
 function Page({ html }) {
   return <HtmlContent html={html} />
 }
 
+export { AboutPage }
 export const HomePage = () => <Page html={homeHtml} />
-export const AboutPage = () => <Page html={aboutHtml} />
 export const ContactPage = () => <Page html={contactHtml} />
 export const PhotosPage = () => <Page html={photosHtml} />
 export const VideosPage = () => <Page html={videosHtml} />
