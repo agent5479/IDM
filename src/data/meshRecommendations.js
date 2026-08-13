@@ -2,10 +2,15 @@
  * Screen mesh recommendation charts rebranded for Site Machinery NZ.
  * Source charts adapted from IDM / DeSite guidance; imperial sizes kept
  * (industry standard) with approximate mm equivalents for NZ readers.
+ * Grade photos sourced from idmcabc.com/screening-recomendation for product-size perception.
  */
 
 function row(mesh, pattern, product, mmHint) {
   return { mesh, pattern, product, mmHint }
+}
+
+function img(file, alt) {
+  return { src: `/images/mesh-guide/${file}`, alt }
 }
 
 export const squareChart = [
@@ -26,6 +31,21 @@ export const elongatedChart = [
   row('1" x 4"', 'Elongated', '3/4" to 7/8"', '~25 x 100 mm'),
 ]
 
+/** Visual grade strip for quick product-size perception */
+export const gradeGallery = [
+  img('compost.jpg', 'Screened compost product example'),
+  img('wood-mulch.jpg', 'Screened wood mulch product example'),
+  img('commercial-triple-mix.jpg', 'Commercial / triple-mix topsoil example'),
+  img('pea-stone.jpg', 'Pea stone product example'),
+  img('decorative-stone.jpg', 'Decorative stone product example'),
+  img('top-coarse-gravel.jpg', 'Top coarse gravel product example'),
+  img('septic-stone.jpg', 'Septic stone product example'),
+  img('base-rock-gravel.jpg', 'Base rock gravel product example'),
+  img('ground-asphalt.jpg', 'Ground asphalt product example'),
+  img('crushed-concrete.jpg', 'Crushed concrete product example'),
+  img('erosion-control-rock.jpg', 'Erosion control rock product example'),
+]
+
 export const meshSections = [
   {
     id: 'charts',
@@ -33,8 +53,16 @@ export const meshSections = [
     intro:
       'Use these square and elongated charts as a starting point. Final product size is typically a little smaller than the mesh opening, depending on material and moisture.',
     tables: [
-      { title: 'Square Mesh', headers: ['Mesh Size', 'Pattern', 'Product Size', 'Approx. Metric'], rows: squareChart.map((r) => [r.mesh, r.pattern, r.product, r.mmHint]) },
-      { title: 'Elongated Mesh', headers: ['Mesh Size', 'Pattern', 'Product Size', 'Approx. Metric'], rows: elongatedChart.map((r) => [r.mesh, r.pattern, r.product, r.mmHint]) },
+      {
+        title: 'Square Mesh',
+        headers: ['Mesh Size', 'Pattern', 'Product Size', 'Approx. Metric'],
+        rows: squareChart.map((r) => [r.mesh, r.pattern, r.product, r.mmHint]),
+      },
+      {
+        title: 'Elongated Mesh',
+        headers: ['Mesh Size', 'Pattern', 'Product Size', 'Approx. Metric'],
+        rows: elongatedChart.map((r) => [r.mesh, r.pattern, r.product, r.mmHint]),
+      },
     ],
   },
   {
@@ -67,6 +95,7 @@ export const meshSections = [
         title: 'Commercial Grade or Triple Mix Topsoil',
         headers: ['Mesh Size', 'Product Size'],
         note: 'A blend of topsoil, sand and compost that normally commands a premium price.',
+        image: img('commercial-triple-mix.jpg', 'Commercial grade / triple-mix topsoil product grade'),
         rows: [
           ['1/2 x 1/2 square mesh', '1/4 minus product'],
           ['3/4 x 4" elongated mesh', '1/2 minus product'],
@@ -84,6 +113,7 @@ export const meshSections = [
     title: 'Compost',
     intro:
       'Compost can be finished as a top-dressing fertiliser / soil builder, or blended with sand and topsoil to create triple mix.',
+    image: img('compost.jpg', 'Screened compost product grade example'),
     tables: [
       {
         title: 'Compost Mesh Recommendation',
@@ -104,6 +134,7 @@ export const meshSections = [
     title: 'Wood Mulch',
     intro:
       'Wood mulch is a light product that moves differently across the deck than soil or aggregate. Run a slightly larger mesh. Many operators screen out fines and mix them into topsoil for slow-release decomposition — a practical way to recycle wood fines.',
+    image: img('wood-mulch.jpg', 'Screened wood mulch product grade example'),
     tables: [
       {
         title: 'Wood Mulch Mesh Recommendation',
@@ -124,12 +155,13 @@ export const meshSections = [
     id: 'aggregates',
     title: 'Aggregate Products',
     intro:
-      'Wider square mesh (including 2″, 3″ and 4″ grizzly openings) is commonly sought for durable aggregate separation, road base and recycled materials.',
+      'Wider square mesh (including 2″, 3″ and 4″ grizzly openings) is commonly sought for durable aggregate separation, road base and recycled materials. Photos show typical finished grades for visual comparison.',
     tables: [
       {
         title: 'Pea Stone',
         headers: ['Mesh Size', 'Product Size'],
         note: 'Often used in playgrounds or for decoration. Pea stone usually commands a premium because most aggregate is crushed and too sharp.',
+        image: img('pea-stone.jpg', 'Pea stone product grade example'),
         rows: [
           ['3/8 x 3/8 square mesh', '1/4 minus product'],
           ['1/2 x 1/2 square mesh', '3/8 minus product'],
@@ -141,6 +173,7 @@ export const meshSections = [
         title: 'Decorative Stone',
         headers: ['Mesh Size', 'Product Size'],
         note: 'Where outdoor watering is restricted, decorative rock is a manageable and cost-effective landscaping solution.',
+        image: img('decorative-stone.jpg', 'Decorative stone product grade example'),
         rows: [
           ['3/4 x 4" elongated mesh', '5/8 minus product'],
           ['1" x 1" square mesh', '3/4 minus product'],
@@ -155,6 +188,7 @@ export const meshSections = [
         title: 'Top Coarse Gravel',
         headers: ['Mesh Size', 'Product Size'],
         note: 'Finer road gravel works well for capping roadways.',
+        image: img('top-coarse-gravel.jpg', 'Top coarse gravel product grade example'),
         rows: [
           ['3/4 x 4" elongated mesh', '5/8 minus product'],
           ['1" x 1" square mesh', '3/4 minus product'],
@@ -166,6 +200,7 @@ export const meshSections = [
         title: 'Septic Stone',
         headers: ['Mesh Size', 'Product Size'],
         note: 'Many regions still use stone in septic fields for the evaporation process.',
+        image: img('septic-stone.jpg', 'Septic stone product grade example'),
         rows: [
           ['1/2 x 1/2 square mesh', '3/8 minus product'],
           ['3/4 x 4" elongated mesh', '5/8 minus product'],
@@ -177,6 +212,7 @@ export const meshSections = [
         title: 'Base Rock Gravel',
         headers: ['Mesh Size', 'Product Size'],
         note: 'Separating smaller gravel makes a more stable road base. Fines can then be spread on top of the base course for a gradeable surface.',
+        image: img('base-rock-gravel.jpg', 'Base rock gravel product grade example'),
         rows: [
           ['1-1/2 x 1-1/2 square mesh', '1-1/8 minus product'],
           ['2" x 2" square mesh', '1-1/2 minus product'],
@@ -188,6 +224,7 @@ export const meshSections = [
         title: 'Ground Asphalt',
         headers: ['Mesh Size', 'Product Size'],
         note: 'Screening recycled asphalt from repaving projects is popular. Fines often go on driveways; larger material suits roads and yards with heavier traffic.',
+        image: img('ground-asphalt.jpg', 'Ground asphalt product grade example'),
         rows: [
           ['3/4 x 4" elongated mesh', '5/8 minus product'],
           ['1" x 1" square mesh', '3/4 minus product'],
@@ -200,6 +237,7 @@ export const meshSections = [
         title: 'Crushed Concrete',
         headers: ['Mesh Size', 'Product Size'],
         note: 'Screened crushed concrete makes excellent base material when building roads.',
+        image: img('crushed-concrete.jpg', 'Crushed concrete product grade example'),
         rows: [
           ['3/4 x 4" elongated mesh', '5/8 minus product'],
           ['1" x 1" square mesh', '3/4 minus product'],
@@ -214,6 +252,7 @@ export const meshSections = [
         title: 'Erosion Control Rock',
         headers: ['Mesh Size', 'Product Size'],
         note: 'Erosion control rock stabilises slopes and areas around culverts during heavy rain.',
+        image: img('erosion-control-rock.jpg', 'Erosion control rock product grade example'),
         rows: [
           ['1/2 x 4" elongated mesh', '3/8 minus product'],
           ['3/4 x 4" elongated mesh', '1/2 minus product'],
