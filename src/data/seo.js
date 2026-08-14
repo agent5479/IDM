@@ -81,7 +81,7 @@ export const routes = [
     file: 'products/slg-78vf/index.html',
     title: `DeSite SLG-78VF Portable Screener | ${siteName}`,
     description:
-      'DeSite SLG-78VF portable vibratory screener with multi-slope deck. Ideal for topsoil, gravel and aggregate screening — supplied in New Zealand by Site Machinery.',
+      'DeSite SLG-78VF portable vibratory screener with multi-slope deck. Screen topsoil, gravel and aggregate — supplied in New Zealand by Site Machinery.',
     keywords:
       'SLG-78VF, portable soil screener NZ, topsoil screener, gravel screener NZ, DeSite ProScreen',
     canonical: `${contact.siteUrl}/products/slg-78vf`,
@@ -115,11 +115,11 @@ export const routes = [
   {
     path: '/products/static-grizzly',
     file: 'products/static-grizzly/index.html',
-    title: `DeSite SLG-78 Static Grizzly Screener | ${siteName}`,
+    title: `DeSite Static Grizzly 78 & 108 | ${siteName}`,
     description:
-      'DeSite SLG-78 Static Grizzly for tough pre-screening and oversize separation of soil, rock and aggregate on New Zealand construction and earthmoving sites.',
+      'DeSite SLG-78 and SLG-108 Static Grizzlies for oversize separation of soil, gravel and aggregate. No-power screeners supplied in New Zealand by Site Machinery NZ.',
     keywords:
-      'static grizzly screener NZ, SLG-78 static grizzly, DeSite grizzly, rock screener, oversize screening',
+      'static grizzly screener NZ, SLG-78 static grizzly, SLG-108 static grizzly, DeSite grizzly, rock screener, oversize screening',
     canonical: `${contact.siteUrl}/products/static-grizzly`,
     changefreq: 'monthly',
     priority: '0.8',
@@ -153,7 +153,7 @@ export const routes = [
     file: 'screening-recommendation/index.html',
     title: `Screen Mesh Size Guide NZ | ${siteName}`,
     description:
-      'Choose the right DeSite screen mesh for topsoil, gravel, compost, mulch and recycled aggregates. Mesh recommendation charts for New Zealand operators.',
+      'Choose the right DeSite screen mesh for topsoil, gravel, compost, mulch and aggregate. Mesh recommendation charts for New Zealand operators.',
     keywords:
       'screen mesh size NZ, topsoil mesh guide, gravel screening mesh, aggregate mesh size, DeSite mesh recommendation',
     canonical: `${contact.siteUrl}/screening-recommendation`,

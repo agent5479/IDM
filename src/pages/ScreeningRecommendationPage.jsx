@@ -52,13 +52,13 @@ export default function ScreeningRecommendationPage() {
       <div className="mesh-hero">
         <h1>Screen Mesh Recommendation Guide</h1>
         <p>
-          Choose the right DeSite mesh for topsoil, compost, mulch, gravel and recycled aggregates.
+          Choose the right DeSite mesh for topsoil, gravel, compost, mulch and aggregate.
           Charts below are tailored for Site Machinery NZ operators — imperial openings (industry
           standard) with approximate metric context where helpful.
         </p>
         <p className="mesh-hero-links">
           Looking for wide grizzly openings? See the{' '}
-          <Link to="/products/static-grizzly">SLG-78 Static Grizzly</Link> or browse{' '}
+          <Link to="/products/static-grizzly">SLG-78 and SLG-108 Static Grizzly</Link> or browse{' '}
           <a href="#aggregates">aggregate recommendations</a>.
         </p>
       </div>

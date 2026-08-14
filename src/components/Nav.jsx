@@ -39,7 +39,7 @@ export default function Nav({ showTagline = false }) {
             SITE MACHINERY
           </Link>
           {showTagline && (
-            <span className="nav-tagline">Affordable, top quality soil screening machines</span>
+            <span className="nav-tagline">Affordable, top quality soil, gravel and aggregate screening machines</span>
           )}
         </div>
         <button

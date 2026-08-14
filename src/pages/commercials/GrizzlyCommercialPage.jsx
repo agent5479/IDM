@@ -31,7 +31,7 @@ const phrases = {
   cta: [
     'Soft close: view the product page, check the mesh guide, then call for the right opening and setup.',
     'Ready to specify mesh and machine? Talk to Site Machinery — nationwide from Nelson.',
-    'See the SLG-78 Static Grizzly details, then contact us for current pricing and delivery.',
+    'See the Static Grizzly details (78 and 108), then contact us for current pricing and delivery.',
   ],
 }
 
@@ -50,7 +50,7 @@ export default function GrizzlyCommercialPage() {
       </div>
 
       <div className="promo-hero-media promo-hero-compact">
-        <img src="/images/grizzly2.jpg" alt="DeSite SLG-78 Static Grizzly screener" />
+        <img src="/images/grizzly2.jpg" alt="DeSite Static Grizzly screener" />
         <img src="/images/grizzly3.jpg" alt="Grizzly screening dirt, stone and sticks" />
       </div>
 

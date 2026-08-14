@@ -1,1 +1,252 @@
-export const staticGrizzlyHtml = "<!-- Product Detail -->\r\n<section class=\"product-detail\">\r\n  <div class=\"product-header\">\r\n    <h1>DeSite SLG-78 Static Grizzly</h1>\r\n    <p>The SLG-78 Static Grizzly is specifically designed for handling aggregate materials with mid-sized equipment, making it the ideal screener for contractors who need rugged grizzly performance without electrical power requirements. Built with the durability of a traditional Grizzly screener enhanced with precision mesh screening, this unit ensures your final product meets exact specifications. It is compatible with skid steers, bucket tractors, mid-size excavators, and compact loaders, providing versatility for various equipment types. The SLG-78 Static offers multiple grizzly mesh options, allowing you to tailor the screening process to your specific aggregate material needs.</p>\r\n  </div>\r\n\r\n  <div class=\"product-gallery\">\r\n    <img src=\"/images/grizzly2.jpg\" alt=\"DeSite SLG-78Grizzly 100mm Screener\">\r\n    <div style=\"position: relative; display: inline-block;\">\r\n      <img src=\"/images/bucket for 78.webp\" alt=\"DeSite SLG-78 Static Grizzly bucket compatibility\">\r\n      <div style=\"position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(255,102,0,0.95); color: #000; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 1rem; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,0.3);\">\r\n        56-66 inches\r\n      </div>\r\n    </div>\r\n    <img src=\"/images/grizzly3.jpg\" alt=\"DeSite SLG-78Grizzly 100mm Dirt, Stone, Sticks\">\r\n  </div>\r\n\r\n  <!-- Video Section -->\r\n  <div style=\"margin: 40px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;\">\r\n    <h2 style=\"color: #ff6600; margin-bottom: 20px; text-align: center;\">See It In Action</h2>\r\n    <div class=\"video-container\" style=\"max-width: 800px; margin: 0 auto;\">\r\n      <iframe src=\"https://player.vimeo.com/video/1129896297\" width=\"100%\" height=\"450\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen style=\"border-radius: 12px;\"></iframe>\r\n    </div>\r\n  </div>\r\n\r\n<div class=\"product-details\">\r\n    <div class=\"product-description\">\r\n      <h2>Product Description</h2>\r\n      <p>The SLG-78 Static Grizzly is specifically designed for handling aggregate materials, making it the perfect solution for tough jobs that demand durability and precision. Built with the ruggedness of a traditional Grizzly screener but enhanced with the precision of mesh screening, this screener ensures that the final product meets your exact specifications.</p>\r\n      \r\n      <p>This robust screener offers low maintenance operation and is built to last. The static design eliminates the need for electrical power while still delivering reliable screening performance for aggregate applications.</p>\r\n      \r\n      <p>Perfect for skid steers, bucket tractors, mid-size excavators and compact loaders. Professional grizzly performance without the power requirements.</p>\r\n      \r\n      <h3 style=\"color: #ffa500; margin-top: 30px; margin-bottom: 15px;\">Key Features:</h3>\r\n      <ul style=\"color: #ccc; line-height: 1.8;\">\r\n        <li>Rugged grizzly design for aggregate materials</li>\r\n        <li>No electrical power required - static operation</li>\r\n        <li>Low maintenance operation</li>\r\n        <li>Built to last with 3-year structural warranty</li>\r\n        <li>Tilting screen deck for precise material control</li>\r\n        <li>Spring suspension system prevents clogging</li>\r\n        <li>Quick-change mesh system</li>\r\n        <li>Designed for mid-sized equipment</li>\r\n        <li>Ideal for aggregate processing</li>\r\n        <li>Optional riser box for increased capacity</li>\r\n        <li>Optional bucket transport lugs for easy mobility</li>\r\n      </ul>\r\n      \r\n      <div style=\"background: rgba(255,102,0,0.15); border: 2px solid #ff6600; padding: 20px; margin-top: 30px; border-radius: 12px;\">\r\n        <h3 style=\"color: #ffa500; margin-bottom: 15px; font-size: 1.2rem;\">Equipment Compatibility</h3>\r\n        <p style=\"color: #e0e0e0; margin-bottom: 10px;\"><strong style=\"color: #ffa500;\">Designed For:</strong> Mid-Sized Equipment</p>\r\n        <p style=\"color: #e0e0e0; margin-bottom: 10px;\"><strong style=\"color: #ffa500;\">Compatible Equipment:</strong> Skid Steers, Bucket Tractors, Mid-Size Excavators, Compact Loaders</p>\r\n        <p style=\"color: #e0e0e0; margin: 0;\">Specifically engineered for aggregate screening with mid-sized construction equipment.</p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"product-specifications\">\r\n      <h2>Specifications</h2>\r\n      \r\n      <div class=\"spec-group\">\r\n        <h3>Machine Dimensions</h3>\r\n        <ul class=\"spec-list\">\r\n          <li><strong>Machine Width:</strong> 95 inches (2.41m)</li>\r\n          <li><strong>Machine Height:</strong> 90 inches (2.29m)</li>\r\n          <li><strong>Machine Depth:</strong> 74 inches (1.88m)</li>\r\n        </ul>\r\n      </div>\r\n\r\n      <div class=\"spec-group\">\r\n        <h3>Screen Deck</h3>\r\n        <ul class=\"spec-list\">\r\n          <li><strong>Screen Deck Width:</strong> 80 inches (2.03m)</li>\r\n          <li><strong>Screen Deck Length:</strong> 52 inches (1.32m)</li>\r\n          <li><strong>Screen Deck Surface Area:</strong> 29 sq/ft (2.7m²)</li>\r\n          <li><strong>Screen Deck Tilt Angle:</strong> 45 to 30 Degrees</li>\r\n        </ul>\r\n      </div>\r\n\r\n      <div class=\"spec-group\">\r\n        <h3>Weight</h3>\r\n        <ul class=\"spec-list\">\r\n          <li><strong>Total Weight (with riser box):</strong> 2250 lbs (1021kg)</li>\r\n          <li><strong>Total Weight (without riser box):</strong> 1750 lbs (794kg)</li>\r\n        </ul>\r\n      </div>\r\n\r\n      <div class=\"spec-group\">\r\n        <h3>Mesh</h3>\r\n        <ul class=\"spec-list\">\r\n          <li><strong>Available Mesh Options:</strong> Multiple grizzly mesh sizes available</li>\r\n          <li><strong>Square Pattern:</strong> 2\" x 2\", 3\" x 3\", 4\" x 4\"</li>\r\n          <li>Quick and easily changed mesh system</li>\r\n          <li>Double lock crimp weave for strength and stability</li>\r\n          <li>Optional mesh sizes upon request</li>\r\n        </ul>\r\n      </div>\r\n\r\n      <div class=\"spec-group\">\r\n        <h3>Warranty</h3>\r\n        <ul class=\"spec-list\">\r\n          <li><strong>Structural Warranty:</strong> 3 years</li>\r\n          <li>All parts provided at no cost during warranty period</li>\r\n          <li>Customer responsible for installation and shipping</li>\r\n        </ul>\r\n      </div>\r\n\r\n      <div class=\"spec-group\">\r\n        <h3>Assembly</h3>\r\n        <ul class=\"spec-list\">\r\n          <li>Comes assembled and ready to use</li>\r\n          <li>Riser box can be installed/removed in under 5 minutes</li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- Screener Features Section -->\r\n  <div style=\"margin: 60px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;\">\r\n    <h2 style=\"color: #ff6600; margin-bottom: 40px; text-align: center; font-size: 2rem;\">Screener Features</h2>\r\n    \r\n    <!-- Tilting Screen Deck -->\r\n    <div style=\"background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);\">\r\n      <h3 style=\"color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;\">Tilting Screen Deck</h3>\r\n      <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;\">\r\n        <img src=\"/images/TILTING-SCREEN-DECK-78STATIC_2.webp\" alt=\"Tilting screen deck side view\" style=\"width: 100%; border-radius: 12px; border: 2px solid #ff6600;\">\r\n        <img src=\"/images/TILTING-SCREEN-DECK-78STATIC_.webp\" alt=\"Tilting screen deck front view\" style=\"width: 100%; border-radius: 12px; border: 2px solid #ff6600;\">\r\n      </div>\r\n      <p style=\"color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;\">The Tilting Screen Deck in the SLG-78 Static is the same advanced system used in our 78VFRB model. This feature allows you to have precise control over the flow of material on the screen deck. By enabling direct contact between your bucket and the screen deck, you can easily move and manage material while keeping the screening process in motion. This system ensures smooth and efficient operation, even when dealing with challenging aggregate materials.</p>\r\n    </div>\r\n\r\n    <!-- Spring Suspension System -->\r\n    <div style=\"background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);\">\r\n      <h3 style=\"color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;\">Spring Suspension System</h3>\r\n      <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;\">\r\n        <img src=\"/images/SUSPENSION-78STATIC.webp\" alt=\"Spring suspension system\" style=\"width: 100%; border-radius: 12px; border: 2px solid #ff6600;\">\r\n        <img src=\"/images/SUSPENSION-78STATIC_.webp\" alt=\"Spring suspension system detail\" style=\"width: 100%; border-radius: 12px; border: 2px solid #ff6600;\">\r\n      </div>\r\n      <p style=\"color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;\">The Spring Suspension System in the SLG-78 Static is designed to facilitate the action and reaction of the screen deck, allowing it to move in a harmonic motion that efficiently drives material across the screen. This movement ensures that your screening process is both precise and fast. Unlike traditional Grizzly screeners where rocks or other debris can often become stuck, the Spring Suspension System helps prevent clogging, making your operation smoother and more reliable.</p>\r\n    </div>\r\n\r\n    <!-- Riser Box (Optional) -->\r\n    <div style=\"background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);\">\r\n      <h3 style=\"color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;\">Riser Box (Optional Accessory)</h3>\r\n      <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;\">\r\n        <img src=\"/images/rise-box.jpg\" alt=\"Riser box for increased capacity\" style=\"width: 100%; border-radius: 12px; border: 2px solid #ff6600;\">\r\n      </div>\r\n      <p style=\"color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;\">The Riser Box is designed to boost productivity by allowing you to handle more material, ultimately increasing the efficiency of your screening operations. It also stabilizes the movement of the screener, ensuring smoother and more consistent performance. Equipped with winches and 2-inch straps, the Riser Box can be easily installed or removed in less than five minutes, making it a convenient and practical addition to your equipment.</p>\r\n    </div>\r\n\r\n    <!-- Bucket Transport Lugs (Optional) -->\r\n    <div style=\"background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);\">\r\n      <h3 style=\"color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;\">Bucket Transport Lugs (Optional Accessory)</h3>\r\n      <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;\">\r\n        <img src=\"/images/lugs.jpg\" alt=\"Bucket transport lugs\" style=\"width: 100%; border-radius: 12px; border: 2px solid #ff6600;\">\r\n      </div>\r\n      <p style=\"color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;\">Like other models in our lineup, the SLG-78 Static offers optional Bucket Transport Lugs. These lugs make transporting and moving the screener as easy and stress-free as possible, ensuring smooth and efficient mobility even in challenging or tight locations. This feature enhances the portability of the machine, making it easier to navigate difficult job sites using your equipment's bucket.</p>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"product-pricing\">\r\n    <h2>Pricing (Estimates)</h2>\r\n    <div class=\"price-main\">Contact Us for Current Pricing</div>\r\n    <p class=\"price-note\">Complete Assembled Unit. Ex Nelson. Price does not include shipping or delivery. Delivery will be arranged with the purchaser and additional charges may apply depending on location.</p>\r\n    \r\n    <h3 style=\"color: #ffa500; margin-top: 30px; margin-bottom: 15px;\">Additional Options:</h3>\r\n    <ul style=\"color: #ccc; text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8;\">\r\n      <li>Additional Grizzly Mesh</li>\r\n      <li>Riser Box</li>\r\n      <li>Bucket Transport Lugs</li>\r\n    </ul>\r\n    <p style=\"color: #888; font-size: 0.9rem; margin-top: 20px; text-align: center; font-style: italic;\">Please contact us for current pricing and delivery options to your location.</p>\r\n  </div>\r\n\r\n  <div class=\"product-description\" style=\"margin-top: 40px;\">\r\n    <h2>What Can You Screen?</h2>\r\n    <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;\">\r\n      <div style=\"background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;\">\r\n        <p style=\"color: #ffa500; font-weight: 600; margin-bottom: 10px;\">Aggregate Materials</p>\r\n        <ul style=\"color: #ccc; line-height: 1.8; list-style: none; padding: 0;\">\r\n          <li>✓ Road Gravel</li>\r\n          <li>✓ Landscape Stone</li>\r\n          <li>✓ Decorative Stone</li>\r\n          <li>✓ Erosion Control Rock</li>\r\n        </ul>\r\n      </div>\r\n      <div style=\"background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;\">\r\n        <p style=\"color: #ffa500; font-weight: 600; margin-bottom: 10px;\">Recycled Materials</p>\r\n        <ul style=\"color: #ccc; line-height: 1.8; list-style: none; padding: 0;\">\r\n          <li>✓ Ground Asphalt</li>\r\n          <li>✓ Crushed Concrete</li>\r\n          <li>✓ Wood Mulch</li>\r\n        </ul>\r\n      </div>\r\n      <div style=\"background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;\">\r\n        <p style=\"color: #ffa500; font-weight: 600; margin-bottom: 10px;\">Note</p>\r\n        <ul style=\"color: #ccc; line-height: 1.8; list-style: none; padding: 0;\">\r\n          <li>Static design - no power required</li>\r\n          <li>Best suited for aggregate applications</li>\r\n          <li>Grizzly-style screening</li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"cta-buttons\" style=\"margin-top: 60px;\">\r\n    <a href=\"tel:+6439707602\" class=\"cta-primary\">Call +64 3 970 7602</a>\r\n    <a href=\"mailto:info@sitemachinery.nz\" class=\"cta-secondary\">Email Us</a>\r\n  </div>\r\n</section>";
+export const staticGrizzlyHtml = `<!-- Product Detail -->
+<section class="product-detail">
+  <div class="product-header">
+    <h1>DeSite Static Grizzly — SLG-78 &amp; SLG-108</h1>
+    <p>No-power grizzly screeners for oversize topsoil, gravel and aggregate. Wide 2″ / 3″ / 4″ square mesh, tilting deck and spring suspension — without electrics to babysit. The SLG-78 is built for mid-size carriers; the SLG-108 uses a full-size 108-class deck for loaders and excavators.</p>
+    <p style="color:#ccc;margin-top:12px;font-size:1rem;">Also used for crushed concrete, ground asphalt and wood mulch when the job needs a wide opening rather than a fine soil mesh.</p>
+    <p style="text-align:center;margin-top:20px;">
+      <a href="#slg-78" style="color:#ffa500;font-weight:600;margin:0 12px;">SLG-78 specs ↓</a>
+      <a href="#slg-108" style="color:#ffa500;font-weight:600;margin:0 12px;">SLG-108 specs ↓</a>
+    </p>
+  </div>
+
+  <div class="product-gallery">
+    <img src="/images/grizzly2.jpg" alt="DeSite Static Grizzly screener">
+    <img src="/images/grizzly3.jpg" alt="DeSite Static Grizzly screening dirt, stone and sticks">
+  </div>
+
+  <div style="margin: 40px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;">
+    <h2 style="color: #ff6600; margin-bottom: 20px; text-align: center;">See It In Action</h2>
+    <div class="video-container" style="max-width: 800px; margin: 0 auto;">
+      <iframe src="https://player.vimeo.com/video/1129896297" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="border-radius: 12px;"></iframe>
+    </div>
+  </div>
+
+  <div class="product-details">
+    <div class="product-description">
+      <h2>Product Description</h2>
+      <p>Static Grizzlies are built for tough oversize work: road gravel, landscape stone, erosion rock and similar aggregate. Mesh screening on a rugged frame gives a cleaner product than fixed bars, with no electrical power required.</p>
+      <p>Both models share a tilting screen deck, spring suspension to reduce clogging, and a quick-change 2″ / 3″ / 4″ square mesh set. Choose the 78 for mid-size gear, or the 108 when bucket width and production need a full-size deck.</p>
+      <p>Low maintenance, 3-year structural warranty, optional riser box and bucket transport lugs.</p>
+
+      <h3 style="color: #ffa500; margin-top: 30px; margin-bottom: 15px;">Key Features:</h3>
+      <ul style="color: #ccc; line-height: 1.8;">
+        <li>Rugged grizzly design for gravel and aggregate</li>
+        <li>No electrical power required — static operation</li>
+        <li>2″ × 2″, 3″ × 3″ and 4″ × 4″ square mesh</li>
+        <li>Tilting screen deck for material control</li>
+        <li>Spring suspension system helps prevent clogging</li>
+        <li>Quick-change mesh, double-lock crimp weave</li>
+        <li>Two sizes: SLG-78 (mid-size) and SLG-108 (full-size)</li>
+        <li>Optional riser box and bucket transport lugs</li>
+        <li>3-year structural warranty</li>
+      </ul>
+    </div>
+
+    <div class="product-specifications">
+      <h2>Choose a Model</h2>
+      <p style="color:#ccc;margin-bottom:20px;">Jump to <a href="#slg-78" style="color:#ffa500;">SLG-78</a> or <a href="#slg-108" style="color:#ffa500;">SLG-108</a> for full dimensions and weights.</p>
+      <div class="spec-group">
+        <h3>Shared Mesh</h3>
+        <ul class="spec-list">
+          <li><strong>Square Pattern:</strong> 2" × 2", 3" × 3", 4" × 4"</li>
+          <li>Quick-change mesh system</li>
+          <li>Double lock crimp weave</li>
+          <li>Optional sizes on request</li>
+        </ul>
+      </div>
+      <div class="spec-group">
+        <h3>Warranty</h3>
+        <ul class="spec-list">
+          <li><strong>Structural Warranty:</strong> 3 years</li>
+          <li>Parts at no cost during warranty</li>
+          <li>Customer installs parts and covers shipping</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLG-78 -->
+  <div id="slg-78" style="margin: 60px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px; scroll-margin-top: 90px;">
+    <h2 style="color: #ff6600; margin-bottom: 20px; text-align: center; font-size: 2rem;">SLG-78 Static Grizzly</h2>
+    <p style="color:#ccc;text-align:center;max-width:800px;margin:0 auto 30px;line-height:1.7;">Mid-size no-power grizzly for skid steers, bucket tractors, mid-size excavators and compact loaders.</p>
+    <div class="product-gallery" style="margin-bottom: 30px;">
+      <div style="position: relative; display: inline-block;">
+        <img src="/images/bucket for 78.webp" alt="DeSite SLG-78 Static Grizzly bucket compatibility">
+        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(255,102,0,0.95); color: #000; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 1rem; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+          Mid-size buckets
+        </div>
+      </div>
+    </div>
+    <div class="product-details">
+      <div class="product-description">
+        <h3 style="color:#ffa500;">Equipment Compatibility</h3>
+        <p style="color:#e0e0e0;margin-bottom:10px;"><strong style="color:#ffa500;">Designed For:</strong> Mid-sized equipment</p>
+        <p style="color:#e0e0e0;margin:0;"><strong style="color:#ffa500;">Compatible Equipment:</strong> Skid Steers, Bucket Tractors, Mid-Size Excavators, Compact Loaders</p>
+      </div>
+      <div class="product-specifications">
+        <h3 style="color:#ffa500;">SLG-78 Specifications</h3>
+        <div class="spec-group">
+          <h3>Machine Dimensions</h3>
+          <ul class="spec-list">
+            <li><strong>Machine Width:</strong> 95 inches (2.41m)</li>
+            <li><strong>Machine Height:</strong> 90 inches (2.29m)</li>
+            <li><strong>Machine Depth:</strong> 74 inches (1.88m)</li>
+          </ul>
+        </div>
+        <div class="spec-group">
+          <h3>Screen Deck</h3>
+          <ul class="spec-list">
+            <li><strong>Screen Deck Width:</strong> 80 inches (2.03m)</li>
+            <li><strong>Screen Deck Length:</strong> 52 inches (1.32m)</li>
+            <li><strong>Screen Deck Surface Area:</strong> 29 sq/ft (2.7m²)</li>
+            <li><strong>Screen Deck Tilt Angle:</strong> 45 to 30 Degrees</li>
+          </ul>
+        </div>
+        <div class="spec-group">
+          <h3>Weight</h3>
+          <ul class="spec-list">
+            <li><strong>Total Weight (with riser box):</strong> 2250 lbs (1021kg)</li>
+            <li><strong>Total Weight (without riser box):</strong> 1750 lbs (794kg)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLG-108 -->
+  <div id="slg-108" style="margin: 60px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px; scroll-margin-top: 90px;">
+    <h2 style="color: #ff6600; margin-bottom: 20px; text-align: center; font-size: 2rem;">SLG-108 Static Grizzly</h2>
+    <p style="color:#ccc;text-align:center;max-width:800px;margin:0 auto 30px;line-height:1.7;">Full-size no-power grizzly on a 108-class frame. Same wide mesh as the 78, sized for loaders, backhoes and excavators with 84–108 inch buckets.</p>
+    <div class="product-gallery" style="margin-bottom: 30px;">
+      <div style="position: relative; display: inline-block;">
+        <img src="/images/bucket for 108.webp" alt="DeSite SLG-108 Static Grizzly bucket compatibility">
+        <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(255,102,0,0.95); color: #000; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 1rem; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+          84–108 inches
+        </div>
+      </div>
+    </div>
+    <div class="product-details">
+      <div class="product-description">
+        <h3 style="color:#ffa500;">Equipment Compatibility</h3>
+        <p style="color:#e0e0e0;margin-bottom:10px;"><strong style="color:#ffa500;">Designed For:</strong> Full-size equipment</p>
+        <p style="color:#e0e0e0;margin-bottom:10px;"><strong style="color:#ffa500;">Maximum Bucket Width:</strong> 2.8 metres (84–108 inches)</p>
+        <p style="color:#e0e0e0;margin:0;"><strong style="color:#ffa500;">Compatible Equipment:</strong> Wheel Loaders, Backhoes, Compact Wheel Loaders, Skidsteers, Excavators, Compact Excavators</p>
+      </div>
+      <div class="product-specifications">
+        <h3 style="color:#ffa500;">SLG-108 Specifications</h3>
+        <div class="spec-group">
+          <h3>Machine Dimensions</h3>
+          <ul class="spec-list">
+            <li><strong>Machine Width:</strong> 126 inches (3.20m)</li>
+            <li><strong>Machine Height:</strong> 122 inches (3.10m)</li>
+            <li><strong>Machine Depth:</strong> 72 inches (1.83m)</li>
+          </ul>
+        </div>
+        <div class="spec-group">
+          <h3>Screen Deck</h3>
+          <ul class="spec-list">
+            <li><strong>Screen Deck Width:</strong> 120 inches (3.05m)</li>
+            <li><strong>Screen Deck Length:</strong> 72 inches (1.83m)</li>
+            <li><strong>Screen Deck Surface Area:</strong> 58 sq/ft (5.4m²)</li>
+            <li><strong>Screen Deck Tilt Angle:</strong> 45 to 30 Degrees</li>
+          </ul>
+        </div>
+        <div class="spec-group">
+          <h3>Weight</h3>
+          <ul class="spec-list">
+            <li><strong>Total Weight (with riser box):</strong> 5500 lbs (2495kg)</li>
+            <li><strong>Total Weight (without riser box):</strong> 4300 lbs (1950kg)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin: 60px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;">
+    <h2 style="color: #ff6600; margin-bottom: 40px; text-align: center; font-size: 2rem;">Screener Features</h2>
+
+    <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);">
+      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Tilting Screen Deck</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        <img src="/images/TILTING-SCREEN-DECK-78STATIC_2.webp" alt="Tilting screen deck side view" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
+        <img src="/images/TILTING-SCREEN-DECK-78STATIC_.webp" alt="Tilting screen deck front view" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
+      </div>
+      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;">The tilting screen deck on both Static Grizzly models is the same system used on the powered 78 and 108 Proscreens. Direct bucket contact lets you control material flow while screening stays in motion — useful on sticky or oversize gravel and aggregate.</p>
+    </div>
+
+    <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);">
+      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Spring Suspension System</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        <img src="/images/SUSPENSION-78STATIC.webp" alt="Spring suspension system" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
+        <img src="/images/SUSPENSION-78STATIC_.webp" alt="Spring suspension system detail" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
+      </div>
+      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;">Spring suspension lets the deck move in a harmonic motion that drives material across the mesh. Unlike traditional bar grizzlies where rock can wedge and stay put, the suspension helps keep the opening clear.</p>
+    </div>
+
+    <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);">
+      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Riser Box (Optional Accessory)</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        <img src="/images/rise-box.jpg" alt="Riser box for increased capacity" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
+      </div>
+      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;">The riser box increases storage under the deck and steadies the screener. Winches and 2-inch straps let you fit or remove it in under five minutes. Available for both 78 and 108.</p>
+    </div>
+
+    <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);">
+      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Bucket Transport Lugs (Optional Accessory)</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+        <img src="/images/lugs.jpg" alt="Bucket transport lugs" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
+      </div>
+      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;">Optional bucket transport lugs let you shift either Static Grizzly around the site with the carrier bucket — useful in tight yards without a separate trailer move.</p>
+    </div>
+  </div>
+
+  <div class="product-pricing">
+    <h2>Pricing (Estimates)</h2>
+    <div class="price-main">Contact Us for Current Pricing</div>
+    <p class="price-note">SLG-78 or SLG-108 Static Grizzly. Ex Nelson. Price does not include shipping or delivery. Delivery will be arranged with the purchaser and additional charges may apply depending on location.</p>
+    <h3 style="color: #ffa500; margin-top: 30px; margin-bottom: 15px;">Additional Options:</h3>
+    <ul style="color: #ccc; text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8;">
+      <li>Additional Grizzly Mesh</li>
+      <li>Riser Box</li>
+      <li>Bucket Transport Lugs</li>
+    </ul>
+    <p style="color: #888; font-size: 0.9rem; margin-top: 20px; text-align: center; font-style: italic;">Please contact us for current pricing and delivery options to your location.</p>
+  </div>
+
+  <div class="product-description" style="margin-top: 40px;">
+    <h2>What Can You Screen?</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
+      <div style="background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;">
+        <p style="color: #ffa500; font-weight: 600; margin-bottom: 10px;">Gravel &amp; Aggregate</p>
+        <ul style="color: #ccc; line-height: 1.8; list-style: none; padding: 0;">
+          <li>✓ Road Gravel</li>
+          <li>✓ Landscape Stone</li>
+          <li>✓ Decorative Stone</li>
+          <li>✓ Erosion Control Rock</li>
+        </ul>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;">
+        <p style="color: #ffa500; font-weight: 600; margin-bottom: 10px;">Soil &amp; Oversize</p>
+        <ul style="color: #ccc; line-height: 1.8; list-style: none; padding: 0;">
+          <li>✓ Oversize topsoil and fill</li>
+          <li>✓ Mixed site material</li>
+          <li>✓ Sticks and debris separation</li>
+        </ul>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;">
+        <p style="color: #ffa500; font-weight: 600; margin-bottom: 10px;">Construction Materials</p>
+        <ul style="color: #ccc; line-height: 1.8; list-style: none; padding: 0;">
+          <li>✓ Ground Asphalt</li>
+          <li>✓ Crushed Concrete</li>
+          <li>✓ Wood Mulch</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-buttons" style="margin-top: 60px;">
+    <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+    <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
+  </div>
+</section>`
