@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-# Keep archive and draft content out of search results
+# Keep internal drafts and archive content out of search results
+Disallow: /idm/
 Disallow: /legacy/
 Disallow: /drafts/
 

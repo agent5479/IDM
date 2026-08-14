@@ -14,9 +14,16 @@ export default function SEO({ pathname, jsonLd }) {
       <meta name="keywords" content={seo.keywords} />
       <meta name="author" content="Warwick Marshall" />
       <meta name="creator" content="Warwick Marshall" />
-      <meta name="robots" content={seo.robots || 'index, follow'} />
+      <meta
+        name="robots"
+        content={seo.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+      />
       <link rel="canonical" href={seo.canonical} />
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+      <meta name="geo.region" content="NZ-NSN" />
+      <meta name="geo.placename" content="Nelson" />
+      <meta name="language" content="en-NZ" />
 
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Site Machinery NZ" />
