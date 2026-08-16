@@ -2097,3 +2097,176 @@ img[data-image-loaded="true"] {
   font-size: 0.85rem;
 }
 
+.commercials-section-label {
+  color: #ffa500;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 22px 0 10px;
+}
+
+.prospects-help,
+.prospects-form {
+  background: rgba(255, 102, 0, 0.08);
+  border: 1px solid rgba(255, 102, 0, 0.28);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.prospects-help h2,
+.prospects-form h2 {
+  color: #ff6600;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.prospects-help p,
+.prospects-help li {
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.prospects-help ul {
+  margin: 10px 0 0 18px;
+}
+
+.prospects-help a {
+  color: #ffa500;
+}
+
+.prospects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.prospects-grid label,
+.prospects-toolbar label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #ffa500;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.prospects-span {
+  grid-column: 1 / -1;
+}
+
+.prospects-grid input,
+.prospects-grid select,
+.prospects-grid textarea,
+.prospects-toolbar input,
+.prospects-toolbar select {
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(255, 102, 0, 0.45);
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+}
+
+.prospects-actions,
+.prospects-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+  align-items: center;
+}
+
+.prospects-toolbar {
+  margin: 0 0 12px;
+}
+
+.prospects-search {
+  min-width: 180px;
+  flex: 1;
+}
+
+.prospects-file-btn {
+  cursor: pointer;
+  margin: 0;
+}
+
+.prospects-status {
+  color: #ffa500;
+  margin-bottom: 10px;
+}
+
+.prospects-count {
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.prospects-print-title {
+  display: none;
+}
+
+.prospects-table-wrap {
+  overflow-x: auto;
+}
+
+.prospects-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.prospects-table th,
+.prospects-table td {
+  border-bottom: 1px solid rgba(255, 102, 0, 0.25);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+  color: #ddd;
+}
+
+.prospects-table th {
+  color: #ffa500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.prospects-table a {
+  color: #ffa500;
+}
+
+.prospects-link-btn {
+  background: none;
+  border: none;
+  color: #ffa500;
+  cursor: pointer;
+  padding: 0 8px 0 0;
+  font-size: 0.85rem;
+}
+
+@media print {
+  .sticky-nav,
+  .footer,
+  .prospects-no-print {
+    display: none !important;
+  }
+
+  .prospects-print-title {
+    display: block;
+    color: #000;
+    margin-bottom: 8px;
+  }
+
+  .prospects-page,
+  .prospects-table th,
+  .prospects-table td,
+  .prospects-count {
+    color: #000;
+  }
+
+  .prospects-table th,
+  .prospects-table td {
+    border-color: #999;
+  }
+}
+

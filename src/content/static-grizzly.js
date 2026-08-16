@@ -2,7 +2,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
 <section class="product-detail">
   <div class="product-header">
     <h1>DeSite Static Grizzly — SLG-78 &amp; SLG-108</h1>
-    <p>No-power grizzly screeners for oversize topsoil, gravel and aggregate. Wide 2″ / 3″ / 4″ square mesh, tilting deck and spring suspension — without electrics to babysit. The SLG-78 is built for mid-size carriers; the SLG-108 uses a full-size 108-class deck for loaders and excavators.</p>
+    <p>No-power grizzly screeners for oversize topsoil, gravel and aggregate. Wide 2″ / 3″ / 4″ square mesh, tilting deck and spring suspension — without electrics to babysit. The SLG-78 is built for mid-size carriers; the SLG-108 uses a full-size 108-class deck for loaders up to about 12 tonne, plus excavators.</p>
     <p style="color:#ccc;margin-top:12px;font-size:1rem;">Also used for crushed concrete, ground asphalt and wood mulch when the job needs a wide opening rather than a fine soil mesh.</p>
     <p style="text-align:center;margin-top:20px;">
       <a href="#slg-78" style="color:#ffa500;font-weight:600;margin:0 12px;">SLG-78 specs ↓</a>
@@ -26,7 +26,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
     <div class="product-description">
       <h2>Product Description</h2>
       <p>Static Grizzlies are built for tough oversize work: road gravel, landscape stone, erosion rock and similar aggregate. Mesh screening on a rugged frame gives a cleaner product than fixed bars, with no electrical power required.</p>
-      <p>Both models share a tilting screen deck, spring suspension to reduce clogging, and a quick-change 2″ / 3″ / 4″ square mesh set. Choose the 78 for mid-size gear, or the 108 when bucket width and production need a full-size deck.</p>
+      <p>Both models share a tilting screen deck, spring suspension to reduce clogging, and a quick-change 2″ / 3″ / 4″ square mesh set. Lead with 4″ / ~100 mm, then step to 2″ / ~50 mm or 3″ / ~75 mm for filling material (nearest stock openings to 70 mm). Choose the 78 for mid-size gear, or the 108 when bucket width and production need a full-size deck — ideal with a loader up to about 12 tonne.</p>
       <p>Low maintenance, 3-year structural warranty, optional riser box and bucket transport lugs.</p>
 
       <h3 style="color: #ffa500; margin-top: 30px; margin-bottom: 15px;">Key Features:</h3>
@@ -117,7 +117,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
   <!-- SLG-108 -->
   <div id="slg-108" style="margin: 60px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px; scroll-margin-top: 90px;">
     <h2 style="color: #ff6600; margin-bottom: 20px; text-align: center; font-size: 2rem;">SLG-108 Static Grizzly</h2>
-    <p style="color:#ccc;text-align:center;max-width:800px;margin:0 auto 30px;line-height:1.7;">Full-size no-power grizzly on a 108-class frame. Same wide mesh as the 78, sized for loaders, backhoes and excavators with 84–108 inch buckets.</p>
+    <p style="color:#ccc;text-align:center;max-width:800px;margin:0 auto 30px;line-height:1.7;">Full-size no-power grizzly on a 108-class frame. Same wide mesh as the 78. Ideal carrier is a loader up to about 12 tonne; also fits backhoes and excavators with 84–108 inch buckets.</p>
     <div class="product-gallery" style="margin-bottom: 30px;">
       <div style="position: relative; display: inline-block;">
         <img src="/images/bucket for 108.webp" alt="DeSite SLG-108 Static Grizzly bucket compatibility">
@@ -129,9 +129,9 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
     <div class="product-details">
       <div class="product-description">
         <h3 style="color:#ffa500;">Equipment Compatibility</h3>
-        <p style="color:#e0e0e0;margin-bottom:10px;"><strong style="color:#ffa500;">Designed For:</strong> Full-size equipment</p>
+        <p style="color:#e0e0e0;margin-bottom:10px;"><strong style="color:#ffa500;">Designed For:</strong> Full-size equipment — ideal with a loader up to about 12 tonne</p>
         <p style="color:#e0e0e0;margin-bottom:10px;"><strong style="color:#ffa500;">Maximum Bucket Width:</strong> 2.8 metres (84–108 inches)</p>
-        <p style="color:#e0e0e0;margin:0;"><strong style="color:#ffa500;">Compatible Equipment:</strong> Wheel Loaders, Backhoes, Compact Wheel Loaders, Skidsteers, Excavators, Compact Excavators</p>
+        <p style="color:#e0e0e0;margin:0;"><strong style="color:#ffa500;">Compatible Equipment:</strong> Wheel Loaders (up to about 12 tonne), Backhoes, Compact Wheel Loaders, Skidsteers, Excavators, Compact Excavators</p>
       </div>
       <div class="product-specifications">
         <h3 style="color:#ffa500;">SLG-108 Specifications</h3>

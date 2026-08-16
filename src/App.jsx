@@ -7,8 +7,11 @@ import {
   CommercialsHubPage,
   ContactPage,
   GrizzlyCommercialPage,
+  ForCivilPage,
+  ForFarmersPage,
   HomePage,
   PhotosPage,
+  ProspectsPage,
   ScreeningRecommendationPage,
   Slg108Page,
   Slg68Page,
@@ -50,6 +53,8 @@ export default function App() {
           <Route path="/photos" element={<PhotosPage />} />
           <Route path="/videos" element={<VideosPage />} />
           <Route path="/screening-recommendation" element={<ScreeningRecommendationPage />} />
+          <Route path="/for/farmers" element={<ForFarmersPage />} />
+          <Route path="/for/civil-contractors" element={<ForCivilPage />} />
           <Route path="/products/slg-108vfrb" element={<Slg108Page />} />
           <Route path="/products/slg-78vf" element={<Slg78Page />} />
           <Route path="/products/slg-78vf-flow" element={<Slg78FlowPage />} />
@@ -60,6 +65,7 @@ export default function App() {
           <Route path="/idm/commercials" element={<CommercialsHubPage />} />
           <Route path="/idm/commercials/grizzly" element={<GrizzlyCommercialPage />} />
           <Route path="/idm/commercials/vibratory" element={<VibratoryCommercialPage />} />
+          <Route path="/idm/prospects" element={<ProspectsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

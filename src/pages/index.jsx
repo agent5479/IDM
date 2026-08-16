@@ -10,7 +10,10 @@ import { slg68Html } from '../content/slg-68v'
 import { staticGrizzlyHtml } from '../content/static-grizzly'
 import { telehandlerBinsHtml } from '../content/telehandler-bins'
 import { additionalProductsHtml } from '../content/additional-products'
+import { forFarmersHtml } from '../content/for-farmers'
+import { forCivilHtml } from '../content/for-civil'
 import ScreeningRecommendationPage from './ScreeningRecommendationPage'
+import ProspectsPage from './office/ProspectsPage'
 import CommercialsHubPage from './commercials/CommercialsHubPage'
 import GrizzlyCommercialPage from './commercials/GrizzlyCommercialPage'
 import VibratoryCommercialPage from './commercials/VibratoryCommercialPage'
@@ -32,9 +35,12 @@ export const Slg68Page = () => <Page html={slg68Html} />
 export const StaticGrizzlyPage = () => <Page html={staticGrizzlyHtml} />
 export const TelehandlerBinsPage = () => <Page html={telehandlerBinsHtml} />
 export const AdditionalProductsPage = () => <Page html={additionalProductsHtml} />
+export const ForFarmersPage = () => <Page html={forFarmersHtml} />
+export const ForCivilPage = () => <Page html={forCivilHtml} />
 export {
   ScreeningRecommendationPage,
   CommercialsHubPage,
   GrizzlyCommercialPage,
   VibratoryCommercialPage,
+  ProspectsPage,
 }

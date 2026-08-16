@@ -152,6 +152,33 @@ export const meshSections = [
     ],
   },
   {
+    id: 'farm-filling',
+    title: 'Farm Gravel, Cow Races and Filling',
+    intro:
+      'Immediate market offer: 100 mm mesh first to knock off oversize, then a 50 mm or 3 inch (~75 mm) secondary to make filling material. Riverbed stone that has rounded on farm makes stronger cow races than sharp crushed product. Exact 70 mm is not a listed stock square — 50 mm and 3 inch (~75 mm) are the nearest DeSite openings; 70 mm can be special-ordered.',
+    tables: [
+      {
+        title: 'First pass — oversize',
+        headers: ['Mesh Size', 'Approx. Metric', 'Use'],
+        note: 'Lead with 100 mm / 4″ on a Static Grizzly or Proscreen. Same opening contractors already spec for oversize gravel.',
+        rows: [
+          ['4" x 4" square (grizzly)', '~100 mm mesh → ~75 mm product', 'Knock off cobbles from farm river gravel'],
+          ['100 mm square (Proscreen)', '~100 mm', 'Same first pass on a vibratory deck'],
+        ],
+      },
+      {
+        title: 'Second pass — filling material',
+        headers: ['Mesh Size', 'Approx. Metric', 'Use'],
+        note: 'Filling for cow races, farm tracks and civil fill. 50 mm and 3 inch (~75 mm) are stock; 70 mm is special-order if the spec is exact.',
+        rows: [
+          ['2" x 2" square', '~50 mm mesh → ~38 mm product', 'Tighter filling material'],
+          ['3" x 3" square', '~75 mm mesh → ~50 mm product', 'Nearest stock opening to 70 mm'],
+          ['70 mm square (special order)', '~70 mm', 'Order if the race or fill spec names 70 mm exactly'],
+        ],
+      },
+    ],
+  },
+  {
     id: 'aggregates',
     title: 'Aggregate Products',
     intro:
@@ -271,5 +298,6 @@ export const meshNav = [
   { id: 'topsoil', label: 'Topsoil' },
   { id: 'compost', label: 'Compost' },
   { id: 'mulch', label: 'Mulch' },
+  { id: 'farm-filling', label: 'Farm & filling' },
   { id: 'aggregates', label: 'Aggregates' },
 ]

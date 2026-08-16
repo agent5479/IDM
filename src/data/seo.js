@@ -153,10 +153,34 @@ export const routes = [
     file: 'screening-recommendation/index.html',
     title: `Screen Mesh Size Guide NZ | ${siteName}`,
     description:
-      'Choose the right DeSite screen mesh for topsoil, gravel, compost, mulch and aggregate. Mesh recommendation charts for New Zealand operators.',
+      'Choose the right DeSite screen mesh for topsoil, gravel, compost, mulch, farm filling and aggregate. Mesh recommendation charts for New Zealand operators.',
     keywords:
-      'screen mesh size NZ, topsoil mesh guide, gravel screening mesh, aggregate mesh size, DeSite mesh recommendation',
+      'screen mesh size NZ, topsoil mesh guide, gravel screening mesh, aggregate mesh size, cow race gravel mesh, DeSite mesh recommendation',
     canonical: `${contact.siteUrl}/screening-recommendation`,
+    changefreq: 'monthly',
+    priority: '0.8',
+  },
+  {
+    path: '/for/farmers',
+    file: 'for/farmers/index.html',
+    title: `Farm Gravel Screeners & Cow Race Fill NZ | ${siteName}`,
+    description:
+      'Screen farm river gravel on site. 100 mm mesh first, then 50 mm or 3 inch (~75 mm) filling mesh for cow races. DeSite grizzlies from Site Machinery NZ.',
+    keywords:
+      'farm gravel screener NZ, cow race gravel, farm river screening, 100mm mesh, filling material screener, DeSite grizzly farm',
+    canonical: `${contact.siteUrl}/for/farmers`,
+    changefreq: 'monthly',
+    priority: '0.8',
+  },
+  {
+    path: '/for/civil-contractors',
+    file: 'for/civil-contractors/index.html',
+    title: `Civil & Landscaping Screeners NZ | ${siteName}`,
+    description:
+      'On-site screening for civil contractors, subdivisions and retaining-wall crews. 100 mm mesh plus 50 mm or 3 inch filling screen. Site Machinery NZ.',
+    keywords:
+      'civil contractor screener NZ, subdivision landscaping screener, skid steer soil screening, retaining wall fill, DeSite Proscreen',
+    canonical: `${contact.siteUrl}/for/civil-contractors`,
     changefreq: 'monthly',
     priority: '0.8',
   },
@@ -187,6 +211,16 @@ export const routes = [
     description: 'Draft promotional material for DeSite vibratory Proscreens.',
     keywords: 'vibratory proscreen promo',
     canonical: `${contact.siteUrl}/idm/commercials/vibratory`,
+    robots: 'noindex, nofollow',
+    includeInSitemap: false,
+  },
+  {
+    path: '/idm/prospects',
+    file: 'idm/prospects/index.html',
+    title: `Prospects Workspace - ${siteName}`,
+    description: 'Internal prospect list workspace for Site Machinery NZ.',
+    keywords: 'Site Machinery prospects',
+    canonical: `${contact.siteUrl}/idm/prospects`,
     robots: 'noindex, nofollow',
     includeInSitemap: false,
   },

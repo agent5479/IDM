@@ -52,14 +52,21 @@ export default function ScreeningRecommendationPage() {
       <div className="mesh-hero">
         <h1>Screen Mesh Recommendation Guide</h1>
         <p>
-          Choose the right DeSite mesh for topsoil, gravel, compost, mulch and aggregate.
-          Charts below are tailored for Site Machinery NZ operators — imperial openings (industry
-          standard) with approximate metric context where helpful.
+          Choose the right DeSite mesh for topsoil, gravel, compost, mulch, farm filling and
+          aggregate. Charts below are tailored for Site Machinery NZ operators — imperial openings
+          (industry standard) with approximate metric context where helpful.
         </p>
         <p className="mesh-hero-links">
-          Looking for wide grizzly openings? See the{' '}
-          <Link to="/products/static-grizzly">SLG-78 and SLG-108 Static Grizzly</Link> or browse{' '}
-          <a href="#aggregates">aggregate recommendations</a>.
+          Immediate farm and civil offer: 100 mm first, then 50 mm or 3 inch (~75 mm) filling.{' '}
+          <a href="#farm-filling">Farm gravel and cow races</a>
+          {' · '}
+          <Link to="/for/farmers">Farmers</Link>
+          {' · '}
+          <Link to="/for/civil-contractors">Civil contractors</Link>
+          {' · '}
+          <Link to="/products/static-grizzly">Static Grizzly</Link>
+          {' · '}
+          <a href="#aggregates">Aggregates</a>
         </p>
       </div>
 

@@ -34,6 +34,8 @@ export default function Footer() {
           <h3>Information</h3>
           <Link to="/about">About Us</Link>
           <Link to="/screening-recommendation">Mesh Size Guide</Link>
+          <Link to="/for/farmers">For Farmers</Link>
+          <Link to="/for/civil-contractors">For Civil Contractors</Link>
           <Link to="/photos">Photos</Link>
           <Link to="/videos">Videos</Link>
           <Link to="/contact">Contact Us</Link>
