@@ -1,1 +1,171 @@
-export const additionalProductsHtml = "<!-- Page Content -->\r\n<section class=\"page-content\">\r\n  <h1>Additional Products Available</h1>\r\n  \r\n  <div class=\"product-description\" style=\"margin-bottom: 40px; text-align: center;\">\r\n    <p style=\"font-size: 1.3rem; color: #ffa500; margin-bottom: 20px;\">Part of our DeSite range - available to order for next shipment</p>\r\n    <p style=\"font-size: 1.1rem; color: #ccc; max-width: 800px; margin: 0 auto;\">\r\n      The following products are part of our DeSite range and can be included in our next order. Contact us to express interest and we'll keep you updated on availability.\r\n    </p>\r\n  </div>\r\n  \r\n    <!-- Riser Box (Optional) -->\r\n    <div style=\"background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);\">\r\n      <h3 style=\"color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;\">Riser Box (Optional Accessory)</h3>\r\n      <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;\">\r\n        <img src=\"/images/rise-box.jpg\" alt=\"Riser box for increased capacity\" style=\"width: 100%; border-radius: 12px; border: 2px solid #ff6600;\">\r\n      </div>\r\n      <p style=\"color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;\">The Riser Box is designed to boost productivity by allowing you to handle more material, ultimately increasing the efficiency of your screening operations. It also stabilizes the movement of the screener, ensuring smoother and more consistent performance. Equipped with winches and 2-inch straps, the Riser Box can be easily installed or removed in less than five minutes, making it a convenient and practical addition to your equipment.</p>\r\n    </div>\r\n\r\n    <!-- Bucket Transport Lugs (Optional) -->\r\n    <div style=\"background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);\">\r\n      <h3 style=\"color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;\">Bucket Transport Lugs (Optional Accessory)</h3>\r\n      <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;\">\r\n        <img src=\"/images/lugs.jpg\" alt=\"Bucket transport lugs\" style=\"width: 100%; border-radius: 12px; border: 2px solid #ff6600;\">\r\n      </div>\r\n      <p style=\"color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;\">Like other models in our lineup, the SLG-78 Static offers optional Bucket Transport Lugs. These lugs make transporting and moving the screener as easy and stress-free as possible, ensuring smooth and efficient mobility even in challenging or tight locations. This feature enhances the portability of the machine, making it easier to navigate difficult job sites using your equipment's bucket.</p>\r\n    </div>\r\n  </div>\r\n  \r\n  <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px;\">\r\n    <div style=\"background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 30px; text-align: center;\">\r\n      <h2 style=\"color: #ffa500; margin-bottom: 15px; font-size: 1.5rem;\">Skidsteer Attachments</h2>\r\n      <p style=\"color: #ccc; line-height: 1.8; font-size: 1.05rem; margin-bottom: 20px;\">\r\n        Specialized attachments for skidsteer loaders designed to enhance productivity and versatility on construction and earthmoving sites.\r\n      </p>\r\n      <p style=\"color: #888; font-size: 0.95rem; font-style: italic;\">\r\n        Available to order for next shipment\r\n      </p>\r\n    </div>\r\n    \r\n    <div style=\"background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 30px; text-align: center;\">\r\n      <h2 style=\"color: #ffa500; margin-bottom: 15px; font-size: 1.5rem;\">Construction Debris Bins</h2>\r\n      <p style=\"color: #ccc; line-height: 1.8; font-size: 1.05rem; margin-bottom: 20px;\">\r\n        Heavy-duty bins for construction waste management. Built tough to handle demolition debris, construction materials, and site waste.\r\n      </p>\r\n      <p style=\"color: #888; font-size: 0.95rem; font-style: italic;\">\r\n        Available to order for next shipment\r\n      </p>\r\n    </div>\r\n    \r\n    <div style=\"background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 30px; text-align: center;\">\r\n      <h2 style=\"color: #ffa500; margin-bottom: 15px; font-size: 1.5rem;\">Equipment Trailers</h2>\r\n      <p style=\"color: #ccc; line-height: 1.8; font-size: 1.05rem; margin-bottom: 20px;\">\r\n        Trailers designed specifically for equipment transport. Robust construction for safely moving heavy machinery and equipment between sites.\r\n      </p>\r\n      <p style=\"color: #888; font-size: 0.95rem; font-style: italic;\">\r\n        Available to order for next shipment\r\n      </p>\r\n    </div>\r\n    \r\n    <div style=\"background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 30px; text-align: center;\">\r\n      <h2 style=\"color: #ffa500; margin-bottom: 15px; font-size: 1.5rem;\">Dump Trailers</h2>\r\n      <p style=\"color: #ccc; line-height: 1.8; font-size: 1.05rem; margin-bottom: 20px;\">\r\n        Dump trailers for efficient material handling. Perfect for transporting and dumping soil, gravel, aggregate, and other bulk materials.\r\n      </p>\r\n      <p style=\"color: #888; font-size: 0.95rem; font-style: italic;\">\r\n        Available to order for next shipment\r\n      </p>\r\n    </div>\r\n  </div>\r\n\r\n  <div style=\"background: rgba(255,102,0,0.15); border: 2px solid #ff6600; border-radius: 16px; padding: 40px; margin-bottom: 40px; text-align: center;\">\r\n    <h2 style=\"color: #ff6600; margin-bottom: 20px; font-size: 1.8rem;\">Interested in These Products?</h2>\r\n    <p style=\"color: #e0e0e0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;\">\r\n      Express your interest and we'll include these items in our next order from DeSite. Contact us to discuss your requirements, get pricing information, and secure your place in the next shipment.\r\n    </p>\r\n    \r\n    <div class=\"cta-buttons\">\r\n      <a href=\"/contact\" class=\"cta-primary\">Contact Us</a>\r\n      <a href=\"tel:+6439707602\" class=\"cta-primary\">Call +64 3 970 7602</a>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"product-description\" style=\"margin-bottom: 40px;\">\r\n    <h2>Why Order from Site Machinery?</h2>\r\n    <ul style=\"color: #ccc; line-height: 1.8; margin-top: 20px; font-size: 1.05rem;\">\r\n      <li><strong style=\"color: #ff6600;\">Exclusive NZ Supplier:</strong> We are the exclusive New Zealand supplier of DeSite equipment</li>\r\n      <li><strong style=\"color: #ff6600;\">Quality Products:</strong> All products are manufactured by DeSite to the highest standards</li>\r\n      <li><strong style=\"color: #ff6600;\">Competitive Pricing:</strong> Direct from manufacturer pricing with local support</li>\r\n      <li><strong style=\"color: #ff6600;\">Nationwide Service:</strong> We can supply anywhere in New Zealand</li>\r\n      <li><strong style=\"color: #ff6600;\">Expert Advice:</strong> Our team can help you choose the right products for your needs</li>\r\n      <li><strong style=\"color: #ff6600;\">Local Support:</strong> NZ-based support and parts availability</li>\r\n    </ul>\r\n  </div>\r\n</section>";
+export const additionalProductsHtml = `<!-- Page Content -->
+<section class="page-content">
+  <h1>Additional Products Available to Order</h1>
+
+  <div class="product-description" style="margin-bottom: 40px; text-align: center;">
+    <p style="font-size: 1.3rem; color: #ffa500; margin-bottom: 20px;">The rest of the DeSite catalog — for the next shipment</p>
+    <p style="font-size: 1.1rem; color: #ccc; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+      The machines on our homepage are the advertised, in-stock range. Everything below is part of the same DeSite catalog and can be included on our next container. Tell us what you want and we will quote it with the next order.
+    </p>
+    <p style="margin-top: 24px;">
+      <a href="#mini" style="color:#ffa500;font-weight:600;margin:0 10px;">Mini screeners</a>
+      <a href="#grizzly-bar" style="color:#ffa500;font-weight:600;margin:0 10px;">Grizzly bar</a>
+      <a href="#attachments" style="color:#ffa500;font-weight:600;margin:0 10px;">Attachments</a>
+      <a href="#trailers" style="color:#ffa500;font-weight:600;margin:0 10px;">Dump trailers</a>
+      <a href="#bins" style="color:#ffa500;font-weight:600;margin:0 10px;">Construction bins</a>
+      <a href="#accessories" style="color:#ffa500;font-weight:600;margin:0 10px;">Accessories</a>
+    </p>
+  </div>
+
+  <div id="mini" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+    <h2 style="color: #ff6600; margin-bottom: 10px;">Mini screeners</h2>
+    <p style="color: #888; margin-bottom: 24px;">Non-vibratory DeSite minis for subcompact carriers. Distinct from the in-stock 68 / 78 / 108 Proscreens.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">SLG-56 Mini</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">Purpose-built for mini equipment. Non-vibratory deck, 63 × 66 inches (33 sq/ft), about 882 lbs (400 kg). Suits buckets in the 48–56 inch class — mini excavators, compact tractors and smaller skidsteers.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">SLG-48 Mini</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">DeSite’s smallest portable screener for limited lift capacity: stand-on skidsteers, subcompact tractors and mini excavators. Deck 55 × 65 inches (25 sq/ft), about 695 lbs (315 kg).</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="grizzly-bar" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+    <h2 style="color: #ff6600; margin-bottom: 10px;">Grizzly bar</h2>
+    <p style="color: #888; margin-bottom: 24px;">Bar-style oversize separation — not the mesh SLG-78 / SLG-108 Static Grizzlies already advertised.</p>
+    <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+      <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+      <h3 style="color: #ffa500; margin-bottom: 12px;">DeSite Grizzly Bar</h3>
+      <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">Traditional bar grizzly for knocking off oversize rock and debris before or instead of a mesh deck. Specify opening and carrier when you enquire so we can match it to the job.</p>
+      <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+    </div>
+  </div>
+
+  <div id="attachments" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+    <h2 style="color: #ff6600; margin-bottom: 10px;">Skid-steer attachments</h2>
+    <p style="color: #888; margin-bottom: 24px;">DeSite attachments designed for skidsteers.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">Mulle Bin</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">Skid-steer mule bin for moving bulk material around the site without a separate dump truck cycle. Built to the same DeSite duty as the rest of the attachment range.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">SR-2 Ripper</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">Skid-steer ripper for breaking hard ground, packed fill and root-bound soils ahead of loading or screening.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">SR-3 Ripper</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">Heavier DeSite skid-steer ripper in the same family as the SR-2, for tougher ground and larger compact loaders. Confirm carrier class when you order.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="trailers" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+    <h2 style="color: #ff6600; margin-bottom: 10px;">Xtreme Duty dump trailers</h2>
+    <p style="color: #888; margin-bottom: 24px;">Excavator-rated floors (laminated 5/8″ steel), barn-door tailgate, single-axle dual-wheel design for compact gear.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">XD 35</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">3.5 cubic yard dump trailer for compact excavators and skidsteers. Same reinforced floor and frameless dump as the larger XD models.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">XD 55</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">5.5 cubic yard dump trailer. Hitch tube long enough for 90-degree loading against an excavator blade in tight yards.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">XD 80</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">8 cubic yard dump trailer for higher-volume haul-off. Dual-wheel single axle to spread ground pressure when loaded.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="bins" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+    <h2 style="color: #ff6600; margin-bottom: 10px;">Construction bins</h2>
+    <p style="color: #888; margin-bottom: 24px;">DeSite dump bins. Separate from the telehandler bins we already stock in Nelson (2.1 × 1.5 × 1.2 m).</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">TB 4.75 yard bin</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">Largest DeSite dump bin in the catalog — about 4.75 cubic yards for debris, spoil and bulk materials on civil and construction sites.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">2 yard bin</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">Two-yard dump bin for mixed site work where the 4.75 is more volume than you need.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+      <div style="background: rgba(255,102,0,0.1); border: 2px solid rgba(255,102,0,0.3); border-radius: 16px; padding: 28px;">
+        <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+        <h3 style="color: #ffa500; margin-bottom: 12px;">1 yard bin</h3>
+        <p style="color: #ccc; line-height: 1.8; margin-bottom: 16px;">One-yard dump bin for compact sites, landscaping crews and tighter carriers.</p>
+        <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="accessories" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+    <h2 style="color: #ff6600; margin-bottom: 10px;">Screener accessories</h2>
+    <p style="color: #888; margin-bottom: 24px;">Fits the advertised Proscreen and Static Grizzly range. Order extras with a machine or on a later container.</p>
+
+    <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 24px; border: 2px solid rgba(255,102,0,0.3);">
+      <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Riser Box</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 16px;">
+        <img src="/images/rise-box.jpg" alt="Riser box for increased capacity" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;" onerror="this.style.display='none'">
+      </div>
+      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem; margin-bottom: 12px;">Raises the screener for more material under the deck and steadies the unit. Winches and 2-inch straps — on or off in under five minutes. Available for 68 / 78 / 108 class machines.</p>
+      <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+    </div>
+
+    <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 24px; border: 2px solid rgba(255,102,0,0.3);">
+      <p style="color: #ffa500; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
+      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Bucket Transport Lugs</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 16px;">
+        <img src="/images/lugs.jpg" alt="Bucket transport lugs" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;" onerror="this.style.display='none'">
+      </div>
+      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem; margin-bottom: 12px;">Move the screener around the job with the carrier bucket — no wheels, axle or hitch. Optional on Proscreen and Static Grizzly models.</p>
+      <p style="color: #888; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+    </div>
+  </div>
+
+  <div style="background: rgba(255,102,0,0.15); border: 2px solid #ff6600; border-radius: 16px; padding: 40px; margin-bottom: 40px; text-align: center;">
+    <h2 style="color: #ff6600; margin-bottom: 20px; font-size: 1.8rem;">Want any of these on the next container?</h2>
+    <p style="color: #e0e0e0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      Contact Site Machinery with the model and carrier you run. We will quote current DeSite pricing and hold a place on the next shipment from Nelson supply.
+    </p>
+    <div class="cta-buttons">
+      <a href="/contact" class="cta-primary">Contact Us</a>
+      <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+    </div>
+  </div>
+
+  <div class="product-description" style="margin-bottom: 40px;">
+    <h2>Why order from Site Machinery?</h2>
+    <ul style="color: #ccc; line-height: 1.8; margin-top: 20px; font-size: 1.05rem;">
+      <li><strong style="color: #ff6600;">Exclusive NZ supplier:</strong> DeSite equipment for New Zealand is ordered through Site Machinery</li>
+      <li><strong style="color: #ff6600;">In-stock vs orderable:</strong> Homepage machines are the advertised range we keep; this page is the rest of the catalog</li>
+      <li><strong style="color: #ff6600;">Nationwide:</strong> Supply from Nelson anywhere in New Zealand</li>
+      <li><strong style="color: #ff6600;">Local support:</strong> Advice on mesh, carrier fit and what belongs on which container</li>
+    </ul>
+  </div>
+</section>
+`

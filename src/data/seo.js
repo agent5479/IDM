@@ -139,11 +139,11 @@ export const routes = [
   {
     path: '/products/additional-products',
     file: 'products/additional-products/index.html',
-    title: `Additional Products & Attachments | ${siteName}`,
+    title: `DeSite Mini Screeners, Trailers & Bins to Order | ${siteName}`,
     description:
-      'Additional Site Machinery NZ products and attachments available with DeSite screener supply — bins, accessories and options for New Zealand operators.',
+      'Order DeSite mini screeners, grizzly bars, skid-steer attachments, Xtreme Duty dump trailers and construction bins for the next New Zealand shipment from Site Machinery NZ.',
     keywords:
-      'DeSite attachments NZ, skidsteer attachments, screener accessories, construction equipment New Zealand',
+      'DeSite mini screener NZ, SLG-56, dump trailer NZ, skid steer attachments, construction bins, DeSite orderable range',
     canonical: `${contact.siteUrl}/products/additional-products`,
     changefreq: 'monthly',
     priority: '0.6',
