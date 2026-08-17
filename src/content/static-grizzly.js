@@ -16,7 +16,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
   </div>
 
   <div style="margin: 40px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;">
-    <h2 style="color: #ff6600; margin-bottom: 20px; text-align: center;">See It In Action</h2>
+    <h2 style="color: #b34700; margin-bottom: 20px; text-align: center;">See It In Action</h2>
     <div class="video-container" style="max-width: 800px; margin: 0 auto;">
       <iframe src="https://player.vimeo.com/video/1129896297" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="border-radius: 12px;"></iframe>
     </div>
@@ -29,8 +29,8 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
       <p>Both models share a tilting screen deck, spring suspension to reduce clogging, and a quick-change 2″ / 3″ / 4″ square mesh set. Lead with 4″ / ~100 mm, then step to 2″ / ~50 mm or 3″ / ~75 mm for filling material (nearest stock openings to 70 mm). Choose the 78 for mid-size gear, or the 108 when bucket width and production need a full-size deck — ideal with a loader up to about 12 tonne.</p>
       <p>Low maintenance, 3-year structural warranty, optional riser box and bucket transport lugs.</p>
 
-      <h3 style="color: #ffa500; margin-top: 30px; margin-bottom: 15px;">Key Features:</h3>
-      <ul style="color: #ccc; line-height: 1.8;">
+      <h3 style="color: #b34700; margin-top: 30px; margin-bottom: 15px;">Key Features:</h3>
+      <ul style="color: #2c2c2c; line-height: 1.8;">
         <li>Rugged grizzly design for gravel and aggregate</li>
         <li>No electrical power required — static operation</li>
         <li>2″ × 2″, 3″ × 3″ and 4″ × 4″ square mesh</li>
@@ -68,7 +68,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
 
   <!-- SLG-78 -->
   <div id="slg-78" style="margin: 60px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px; scroll-margin-top: 90px;">
-    <h2 style="color: #ff6600; margin-bottom: 20px; text-align: center; font-size: 2rem;">SLG-78 Static Grizzly</h2>
+    <h2 style="color: #b34700; margin-bottom: 20px; text-align: center; font-size: 2rem;">SLG-78 Static Grizzly</h2>
     <p style="color:#ccc;text-align:center;max-width:800px;margin:0 auto 30px;line-height:1.7;">Mid-size no-power grizzly for skid steers, bucket tractors, mid-size excavators and compact loaders.</p>
     <div class="product-gallery" style="margin-bottom: 30px;">
       <div style="position: relative; display: inline-block;">
@@ -116,7 +116,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
 
   <!-- SLG-108 -->
   <div id="slg-108" style="margin: 60px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px; scroll-margin-top: 90px;">
-    <h2 style="color: #ff6600; margin-bottom: 20px; text-align: center; font-size: 2rem;">SLG-108 Static Grizzly</h2>
+    <h2 style="color: #b34700; margin-bottom: 20px; text-align: center; font-size: 2rem;">SLG-108 Static Grizzly</h2>
     <p style="color:#ccc;text-align:center;max-width:800px;margin:0 auto 30px;line-height:1.7;">Full-size no-power grizzly on a 108-class frame. Same wide mesh as the 78. Ideal carrier is a loader up to about 12 tonne; also fits backhoes and excavators with 84–108 inch buckets.</p>
     <div class="product-gallery" style="margin-bottom: 30px;">
       <div style="position: relative; display: inline-block;">
@@ -164,40 +164,40 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
   </div>
 
   <div style="margin: 60px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;">
-    <h2 style="color: #ff6600; margin-bottom: 40px; text-align: center; font-size: 2rem;">Screener Features</h2>
+    <h2 style="color: #b34700; margin-bottom: 40px; text-align: center; font-size: 2rem;">Screener Features</h2>
 
     <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);">
-      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Tilting Screen Deck</h3>
+      <h3 style="color: #b34700; margin-bottom: 20px; font-size: 1.5rem;">Tilting Screen Deck</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
         <img src="/images/TILTING-SCREEN-DECK-78STATIC_2.webp" alt="Tilting screen deck side view" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
         <img src="/images/TILTING-SCREEN-DECK-78STATIC_.webp" alt="Tilting screen deck front view" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
       </div>
-      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;">The tilting screen deck on both Static Grizzly models is the same system used on the powered 78 and 108 Proscreens. Direct bucket contact lets you control material flow while screening stays in motion — useful on sticky or oversize gravel and aggregate.</p>
+      <p style="color: #2c2c2c; line-height: 1.8; font-size: 1.05rem;">The tilting screen deck on both Static Grizzly models is the same system used on the powered 78 and 108 Proscreens. Direct bucket contact lets you control material flow while screening stays in motion — useful on sticky or oversize gravel and aggregate.</p>
     </div>
 
     <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);">
-      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Spring Suspension System</h3>
+      <h3 style="color: #b34700; margin-bottom: 20px; font-size: 1.5rem;">Spring Suspension System</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
         <img src="/images/SUSPENSION-78STATIC.webp" alt="Spring suspension system" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
         <img src="/images/SUSPENSION-78STATIC_.webp" alt="Spring suspension system detail" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
       </div>
-      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;">Spring suspension lets the deck move in a harmonic motion that drives material across the mesh. Unlike traditional bar grizzlies where rock can wedge and stay put, the suspension helps keep the opening clear.</p>
+      <p style="color: #2c2c2c; line-height: 1.8; font-size: 1.05rem;">Spring suspension lets the deck move in a harmonic motion that drives material across the mesh. Unlike traditional bar grizzlies where rock can wedge and stay put, the suspension helps keep the opening clear.</p>
     </div>
 
     <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);">
-      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Riser Box (Optional Accessory)</h3>
+      <h3 style="color: #b34700; margin-bottom: 20px; font-size: 1.5rem;">Riser Box (Optional Accessory)</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
         <img src="/images/rise-box.jpg" alt="Riser box for increased capacity" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
       </div>
-      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;">The riser box increases storage under the deck and steadies the screener. Winches and 2-inch straps let you fit or remove it in under five minutes. Available for both 78 and 108.</p>
+      <p style="color: #2c2c2c; line-height: 1.8; font-size: 1.05rem;">The riser box increases storage under the deck and steadies the screener. Winches and 2-inch straps let you fit or remove it in under five minutes. Available for both 78 and 108.</p>
     </div>
 
     <div style="background: rgba(255,102,0,0.1); border-radius: 16px; padding: 30px; margin-bottom: 30px; border: 2px solid rgba(255,102,0,0.3);">
-      <h3 style="color: #ffa500; margin-bottom: 20px; font-size: 1.5rem;">Bucket Transport Lugs (Optional Accessory)</h3>
+      <h3 style="color: #b34700; margin-bottom: 20px; font-size: 1.5rem;">Bucket Transport Lugs (Optional Accessory)</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
         <img src="/images/lugs.jpg" alt="Bucket transport lugs" style="width: 100%; border-radius: 12px; border: 2px solid #ff6600;">
       </div>
-      <p style="color: #e0e0e0; line-height: 1.8; font-size: 1.05rem;">Optional bucket transport lugs let you shift either Static Grizzly around the site with the carrier bucket — useful in tight yards without a separate trailer move.</p>
+      <p style="color: #2c2c2c; line-height: 1.8; font-size: 1.05rem;">Optional bucket transport lugs let you shift either Static Grizzly around the site with the carrier bucket — useful in tight yards without a separate trailer move.</p>
     </div>
   </div>
 
@@ -205,21 +205,21 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
     <h2>Pricing (Estimates)</h2>
     <div class="price-main">Contact Us for Current Pricing</div>
     <p class="price-note">SLG-78 or SLG-108 Static Grizzly. Ex Nelson. Price does not include shipping or delivery. Delivery will be arranged with the purchaser and additional charges may apply depending on location.</p>
-    <h3 style="color: #ffa500; margin-top: 30px; margin-bottom: 15px;">Additional Options:</h3>
-    <ul style="color: #ccc; text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8;">
+    <h3 style="color: #b34700; margin-top: 30px; margin-bottom: 15px;">Additional Options:</h3>
+    <ul style="color: #2c2c2c; text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8;">
       <li>Additional Grizzly Mesh</li>
       <li>Riser Box</li>
       <li>Bucket Transport Lugs</li>
     </ul>
-    <p style="color: #888; font-size: 0.9rem; margin-top: 20px; text-align: center; font-style: italic;">Please contact us for current pricing and delivery options to your location.</p>
+    <p style="color: #555555; font-size: 0.9rem; margin-top: 20px; text-align: center; font-style: italic;">Please contact us for current pricing and delivery options to your location.</p>
   </div>
 
   <div class="product-description" style="margin-top: 40px;">
     <h2>What Can You Screen?</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px;">
       <div style="background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;">
-        <p style="color: #ffa500; font-weight: 600; margin-bottom: 10px;">Gravel &amp; Aggregate</p>
-        <ul style="color: #ccc; line-height: 1.8; list-style: none; padding: 0;">
+        <p style="color: #b34700; font-weight: 600; margin-bottom: 10px;">Gravel &amp; Aggregate</p>
+        <ul style="color: #2c2c2c; line-height: 1.8; list-style: none; padding: 0;">
           <li>✓ Road Gravel</li>
           <li>✓ Landscape Stone</li>
           <li>✓ Decorative Stone</li>
@@ -227,16 +227,16 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
         </ul>
       </div>
       <div style="background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;">
-        <p style="color: #ffa500; font-weight: 600; margin-bottom: 10px;">Soil &amp; Oversize</p>
-        <ul style="color: #ccc; line-height: 1.8; list-style: none; padding: 0;">
+        <p style="color: #b34700; font-weight: 600; margin-bottom: 10px;">Soil &amp; Oversize</p>
+        <ul style="color: #2c2c2c; line-height: 1.8; list-style: none; padding: 0;">
           <li>✓ Oversize topsoil and fill</li>
           <li>✓ Mixed site material</li>
           <li>✓ Sticks and debris separation</li>
         </ul>
       </div>
       <div style="background: rgba(255,102,0,0.1); padding: 15px; border-radius: 8px; border-left: 3px solid #ff6600;">
-        <p style="color: #ffa500; font-weight: 600; margin-bottom: 10px;">Construction Materials</p>
-        <ul style="color: #ccc; line-height: 1.8; list-style: none; padding: 0;">
+        <p style="color: #b34700; font-weight: 600; margin-bottom: 10px;">Construction Materials</p>
+        <ul style="color: #2c2c2c; line-height: 1.8; list-style: none; padding: 0;">
           <li>✓ Ground Asphalt</li>
           <li>✓ Crushed Concrete</li>
           <li>✓ Wood Mulch</li>

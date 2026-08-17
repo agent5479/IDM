@@ -20,6 +20,7 @@ export default function SEO({ pathname, jsonLd }) {
       />
       <link rel="canonical" href={seo.canonical} />
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      <meta name="theme-color" content="#ffffff" />
 
       <meta name="geo.region" content="NZ-NSN" />
       <meta name="geo.placename" content="Nelson" />
