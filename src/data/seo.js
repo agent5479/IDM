@@ -169,7 +169,7 @@ export const routes = [
     keywords:
       'farm gravel screener NZ, cow race gravel, farm river screening, 100mm mesh, filling material screener, DeSite grizzly farm',
     canonical: `${contact.siteUrl}/for/farmers`,
-    ogImage: `${contact.siteUrl}/images/grizzly3.jpg`,
+    ogImage: `${contact.siteUrl}/images/farmers-hero.jpg`,
     changefreq: 'monthly',
     priority: '0.8',
   },

@@ -1,6 +1,6 @@
 export const forFarmersHtml = `<!-- Farmers lead page -->
 <section class="lead-page">
-  <div class="lead-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.72)), url('/images/grizzly3.jpg');">
+  <div class="lead-hero lead-hero-farmers" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.72)), url('/images/farmers-hero.jpg');">
     <div class="lead-hero-inner">
       <h1>Screen river gravel on the farm</h1>
       <p class="lead-hero-sub">Make filling for cow races from stone already on the property.</p>
