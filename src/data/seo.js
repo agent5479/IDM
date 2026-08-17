@@ -163,24 +163,26 @@ export const routes = [
   {
     path: '/for/farmers',
     file: 'for/farmers/index.html',
-    title: `Farm Gravel Screeners & Cow Race Fill NZ | ${siteName}`,
+    title: `Screen Farm River Gravel for Cow Races | ${siteName}`,
     description:
-      'Screen farm river gravel on site. 100 mm mesh first, then 50 mm or 3 inch (~75 mm) filling mesh for cow races. DeSite grizzlies from Site Machinery NZ.',
+      'Screen river gravel on the farm. Make filling for cow races from rounded riverbed stone. 100 mm mesh, then a 50 mm or 3 inch filling screen. From Nelson, nationwide.',
     keywords:
       'farm gravel screener NZ, cow race gravel, farm river screening, 100mm mesh, filling material screener, DeSite grizzly farm',
     canonical: `${contact.siteUrl}/for/farmers`,
+    ogImage: `${contact.siteUrl}/images/grizzly3.jpg`,
     changefreq: 'monthly',
     priority: '0.8',
   },
   {
     path: '/for/civil-contractors',
     file: 'for/civil-contractors/index.html',
-    title: `Civil & Landscaping Screeners NZ | ${siteName}`,
+    title: `Screen Soil and Gravel On-Site | ${siteName}`,
     description:
-      'On-site screening for civil contractors, subdivisions and retaining-wall crews. 100 mm mesh plus 50 mm or 3 inch filling screen. Site Machinery NZ.',
+      'Screen soil and gravel on the job for subdivisions, building works and retaining walls. 100 mm mesh plus a 50 mm or 3 inch filling screen. Site Machinery NZ.',
     keywords:
       'civil contractor screener NZ, subdivision landscaping screener, skid steer soil screening, retaining wall fill, DeSite Proscreen',
     canonical: `${contact.siteUrl}/for/civil-contractors`,
+    ogImage: `${contact.siteUrl}/images/108-WROKING.webp`,
     changefreq: 'monthly',
     priority: '0.8',
   },

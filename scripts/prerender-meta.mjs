@@ -20,6 +20,7 @@ function injectMeta(html, route) {
     route.path === '/'
       ? `<script type="application/ld+json">${JSON.stringify(organizationJsonLd)}</script>`
       : ''
+  const ogImage = route.ogImage || defaultOgImage
 
   const tags = `
     <title>${escapeHtml(route.title)}</title>
@@ -38,12 +39,12 @@ function injectMeta(html, route) {
     <meta property="og:title" content="${escapeAttr(route.title)}" />
     <meta property="og:description" content="${escapeAttr(route.description)}" />
     <meta property="og:url" content="${escapeAttr(route.canonical)}" />
-    <meta property="og:image" content="${escapeAttr(defaultOgImage)}" />
+    <meta property="og:image" content="${escapeAttr(ogImage)}" />
     <meta property="og:locale" content="en_NZ" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeAttr(route.title)}" />
     <meta name="twitter:description" content="${escapeAttr(route.description)}" />
-    <meta name="twitter:image" content="${escapeAttr(defaultOgImage)}" />
+    <meta name="twitter:image" content="${escapeAttr(ogImage)}" />
     <meta name="contact:phone_number" content="${escapeAttr(contact.phoneDisplay)}" />
     <meta name="contact:email" content="${escapeAttr(contact.email)}" />
     ${jsonLd}

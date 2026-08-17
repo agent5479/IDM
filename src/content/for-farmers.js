@@ -1,61 +1,74 @@
-export const forFarmersHtml = `<!-- Farmer campaign -->
-<section class="page-content">
-  <h1>Screeners for Farms and Farm Rivers</h1>
-
-  <div class="product-description" style="margin-bottom: 40px; text-align: center;">
-    <p style="font-size: 1.3rem; color: #b34700; margin-bottom: 20px;">Farmer campaign — 100 mm mesh first, then a filling screen</p>
-    <p style="font-size: 1.1rem; color: #2c2c2c; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-      Screen gravel on the farm, especially from farm rivers. Knock off oversize with 100 mm mesh, then run a 50 mm or 3 inch (~75 mm) secondary screen to make filling material. Riverbed stone that has already rounded on the farm makes stronger cow races than sharp crushed product.
-    </p>
-  </div>
-
-  <div style="background: rgba(255,102,0,0.12); border: 2px solid rgba(255,102,0,0.35); border-radius: 16px; padding: 32px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
-    <h2 style="color: #b34700; margin-bottom: 16px; text-align: center;">The immediate offer</h2>
-    <ul style="color: #2c2c2c; line-height: 1.8; font-size: 1.05rem; max-width: 720px; margin: 0 auto;">
-      <li><strong style="color: #b34700;">Lead with 100 mm mesh</strong> — 4″ square on a Static Grizzly, or 100 mm square on a Proscreen — to take out oversize from river gravel and farm fill.</li>
-      <li><strong style="color: #b34700;">Then a 50 mm or ~70–75 mm secondary</strong> — stock squares are 50 mm and 3 inch (~75 mm), the nearest openings to 70 mm. Exact 70 mm is a special-order mesh if you need that size on the nose.</li>
-      <li>That second pass makes filling material for races, tracks and farm landscaping — rounded riverbed product that packs and wears better under cows.</li>
-    </ul>
-  </div>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 50px;">
-    <div class="product-description">
-      <h2 style="color: #b34700; margin-bottom: 14px;">Farm rivers and gravel</h2>
-      <p style="color: #2c2c2c; line-height: 1.8; margin: 0;">Landscaping farms with a river on the property is where a grizzly earns its keep. Screen river gravel on site instead of buying in metal. The SLG-78 and SLG-108 Static Grizzlies run 2″ / 3″ / 4″ square mesh with no electrics to babysit — sensible for a paddock or river terrace.</p>
-    </div>
-    <div class="product-description">
-      <h2 style="color: #b34700; margin-bottom: 14px;">Cow races and filling</h2>
-      <p style="color: #2c2c2c; line-height: 1.8; margin: 0;">Use the 100 mm pass to drop oversize, then the 50 mm or 3 inch (~75 mm) screen for filling. Rounded riverbed stone is kinder on hooves and builds a stronger race than angular crushed rock. Same pairing works for farm tracks and hard-stand fill.</p>
-    </div>
-    <div class="product-description">
-      <h2 style="color: #b34700; margin-bottom: 14px;">Which machine</h2>
-      <p style="color: #2c2c2c; line-height: 1.8; margin: 0;">Grizzly for gravel and river oversize. Proscreen if you also need to screen soil. The SLG-108 Static Grizzly suits a loader up to about 12 tonne — not a full quarry wheel loader. Mid-size farms usually sit on the 78 Grizzly or a 68 / 78 Proscreen.</p>
+export const forFarmersHtml = `<!-- Farmers lead page -->
+<section class="lead-page">
+  <div class="lead-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.72)), url('/images/grizzly3.jpg');">
+    <div class="lead-hero-inner">
+      <h1>Screen river gravel on the farm</h1>
+      <p class="lead-hero-sub">Make filling for cow races from stone already on the property.</p>
+      <div class="cta-buttons lead-cta">
+        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="/contact" class="cta-secondary">Contact Us</a>
+      </div>
     </div>
   </div>
 
-  <div class="product-description" style="margin-bottom: 40px;">
-    <h2>Typical farm jobs</h2>
-    <ul style="color: #2c2c2c; line-height: 1.8; margin-top: 16px; font-size: 1.05rem;">
-      <li>River gravel screened on farm for races, lanes and yards</li>
-      <li>Farm landscaping — terraces, tracks and yard fill from material already on the property</li>
-      <li>Separating oversize rock from usable stone without a crushing plant</li>
-    </ul>
-    <p style="margin-top: 20px;">
-      <a href="/products/static-grizzly" style="color:#ffa500;font-weight:600;margin-right:18px;">Static Grizzly 78 &amp; 108</a>
-      <a href="/products/slg-78vf" style="color:#ffa500;font-weight:600;margin-right:18px;">SLG-78VF Proscreen</a>
-      <a href="/screening-recommendation#farm-filling" style="color:#ffa500;font-weight:600;">Farm mesh guide</a>
-    </p>
-  </div>
+  <div class="lead-body">
+    <p class="lead-intro">If you have a farm river, you already have metal. Screen it on the terrace, knock the cobbles off, and use the rounded riverbed stone for races, tracks and yards — it packs harder under cows than sharp crushed product you buy in.</p>
 
-  <div style="background: rgba(255,102,0,0.15); border: 2px solid #ff6600; border-radius: 16px; padding: 40px; margin-bottom: 40px; text-align: center;">
-    <h2 style="color: #b34700; margin-bottom: 20px; font-size: 1.8rem;">Talk through mesh and carrier</h2>
-    <p style="color: #2c2c2c; font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
-      Tell us the river material, the race or fill spec, and the loader or excavator you run. We will quote 100 mm plus a 50 mm or 3 inch filling screen from Nelson, nationwide.
-    </p>
-    <div class="cta-buttons">
-      <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
-      <a href="/contact" class="cta-secondary">Contact Us</a>
-      <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
+    <div class="lead-split">
+      <img src="/images/grizzly2.jpg" alt="DeSite Static Grizzly screening farm gravel">
+      <div class="lead-split-copy">
+        <h2>Farm rivers and gravel</h2>
+        <p>A no-power Static Grizzly sits on the paddock and takes river-run and farm fill. Wide square mesh shrugs off sticks and oversize so the stone you keep is ready for the race or the lane. No electrics to babysit out in the paddock.</p>
+      </div>
+    </div>
+
+    <div class="lead-split lead-split-reverse">
+      <img src="/images/dual78-screen-setup-900-riserbox.png" alt="Two-pass screening setup for oversize then filling material">
+      <div class="lead-split-copy">
+        <h2>Cow races and filling</h2>
+        <p>Start with 100 mm mesh to drop the cobbles. Then run a 50 mm or 3 inch (~75 mm) screen for filling. Riverbed stone that has already rounded on the farm is kinder on hooves and builds a stronger race than angular crushed rock. Same pairing works for farm tracks and hard-stand fill.</p>
+        <p class="lead-note">Need an exact 70 mm opening? That mesh is special-order — 50 mm and 3 inch are the stock sizes we offer first.</p>
+      </div>
+    </div>
+
+    <div class="lead-split">
+      <img src="/images/bucket for 108.webp" alt="SLG-108 Static Grizzly matched to a farm loader">
+      <div class="lead-split-copy">
+        <h2>Match the machine to the loader you already run</h2>
+        <p>Use a Grizzly for river gravel and oversize. Add a Proscreen if you also screen soil. The SLG-108 Static Grizzly suits a loader up to about 12 tonne — not a quarry wheel loader. Mid-size farms usually sit on the 78 Grizzly or a 68 / 78 Proscreen.</p>
+      </div>
+    </div>
+
+    <div class="lead-machines">
+      <h2>Machines that do this work</h2>
+      <div class="lead-machine-grid">
+        <a class="lead-machine" href="/products/static-grizzly#slg-78">
+          <img src="/images/bucket for 78.webp" alt="DeSite SLG-78 Static Grizzly">
+          <h3>SLG-78 Static Grizzly</h3>
+          <p>Mid-size, no power. Built for skid steers, bucket tractors and compact loaders.</p>
+        </a>
+        <a class="lead-machine" href="/products/static-grizzly#slg-108">
+          <img src="/images/bucket for 108.webp" alt="DeSite SLG-108 Static Grizzly">
+          <h3>SLG-108 Static Grizzly</h3>
+          <p>Full-size deck. Ideal with a loader up to about 12 tonne.</p>
+        </a>
+        <a class="lead-machine" href="/products/slg-78vf">
+          <img src="/images/rise-box.jpg" alt="Proscreen with riser box for farm filling">
+          <h3>SLG-78VF Proscreen</h3>
+          <p>When you also need to screen soil, not only river gravel.</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="lead-close">
+      <h2>See it at Nelson, supply nationwide</h2>
+      <p>Tell us what you are screening and which loader or excavator you run. We will quote 100 mm mesh plus a filling screen, from Site Machinery in Nelson.</p>
+      <div class="cta-buttons lead-cta">
+        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="/contact" class="cta-secondary">Contact Us</a>
+        <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
+      </div>
+      <p class="lead-note" style="margin-top: 18px;"><a href="/screening-recommendation#farm-filling" style="color:#b34700;font-weight:600;">Mesh size guide</a></p>
     </div>
   </div>
 </section>
