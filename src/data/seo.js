@@ -15,6 +15,7 @@ export const routes = [
     canonical: `${contact.siteUrl}/`,
     changefreq: 'weekly',
     priority: '1.0',
+    schemaType: 'home',
   },
   {
     path: '/about',
@@ -27,6 +28,7 @@ export const routes = [
     canonical: `${contact.siteUrl}/about`,
     changefreq: 'monthly',
     priority: '0.8',
+    schemaType: 'about',
   },
   {
     path: '/contact',
@@ -39,6 +41,7 @@ export const routes = [
     canonical: `${contact.siteUrl}/contact`,
     changefreq: 'monthly',
     priority: '0.9',
+    schemaType: 'contact',
   },
   {
     path: '/photos',
@@ -51,6 +54,7 @@ export const routes = [
     canonical: `${contact.siteUrl}/photos`,
     changefreq: 'monthly',
     priority: '0.7',
+    schemaType: 'webPage',
   },
   {
     path: '/videos',
@@ -63,6 +67,7 @@ export const routes = [
     canonical: `${contact.siteUrl}/videos`,
     changefreq: 'monthly',
     priority: '0.7',
+    schemaType: 'webPage',
   },
   {
     path: '/products/slg-108vfrb',
@@ -75,6 +80,12 @@ export const routes = [
     canonical: `${contact.siteUrl}/products/slg-108vfrb`,
     changefreq: 'monthly',
     priority: '0.9',
+    schemaType: 'product',
+    product: {
+      name: 'DeSite SLG-108VFRB',
+      image: `${contact.siteUrl}/images/SLG108VFRB.jpg`,
+      sku: 'SLG-108VFRB',
+    },
   },
   {
     path: '/products/slg-78vf',
@@ -87,6 +98,12 @@ export const routes = [
     canonical: `${contact.siteUrl}/products/slg-78vf`,
     changefreq: 'monthly',
     priority: '0.9',
+    schemaType: 'product',
+    product: {
+      name: 'DeSite SLG-78VF',
+      image: `${contact.siteUrl}/images/Proscreen_SLG78VFII_home.jpg`,
+      sku: 'SLG-78VF',
+    },
   },
   {
     path: '/products/slg-78vf-flow',
@@ -99,6 +116,12 @@ export const routes = [
     canonical: `${contact.siteUrl}/products/slg-78vf-flow`,
     changefreq: 'monthly',
     priority: '0.8',
+    schemaType: 'product',
+    product: {
+      name: 'DeSite SLG-78VF with Flow Control',
+      image: `${contact.siteUrl}/images/Proscreen_SLG78VFII_home.jpg`,
+      sku: 'SLG-78VF-FLOW',
+    },
   },
   {
     path: '/products/slg-68v',
@@ -111,6 +134,12 @@ export const routes = [
     canonical: `${contact.siteUrl}/products/slg-68v`,
     changefreq: 'monthly',
     priority: '0.9',
+    schemaType: 'product',
+    product: {
+      name: 'DeSite SLG-68V',
+      image: `${contact.siteUrl}/images/Proscreen_68.jpg`,
+      sku: 'SLG-68V',
+    },
   },
   {
     path: '/products/static-grizzly',
@@ -123,6 +152,12 @@ export const routes = [
     canonical: `${contact.siteUrl}/products/static-grizzly`,
     changefreq: 'monthly',
     priority: '0.8',
+    schemaType: 'product',
+    product: {
+      name: 'DeSite Static Grizzly SLG-78 & SLG-108',
+      image: `${contact.siteUrl}/images/grizzly2.jpg`,
+      sku: 'STATIC-GRIZZLY',
+    },
   },
   {
     path: '/products/telehandler-bins',
@@ -135,6 +170,12 @@ export const routes = [
     canonical: `${contact.siteUrl}/products/telehandler-bins`,
     changefreq: 'monthly',
     priority: '0.7',
+    schemaType: 'product',
+    product: {
+      name: 'Telehandler Bins',
+      image: `${contact.siteUrl}/images/Telehandler-bin_site_machinery.jpg`,
+      sku: 'TELEHANDLER-BINS',
+    },
   },
   {
     path: '/products/additional-products',
@@ -147,6 +188,7 @@ export const routes = [
     canonical: `${contact.siteUrl}/products/additional-products`,
     changefreq: 'monthly',
     priority: '0.6',
+    schemaType: 'webPage',
   },
   {
     path: '/screening-recommendation',
@@ -159,6 +201,7 @@ export const routes = [
     canonical: `${contact.siteUrl}/screening-recommendation`,
     changefreq: 'monthly',
     priority: '0.8',
+    schemaType: 'meshGuide',
   },
   {
     path: '/for/farmers',
@@ -172,6 +215,11 @@ export const routes = [
     ogImage: `${contact.siteUrl}/images/farmers-hero.jpg`,
     changefreq: 'monthly',
     priority: '0.8',
+    schemaType: 'service',
+    service: {
+      name: 'Farm river gravel and cow race screening',
+      serviceType: 'Farm gravel screening',
+    },
   },
   {
     path: '/for/civil-contractors',
@@ -185,6 +233,65 @@ export const routes = [
     ogImage: `${contact.siteUrl}/images/108-WROKING.webp`,
     changefreq: 'monthly',
     priority: '0.8',
+    schemaType: 'service',
+    service: {
+      name: 'On-site soil and gravel screening for civil contractors',
+      serviceType: 'Civil on-site screening',
+    },
+  },
+  {
+    path: '/for/topsoil-landscaping',
+    file: 'for/topsoil-landscaping/index.html',
+    title: `On-Site Topsoil Screening for Landscapers NZ | ${siteName}`,
+    description:
+      'Grade topsoil, compost and yard soil on-site in New Zealand. DeSite Proscreens for landscapers and material yards — mesh matched to the finish you sell. Site Machinery NZ.',
+    keywords:
+      'topsoil screener NZ, landscaping soil screener, on-site topsoil screening, compost screener New Zealand, Site Machinery',
+    canonical: `${contact.siteUrl}/for/topsoil-landscaping`,
+    ogImage: `${contact.siteUrl}/images/Proscreen_SLG78VFII_home.jpg`,
+    changefreq: 'monthly',
+    priority: '0.8',
+    schemaType: 'service',
+    service: {
+      name: 'On-site topsoil screening for landscapers',
+      serviceType: 'Topsoil and landscaping screening',
+    },
+  },
+  {
+    path: '/for/aggregate-and-road-metal',
+    file: 'for/aggregate-and-road-metal/index.html',
+    title: `Screen Gravel, Road Metal & Drainage Stone NZ | ${siteName}`,
+    description:
+      'On-site aggregate screening in New Zealand — road metal, pea gravel, septic stone and drainage rock. DeSite Proscreens and Static Grizzlies from Site Machinery NZ.',
+    keywords:
+      'aggregate screener NZ, road metal screening, gravel screener New Zealand, drainage stone screener, septic rock mesh',
+    canonical: `${contact.siteUrl}/for/aggregate-and-road-metal`,
+    ogImage: `${contact.siteUrl}/images/grizzly3.jpg`,
+    changefreq: 'monthly',
+    priority: '0.8',
+    schemaType: 'service',
+    service: {
+      name: 'Aggregate, road metal and drainage stone screening',
+      serviceType: 'Aggregate screening',
+    },
+  },
+  {
+    path: '/for/nelson-nationwide',
+    file: 'for/nelson-nationwide/index.html',
+    title: `Nelson Showroom & Nationwide Screener Supply | ${siteName}`,
+    description:
+      'View DeSite screeners at 105 Pascoe Street, Nelson. Site Machinery NZ specifies mesh and machine for nationwide New Zealand supply.',
+    keywords:
+      'screener showroom Nelson, Site Machinery Nelson, buy soil screener NZ, DeSite New Zealand supplier, Pascoe Street Nelson',
+    canonical: `${contact.siteUrl}/for/nelson-nationwide`,
+    ogImage: `${contact.siteUrl}/images/SLG108VFRB.jpg`,
+    changefreq: 'monthly',
+    priority: '0.8',
+    schemaType: 'service',
+    service: {
+      name: 'Nelson showroom viewing and nationwide screener supply',
+      serviceType: 'Equipment supply and showroom',
+    },
   },
   {
     path: '/idm/commercials',
@@ -233,9 +340,12 @@ export function getSeo(pathname) {
   return routes.find((r) => r.path === normalized) || routes[0]
 }
 
+const localBusinessId = `${contact.siteUrl}/#organization`
+
 export const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': localBusinessId,
   name: 'Site Machinery NZ',
   alternateName: 'Site Machinery Ltd',
   url: contact.siteUrl,
@@ -275,7 +385,171 @@ export const organizationJsonLd = {
     'topsoil screener',
     'DeSite ProScreen',
     'vibratory screening equipment',
+    'cow race gravel screening',
+    'on-site civil fill screening',
+  ],
+  makesOffer: [
+    {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Product',
+        name: 'DeSite SLG-78VF',
+        url: `${contact.siteUrl}/products/slg-78vf`,
+      },
+    },
+    {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Product',
+        name: 'DeSite SLG-108VFRB',
+        url: `${contact.siteUrl}/products/slg-108vfrb`,
+      },
+    },
+    {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Product',
+        name: 'DeSite Static Grizzly',
+        url: `${contact.siteUrl}/products/static-grizzly`,
+      },
+    },
+    {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: 'Farm river gravel and cow race screening supply',
+        url: `${contact.siteUrl}/for/farmers`,
+      },
+    },
+    {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: 'Civil on-site soil and gravel screening supply',
+        url: `${contact.siteUrl}/for/civil-contractors`,
+      },
+    },
   ],
 }
 
-export { defaultOgImage, siteName }
+function providerRef() {
+  return { '@id': localBusinessId }
+}
+
+function productJsonLd(route) {
+  const p = route.product
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: p.name,
+    description: route.description,
+    image: p.image,
+    sku: p.sku,
+    brand: {
+      '@type': 'Brand',
+      name: 'DeSite',
+    },
+    url: route.canonical,
+    offers: {
+      '@type': 'Offer',
+      url: route.canonical,
+      priceCurrency: 'NZD',
+      availability: 'https://schema.org/InStock',
+      seller: providerRef(),
+      areaServed: {
+        '@type': 'Country',
+        name: 'New Zealand',
+      },
+      description: 'Contact Site Machinery NZ for current pricing. Ex Nelson; freight arranged with purchaser.',
+    },
+  }
+}
+
+function serviceJsonLd(route) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: route.service.name,
+    serviceType: route.service.serviceType,
+    description: route.description,
+    url: route.canonical,
+    provider: providerRef(),
+    areaServed: {
+      '@type': 'Country',
+      name: 'New Zealand',
+    },
+  }
+}
+
+function meshGuideJsonLd(route) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: route.title,
+    description: route.description,
+    url: route.canonical,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteName,
+      url: contact.siteUrl,
+    },
+    about: {
+      '@type': 'Thing',
+      name: 'DeSite screen mesh size selection',
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      name: 'Screen mesh recommendation charts',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Square and elongated base charts' },
+        { '@type': 'ListItem', position: 2, name: 'Topsoil and triple mix' },
+        { '@type': 'ListItem', position: 3, name: 'Farm filling and cow races' },
+        { '@type': 'ListItem', position: 4, name: 'Aggregates and road metal' },
+      ],
+    },
+    provider: providerRef(),
+  }
+}
+
+function webPageJsonLd(route) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: route.title,
+    description: route.description,
+    url: route.canonical,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: siteName,
+      url: contact.siteUrl,
+    },
+    about: providerRef(),
+  }
+}
+
+/**
+ * Return JSON-LD for a pathname (object or null). Used by Helmet and prerender.
+ */
+export function getJsonLd(pathname) {
+  const route = getSeo(pathname)
+  if (route.robots && String(route.robots).includes('noindex')) return null
+
+  switch (route.schemaType) {
+    case 'home':
+      return organizationJsonLd
+    case 'product':
+      return productJsonLd(route)
+    case 'service':
+      return serviceJsonLd(route)
+    case 'meshGuide':
+      return meshGuideJsonLd(route)
+    case 'about':
+    case 'contact':
+    case 'webPage':
+      return webPageJsonLd(route)
+    default:
+      return null
+  }
+}
+
+export { defaultOgImage, siteName, localBusinessId }

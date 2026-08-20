@@ -9,6 +9,9 @@ import {
   GrizzlyCommercialPage,
   ForCivilPage,
   ForFarmersPage,
+  ForTopsoilLandscapingPage,
+  ForAggregateRoadMetalPage,
+  ForNelsonNationwidePage,
   HomePage,
   PhotosPage,
   ProspectsPage,
@@ -55,6 +58,9 @@ export default function App() {
           <Route path="/screening-recommendation" element={<ScreeningRecommendationPage />} />
           <Route path="/for/farmers" element={<ForFarmersPage />} />
           <Route path="/for/civil-contractors" element={<ForCivilPage />} />
+          <Route path="/for/topsoil-landscaping" element={<ForTopsoilLandscapingPage />} />
+          <Route path="/for/aggregate-and-road-metal" element={<ForAggregateRoadMetalPage />} />
+          <Route path="/for/nelson-nationwide" element={<ForNelsonNationwidePage />} />
           <Route path="/products/slg-108vfrb" element={<Slg108Page />} />
           <Route path="/products/slg-78vf" element={<Slg78Page />} />
           <Route path="/products/slg-78vf-flow" element={<Slg78FlowPage />} />

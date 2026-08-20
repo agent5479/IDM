@@ -2,8 +2,8 @@ export const forCivilHtml = `<!-- Civil contractors lead page -->
 <section class="lead-page">
   <div class="lead-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.72)), url('/images/108-WROKING.webp');">
     <div class="lead-hero-inner">
-      <h1>Screen on the job, not at the tip</h1>
-      <p class="lead-hero-sub">Grade soil and gravel for subdivisions, building works and retaining walls — from material you already have on site.</p>
+      <h1>Subdivision fill screening on site</h1>
+      <p class="lead-hero-sub">On-site soil screening for civil contractors — grade subdivision fill, building works and retaining-wall soil without buying every cubic metre in.</p>
       <div class="cta-buttons lead-cta">
         <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
@@ -12,7 +12,7 @@ export const forCivilHtml = `<!-- Civil contractors lead page -->
   </div>
 
   <div class="lead-body">
-    <p class="lead-intro">If the crew is already shifting dirt, screening it on the job stops you buying in graded product and hauling the same material twice. 100 mm mesh knocks off oversize; a 50 mm or 3 inch (~75 mm) second pass makes filling for lots, walls and landscaping.</p>
+    <p class="lead-intro">Need subdivision landscaping screener capacity or skid-steer retaining-wall fill screening in New Zealand? If the crew is already shifting dirt, screening it on the job stops you buying in graded product and hauling the same material twice. 100 mm mesh knocks off oversize; a 50 mm or 3 inch (~75 mm) second pass makes filling for lots, walls and landscaping.</p>
 
     <div class="lead-split">
       <img src="/images/SLG108VFRB.jpg" alt="DeSite Proscreen grading material on a civil job">
@@ -62,13 +62,13 @@ export const forCivilHtml = `<!-- Civil contractors lead page -->
 
     <div class="lead-close">
       <h2>See it at Nelson, supply nationwide</h2>
-      <p>Tell us the job — subdivision, retaining, civil fill — and the loader or skid steer on site. We will match 100 mm plus a filling screen, from Site Machinery in Nelson.</p>
+      <p>Tell us the job — subdivision fill on-site, retaining walls, civil fill — and the loader or skid steer on site. We will match 100 mm plus a filling screen from Site Machinery NZ in Nelson, supply nationwide. <a href="/for/nelson-nationwide" style="color:#b34700;font-weight:600;">Showroom &amp; nationwide supply</a>.</p>
       <div class="cta-buttons lead-cta">
         <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
         <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
       </div>
-      <p class="lead-note" style="margin-top: 18px;"><a href="/screening-recommendation#farm-filling" style="color:#b34700;font-weight:600;">Mesh size guide</a></p>
+      <p class="lead-note" style="margin-top: 18px;"><a href="/screening-recommendation#farm-filling" style="color:#b34700;font-weight:600;">Mesh size guide</a> · <a href="/for/topsoil-landscaping" style="color:#b34700;font-weight:600;">Topsoil &amp; landscaping</a></p>
     </div>
   </div>
 </section>

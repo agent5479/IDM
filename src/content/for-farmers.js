@@ -2,8 +2,8 @@ export const forFarmersHtml = `<!-- Farmers lead page -->
 <section class="lead-page">
   <div class="lead-hero lead-hero-farmers" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.72)), url('/images/farmers-hero.jpg');">
     <div class="lead-hero-inner">
-      <h1>Screen river gravel on the farm</h1>
-      <p class="lead-hero-sub">Make filling for cow races from stone already on the property.</p>
+      <h1>Cow race gravel screening on the farm</h1>
+      <p class="lead-hero-sub">Farm river screening in New Zealand — make cow race filling from rounded riverbed stone already on the property.</p>
       <div class="cta-buttons lead-cta">
         <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
@@ -12,7 +12,7 @@ export const forFarmersHtml = `<!-- Farmers lead page -->
   </div>
 
   <div class="lead-body">
-    <p class="lead-intro">If you have a farm river, you already have metal. Screen it on the terrace, knock the cobbles off, and use the rounded riverbed stone for races, tracks and yards — it packs harder under cows than sharp crushed product you buy in.</p>
+    <p class="lead-intro">Looking for cow race gravel screening or farm river gravel screening in New Zealand? If you have a farm river, you already have metal. Screen it on the terrace, knock the cobbles off, and use the rounded riverbed stone for races, tracks and yards — it packs harder under cows than sharp crushed product you buy in.</p>
 
     <div class="lead-split">
       <img src="/images/grizzly2.jpg" alt="DeSite Static Grizzly screening farm gravel">
@@ -62,13 +62,13 @@ export const forFarmersHtml = `<!-- Farmers lead page -->
 
     <div class="lead-close">
       <h2>See it at Nelson, supply nationwide</h2>
-      <p>Tell us what you are screening and which loader or excavator you run. We will quote 100 mm mesh plus a filling screen, from Site Machinery in Nelson.</p>
+      <p>Tell us what you are screening and which loader or excavator you run. We will quote 100 mm mesh plus a filling screen, from the Site Machinery NZ showroom in Nelson — supply nationwide. Prefer to view machines first? <a href="/for/nelson-nationwide" style="color:#b34700;font-weight:600;">Nelson showroom details</a>.</p>
       <div class="cta-buttons lead-cta">
         <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
         <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
       </div>
-      <p class="lead-note" style="margin-top: 18px;"><a href="/screening-recommendation#farm-filling" style="color:#b34700;font-weight:600;">Mesh size guide</a></p>
+      <p class="lead-note" style="margin-top: 18px;"><a href="/screening-recommendation#farm-filling" style="color:#b34700;font-weight:600;">Mesh size guide</a> · <a href="/for/aggregate-and-road-metal" style="color:#b34700;font-weight:600;">Aggregate &amp; road metal</a></p>
     </div>
   </div>
 </section>

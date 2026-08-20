@@ -1,10 +1,10 @@
 import { Helmet } from 'react-helmet-async'
 import { contact } from '../data/contact'
-import { defaultOgImage, getSeo, organizationJsonLd } from '../data/seo'
+import { defaultOgImage, getJsonLd, getSeo } from '../data/seo'
 
 export default function SEO({ pathname, jsonLd }) {
   const seo = getSeo(pathname)
-  const payload = jsonLd || (pathname === '/' ? organizationJsonLd : null)
+  const payload = jsonLd !== undefined ? jsonLd : getJsonLd(pathname)
   const ogImage = seo.ogImage || defaultOgImage
 
   return (

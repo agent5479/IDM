@@ -12,6 +12,9 @@ import { telehandlerBinsHtml } from '../content/telehandler-bins'
 import { additionalProductsHtml } from '../content/additional-products'
 import { forFarmersHtml } from '../content/for-farmers'
 import { forCivilHtml } from '../content/for-civil'
+import { forTopsoilLandscapingHtml } from '../content/for-topsoil-landscaping'
+import { forAggregateRoadMetalHtml } from '../content/for-aggregate-and-road-metal'
+import { forNelsonNationwideHtml } from '../content/for-nelson-nationwide'
 import ScreeningRecommendationPage from './ScreeningRecommendationPage'
 import ProspectsPage from './office/ProspectsPage'
 import CommercialsHubPage from './commercials/CommercialsHubPage'
@@ -37,6 +40,9 @@ export const TelehandlerBinsPage = () => <Page html={telehandlerBinsHtml} />
 export const AdditionalProductsPage = () => <Page html={additionalProductsHtml} />
 export const ForFarmersPage = () => <Page html={forFarmersHtml} />
 export const ForCivilPage = () => <Page html={forCivilHtml} />
+export const ForTopsoilLandscapingPage = () => <Page html={forTopsoilLandscapingHtml} />
+export const ForAggregateRoadMetalPage = () => <Page html={forAggregateRoadMetalHtml} />
+export const ForNelsonNationwidePage = () => <Page html={forNelsonNationwideHtml} />
 export {
   ScreeningRecommendationPage,
   CommercialsHubPage,

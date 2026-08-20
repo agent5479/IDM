@@ -1,7 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { routes, defaultOgImage, organizationJsonLd } from '../src/data/seo.js'
+import { routes, defaultOgImage, getJsonLd } from '../src/data/seo.js'
 import { contact } from '../src/data/contact.js'
+import { getStaticPageHtml } from '../src/data/staticPages.js'
 
 const distDir = path.resolve('dist')
 const publicDir = path.resolve('public')
@@ -16,10 +17,10 @@ if (!fs.existsSync(indexPath)) {
 const template = fs.readFileSync(indexPath, 'utf8')
 
 function injectMeta(html, route) {
-  const jsonLd =
-    route.path === '/'
-      ? `<script type="application/ld+json">${JSON.stringify(organizationJsonLd)}</script>`
-      : ''
+  const jsonLdPayload = getJsonLd(route.path)
+  const jsonLd = jsonLdPayload
+    ? `<script type="application/ld+json">${JSON.stringify(jsonLdPayload)}</script>`
+    : ''
   const ogImage = route.ogImage || defaultOgImage
 
   const tags = `
@@ -68,6 +69,15 @@ function injectMeta(html, route) {
   out = out.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/gi, '')
   // Insert tags before </head>
   out = out.replace(/<\/head>/i, `${tags}\n  </head>`)
+
+  const bodyHtml = getStaticPageHtml(route.path)
+  if (bodyHtml) {
+    out = out.replace(
+      /<div id="root"><\/div>/i,
+      `<div id="root">${bodyHtml}</div>`,
+    )
+  }
+
   return out
 }
 

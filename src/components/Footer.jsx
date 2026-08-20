@@ -36,6 +36,9 @@ export default function Footer() {
           <Link to="/screening-recommendation">Mesh Size Guide</Link>
           <Link to="/for/farmers">For Farmers</Link>
           <Link to="/for/civil-contractors">For Civil Contractors</Link>
+          <Link to="/for/topsoil-landscaping">Topsoil & Landscaping</Link>
+          <Link to="/for/aggregate-and-road-metal">Aggregate & Road Metal</Link>
+          <Link to="/for/nelson-nationwide">Nelson Showroom</Link>
           <Link to="/photos">Photos</Link>
           <Link to="/videos">Videos</Link>
           <Link to="/contact">Contact Us</Link>

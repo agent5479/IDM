@@ -7,7 +7,7 @@ React (Vite) website for Site Machinery NZ — DeSite soil screening equipment s
 - React 18 + Vite
 - React Router
 - `react-helmet-async` for SEO metadata
-- Static build to `dist/` with per-route meta injection
+- Static build to `dist/` with per-route meta, JSON-LD, and crawlable HTML body injection
 - GitHub Actions → GitHub Pages
 
 ## Local development
