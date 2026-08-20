@@ -54,6 +54,8 @@ Keep `sitemachinery.nz` pointed at GitHub Pages. Vite `base` is `/` so assets re
 
 ## Post-deploy SEO operator checklist
 
+Full tick-list for future review: **[SEO-FOLLOW-UPS.md](./SEO-FOLLOW-UPS.md)**.
+
 ### Google Business Profile (GBP)
 
 1. Match NAP to the site: **Site Machinery NZ**, 105 Pascoe Street, Nelson 7011, phone **+64 3 970 7602**, website `https://sitemachinery.nz`.

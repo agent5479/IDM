@@ -47,4 +47,4 @@ Showroom: 105 Pascoe Street, Nelson
 - `public/` — favicon, robots, sitemap, images, `.nojekyll`
 - `site/` — previous static HTML (reference; not deployed)
 - `legacy/` — drafts / unused assets (not deployed)
-- `docs/` — additional notes
+- `docs/` — additional notes ([DEPLOYMENT.md](./DEPLOYMENT.md), [SEO-FOLLOW-UPS.md](./SEO-FOLLOW-UPS.md))
