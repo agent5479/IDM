@@ -46,7 +46,7 @@ export const routes = [
   {
     path: '/photos',
     file: 'photos/index.html',
-    title: `Screener Photos | DeSite Equipment Gallery - ${siteName}`,
+    title: `Screener Photos | Equipment Gallery | ${siteName}`,
     description:
       'Photo galleries of DeSite soil, gravel and aggregate screeners in New Zealand — SLG-108VFRB, SLG-78VF, SLG-68V and telehandler bins on real job sites.',
     keywords:
@@ -162,7 +162,7 @@ export const routes = [
   {
     path: '/products/telehandler-bins',
     file: 'products/telehandler-bins/index.html',
-    title: `Telehandler Bins NZ | Construction Material Bins - ${siteName}`,
+    title: `Telehandler Bins NZ | ${siteName}`,
     description:
       'Durable telehandler bins from Site Machinery NZ for handling soil, aggregate and construction materials on civil and earthmoving projects.',
     keywords:
@@ -180,9 +180,9 @@ export const routes = [
   {
     path: '/products/additional-products',
     file: 'products/additional-products/index.html',
-    title: `DeSite Mini Screeners, Trailers & Bins to Order | ${siteName}`,
+    title: `Mini Screeners & Bins to Order | ${siteName}`,
     description:
-      'Order DeSite mini screeners, grizzly bars, skid-steer attachments, Xtreme Duty dump trailers and construction bins for the next New Zealand shipment from Site Machinery NZ.',
+      'Order DeSite mini screeners, dump trailers and construction bins for the next New Zealand shipment from Site Machinery NZ.',
     keywords:
       'DeSite mini screener NZ, SLG-56, dump trailer NZ, skid steer attachments, construction bins, DeSite orderable range',
     canonical: `${contact.siteUrl}/products/additional-products`,
@@ -242,9 +242,9 @@ export const routes = [
   {
     path: '/for/topsoil-landscaping',
     file: 'for/topsoil-landscaping/index.html',
-    title: `On-Site Topsoil Screening for Landscapers NZ | ${siteName}`,
+    title: `Topsoil Screening for Landscapers | ${siteName}`,
     description:
-      'Grade topsoil, compost and yard soil on-site in New Zealand. DeSite Proscreens for landscapers and material yards — mesh matched to the finish you sell. Site Machinery NZ.',
+      'Grade topsoil, compost and yard soil on-site in New Zealand. DeSite Proscreens for landscapers — mesh matched to the finish you sell.',
     keywords:
       'topsoil screener NZ, landscaping soil screener, on-site topsoil screening, compost screener New Zealand, Site Machinery',
     canonical: `${contact.siteUrl}/for/topsoil-landscaping`,
@@ -260,7 +260,7 @@ export const routes = [
   {
     path: '/for/aggregate-and-road-metal',
     file: 'for/aggregate-and-road-metal/index.html',
-    title: `Screen Gravel, Road Metal & Drainage Stone NZ | ${siteName}`,
+    title: `Gravel & Road Metal Screening NZ | ${siteName}`,
     description:
       'On-site aggregate screening in New Zealand — road metal, pea gravel, septic stone and drainage rock. DeSite Proscreens and Static Grizzlies from Site Machinery NZ.',
     keywords:
@@ -278,7 +278,7 @@ export const routes = [
   {
     path: '/for/nelson-nationwide',
     file: 'for/nelson-nationwide/index.html',
-    title: `Nelson Showroom & Nationwide Screener Supply | ${siteName}`,
+    title: `Nelson Showroom, Nationwide Supply | ${siteName}`,
     description:
       'View DeSite screeners at 105 Pascoe Street, Nelson. Site Machinery NZ specifies mesh and machine for nationwide New Zealand supply.',
     keywords:
@@ -338,6 +338,24 @@ export const routes = [
 export function getSeo(pathname) {
   const normalized = pathname.endsWith('/') && pathname !== '/' ? pathname.slice(0, -1) : pathname
   return routes.find((r) => r.path === normalized) || routes[0]
+}
+
+/** Routes that should appear in sitemap.xml and be indexable. */
+export function isIndexableRoute(route) {
+  if (route.includeInSitemap === false) return false
+  if (route.robots && String(route.robots).includes('noindex')) return false
+  return true
+}
+
+export const notFoundSeo = {
+  path: '/404',
+  title: `Page Not Found | ${siteName}`,
+  description:
+    'This page could not be found. Return to Site Machinery NZ for DeSite soil, gravel and aggregate screeners.',
+  keywords: 'Site Machinery NZ',
+  robots: 'noindex, nofollow',
+  includeInSitemap: false,
+  omitCanonical: true,
 }
 
 const localBusinessId = `${contact.siteUrl}/#organization`

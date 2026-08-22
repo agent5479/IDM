@@ -1,6 +1,12 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { routes, defaultOgImage, getJsonLd } from '../src/data/seo.js'
+import {
+  routes,
+  defaultOgImage,
+  getJsonLd,
+  isIndexableRoute,
+  notFoundSeo,
+} from '../src/data/seo.js'
 import { contact } from '../src/data/contact.js'
 import { getStaticPageHtml } from '../src/data/staticPages.js'
 
@@ -8,6 +14,7 @@ const distDir = path.resolve('dist')
 const publicDir = path.resolve('public')
 const indexPath = path.join(distDir, 'index.html')
 const defaultRobots = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+const lastmod = new Date().toISOString().slice(0, 10)
 
 if (!fs.existsSync(indexPath)) {
   console.error('dist/index.html missing. Run vite build first.')
@@ -16,21 +23,33 @@ if (!fs.existsSync(indexPath)) {
 
 const template = fs.readFileSync(indexPath, 'utf8')
 
-function injectMeta(html, route) {
-  const jsonLdPayload = getJsonLd(route.path)
+const notFoundBody = `<main class="page-content" style="max-width:720px;margin:80px auto;padding:0 20px;text-align:center;">
+  <h1>Page not found</h1>
+  <p>The page you requested is not available. Return to Site Machinery NZ for DeSite soil, gravel and aggregate screeners.</p>
+  <p><a href="/" class="cta-primary">Back to home</a></p>
+</main>`
+
+function injectMeta(html, route, { bodyHtml } = {}) {
+  const jsonLdPayload = route.path && !route.omitCanonical ? getJsonLd(route.path) : null
   const jsonLd = jsonLdPayload
     ? `<script type="application/ld+json">${JSON.stringify(jsonLdPayload)}</script>`
     : ''
   const ogImage = route.ogImage || defaultOgImage
+  const canonicalTag = route.omitCanonical || !route.canonical
+    ? ''
+    : `<link rel="canonical" href="${escapeAttr(route.canonical)}" />`
+  const ogUrlTag = route.omitCanonical || !route.canonical
+    ? ''
+    : `<meta property="og:url" content="${escapeAttr(route.canonical)}" />`
 
   const tags = `
     <title>${escapeHtml(route.title)}</title>
     <meta name="description" content="${escapeAttr(route.description)}" />
-    <meta name="keywords" content="${escapeAttr(route.keywords)}" />
+    <meta name="keywords" content="${escapeAttr(route.keywords || '')}" />
     <meta name="author" content="Warwick Marshall" />
     <meta name="creator" content="Warwick Marshall" />
     <meta name="robots" content="${escapeAttr(route.robots || defaultRobots)}" />
-    <link rel="canonical" href="${escapeAttr(route.canonical)}" />
+    ${canonicalTag}
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="geo.region" content="NZ-NSN" />
     <meta name="geo.placename" content="Nelson" />
@@ -39,7 +58,7 @@ function injectMeta(html, route) {
     <meta property="og:site_name" content="Site Machinery NZ" />
     <meta property="og:title" content="${escapeAttr(route.title)}" />
     <meta property="og:description" content="${escapeAttr(route.description)}" />
-    <meta property="og:url" content="${escapeAttr(route.canonical)}" />
+    ${ogUrlTag}
     <meta property="og:image" content="${escapeAttr(ogImage)}" />
     <meta property="og:locale" content="en_NZ" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -70,11 +89,12 @@ function injectMeta(html, route) {
   // Insert tags before </head>
   out = out.replace(/<\/head>/i, `${tags}\n  </head>`)
 
-  const bodyHtml = getStaticPageHtml(route.path)
-  if (bodyHtml) {
+  const resolvedBody =
+    bodyHtml !== undefined ? bodyHtml : getStaticPageHtml(route.path)
+  if (resolvedBody) {
     out = out.replace(
       /<div id="root"><\/div>/i,
-      `<div id="root">${bodyHtml}</div>`,
+      `<div id="root">${resolvedBody}</div>`,
     )
   }
 
@@ -94,13 +114,14 @@ function escapeAttr(str) {
 
 function buildSitemap() {
   const urls = routes
-    .filter((route) => route.includeInSitemap !== false)
+    .filter(isIndexableRoute)
     .map((route) => {
       const loc = route.canonical
       const changefreq = route.changefreq || 'monthly'
       const priority = route.priority || '0.5'
       return `  <url>
     <loc>${loc}</loc>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`
@@ -122,9 +143,12 @@ for (const route of routes) {
   console.log('Prerendered', route.file)
 }
 
-// SPA fallback for unknown client routes on GitHub Pages
-fs.writeFileSync(path.join(distDir, '404.html'), injectMeta(template, routes[0]))
-console.log('Wrote 404.html')
+// GitHub Pages unknown-URL fallback — must not look like the homepage
+fs.writeFileSync(
+  path.join(distDir, '404.html'),
+  injectMeta(template, notFoundSeo, { bodyHtml: notFoundBody }),
+)
+console.log('Wrote 404.html (noindex)')
 
 const sitemap = buildSitemap()
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap)
