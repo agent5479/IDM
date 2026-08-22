@@ -50,7 +50,9 @@ function injectMeta(html, route, { bodyHtml } = {}) {
     <meta name="creator" content="Warwick Marshall" />
     <meta name="robots" content="${escapeAttr(route.robots || defaultRobots)}" />
     ${canonicalTag}
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="geo.region" content="NZ-NSN" />
     <meta name="geo.placename" content="Nelson" />
     <meta name="language" content="en-NZ" />
@@ -82,6 +84,7 @@ function injectMeta(html, route, { bodyHtml } = {}) {
   out = out.replace(/<meta\s+name="language"[^>]*>/gi, '')
   out = out.replace(/<link\s+rel="canonical"[^>]*>/gi, '')
   out = out.replace(/<link\s+rel="icon"[^>]*>/gi, '')
+  out = out.replace(/<link\s+rel="apple-touch-icon"[^>]*>/gi, '')
   out = out.replace(/<meta\s+property="og:[^"]*"[^>]*>/gi, '')
   out = out.replace(/<meta\s+name="twitter:[^"]*"[^>]*>/gi, '')
   out = out.replace(/<meta\s+name="contact:[^"]*"[^>]*>/gi, '')

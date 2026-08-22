@@ -20,7 +20,9 @@ export default function SEO({ pathname, jsonLd }) {
         content={seo.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
       />
       <link rel="canonical" href={seo.canonical} />
-      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <meta name="theme-color" content="#efe8dc" />
 
       <meta name="geo.region" content="NZ-NSN" />

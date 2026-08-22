@@ -370,7 +370,7 @@ export const organizationJsonLd = {
   email: contact.email,
   telephone: contact.phoneTel,
   image: defaultOgImage,
-  logo: `${contact.siteUrl}/favicon.ico`,
+  logo: `${contact.siteUrl}/site-logo.png`,
   description:
     'New Zealand supplier of DeSite soil, gravel and aggregate screening machines and related earthmoving equipment.',
   address: {
