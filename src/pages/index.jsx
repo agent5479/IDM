@@ -16,6 +16,7 @@ import { forTopsoilLandscapingHtml } from '../content/for-topsoil-landscaping'
 import { forAggregateRoadMetalHtml } from '../content/for-aggregate-and-road-metal'
 import { forNelsonNationwideHtml } from '../content/for-nelson-nationwide'
 import ScreeningRecommendationPage from './ScreeningRecommendationPage'
+import ImageCatalogPage from './ImageCatalogPage'
 import ProspectsPage from './office/ProspectsPage'
 import CommercialsHubPage from './commercials/CommercialsHubPage'
 import GrizzlyCommercialPage from './commercials/GrizzlyCommercialPage'
@@ -45,6 +46,7 @@ export const ForAggregateRoadMetalPage = () => <Page html={forAggregateRoadMetal
 export const ForNelsonNationwidePage = () => <Page html={forNelsonNationwideHtml} />
 export {
   ScreeningRecommendationPage,
+  ImageCatalogPage,
   CommercialsHubPage,
   GrizzlyCommercialPage,
   VibratoryCommercialPage,

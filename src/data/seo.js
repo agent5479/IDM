@@ -57,6 +57,19 @@ export const routes = [
     schemaType: 'webPage',
   },
   {
+    path: '/image-catalog',
+    file: 'image-catalog/index.html',
+    title: `Complete Image Catalog | Equipment Photos | ${siteName}`,
+    description:
+      'Complete DeSite screener image catalog sorted by model — SLG-108VFRB, SLG-78VF, SLG-68V, Static Grizzly, telehandler bins and more. Thumbnails open full-size photos.',
+    keywords:
+      'DeSite image catalog NZ, screener photos by model, SLG-108VFRB gallery, SLG-78VF photos, SLG-68V images, gravel screener catalog',
+    canonical: `${contact.siteUrl}/image-catalog`,
+    changefreq: 'monthly',
+    priority: '0.7',
+    schemaType: 'webPage',
+  },
+  {
     path: '/videos',
     file: 'videos/index.html',
     title: `Screener Videos | DeSite Demo Footage - ${siteName}`,

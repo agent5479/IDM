@@ -64,6 +64,7 @@ ${bodyHtml}
       <a href="/for/aggregate-and-road-metal">Aggregate &amp; Road Metal</a>
       <a href="/for/nelson-nationwide">Nelson Showroom</a>
       <a href="/photos">Photos</a>
+      <a href="/image-catalog">Image Catalog</a>
       <a href="/videos">Videos</a>
       <a href="/contact">Contact Us</a>
     </div>

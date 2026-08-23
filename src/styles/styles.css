@@ -2518,6 +2518,231 @@ img[data-image-loaded="true"] {
   }
 }
 
+/* —— Complete image catalog —— */
+.image-catalog-hero {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.image-catalog-hero h1 {
+  color: #b34700;
+  margin-bottom: 12px;
+}
+
+.image-catalog-hero p {
+  max-width: 720px;
+  margin: 0 auto 12px;
+  color: #2c2c2c;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.image-catalog-hero-links a {
+  color: #b34700;
+  font-weight: 600;
+}
+
+.image-catalog-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 0 40px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border-card);
+  border-bottom: 1px solid var(--border-card);
+}
+
+.image-catalog-nav a {
+  color: #b34700;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.image-catalog-nav a:hover {
+  background: rgba(255, 102, 0, 0.12);
+  text-decoration: underline;
+}
+
+.image-catalog-section {
+  scroll-margin-top: 90px;
+  margin-bottom: 48px;
+}
+
+.image-catalog-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.image-catalog-section-head h2 {
+  color: #b34700;
+  margin: 0;
+}
+
+.image-catalog-product-link {
+  color: #b34700;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.image-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.image-catalog-thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 2px solid var(--border-card);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-card);
+  cursor: zoom-in;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.image-catalog-thumb:hover {
+  transform: scale(1.03);
+  border-color: #ff6600;
+}
+
+.image-catalog-thumb img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.image-catalog-cta {
+  margin-top: 40px;
+}
+
+.image-catalog-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.image-catalog-lightbox-inner {
+  position: relative;
+  max-width: min(1100px, 100%);
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.image-catalog-lightbox-figure {
+  margin: 0;
+  max-width: 100%;
+  text-align: center;
+}
+
+.image-catalog-lightbox-figure img {
+  display: block;
+  max-width: min(96vw, 1000px);
+  max-height: calc(100vh - 120px);
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.image-catalog-lightbox-figure figcaption {
+  color: #f5f5f5;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.image-catalog-lightbox-count {
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.image-catalog-lightbox-close {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #ff6600;
+  color: #000;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.image-catalog-lightbox-nav {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-catalog-lightbox-nav:hover:not(:disabled) {
+  background: rgba(255, 102, 0, 0.85);
+  color: #000;
+}
+
+.image-catalog-lightbox-nav:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .image-catalog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .image-catalog-thumb img {
+    height: 140px;
+  }
+
+  .image-catalog-lightbox {
+    padding: 12px;
+  }
+
+  .image-catalog-lightbox-nav {
+    display: none;
+  }
+
+  .image-catalog-lightbox-close {
+    top: 8px;
+    right: 8px;
+  }
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,

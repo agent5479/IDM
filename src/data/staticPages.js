@@ -16,6 +16,7 @@ import { staticGrizzlyHtml } from '../content/static-grizzly.js'
 import { telehandlerBinsHtml } from '../content/telehandler-bins.js'
 import { videosHtml } from '../content/videos.js'
 import { buildMeshGuideHtml } from './meshGuideHtml.js'
+import { buildImageCatalogHtml } from './imageCatalogHtml.js'
 import { buildStaticChrome } from './staticChrome.js'
 
 const pageBodies = {
@@ -48,6 +49,8 @@ export function getStaticPageHtml(pathname) {
   let body
   if (pathname === '/screening-recommendation') {
     body = buildMeshGuideHtml()
+  } else if (pathname === '/image-catalog') {
+    body = buildImageCatalogHtml()
   } else {
     body = pageBodies[pathname]
   }
