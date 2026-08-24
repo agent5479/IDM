@@ -1,3 +1,4 @@
+import HomeHero from '../components/HomeHero'
 import HtmlContent from '../components/HtmlContent'
 import { homeHtml } from '../content/home'
 import { contactHtml } from '../content/contact'
@@ -28,7 +29,12 @@ function Page({ html }) {
 }
 
 export { AboutPage }
-export const HomePage = () => <Page html={homeHtml} />
+export const HomePage = () => (
+  <>
+    <HomeHero />
+    <Page html={homeHtml} />
+  </>
+)
 export const ContactPage = () => <Page html={contactHtml} />
 export const PhotosPage = () => <Page html={photosHtml} />
 export const VideosPage = () => <Page html={videosHtml} />
