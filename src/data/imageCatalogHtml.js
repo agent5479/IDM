@@ -48,8 +48,8 @@ export function buildImageCatalogHtml() {
     <h1>Complete Image Catalog</h1>
     <p>
       All Site Machinery / DeSite equipment photos sorted by model. Click a
-      thumbnail to view the full-size image. Includes local product shots and
-      manufacturer gallery photos from IDM.
+      thumbnail to view the full-size image. Includes local product shots plus
+      manufacturer galleries from IDM and DeSite Products Australia.
     </p>
     <p class="image-catalog-hero-links">
       <a href="/photos">Curated photo gallery</a>

@@ -1,27 +1,43 @@
 /**
- * Complete equipment image catalog — local site assets + scraped IDM galleries.
+ * Complete equipment image catalog — local site assets + scraped IDM / AU galleries.
  * Mesh-guide grade photos and the DeSite logo are intentionally excluded.
  */
+import auManifest from './auCatalogManifest.js'
 import idmManifest from './idmCatalogManifest.js'
 
 function img(src, alt) {
   return { src, alt }
 }
 
-function fromIdm(modelId) {
-  return idmManifest
-    .filter((m) => m.modelId === modelId)
-    .map((m) => img(m.file, m.alt))
+function fromManifest(manifest, modelId) {
+  return manifest.filter((m) => m.modelId === modelId).map((m) => img(m.file, m.alt))
 }
 
+function fromIdm(modelId) {
+  return fromManifest(idmManifest, modelId)
+}
+
+function fromAu(modelId) {
+  return fromManifest(auManifest, modelId)
+}
+
+/** Dedupe by full path and by basename so AU/IDM copies of local feature shots are skipped. */
 function mergeUnique(...lists) {
-  const seen = new Set()
+  const seenSrc = new Set()
+  const seenBase = new Set()
   const out = []
   for (const list of lists) {
     for (const item of list) {
-      const key = item.src.toLowerCase()
-      if (seen.has(key)) continue
-      seen.add(key)
+      const srcKey = item.src.toLowerCase()
+      // Strip scrape numbering prefix (01-Name.webp → name.webp)
+      const baseKey = item.src
+        .split('/')
+        .pop()
+        .toLowerCase()
+        .replace(/^\d{2}-/, '')
+      if (seenSrc.has(srcKey) || seenBase.has(baseKey)) continue
+      seenSrc.add(srcKey)
+      seenBase.add(baseKey)
       out.push(item)
     }
   }
@@ -136,13 +152,13 @@ export const imageCatalog = [
     id: 'slg-108vfrb',
     title: 'Proscreen SLG-108VFRB',
     href: '/products/slg-108vfrb',
-    images: mergeUnique(local108, fromIdm('slg-108vfrb')),
+    images: mergeUnique(local108, fromIdm('slg-108vfrb'), fromAu('slg-108vfrb')),
   },
   {
     id: 'slg-78vf',
     title: 'Proscreen SLG-78VF',
     href: '/products/slg-78vf',
-    images: mergeUnique(local78, fromIdm('slg-78vf')),
+    images: mergeUnique(local78, fromIdm('slg-78vf'), fromAu('slg-78vf')),
   },
   {
     id: 'slg-78vf-flow',
@@ -154,25 +170,25 @@ export const imageCatalog = [
     id: 'slg-68v',
     title: 'Proscreen SLG-68V',
     href: '/products/slg-68v',
-    images: mergeUnique(local68, fromIdm('slg-68v')),
+    images: mergeUnique(local68, fromIdm('slg-68v'), fromAu('slg-68v')),
   },
   {
     id: 'static-grizzly',
     title: 'Static Grizzly (78 & 108)',
     href: '/products/static-grizzly',
-    images: mergeUnique(localGrizzly, fromIdm('static-grizzly')),
+    images: mergeUnique(localGrizzly, fromIdm('static-grizzly'), fromAu('static-grizzly')),
   },
   {
     id: 'telehandler-bins',
     title: 'Telehandler Bins',
     href: '/products/telehandler-bins',
-    images: localBins,
+    images: mergeUnique(localBins, fromAu('telehandler-bins')),
   },
   {
     id: 'additional-products',
     title: 'Additional Products',
     href: '/products/additional-products',
-    images: localAdditional,
+    images: mergeUnique(localAdditional, fromAu('additional-products')),
   },
   {
     id: 'accessories',
