@@ -39,12 +39,13 @@ Confirm:
 
 - CSS/images load at root paths (`/assets/...`, `/images/...`)
 - Favicon at `/favicon.ico`
-- `/sitemap.xml` and `/robots.txt` present
+- `/sitemap.xml`, `/robots.txt`, and `/llms.txt` present
+- `robots.txt` explicitly Allows GPTBot, Google-Extended, ClaudeBot, PerplexityBot (and peers)
 - Phone displays as `+64 3 970 7602`
 - Meta tags present in `dist/index.html` and route folders (e.g. `dist/about/index.html`)
-- **Body prerender:** open `dist/products/slg-78vf/index.html` (and peers) and confirm an `<h1>` and page copy exist inside `#root` without running JS
-- **Mesh guide:** `dist/screening-recommendation/index.html` contains chart tables in the static HTML
-- **JSON-LD:** home has `LocalBusiness`; product routes have `Product`; `/for/*` routes have `Service`
+- **Body prerender:** open `dist/index.html` and confirm hero `<h1>`; open `dist/products/slg-78vf/index.html` (and peers) and confirm an `<h1>` and page copy exist inside `#root` without running JS
+- **Mesh guide:** `dist/screening-recommendation/index.html` contains chart tables and HowTo JSON-LD in the static HTML
+- **JSON-LD:** home has `LocalBusiness` + `SoftwareApplication`; product routes have `Product`; `/for/*` routes have `Service`
 - **Sitemap:** includes `/for/topsoil-landscaping`, `/for/aggregate-and-road-metal`, `/for/nelson-nationwide`
 - **Internal routes:** `dist/idm/**/index.html` keep empty `#root` and `noindex`
 

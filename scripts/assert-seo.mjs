@@ -64,6 +64,16 @@ if (!sitemap.includes('<lastmod>')) {
 
 const robotsDist = read(path.join(distDir, 'robots.txt'))
 const robotsPublic = read(path.join(publicDir, 'robots.txt'))
+const aiBots = [
+  'GPTBot',
+  'OAI-SearchBot',
+  'ChatGPT-User',
+  'Google-Extended',
+  'ClaudeBot',
+  'PerplexityBot',
+  'Perplexity-User',
+  'Applebot-Extended',
+]
 for (const [label, text] of [
   ['dist/robots.txt', robotsDist],
   ['public/robots.txt', robotsPublic],
@@ -73,6 +83,26 @@ for (const [label, text] of [
     fail(`${label}: missing Sitemap URL`)
   }
   if (!text.includes('Allow: /')) fail(`${label}: missing Allow: /`)
+  for (const bot of aiBots) {
+    if (!text.includes(`User-agent: ${bot}`)) {
+      fail(`${label}: missing explicit Allow for ${bot}`)
+    }
+  }
+}
+
+const llmsPublic = read(path.join(publicDir, 'llms.txt'))
+const llmsDist = read(path.join(distDir, 'llms.txt'))
+for (const [label, text] of [
+  ['public/llms.txt', llmsPublic],
+  ['dist/llms.txt', llmsDist],
+]) {
+  if (!text.includes('Site Machinery NZ')) fail(`${label}: missing brand name`)
+  if (!text.includes('https://sitemachinery.nz/screening-recommendation')) {
+    fail(`${label}: missing mesh guide link`)
+  }
+  if (!text.includes('https://sitemachinery.nz/for/farmers')) {
+    fail(`${label}: missing farmers page link`)
+  }
 }
 
 // Sample public product page meta
@@ -91,6 +121,24 @@ if (product && productHtml) {
   if (!productHtml.includes('<h1>DeSite SLG-78VF</h1>')) {
     fail('Product HTML missing prerendered body h1')
   }
+}
+
+const homeHtml = read(path.join(distDir, 'index.html'))
+if (homeHtml) {
+  if (!homeHtml.includes('<h1>Screen and Grade Topsoil, Gravel and Aggregate On-Site</h1>')) {
+    fail('Homepage HTML missing prerendered hero h1')
+  }
+  if (!homeHtml.includes('SoftwareApplication')) {
+    fail('Homepage JSON-LD missing SoftwareApplication (profit calculator)')
+  }
+  if (!homeHtml.includes('LocalBusiness')) {
+    fail('Homepage JSON-LD missing LocalBusiness')
+  }
+}
+
+const meshHtml = read(path.join(distDir, 'screening-recommendation/index.html'))
+if (meshHtml && !meshHtml.includes('"@type":"HowTo"')) {
+  fail('Mesh guide JSON-LD missing HowTo')
 }
 
 const notFoundHtml = read(path.join(distDir, '404.html'))

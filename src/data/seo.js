@@ -372,12 +372,16 @@ export const notFoundSeo = {
 }
 
 const localBusinessId = `${contact.siteUrl}/#organization`
+const websiteId = `${contact.siteUrl}/#website`
+const profitCalculatorId = `${contact.siteUrl}/#profit-calculator`
+const meshGuideHowToId = `${contact.siteUrl}/screening-recommendation#howto`
 
 export const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['LocalBusiness', 'Organization'],
   '@id': localBusinessId,
   name: 'Site Machinery NZ',
+  legalName: 'Site Machinery Ltd',
   alternateName: 'Site Machinery Ltd',
   url: contact.siteUrl,
   email: contact.email,
@@ -463,6 +467,41 @@ export const organizationJsonLd = {
   ],
 }
 
+function homeJsonLd() {
+  const { '@context': _ctx, ...business } = organizationJsonLd
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      business,
+      {
+        '@type': 'WebSite',
+        '@id': websiteId,
+        name: siteName,
+        url: contact.siteUrl,
+        publisher: { '@id': localBusinessId },
+        inLanguage: 'en-NZ',
+      },
+      {
+        '@type': 'SoftwareApplication',
+        '@id': profitCalculatorId,
+        name: 'Screening Profit Calculator',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
+        description:
+          'Estimate saleable material and revenue from DeSite screener production rates for New Zealand operators. Defaults assume about 50% of screened material becomes saleable product.',
+        url: `${contact.siteUrl}/#equipment`,
+        isAccessibleForFree: true,
+        provider: { '@id': localBusinessId },
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'NZD',
+        },
+      },
+    ],
+  }
+}
+
 function providerRef() {
   return { '@id': localBusinessId }
 }
@@ -515,30 +554,76 @@ function serviceJsonLd(route) {
 function meshGuideJsonLd(route) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: route.title,
-    description: route.description,
-    url: route.canonical,
-    isPartOf: {
-      '@type': 'WebSite',
-      name: siteName,
-      url: contact.siteUrl,
-    },
-    about: {
-      '@type': 'Thing',
-      name: 'DeSite screen mesh size selection',
-    },
-    mainEntity: {
-      '@type': 'ItemList',
-      name: 'Screen mesh recommendation charts',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Square and elongated base charts' },
-        { '@type': 'ListItem', position: 2, name: 'Topsoil and triple mix' },
-        { '@type': 'ListItem', position: 3, name: 'Farm filling and cow races' },
-        { '@type': 'ListItem', position: 4, name: 'Aggregates and road metal' },
-      ],
-    },
-    provider: providerRef(),
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${route.canonical}#webpage`,
+        name: route.title,
+        description: route.description,
+        url: route.canonical,
+        isPartOf: {
+          '@type': 'WebSite',
+          name: siteName,
+          url: contact.siteUrl,
+        },
+        about: {
+          '@type': 'Thing',
+          name: 'DeSite screen mesh size selection',
+        },
+        mainEntity: { '@id': meshGuideHowToId },
+        provider: providerRef(),
+      },
+      {
+        '@type': 'HowTo',
+        '@id': meshGuideHowToId,
+        name: 'How to choose DeSite screen mesh for New Zealand materials',
+        description:
+          'Match DeSite mesh opening to the finished product — topsoil, farm filling, cow races, compost, mulch or aggregate.',
+        url: route.canonical,
+        provider: providerRef(),
+        step: [
+          {
+            '@type': 'HowToStep',
+            position: 1,
+            name: 'Define the finished product',
+            text: 'Decide whether you need fine topsoil, farm filling, cow race gravel, compost, mulch or sized aggregate.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 2,
+            name: 'Pick the chart for that material',
+            text: 'Use the Site Machinery NZ mesh charts for topsoil, farm filling, organics or aggregates — openings are listed in imperial (industry standard) with metric context.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 3,
+            name: 'Use a two-pass setup when oversize dominates',
+            text: 'For farm rivers and civil fill, start with about 100 mm mesh to drop cobbles, then run 50 mm or 3 inch (~75 mm) for filling material.',
+          },
+          {
+            '@type': 'HowToStep',
+            position: 4,
+            name: 'Confirm mesh and machine with Site Machinery NZ',
+            text: 'Match mesh and ProScreen or Static Grizzly to the carrier you already run. Call +64 3 970 7602 or visit the Nelson showroom.',
+          },
+        ],
+      },
+      {
+        '@type': 'SoftwareApplication',
+        name: 'DeSite Screen Mesh Recommendation Guide',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web',
+        description: route.description,
+        url: route.canonical,
+        isAccessibleForFree: true,
+        provider: providerRef(),
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'NZD',
+        },
+      },
+    ],
   }
 }
 
@@ -567,7 +652,7 @@ export function getJsonLd(pathname) {
 
   switch (route.schemaType) {
     case 'home':
-      return organizationJsonLd
+      return homeJsonLd()
     case 'product':
       return productJsonLd(route)
     case 'service':

@@ -23,7 +23,7 @@ npm run dev
 npm run build
 ```
 
-Output is in `dist/` (HTML, hashed CSS/JS, `favicon.ico`, `robots.txt`, `sitemap.xml`, images).
+Output is in `dist/` (HTML, hashed CSS/JS, `favicon.ico`, `robots.txt`, `sitemap.xml`, `llms.txt`, images).
 
 ## Deployment
 

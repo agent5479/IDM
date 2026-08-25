@@ -19,8 +19,31 @@ import { buildMeshGuideHtml } from './meshGuideHtml.js'
 import { buildImageCatalogHtml } from './imageCatalogHtml.js'
 import { buildStaticChrome } from './staticChrome.js'
 
+/** Crawlable hero (matches HomeHero copy). Video stays client-only. */
+const homeHeroHtml = `<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      Exclusive specialist supplier of DeSite small and medium scale soil, gravel and
+      earthmoving/processing equipment
+    </div>
+    <h1>Screen and Grade Topsoil, Gravel and Aggregate On-Site</h1>
+    <p class="hero-subtitle">
+      Portable screening machines for earthmoving, civil, farming and landscaping — from Nelson,
+      nationwide
+    </p>
+    <p class="hero-note">
+      Also used to reduce buy-in costs, skip unnecessary tip fees, and create saleable product
+      from material already on site.
+    </p>
+    <p class="hero-location">
+      Order directly from Site Machinery — your New Zealand supplier
+    </p>
+    <a href="#equipment" class="hero-cta">View Our Equipment Range</a>
+  </div>
+</section>`
+
 const pageBodies = {
-  '/': homeHtml,
+  '/': `${homeHeroHtml}\n${homeHtml}`,
   '/about': aboutHtml,
   '/contact': contactHtml,
   '/photos': photosHtml,
