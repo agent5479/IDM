@@ -65,6 +65,7 @@ ${bodyHtml}
       <a href="/for/nelson-nationwide">Nelson Showroom</a>
       <a href="/photos">Photos</a>
       <a href="/image-catalog">Image Catalog</a>
+      <a href="/prospects">Prospects</a>
       <a href="/videos">Videos</a>
       <a href="/contact">Contact Us</a>
     </div>

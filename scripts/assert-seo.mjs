@@ -121,6 +121,17 @@ if (product && productHtml) {
   if (!productHtml.includes('<h1>DeSite SLG-78VF</h1>')) {
     fail('Product HTML missing prerendered body h1')
   }
+  if (product.product?.image && !productHtml.includes(`property="og:image" content="${product.product.image}"`)) {
+    fail('Product HTML og:image should use the product image')
+  }
+  if (!productHtml.includes('property="og:image:width"')) {
+    fail('Product HTML missing og:image:width')
+  }
+}
+
+const civilHtml = read(path.join(distDir, 'for/civil-contractors/index.html'))
+if (civilHtml && /property="og:image" content="[^"]+\.webp"/.test(civilHtml)) {
+  fail('Civil page og:image must not use WebP')
 }
 
 const homeHtml = read(path.join(distDir, 'index.html'))

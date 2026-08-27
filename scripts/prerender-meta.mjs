@@ -2,10 +2,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import {
   routes,
-  defaultOgImage,
   getJsonLd,
   isIndexableRoute,
   notFoundSeo,
+  resolveOgImage,
 } from '../src/data/seo.js'
 import { contact } from '../src/data/contact.js'
 import { getStaticPageHtml } from '../src/data/staticPages.js'
@@ -34,7 +34,7 @@ function injectMeta(html, route, { bodyHtml } = {}) {
   const jsonLd = jsonLdPayload
     ? `<script type="application/ld+json">${JSON.stringify(jsonLdPayload)}</script>`
     : ''
-  const ogImage = route.ogImage || defaultOgImage
+  const og = resolveOgImage(route)
   const canonicalTag = route.omitCanonical || !route.canonical
     ? ''
     : `<link rel="canonical" href="${escapeAttr(route.canonical)}" />`
@@ -51,8 +51,12 @@ function injectMeta(html, route, { bodyHtml } = {}) {
     <meta name="robots" content="${escapeAttr(route.robots || defaultRobots)}" />
     ${canonicalTag}
     <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#efe8dc" />
     <meta name="geo.region" content="NZ-NSN" />
     <meta name="geo.placename" content="Nelson" />
     <meta name="language" content="en-NZ" />
@@ -61,12 +65,14 @@ function injectMeta(html, route, { bodyHtml } = {}) {
     <meta property="og:title" content="${escapeAttr(route.title)}" />
     <meta property="og:description" content="${escapeAttr(route.description)}" />
     ${ogUrlTag}
-    <meta property="og:image" content="${escapeAttr(ogImage)}" />
+    <meta property="og:image" content="${escapeAttr(og.url)}" />
+    <meta property="og:image:width" content="${og.width}" />
+    <meta property="og:image:height" content="${og.height}" />
     <meta property="og:locale" content="en_NZ" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${escapeAttr(route.title)}" />
     <meta name="twitter:description" content="${escapeAttr(route.description)}" />
-    <meta name="twitter:image" content="${escapeAttr(ogImage)}" />
+    <meta name="twitter:image" content="${escapeAttr(og.url)}" />
     <meta name="contact:phone_number" content="${escapeAttr(contact.phoneDisplay)}" />
     <meta name="contact:email" content="${escapeAttr(contact.email)}" />
     ${jsonLd}
@@ -85,6 +91,8 @@ function injectMeta(html, route, { bodyHtml } = {}) {
   out = out.replace(/<link\s+rel="canonical"[^>]*>/gi, '')
   out = out.replace(/<link\s+rel="icon"[^>]*>/gi, '')
   out = out.replace(/<link\s+rel="apple-touch-icon"[^>]*>/gi, '')
+  out = out.replace(/<link\s+rel="manifest"[^>]*>/gi, '')
+  out = out.replace(/<meta\s+name="theme-color"[^>]*>/gi, '')
   out = out.replace(/<meta\s+property="og:[^"]*"[^>]*>/gi, '')
   out = out.replace(/<meta\s+name="twitter:[^"]*"[^>]*>/gi, '')
   out = out.replace(/<meta\s+name="contact:[^"]*"[^>]*>/gi, '')

@@ -260,15 +260,13 @@ export default function ProspectsPage() {
     <section className="page-content commercials-page commercials-compact prospects-page">
       <div className="commercials-banner commercials-banner-compact prospects-no-print">
         <div className="commercials-banner-row">
-          <Link to="/idm/commercials" className="commercials-kicker-inline">
-            ← Hub
-          </Link>
           <span className="commercials-badge">Office · Prospects</span>
         </div>
         <h1>Prospect list</h1>
         <p className="commercials-sub">
           Farmer, civil and landscaper contacts stay on this browser until you export a CSV. This
-          page does not scrape directories or send email.
+          page does not scrape directories or send email. NZBN lookup will plug in when the API key
+          is ready.
         </p>
       </div>
 

@@ -41,6 +41,7 @@ export default function Footer() {
           <Link to="/for/nelson-nationwide">Nelson Showroom</Link>
           <Link to="/photos">Photos</Link>
           <Link to="/image-catalog">Image Catalog</Link>
+          <Link to="/prospects">Prospects</Link>
           <Link to="/videos">Videos</Link>
           <Link to="/contact">Contact Us</Link>
         </div>

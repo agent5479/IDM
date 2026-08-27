@@ -2,6 +2,26 @@ import { contact } from './contact.js'
 
 const siteName = 'Site Machinery NZ'
 const defaultOgImage = `${contact.siteUrl}/images/SLG108VFRB.jpg`
+/** Absolute image URL → pixel size for og:image:width / height */
+const ogImageSizes = {
+  [`${contact.siteUrl}/images/SLG108VFRB.jpg`]: { width: 300, height: 300 },
+  [`${contact.siteUrl}/images/Proscreen_SLG78VFII_home.jpg`]: { width: 300, height: 300 },
+  [`${contact.siteUrl}/images/Proscreen_68.jpg`]: { width: 300, height: 300 },
+  [`${contact.siteUrl}/images/Proscreen78-flow-control.jpg`]: { width: 768, height: 435 },
+  [`${contact.siteUrl}/images/grizzly3.jpg`]: { width: 1808, height: 1408 },
+  [`${contact.siteUrl}/images/farmers-hero.jpg`]: { width: 1920, height: 1280 },
+  [`${contact.siteUrl}/images/Telehandler-bin_site_machinery.jpg`]: { width: 500, height: 327 },
+}
+
+/**
+ * Resolve absolute OG/Twitter image URL and dimensions for a route.
+ * Prefer route.ogImage, then product.image, then the site default. JPG/PNG only.
+ */
+export function resolveOgImage(route = {}) {
+  const url = route.ogImage || route.product?.image || defaultOgImage
+  const size = ogImageSizes[url] || { width: 1200, height: 630 }
+  return { url, width: size.width, height: size.height }
+}
 
 export const routes = [
   {
@@ -168,7 +188,7 @@ export const routes = [
     schemaType: 'product',
     product: {
       name: 'DeSite Static Grizzly SLG-78 & SLG-108',
-      image: `${contact.siteUrl}/images/grizzly2.jpg`,
+      image: `${contact.siteUrl}/images/grizzly3.jpg`,
       sku: 'STATIC-GRIZZLY',
     },
   },
@@ -243,7 +263,8 @@ export const routes = [
     keywords:
       'civil contractor screener NZ, subdivision landscaping screener, skid steer soil screening, retaining wall fill, DeSite Proscreen',
     canonical: `${contact.siteUrl}/for/civil-contractors`,
-    ogImage: `${contact.siteUrl}/images/108-WROKING.webp`,
+    // JPG — many link-preview crawlers skip WebP for og:image
+    ogImage: `${contact.siteUrl}/images/Proscreen78-flow-control.jpg`,
     changefreq: 'monthly',
     priority: '0.8',
     schemaType: 'service',
@@ -337,12 +358,24 @@ export const routes = [
     includeInSitemap: false,
   },
   {
+    path: '/prospects',
+    file: 'prospects/index.html',
+    title: `Prospect List | Office Workspace | ${siteName}`,
+    description:
+      'Office prospect list for Site Machinery NZ — farmer, civil and landscaper contacts with CSV import/export and a printable call sheet. NZBN lookup coming soon.',
+    keywords: 'Site Machinery prospects, industrial leads NZ, farmer civil landscaper contacts',
+    canonical: `${contact.siteUrl}/prospects`,
+    robots: 'noindex, nofollow',
+    includeInSitemap: false,
+  },
+  {
     path: '/idm/prospects',
     file: 'idm/prospects/index.html',
-    title: `Prospects Workspace - ${siteName}`,
-    description: 'Internal prospect list workspace for Site Machinery NZ.',
+    title: `Prospect List | Office Workspace | ${siteName}`,
+    description:
+      'Redirects to the Site Machinery NZ prospect list workspace.',
     keywords: 'Site Machinery prospects',
-    canonical: `${contact.siteUrl}/idm/prospects`,
+    canonical: `${contact.siteUrl}/prospects`,
     robots: 'noindex, nofollow',
     includeInSitemap: false,
   },

@@ -1,11 +1,11 @@
 import { Helmet } from 'react-helmet-async'
 import { contact } from '../data/contact'
-import { defaultOgImage, getJsonLd, getSeo } from '../data/seo'
+import { getJsonLd, getSeo, resolveOgImage } from '../data/seo'
 
 export default function SEO({ pathname, jsonLd }) {
   const seo = getSeo(pathname)
   const payload = jsonLd !== undefined ? jsonLd : getJsonLd(pathname)
-  const ogImage = seo.ogImage || defaultOgImage
+  const og = resolveOgImage(seo)
 
   return (
     <Helmet>
@@ -21,8 +21,11 @@ export default function SEO({ pathname, jsonLd }) {
       />
       <link rel="canonical" href={seo.canonical} />
       <link rel="icon" href="/favicon.ico" sizes="any" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
       <meta name="theme-color" content="#efe8dc" />
 
       <meta name="geo.region" content="NZ-NSN" />
@@ -34,13 +37,15 @@ export default function SEO({ pathname, jsonLd }) {
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.canonical} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={og.url} />
+      <meta property="og:image:width" content={String(og.width)} />
+      <meta property="og:image:height" content={String(og.height)} />
       <meta property="og:locale" content="en_NZ" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={og.url} />
 
       <meta name="contact:phone_number" content={contact.phoneDisplay} />
       <meta name="contact:email" content={contact.email} />

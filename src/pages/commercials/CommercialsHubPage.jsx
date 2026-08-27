@@ -44,16 +44,6 @@ const liveCampaigns = [
   },
 ]
 
-const officeTools = [
-  {
-    slug: 'prospects',
-    title: 'Prospect lists',
-    status: 'Office workspace',
-    blurb: 'Keep farmer, civil and landscaper contacts. CSV in and out. Call sheet.',
-    to: '/idm/prospects',
-  },
-]
-
 export default function CommercialsHubPage() {
   return (
     <section className="page-content commercials-page commercials-compact">
@@ -61,7 +51,7 @@ export default function CommercialsHubPage() {
         <span className="commercials-badge">Internal workspace</span>
         <h1>IDM / Commercials</h1>
         <p className="commercials-sub">
-          Unlisted drafts for director review, plus live campaign pages and the office prospect list.
+          Unlisted drafts for director review, plus links to live campaign pages.
         </p>
       </div>
 
@@ -92,20 +82,6 @@ export default function CommercialsHubPage() {
             <p>{item.blurb}</p>
             <Link to={item.to} className="equipment-cta">
               Open page
-            </Link>
-          </article>
-        ))}
-      </div>
-
-      <h2 className="commercials-section-label">Office</h2>
-      <div className="commercials-grid commercials-grid-compact">
-        {officeTools.map((item) => (
-          <article key={item.slug} className="commercials-card is-active">
-            <div className="commercials-card-status">{item.status}</div>
-            <h2>{item.title}</h2>
-            <p>{item.blurb}</p>
-            <Link to={item.to} className="equipment-cta">
-              Open workspace
             </Link>
           </article>
         ))}

@@ -56,6 +56,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/photos" element={<PhotosPage />} />
           <Route path="/image-catalog" element={<ImageCatalogPage />} />
+          <Route path="/prospects" element={<ProspectsPage />} />
           <Route path="/videos" element={<VideosPage />} />
           <Route path="/screening-recommendation" element={<ScreeningRecommendationPage />} />
           <Route path="/for/farmers" element={<ForFarmersPage />} />
@@ -73,7 +74,7 @@ export default function App() {
           <Route path="/idm/commercials" element={<CommercialsHubPage />} />
           <Route path="/idm/commercials/grizzly" element={<GrizzlyCommercialPage />} />
           <Route path="/idm/commercials/vibratory" element={<VibratoryCommercialPage />} />
-          <Route path="/idm/prospects" element={<ProspectsPage />} />
+          <Route path="/idm/prospects" element={<Navigate to="/prospects" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
