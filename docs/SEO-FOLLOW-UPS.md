@@ -13,6 +13,8 @@ Operator and content work that remains after the Aug 2026 remediation (crawlable
 
 - [ ] Confirm Search Console property is only `https://sitemachinery.nz` (no indexed `.github.io` duplicate)
 - [ ] Submit / refresh `https://sitemachinery.nz/sitemap.xml`
+- [ ] Confirm `https://sitemachinery.nz/3481b2c71f3849bd9d53fd46b812c1c4.txt` returns 200 with the IndexNow key only
+- [ ] In Bing Webmaster Tools, verify IndexNow received the sitemap URLs after deploy
 - [ ] Request indexing for `/for/topsoil-landscaping`, `/for/aggregate-and-road-metal`, `/for/nelson-nationwide`, `/llms.txt` (optional URL inspection)
 - [ ] Validate Rich Results / schema on home (`LocalBusiness` + `SoftwareApplication`), one product (`Product`), mesh guide (`HowTo`), and one `/for/` page (`Service`)
 - [ ] After deploy, view-source (no JS) homepage and a product URL — confirm `<h1>` + body copy are present in HTML

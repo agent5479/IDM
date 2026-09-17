@@ -23,6 +23,7 @@ The workflow [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) w
 1. Install dependencies (`npm ci`)
 2. Build (`npm run build`) — Vite + SEO meta/body prerender
 3. Upload and deploy the `dist/` artifact
+4. After Pages is live, submit sitemap URLs to [IndexNow](https://www.indexnow.org/) (Bing and other participating engines)
 
 ## Deploy (manual)
 
@@ -40,6 +41,7 @@ Confirm:
 - CSS/images load at root paths (`/assets/...`, `/images/...`)
 - Favicon at `/favicon.ico`
 - `/sitemap.xml`, `/robots.txt`, and `/llms.txt` present
+- IndexNow key file present at `/3481b2c71f3849bd9d53fd46b812c1c4.txt` (file body is the key only)
 - `robots.txt` explicitly Allows GPTBot, Google-Extended, ClaudeBot, PerplexityBot (and peers)
 - Phone displays as `+64 3 970 7602`
 - Meta tags present in `dist/index.html` and route folders (e.g. `dist/about/index.html`)
@@ -63,6 +65,13 @@ Full tick-list for future review: **[SEO-FOLLOW-UPS.md](./SEO-FOLLOW-UPS.md)**.
 2. Hours: Monday–Friday 08:00–17:00 (aligned with schema).
 3. Categories/services mirror site use cases: soil/gravel/aggregate screeners, static grizzly, telehandler bins, farm/cow-race screening, civil on-site screening, topsoil/landscaping, showroom viewing.
 4. Encourage reviews that name specific services, materials, and towns; reuse that language on `/for/*` pages (do not invent reviews).
+
+### IndexNow (Bing)
+
+1. Key file must be publicly readable: `https://sitemachinery.nz/3481b2c71f3849bd9d53fd46b812c1c4.txt` (UTF-8, key only).
+2. Each successful Pages deploy submits indexable sitemap URLs to `https://api.indexnow.org/indexnow`.
+3. Manual submit after the key file is live: `npm run indexnow` (use `npm run indexnow:dry-run` to print the payload only).
+4. In Bing Webmaster Tools, confirm the URLs were received (URL submission / IndexNow reports). HTTP 202 on the first submit is normal while Bing validates the key.
 
 ### Search Console
 

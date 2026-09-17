@@ -44,7 +44,7 @@ Showroom: 105 Pascoe Street, Nelson
 ## Project layout
 
 - `src/` — React app (components, pages, SEO data, styles)
-- `public/` — favicon, robots, sitemap, images, `.nojekyll`
+- `public/` — favicon, robots, sitemap, IndexNow key file, images, `.nojekyll`
 - `site/` — previous static HTML (reference; not deployed)
 - `legacy/` — drafts / unused assets (not deployed)
 - `docs/` — additional notes ([DEPLOYMENT.md](./DEPLOYMENT.md), [SEO-FOLLOW-UPS.md](./SEO-FOLLOW-UPS.md))

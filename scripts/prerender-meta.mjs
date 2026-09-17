@@ -8,6 +8,7 @@ import {
   resolveOgImage,
 } from '../src/data/seo.js'
 import { contact } from '../src/data/contact.js'
+import { getIndexNowKeyFileBody, indexNowKey } from '../src/data/indexnow.js'
 import { getStaticPageHtml } from '../src/data/staticPages.js'
 
 const distDir = path.resolve('dist')
@@ -165,5 +166,11 @@ const sitemap = buildSitemap()
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap)
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap)
 console.log('Wrote sitemap.xml')
+
+const indexNowBody = getIndexNowKeyFileBody()
+const indexNowFile = `${indexNowKey}.txt`
+fs.writeFileSync(path.join(distDir, indexNowFile), indexNowBody)
+fs.writeFileSync(path.join(publicDir, indexNowFile), indexNowBody)
+console.log('Wrote', indexNowFile)
 
 console.log('SEO prerender complete.')

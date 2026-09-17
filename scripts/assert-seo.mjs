@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { indexNowKey } from '../src/data/indexnow.js'
 import { routes, isIndexableRoute, notFoundSeo } from '../src/data/seo.js'
 
 const distDir = path.resolve('dist')
@@ -87,6 +88,18 @@ for (const [label, text] of [
     if (!text.includes(`User-agent: ${bot}`)) {
       fail(`${label}: missing explicit Allow for ${bot}`)
     }
+  }
+}
+
+const indexNowFile = `${indexNowKey}.txt`
+for (const [label, dir] of [
+  ['public', publicDir],
+  ['dist', distDir],
+]) {
+  const keyPath = path.join(dir, indexNowFile)
+  const keyText = read(keyPath)
+  if (keyText.replace(/^\uFEFF/, '').trim() !== indexNowKey) {
+    fail(`${label}/${indexNowFile}: must be UTF-8 and contain only the IndexNow key`)
   }
 }
 
