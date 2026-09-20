@@ -6,9 +6,14 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div>
-          <h3>Site Machinery</h3>
-          <p className="footer-tagline">Affordable, top quality soil, gravel and aggregate screening machines</p>
-          <p>Specialist supplier of smaller scale earthmoving, soils & gravel processing equipment.</p>
+          <h3>Site Machinery NZ</h3>
+          <p className="footer-tagline">
+            DeSite soil, gravel and aggregate screening equipment
+          </p>
+          <p>
+            New Zealand specialist supplier of portable Proscreens and Static Grizzlies —
+            Nelson showroom, nationwide supply.
+          </p>
         </div>
 
         <div>
@@ -21,6 +26,7 @@ export default function Footer() {
 
         <div>
           <h3>Products</h3>
+          <Link to="/products">All screening equipment</Link>
           <Link to="/products/slg-108vfrb">Proscreen SLG-108VFRB</Link>
           <Link to="/products/slg-78vf">Proscreen SLG-78VF</Link>
           <Link to="/products/slg-78vf-flow">Proscreen SLG-78VF with Flow Control</Link>
@@ -31,24 +37,23 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3>Information</h3>
-          <Link to="/about">About Us</Link>
-          <Link to="/screening-recommendation">Mesh Size Guide</Link>
-          <Link to="/for/farmers">For Farmers</Link>
-          <Link to="/for/civil-contractors">For Civil Contractors</Link>
+          <h3>Applications</h3>
+          <Link to="/for/farmers">Farm gravel screener</Link>
+          <Link to="/for/civil-contractors">Civil contractors</Link>
           <Link to="/for/topsoil-landscaping">Topsoil & Landscaping</Link>
           <Link to="/for/aggregate-and-road-metal">Aggregate & Road Metal</Link>
           <Link to="/for/nelson-nationwide">Nelson Showroom</Link>
+          <Link to="/screening-recommendation">Mesh Size Guide</Link>
+          <Link to="/about">About Us</Link>
           <Link to="/photos">Photos</Link>
           <Link to="/image-catalog">Image Catalog</Link>
-          <Link to="/prospects">Prospects</Link>
           <Link to="/videos">Videos</Link>
           <Link to="/contact">Contact Us</Link>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; SITE MACHINERY 2026. All rights reserved.</p>
+        <p>&copy; Site Machinery NZ 2026. All rights reserved.</p>
       </div>
     </footer>
   )

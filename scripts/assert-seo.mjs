@@ -118,11 +118,18 @@ for (const [label, text] of [
   }
 }
 
+function escapeHtml(str) {
+  return String(str)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+}
+
 // Sample public product page meta
 const product = routeByPath.get('/products/slg-78vf')
 const productHtml = read(path.join(distDir, 'products/slg-78vf/index.html'))
 if (product && productHtml) {
-  if (!productHtml.includes(`<title>${product.title}</title>`)) {
+  if (!productHtml.includes(`<title>${escapeHtml(product.title)}</title>`)) {
     fail('Product HTML title mismatch for /products/slg-78vf')
   }
   if (!productHtml.includes(`rel="canonical" href="${product.canonical}"`)) {

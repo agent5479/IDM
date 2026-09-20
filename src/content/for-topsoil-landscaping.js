@@ -2,8 +2,8 @@ export const forTopsoilLandscapingHtml = `<!-- Topsoil & landscaping lead page -
 <section class="lead-page">
   <div class="lead-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.72)), url('/images/Proscreen_SLG78VFII_home.jpg');">
     <div class="lead-hero-inner">
-      <h1>On-site topsoil screening for landscapers</h1>
-      <p class="lead-hero-sub">Grade topsoil, compost and yard soil in New Zealand — cut buy-in and tip fees with mesh matched to the finish you sell.</p>
+      <h1>Topsoil screener NZ for landscapers</h1>
+      <p class="lead-hero-sub">Grade topsoil, compost and yard soil on-site — cut buy-in and tip fees with mesh matched to the finish you sell.</p>
       <div class="cta-buttons lead-cta">
         <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>

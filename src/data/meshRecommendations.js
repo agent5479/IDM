@@ -294,10 +294,51 @@ export const meshSections = [
 ]
 
 export const meshNav = [
+  { id: 'metric-openings', label: 'Metric openings' },
   { id: 'charts', label: 'Charts' },
   { id: 'topsoil', label: 'Topsoil' },
   { id: 'compost', label: 'Compost' },
   { id: 'mulch', label: 'Mulch' },
   { id: 'farm-filling', label: 'Farm & filling' },
   { id: 'aggregates', label: 'Aggregates' },
+]
+
+/** Metric opening anchors for long-tail mesh searches (same page — not separate URLs). */
+export const metricOpenings = [
+  {
+    id: '10mm',
+    label: '~10 mm',
+    imperial: '3/8″ square / elongated',
+    use: 'Fine topsoil, compost fines, pea-stone style grades',
+  },
+  {
+    id: '13mm',
+    label: '~13 mm',
+    imperial: '1/2″ square / elongated',
+    use: 'Commercial topsoil, coarser compost, small decorative stone',
+  },
+  {
+    id: '25mm',
+    label: '~25 mm',
+    imperial: '1″ square',
+    use: 'Coarse topsoil blends, mulch fines separation, light gravel',
+  },
+  {
+    id: '50mm',
+    label: '~50 mm',
+    imperial: '2″ square',
+    use: 'Farm and civil filling material (tighter second pass)',
+  },
+  {
+    id: '75mm',
+    label: '~75 mm',
+    imperial: '3″ square',
+    use: 'Cow race / farm filling (nearest stock opening to 70 mm)',
+  },
+  {
+    id: '100mm',
+    label: '~100 mm',
+    imperial: '4″ square / grizzly',
+    use: 'First-pass oversize on farm river gravel and civil feed',
+  },
 ]

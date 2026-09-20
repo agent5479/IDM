@@ -27,11 +27,11 @@ export const routes = [
   {
     path: '/',
     file: 'index.html',
-    title: 'Soil, Gravel & Aggregate Screeners NZ | Site Machinery',
+    title: 'Soil, Gravel & Aggregate Screeners NZ | Site Machinery NZ',
     description:
       'DeSite soil, gravel and aggregate screening machines for New Zealand. Portable vibratory ProScreens from Site Machinery NZ — Nelson showroom, nationwide supply.',
     keywords:
-      'soil screener NZ, gravel screener NZ, aggregate screener, topsoil screener NZ, DeSite NZ, vibratory screener, screening equipment New Zealand, Site Machinery',
+      'soil screener NZ, gravel screener NZ, aggregate screener, topsoil screener NZ, DeSite NZ, vibratory screener, screening equipment New Zealand, Site Machinery NZ',
     canonical: `${contact.siteUrl}/`,
     changefreq: 'weekly',
     priority: '1.0',
@@ -40,11 +40,11 @@ export const routes = [
   {
     path: '/about',
     file: 'about/index.html',
-    title: `About Us | DeSite Screener Supplier - ${siteName}`,
+    title: 'About Site Machinery NZ | DeSite Screener Supplier',
     description:
       'Site Machinery NZ supplies DeSite soil, gravel and aggregate screening equipment. Nelson-based specialist with nationwide New Zealand supply and support.',
     keywords:
-      'about Site Machinery, DeSite supplier NZ, soil screener company NZ, screening equipment Nelson, gravel screener New Zealand',
+      'about Site Machinery NZ, DeSite supplier NZ, soil screener company NZ, screening equipment Nelson, gravel screener New Zealand',
     canonical: `${contact.siteUrl}/about`,
     changefreq: 'monthly',
     priority: '0.8',
@@ -53,11 +53,11 @@ export const routes = [
   {
     path: '/contact',
     file: 'contact/index.html',
-    title: `Contact Us | Screener Pricing NZ - ${siteName}`,
+    title: 'Contact Us | Screener Pricing NZ | Site Machinery NZ',
     description:
       'Contact Site Machinery NZ for DeSite soil, gravel and aggregate screener pricing and advice. Showroom at 105 Pascoe Street, Nelson — supply across New Zealand.',
     keywords:
-      'contact Site Machinery, screener pricing NZ, buy soil screener NZ, Nelson showroom, DeSite New Zealand',
+      'contact Site Machinery NZ, screener pricing NZ, buy soil screener NZ, Nelson showroom, DeSite New Zealand',
     canonical: `${contact.siteUrl}/contact`,
     changefreq: 'monthly',
     priority: '0.9',
@@ -92,7 +92,7 @@ export const routes = [
   {
     path: '/videos',
     file: 'videos/index.html',
-    title: `Screener Videos | DeSite Demo Footage - ${siteName}`,
+    title: `Screener Videos | DeSite Demo Footage | ${siteName}`,
     description:
       'Watch DeSite soil, gravel and aggregate screeners in action. Site Machinery NZ videos of SLG-108VFRB, SLG-78VF and SLG-68V demonstrations.',
     keywords:
@@ -103,9 +103,22 @@ export const routes = [
     schemaType: 'webPage',
   },
   {
+    path: '/products',
+    file: 'products/index.html',
+    title: 'Portable Screening Equipment NZ | Site Machinery NZ',
+    description:
+      'DeSite portable screeners and Static Grizzlies for New Zealand — soil, gravel and aggregate. Match a Proscreen to skid steers, loaders, excavators or tractors.',
+    keywords:
+      'portable screener NZ, screening equipment NZ, DeSite screener NZ, soil screening equipment, gravel screening machine NZ',
+    canonical: `${contact.siteUrl}/products`,
+    changefreq: 'weekly',
+    priority: '0.95',
+    schemaType: 'productsHub',
+  },
+  {
     path: '/products/slg-108vfrb',
     file: 'products/slg-108vfrb/index.html',
-    title: `DeSite SLG-108VFRB Heavy Duty Screener | ${siteName}`,
+    title: 'SLG-108VFRB Heavy Duty Screener NZ | Site Machinery NZ',
     description:
       'DeSite SLG-108VFRB heavy-duty vibratory screener for soil, gravel and aggregate. High-capacity ProScreen supplied across New Zealand by Site Machinery NZ.',
     keywords:
@@ -115,7 +128,7 @@ export const routes = [
     priority: '0.9',
     schemaType: 'product',
     product: {
-      name: 'DeSite SLG-108VFRB',
+      name: 'DeSite SLG-108VFRB heavy-duty soil and gravel screener',
       image: `${contact.siteUrl}/images/SLG108VFRB.jpg`,
       sku: 'SLG-108VFRB',
     },
@@ -123,17 +136,17 @@ export const routes = [
   {
     path: '/products/slg-78vf',
     file: 'products/slg-78vf/index.html',
-    title: `DeSite SLG-78VF Portable Screener | ${siteName}`,
+    title: 'SLG-78VF Portable Soil & Gravel Screener NZ',
     description:
-      'DeSite SLG-78VF portable vibratory screener with multi-slope deck. Screen topsoil, gravel and aggregate — supplied in New Zealand by Site Machinery.',
+      'DeSite SLG-78VF portable soil and gravel screener (907 kg). Multi-slope deck for skid steers and compact loaders — supplied in New Zealand by Site Machinery NZ.',
     keywords:
-      'SLG-78VF, portable soil screener NZ, topsoil screener, gravel screener NZ, DeSite ProScreen',
+      'SLG-78VF, portable soil screener NZ, topsoil screener, gravel screener NZ, DeSite ProScreen, screener for skid steer',
     canonical: `${contact.siteUrl}/products/slg-78vf`,
     changefreq: 'monthly',
     priority: '0.9',
     schemaType: 'product',
     product: {
-      name: 'DeSite SLG-78VF',
+      name: 'DeSite SLG-78VF portable soil and gravel screener',
       image: `${contact.siteUrl}/images/Proscreen_SLG78VFII_home.jpg`,
       sku: 'SLG-78VF',
     },
@@ -141,7 +154,7 @@ export const routes = [
   {
     path: '/products/slg-78vf-flow',
     file: 'products/slg-78vf-flow/index.html',
-    title: `DeSite SLG-78VF Flow Control Screener | ${siteName}`,
+    title: 'SLG-78VF Flow Control Screener NZ | Site Machinery NZ',
     description:
       'DeSite SLG-78VF with Flow Control for consistent feed when screening soil, gravel and aggregate. Available in New Zealand from Site Machinery NZ.',
     keywords:
@@ -151,7 +164,7 @@ export const routes = [
     priority: '0.8',
     schemaType: 'product',
     product: {
-      name: 'DeSite SLG-78VF with Flow Control',
+      name: 'DeSite SLG-78VF with Flow Control portable screener',
       image: `${contact.siteUrl}/images/Proscreen_SLG78VFII_home.jpg`,
       sku: 'SLG-78VF-FLOW',
     },
@@ -159,9 +172,9 @@ export const routes = [
   {
     path: '/products/slg-68v',
     file: 'products/slg-68v/index.html',
-    title: `DeSite SLG-68V Compact Screener | ${siteName}`,
+    title: 'SLG-68V Compact Soil Screener NZ | Site Machinery NZ',
     description:
-      'DeSite SLG-68V compact portable screener for smaller contractors and landscapers. Screen soil, gravel and aggregate — supplied nationwide by Site Machinery NZ.',
+      'DeSite SLG-68V compact portable soil and gravel screener for mini skids and landscapers. Supplied nationwide by Site Machinery NZ.',
     keywords:
       'SLG-68V, compact soil screener NZ, small gravel screener, DeSite 68V, portable screener New Zealand',
     canonical: `${contact.siteUrl}/products/slg-68v`,
@@ -169,7 +182,7 @@ export const routes = [
     priority: '0.9',
     schemaType: 'product',
     product: {
-      name: 'DeSite SLG-68V',
+      name: 'DeSite SLG-68V compact soil and gravel screener',
       image: `${contact.siteUrl}/images/Proscreen_68.jpg`,
       sku: 'SLG-68V',
     },
@@ -177,7 +190,7 @@ export const routes = [
   {
     path: '/products/static-grizzly',
     file: 'products/static-grizzly/index.html',
-    title: `DeSite Static Grizzly 78 & 108 | ${siteName}`,
+    title: 'DeSite Static Grizzly Screener NZ | Site Machinery NZ',
     description:
       'DeSite SLG-78 and SLG-108 Static Grizzlies for oversize separation of soil, gravel and aggregate. No-power screeners supplied in New Zealand by Site Machinery NZ.',
     keywords:
@@ -187,7 +200,7 @@ export const routes = [
     priority: '0.8',
     schemaType: 'product',
     product: {
-      name: 'DeSite Static Grizzly SLG-78 & SLG-108',
+      name: 'DeSite Static Grizzly SLG-78 & SLG-108 no-power screener',
       image: `${contact.siteUrl}/images/grizzly3.jpg`,
       sku: 'STATIC-GRIZZLY',
     },
@@ -226,7 +239,7 @@ export const routes = [
   {
     path: '/screening-recommendation',
     file: 'screening-recommendation/index.html',
-    title: `Screen Mesh Size Guide NZ | ${siteName}`,
+    title: 'Screener Mesh Sizes | Topsoil, Gravel & Aggregate NZ',
     description:
       'Choose the right DeSite screen mesh for topsoil, gravel, compost, mulch, farm filling and aggregate. Mesh recommendation charts for New Zealand operators.',
     keywords:
@@ -239,9 +252,9 @@ export const routes = [
   {
     path: '/for/farmers',
     file: 'for/farmers/index.html',
-    title: `Screen Farm River Gravel for Cow Races | ${siteName}`,
+    title: 'Farm Gravel Screener NZ | Cow Race Filling',
     description:
-      'Screen river gravel on the farm. Make filling for cow races from rounded riverbed stone. 100 mm mesh, then a 50 mm or 3 inch filling screen. From Nelson, nationwide.',
+      'Farm gravel screener NZ — screen river gravel for cow races from rounded riverbed stone. 100 mm mesh, then 50 mm or 3 inch filling. From Nelson, nationwide.',
     keywords:
       'farm gravel screener NZ, cow race gravel, farm river screening, 100mm mesh, filling material screener, DeSite grizzly farm',
     canonical: `${contact.siteUrl}/for/farmers`,
@@ -257,11 +270,11 @@ export const routes = [
   {
     path: '/for/civil-contractors',
     file: 'for/civil-contractors/index.html',
-    title: `Screen Soil and Gravel On-Site | ${siteName}`,
+    title: 'Soil Screener for Civil Contractors NZ',
     description:
-      'Screen soil and gravel on the job for subdivisions, building works and retaining walls. 100 mm mesh plus a 50 mm or 3 inch filling screen. Site Machinery NZ.',
+      'Soil screener for civil contractors NZ — grade subdivision fill, building works and retaining-wall soil on site. 100 mm then 50 mm or 3 inch filling mesh.',
     keywords:
-      'civil contractor screener NZ, subdivision landscaping screener, skid steer soil screening, retaining wall fill, DeSite Proscreen',
+      'screener for civil contractors NZ, subdivision soil screening, skid steer soil screening, retaining wall fill, DeSite Proscreen',
     canonical: `${contact.siteUrl}/for/civil-contractors`,
     // JPG — many link-preview crawlers skip WebP for og:image
     ogImage: `${contact.siteUrl}/images/Proscreen78-flow-control.jpg`,
@@ -276,11 +289,11 @@ export const routes = [
   {
     path: '/for/topsoil-landscaping',
     file: 'for/topsoil-landscaping/index.html',
-    title: `Topsoil Screening for Landscapers | ${siteName}`,
+    title: 'Topsoil Screener NZ for Landscapers',
     description:
-      'Grade topsoil, compost and yard soil on-site in New Zealand. DeSite Proscreens for landscapers — mesh matched to the finish you sell.',
+      'Topsoil screener NZ for landscapers — grade compost and yard soil on-site. DeSite Proscreens with mesh matched to the finish you sell.',
     keywords:
-      'topsoil screener NZ, landscaping soil screener, on-site topsoil screening, compost screener New Zealand, Site Machinery',
+      'topsoil screener NZ, landscaping soil screener, on-site topsoil screening, compost screener New Zealand, Site Machinery NZ',
     canonical: `${contact.siteUrl}/for/topsoil-landscaping`,
     ogImage: `${contact.siteUrl}/images/Proscreen_SLG78VFII_home.jpg`,
     changefreq: 'monthly',
@@ -294,9 +307,9 @@ export const routes = [
   {
     path: '/for/aggregate-and-road-metal',
     file: 'for/aggregate-and-road-metal/index.html',
-    title: `Gravel & Road Metal Screening NZ | ${siteName}`,
+    title: 'Gravel & Aggregate Screening Equipment NZ',
     description:
-      'On-site aggregate screening in New Zealand — road metal, pea gravel, septic stone and drainage rock. DeSite Proscreens and Static Grizzlies from Site Machinery NZ.',
+      'Gravel and aggregate screening equipment NZ — road metal, pea gravel, septic stone and drainage rock. DeSite Proscreens and Static Grizzlies from Site Machinery NZ.',
     keywords:
       'aggregate screener NZ, road metal screening, gravel screener New Zealand, drainage stone screener, septic rock mesh',
     canonical: `${contact.siteUrl}/for/aggregate-and-road-metal`,
@@ -312,11 +325,11 @@ export const routes = [
   {
     path: '/for/nelson-nationwide',
     file: 'for/nelson-nationwide/index.html',
-    title: `Nelson Showroom, Nationwide Supply | ${siteName}`,
+    title: 'Nelson Screening Equipment Showroom | Site Machinery NZ',
     description:
-      'View DeSite screeners at 105 Pascoe Street, Nelson. Site Machinery NZ specifies mesh and machine for nationwide New Zealand supply.',
+      'Nelson screening equipment showroom at 105 Pascoe Street. View DeSite soil and gravel screeners, then supply nationwide across New Zealand.',
     keywords:
-      'screener showroom Nelson, Site Machinery Nelson, buy soil screener NZ, DeSite New Zealand supplier, Pascoe Street Nelson',
+      'soil screener Nelson, screening equipment Nelson, gravel screener Nelson, DeSite Nelson, Site Machinery Nelson showroom',
     canonical: `${contact.siteUrl}/for/nelson-nationwide`,
     ogImage: `${contact.siteUrl}/images/SLG108VFRB.jpg`,
     changefreq: 'monthly',
@@ -415,14 +428,14 @@ export const organizationJsonLd = {
   '@id': localBusinessId,
   name: 'Site Machinery NZ',
   legalName: 'Site Machinery Ltd',
-  alternateName: 'Site Machinery Ltd',
+  alternateName: ['Site Machinery Ltd', 'Site Machinery'],
   url: contact.siteUrl,
   email: contact.email,
   telephone: contact.phoneTel,
   image: defaultOgImage,
   logo: `${contact.siteUrl}/site-logo.png`,
   description:
-    'New Zealand supplier of DeSite soil, gravel and aggregate screening machines and related earthmoving equipment.',
+    'Site Machinery NZ — DeSite soil, gravel and aggregate screening equipment. Nelson showroom at 105 Pascoe Street; nationwide New Zealand supply.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '105 Pascoe Street',
@@ -435,10 +448,16 @@ export const organizationJsonLd = {
     latitude: -41.2706,
     longitude: 173.284,
   },
-  areaServed: {
-    '@type': 'Country',
-    name: 'New Zealand',
-  },
+  areaServed: [
+    {
+      '@type': 'Country',
+      name: 'New Zealand',
+    },
+    {
+      '@type': 'City',
+      name: 'Nelson',
+    },
+  ],
   priceRange: '$$',
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
@@ -447,14 +466,18 @@ export const organizationJsonLd = {
     closes: '17:00',
   },
   knowsAbout: [
-    'soil screener',
-    'gravel screener',
-    'aggregate screener',
-    'topsoil screener',
+    'soil screener NZ',
+    'gravel screener NZ',
+    'aggregate screener NZ',
+    'topsoil screener NZ',
+    'portable screener NZ',
+    'DeSite screening equipment',
     'DeSite ProScreen',
-    'vibratory screening equipment',
+    'static grizzly screener',
+    'farm gravel screening',
     'cow race gravel screening',
     'on-site civil fill screening',
+    'Nelson screening equipment showroom',
   ],
   makesOffer: [
     {
@@ -676,6 +699,47 @@ function webPageJsonLd(route) {
   }
 }
 
+function productsHubJsonLd(route) {
+  const items = [
+    { name: 'DeSite SLG-78VF portable soil and gravel screener', url: `${contact.siteUrl}/products/slg-78vf` },
+    { name: 'DeSite SLG-68V compact soil and gravel screener', url: `${contact.siteUrl}/products/slg-68v` },
+    { name: 'DeSite SLG-108VFRB heavy-duty soil and gravel screener', url: `${contact.siteUrl}/products/slg-108vfrb` },
+    { name: 'DeSite Static Grizzly SLG-78 & SLG-108', url: `${contact.siteUrl}/products/static-grizzly` },
+    { name: 'DeSite SLG-78VF with Flow Control', url: `${contact.siteUrl}/products/slg-78vf-flow` },
+    { name: 'Telehandler Bins', url: `${contact.siteUrl}/products/telehandler-bins` },
+  ]
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${route.canonical}#webpage`,
+        name: route.title,
+        description: route.description,
+        url: route.canonical,
+        isPartOf: {
+          '@type': 'WebSite',
+          name: siteName,
+          url: contact.siteUrl,
+        },
+        about: providerRef(),
+        mainEntity: { '@id': `${route.canonical}#itemlist` },
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${route.canonical}#itemlist`,
+        name: 'DeSite portable screening equipment NZ',
+        itemListElement: items.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.name,
+          url: item.url,
+        })),
+      },
+    ],
+  }
+}
+
 /**
  * Return JSON-LD for a pathname (object or null). Used by Helmet and prerender.
  */
@@ -692,6 +756,8 @@ export function getJsonLd(pathname) {
       return serviceJsonLd(route)
     case 'meshGuide':
       return meshGuideJsonLd(route)
+    case 'productsHub':
+      return productsHubJsonLd(route)
     case 'about':
     case 'contact':
     case 'webPage':

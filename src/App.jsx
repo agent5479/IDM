@@ -15,6 +15,7 @@ import {
   HomePage,
   ImageCatalogPage,
   PhotosPage,
+  ProductsHubPage,
   ProspectsPage,
   ScreeningRecommendationPage,
   Slg108Page,
@@ -64,6 +65,7 @@ export default function App() {
           <Route path="/for/topsoil-landscaping" element={<ForTopsoilLandscapingPage />} />
           <Route path="/for/aggregate-and-road-metal" element={<ForAggregateRoadMetalPage />} />
           <Route path="/for/nelson-nationwide" element={<ForNelsonNationwidePage />} />
+          <Route path="/products" element={<ProductsHubPage />} />
           <Route path="/products/slg-108vfrb" element={<Slg108Page />} />
           <Route path="/products/slg-78vf" element={<Slg78Page />} />
           <Route path="/products/slg-78vf-flow" element={<Slg78FlowPage />} />

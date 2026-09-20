@@ -1,5 +1,5 @@
 import { contact } from './contact.js'
-import { gradeGallery, meshNav, meshSections } from './meshRecommendations.js'
+import { gradeGallery, meshNav, meshSections, metricOpenings } from './meshRecommendations.js'
 
 function escapeHtml(str) {
   return String(str)
@@ -69,17 +69,39 @@ export function buildMeshGuideHtml() {
     })
     .join('\n')
 
+  const metricSection = `<section id="metric-openings" class="mesh-section">
+  <h2>Screener mesh sizes by opening</h2>
+  <p class="mesh-section-intro">Common metric openings used when specifying DeSite mesh for topsoil, gravel and aggregate in New Zealand. Imperial sizes remain the industry chart standard — use these anchors when you already know the millimetre opening.</p>
+  <div class="mesh-table-wrap">
+    <div class="mesh-table-scroll">
+      <table class="mesh-table">
+        <thead><tr><th>Opening</th><th>Approx. imperial</th><th>Typical use</th></tr></thead>
+        <tbody>
+${metricOpenings
+  .map(
+    (row) =>
+      `          <tr id="${escapeHtml(row.id)}"><td><a href="#${escapeHtml(row.id)}">${escapeHtml(row.label)}</a></td><td>${escapeHtml(row.imperial)}</td><td>${escapeHtml(row.use)}</td></tr>`,
+  )
+  .join('\n')}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>`
+
   return `<!-- Mesh guide (static prerender) -->
 <section class="page-content mesh-page">
   <div class="mesh-hero">
-    <h1>Screen Mesh Recommendation Guide</h1>
+    <h1>Screener mesh sizes for topsoil, gravel and aggregate</h1>
     <p>
       Choose the right DeSite mesh for topsoil, gravel, compost, mulch, farm filling and
       aggregate. Charts below are tailored for Site Machinery NZ operators — imperial openings
       (industry standard) with approximate metric context where helpful.
     </p>
     <p class="mesh-hero-links">
-      Immediate farm and civil offer: 100 mm first, then 50 mm or 3 inch (~75 mm) filling.
+      Metric shortcuts:
+      ${metricOpenings.map((m) => `<a href="#${escapeHtml(m.id)}">${escapeHtml(m.label)}</a>`).join(' · ')}
+      · Immediate farm and civil offer: 100 mm first, then 50 mm or 3 inch (~75 mm) filling.
       <a href="#farm-filling">Farm gravel and cow races</a>
       · <a href="/for/farmers">Farmers</a>
       · <a href="/for/civil-contractors">Civil contractors</a>
@@ -100,6 +122,7 @@ export function buildMeshGuideHtml() {
     ${nav}
   </nav>
 
+  ${metricSection}
   ${sections}
 
   <div class="product-description mesh-cta">

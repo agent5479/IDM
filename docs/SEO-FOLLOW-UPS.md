@@ -50,6 +50,7 @@ Operator and content work that remains after the Aug 2026 remediation (crawlable
 ## Reference
 
 - Implementation notes and deploy checks: [DEPLOYMENT.md](./DEPLOYMENT.md)
+- Commercial search intent map: [SEO-ENTITY-MAP.md](./SEO-ENTITY-MAP.md)
 - Route / schema source of truth: `src/data/seo.js`
 - Body prerender: `scripts/prerender-meta.mjs`, `src/data/staticPages.js`
 - AI discovery file: `public/llms.txt`

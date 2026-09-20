@@ -70,11 +70,6 @@ export default function HomeHero() {
     }
   }, [reduceMotion])
 
-  const onCtaClick = (event) => {
-    event.preventDefault()
-    document.getElementById('equipment')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-
   const onToggleSound = async () => {
     try {
       const Player = await loadVimeoPlayerApi()
@@ -126,12 +121,12 @@ export default function HomeHero() {
           Also used to reduce buy-in costs, skip unnecessary tip fees, and create saleable product
           from material already on site.
         </p>
-        <p className="hero-location">
-          📍 Order directly from Site Machinery — your New Zealand supplier
-        </p>
-        <a href="#equipment" className="hero-cta" onClick={onCtaClick}>
-          View Our Equipment Range
-        </a>
+    <p className="hero-location">
+      Order directly from Site Machinery NZ — your New Zealand DeSite supplier
+    </p>
+    <a href="/products" className="hero-cta">
+      View Our Screening Equipment
+    </a>
       </div>
 
       {!reduceMotion && (

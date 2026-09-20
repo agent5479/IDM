@@ -8,6 +8,7 @@ import { forNelsonNationwideHtml } from '../content/for-nelson-nationwide.js'
 import { forTopsoilLandscapingHtml } from '../content/for-topsoil-landscaping.js'
 import { homeHtml } from '../content/home.js'
 import { photosHtml } from '../content/photos.js'
+import { productsHubHtml } from '../content/products-hub.js'
 import { slg108Html } from '../content/slg-108vfrb.js'
 import { slg68Html } from '../content/slg-68v.js'
 import { slg78Html } from '../content/slg-78vf.js'
@@ -36,9 +37,9 @@ const homeHeroHtml = `<section class="hero">
       from material already on site.
     </p>
     <p class="hero-location">
-      Order directly from Site Machinery — your New Zealand supplier
+      Order directly from Site Machinery NZ — your New Zealand DeSite supplier
     </p>
-    <a href="#equipment" class="hero-cta">View Our Equipment Range</a>
+    <a href="/products" class="hero-cta">View Our Screening Equipment</a>
   </div>
 </section>`
 
@@ -48,6 +49,7 @@ const pageBodies = {
   '/contact': contactHtml,
   '/photos': photosHtml,
   '/videos': videosHtml,
+  '/products': productsHubHtml,
   '/products/slg-108vfrb': slg108Html,
   '/products/slg-78vf': slg78Html,
   '/products/slg-78vf-flow': slg78FlowHtml,

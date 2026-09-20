@@ -16,6 +16,7 @@ import { forCivilHtml } from '../content/for-civil'
 import { forTopsoilLandscapingHtml } from '../content/for-topsoil-landscaping'
 import { forAggregateRoadMetalHtml } from '../content/for-aggregate-and-road-metal'
 import { forNelsonNationwideHtml } from '../content/for-nelson-nationwide'
+import { productsHubHtml } from '../content/products-hub'
 import ScreeningRecommendationPage from './ScreeningRecommendationPage'
 import ImageCatalogPage from './ImageCatalogPage'
 import ProspectsPage from './office/ProspectsPage'
@@ -38,6 +39,7 @@ export const HomePage = () => (
 export const ContactPage = () => <Page html={contactHtml} />
 export const PhotosPage = () => <Page html={photosHtml} />
 export const VideosPage = () => <Page html={videosHtml} />
+export const ProductsHubPage = () => <Page html={productsHubHtml} />
 export const Slg108Page = () => <Page html={slg108Html} />
 export const Slg78Page = () => <Page html={slg78Html} />
 export const Slg78FlowPage = () => <Page html={slg78FlowHtml} />

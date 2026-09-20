@@ -6,21 +6,25 @@ import { contact } from './contact.js'
  */
 export function buildStaticChrome(bodyHtml, { showTagline = false } = {}) {
   const tagline = showTagline
-    ? `<span class="nav-tagline">Affordable, top quality soil, gravel and aggregate screening machines</span>`
+    ? `<span class="nav-tagline">Affordable soil, gravel and aggregate screening equipment</span>`
     : ''
 
   return `<nav class="sticky-nav">
   <div class="nav-content">
     <div class="nav-brand">
-      <a href="/" class="nav-logo">SITE MACHINERY</a>
+      <a href="/" class="nav-logo" aria-label="Site Machinery NZ home">SITE MACHINERY</a>
       ${tagline}
     </div>
     <div class="nav-menu" id="navMenu">
       <a href="/">Home</a>
-      <a href="/#equipment">Products</a>
-      <a href="/about">About Us</a>
-      <a href="/photos">Photos</a>
-      <a href="/videos">Videos</a>
+      <a href="/products">Products</a>
+      <a href="/for/farmers">Farmers</a>
+      <a href="/for/civil-contractors">Civil</a>
+      <a href="/for/topsoil-landscaping">Topsoil</a>
+      <a href="/for/aggregate-and-road-metal">Aggregate</a>
+      <a href="/for/nelson-nationwide">Nelson</a>
+      <a href="/screening-recommendation">Mesh guide</a>
+      <a href="/about">About</a>
       <a href="/contact">Contact</a>
     </div>
     <div class="nav-contact">
@@ -33,9 +37,9 @@ ${bodyHtml}
 <footer class="footer">
   <div class="footer-content">
     <div>
-      <h3>Site Machinery</h3>
-      <p class="footer-tagline">Affordable, top quality soil, gravel and aggregate screening machines</p>
-      <p>Specialist supplier of smaller scale earthmoving, soils &amp; gravel processing equipment.</p>
+      <h3>Site Machinery NZ</h3>
+      <p class="footer-tagline">DeSite soil, gravel and aggregate screening equipment</p>
+      <p>New Zealand specialist supplier of portable Proscreens and Static Grizzlies — Nelson showroom, nationwide supply.</p>
     </div>
     <div>
       <h3>Contact</h3>
@@ -46,6 +50,7 @@ ${bodyHtml}
     </div>
     <div>
       <h3>Products</h3>
+      <a href="/products">All screening equipment</a>
       <a href="/products/slg-108vfrb">Proscreen SLG-108VFRB</a>
       <a href="/products/slg-78vf">Proscreen SLG-78VF</a>
       <a href="/products/slg-78vf-flow">Proscreen SLG-78VF with Flow Control</a>
@@ -55,23 +60,22 @@ ${bodyHtml}
       <a href="/products/additional-products">Additional Products</a>
     </div>
     <div>
-      <h3>Information</h3>
-      <a href="/about">About Us</a>
-      <a href="/screening-recommendation">Mesh Size Guide</a>
-      <a href="/for/farmers">For Farmers</a>
-      <a href="/for/civil-contractors">For Civil Contractors</a>
+      <h3>Applications</h3>
+      <a href="/for/farmers">Farm gravel screener</a>
+      <a href="/for/civil-contractors">Civil contractors</a>
       <a href="/for/topsoil-landscaping">Topsoil &amp; Landscaping</a>
       <a href="/for/aggregate-and-road-metal">Aggregate &amp; Road Metal</a>
       <a href="/for/nelson-nationwide">Nelson Showroom</a>
+      <a href="/screening-recommendation">Mesh Size Guide</a>
+      <a href="/about">About Us</a>
       <a href="/photos">Photos</a>
       <a href="/image-catalog">Image Catalog</a>
-      <a href="/prospects">Prospects</a>
       <a href="/videos">Videos</a>
       <a href="/contact">Contact Us</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; SITE MACHINERY 2026. All rights reserved.</p>
+    <p>&copy; Site Machinery NZ 2026. All rights reserved.</p>
   </div>
 </footer>`
 }

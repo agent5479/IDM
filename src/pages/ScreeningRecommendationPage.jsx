@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { contact, emailHref, phoneHref } from '../data/contact'
-import { gradeGallery, meshNav, meshSections } from '../data/meshRecommendations'
+import { gradeGallery, meshNav, meshSections, metricOpenings } from '../data/meshRecommendations'
 
 function GradeImage({ image }) {
   if (!image) return null
@@ -50,13 +50,21 @@ export default function ScreeningRecommendationPage() {
   return (
     <section className="page-content mesh-page">
       <div className="mesh-hero">
-        <h1>Screen Mesh Recommendation Guide</h1>
+        <h1>Screener mesh sizes for topsoil, gravel and aggregate</h1>
         <p>
           Choose the right DeSite mesh for topsoil, gravel, compost, mulch, farm filling and
           aggregate. Charts below are tailored for Site Machinery NZ operators — imperial openings
           (industry standard) with approximate metric context where helpful.
         </p>
         <p className="mesh-hero-links">
+          Metric shortcuts:{' '}
+          {metricOpenings.map((m, i) => (
+            <span key={m.id}>
+              {i > 0 ? ' · ' : ''}
+              <a href={`#${m.id}`}>{m.label}</a>
+            </span>
+          ))}
+          {' · '}
           Immediate farm and civil offer: 100 mm first, then 50 mm or 3 inch (~75 mm) filling.{' '}
           <a href="#farm-filling">Farm gravel and cow races</a>
           {' · '}
@@ -92,6 +100,39 @@ export default function ScreeningRecommendationPage() {
           </a>
         ))}
       </nav>
+
+      <section id="metric-openings" className="mesh-section">
+        <h2>Screener mesh sizes by opening</h2>
+        <p className="mesh-section-intro">
+          Common metric openings used when specifying DeSite mesh for topsoil, gravel and aggregate
+          in New Zealand. Imperial sizes remain the industry chart standard — use these anchors when
+          you already know the millimetre opening.
+        </p>
+        <div className="mesh-table-wrap">
+          <div className="mesh-table-scroll">
+            <table className="mesh-table">
+              <thead>
+                <tr>
+                  <th>Opening</th>
+                  <th>Approx. imperial</th>
+                  <th>Typical use</th>
+                </tr>
+              </thead>
+              <tbody>
+                {metricOpenings.map((row) => (
+                  <tr key={row.id} id={row.id}>
+                    <td>
+                      <a href={`#${row.id}`}>{row.label}</a>
+                    </td>
+                    <td>{row.imperial}</td>
+                    <td>{row.use}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
       {meshSections.map((section) => (
         <section key={section.id} id={section.id} className="mesh-section">

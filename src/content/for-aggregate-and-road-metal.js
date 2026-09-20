@@ -2,8 +2,8 @@ export const forAggregateRoadMetalHtml = `<!-- Aggregate & road metal lead page 
 <section class="lead-page">
   <div class="lead-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.72)), url('/images/grizzly3.jpg');">
     <div class="lead-hero-inner">
-      <h1>Screen gravel, road metal and drainage stone</h1>
-      <p class="lead-hero-sub">On-site aggregate screening in New Zealand — oversize out, saleable grades in, less haulage both ways.</p>
+      <h1>Gravel and aggregate screening equipment NZ</h1>
+      <p class="lead-hero-sub">On-site aggregate screening — oversize out, saleable grades in, less haulage both ways.</p>
       <div class="cta-buttons lead-cta">
         <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>

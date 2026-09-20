@@ -2,8 +2,8 @@ export const forNelsonNationwideHtml = `<!-- Nelson showroom & nationwide supply
 <section class="lead-page">
   <div class="lead-hero" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.72)), url('/images/SLG108VFRB.jpg');">
     <div class="lead-hero-inner">
-      <h1>Nelson showroom, nationwide New Zealand supply</h1>
-      <p class="lead-hero-sub">View DeSite screeners at 105 Pascoe Street, Nelson — then specify mesh and machine for delivery anywhere in NZ.</p>
+      <h1>Nelson screening equipment showroom</h1>
+      <p class="lead-hero-sub">View DeSite screeners at 105 Pascoe Street, Nelson — then specify mesh and machine for delivery anywhere in NZ, including Tasman and the South Island.</p>
       <div class="cta-buttons lead-cta">
         <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
         <a href="/contact" class="cta-secondary">Book a viewing</a>
@@ -12,7 +12,7 @@ export const forNelsonNationwideHtml = `<!-- Nelson showroom & nationwide supply
   </div>
 
   <div class="lead-body">
-    <p class="lead-intro">Site Machinery NZ is based in Nelson with a showroom at 105 Pascoe Street. Farmers, landscapers and civil contractors visit to see Proscreens and Static Grizzlies in person, then we arrange supply and freight across New Zealand.</p>
+    <p class="lead-intro">Site Machinery NZ is the New Zealand specialist supplier of DeSite screening equipment. We are based in Nelson with a showroom at 105 Pascoe Street. Farmers, landscapers and civil contractors visit to see Proscreens and Static Grizzlies in person, then we arrange supply and freight across New Zealand.</p>
 
     <div class="lead-split">
       <img src="/images/SLG108VFRB.jpg" alt="DeSite screening equipment at Site Machinery Nelson showroom">
