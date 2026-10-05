@@ -583,6 +583,27 @@ body {
   border-color: #ff6600;
 }
 
+.equipment-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.equipment-card-link:focus {
+  outline: none;
+}
+
+.equipment-card:has(.equipment-card-link:focus-visible) {
+  outline: 3px solid #ff6600;
+  outline-offset: 4px;
+}
+
+.equipment-card .equipment-link {
+  position: relative;
+  z-index: 2;
+}
+
 .equipment-card:active {
   transform: translateY(-4px) scale(1.01);
   transition: transform 0.1s ease;
@@ -764,7 +785,8 @@ body {
   font-size: 1rem;
 }
 
-.equipment-cta:hover {
+.equipment-cta:hover,
+.equipment-card:hover .equipment-cta {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(255,102,0,0.4);
 }
