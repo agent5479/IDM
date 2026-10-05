@@ -228,9 +228,9 @@ export const routes = [
     file: 'products/additional-products/index.html',
     title: `Mini Screeners & Bins to Order | ${siteName}`,
     description:
-      'Order DeSite mini screeners, dump trailers and construction bins for the next New Zealand shipment from Site Machinery NZ.',
+      'Order DeSite mini screeners, mule bins, skid-steer rippers, dump trailers and construction bins for the next New Zealand shipment from Site Machinery NZ.',
     keywords:
-      'DeSite mini screener NZ, SLG-56, dump trailer NZ, skid steer attachments, construction bins, DeSite orderable range',
+      'DeSite mini screener NZ, mule bin NZ, SLG-56, dump trailer NZ, skid steer ripper, construction bins, DeSite orderable range',
     canonical: `${contact.siteUrl}/products/additional-products`,
     changefreq: 'monthly',
     priority: '0.6',

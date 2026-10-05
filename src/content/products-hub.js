@@ -50,7 +50,7 @@ export const productsHubHtml = `<!-- Products hub — portable / DeSite screenin
         <a class="lead-machine" href="/products/additional-products">
           <img src="/images/catalog/slg-56.webp" alt="Additional DeSite products to order">
           <h3>More to order</h3>
-          <p>Mini screeners, dump trailers and bins for the next NZ shipment.</p>
+          <p>Mini screeners, mule bins, dump trailers and construction bins for the next NZ shipment.</p>
         </a>
       </div>
     </div>
