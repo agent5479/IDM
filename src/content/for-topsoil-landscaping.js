@@ -5,7 +5,7 @@ export const forTopsoilLandscapingHtml = `<!-- Topsoil & landscaping lead page -
       <h1>Topsoil screener NZ for landscapers</h1>
       <p class="lead-hero-sub">Grade topsoil, compost and yard soil on-site — cut buy-in and tip fees with mesh matched to the finish you sell.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
       </div>
     </div>
@@ -56,7 +56,7 @@ export const forTopsoilLandscapingHtml = `<!-- Topsoil & landscaping lead page -
       <h2>Specify mesh and machine from Nelson</h2>
       <p>Tell Site Machinery NZ what finish you sell and which loader or skid steer you run. We will quote mesh and model for topsoil screening New Zealand landscapers actually need.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
         <a href="/screening-recommendation#topsoil" class="cta-secondary">Mesh guide</a>
       </div>

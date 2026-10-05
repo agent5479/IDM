@@ -5,7 +5,7 @@ export const productsHubHtml = `<!-- Products hub — portable / DeSite screenin
       <h1>Portable DeSite screening equipment for New Zealand</h1>
       <p class="lead-hero-sub">Soil, gravel and aggregate screeners matched to the carrier you already run — from Nelson, nationwide supply.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact for pricing</a>
       </div>
     </div>
@@ -98,7 +98,7 @@ export const productsHubHtml = `<!-- Products hub — portable / DeSite screenin
       <h2>Specify mesh and machine from Nelson</h2>
       <p>View Proscreens and Static Grizzlies at 105 Pascoe Street, Nelson — then arrange supply anywhere in New Zealand. <a href="/for/nelson-nationwide" style="color:#b34700;font-weight:600;">Nelson showroom details</a> · <a href="/screening-recommendation" style="color:#b34700;font-weight:600;">Mesh size guide</a></p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
       </div>
     </div>

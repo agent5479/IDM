@@ -43,7 +43,7 @@ Confirm:
 - `/sitemap.xml`, `/robots.txt`, and `/llms.txt` present
 - IndexNow key file present at `/3481b2c71f3849bd9d53fd46b812c1c4.txt` (file body is the key only)
 - `robots.txt` explicitly Allows GPTBot, Google-Extended, ClaudeBot, PerplexityBot (and peers)
-- Phone displays as `+64 3 970 7602`
+- Phone displays as `027 521 2126`
 - Meta tags present in `dist/index.html` and route folders (e.g. `dist/about/index.html`)
 - **Body prerender:** open `dist/index.html` and confirm hero `<h1>`; open `dist/products/slg-78vf/index.html` (and peers) and confirm an `<h1>` and page copy exist inside `#root` without running JS
 - **Mesh guide:** `dist/screening-recommendation/index.html` contains chart tables and HowTo JSON-LD in the static HTML
@@ -61,7 +61,7 @@ Full tick-list for future review: **[SEO-FOLLOW-UPS.md](./SEO-FOLLOW-UPS.md)**.
 
 ### Google Business Profile (GBP)
 
-1. Match NAP to the site: **Site Machinery NZ**, 105 Pascoe Street, Nelson 7011, phone **+64 3 970 7602**, website `https://sitemachinery.nz`.
+1. Match NAP to the site: **Site Machinery NZ**, 105 Pascoe Street, Nelson 7011, phone **027 521 2126**, website `https://sitemachinery.nz`.
 2. Hours: Monday–Friday 08:00–17:00 (aligned with schema).
 3. Categories/services mirror site use cases: soil/gravel/aggregate screeners, static grizzly, telehandler bins, farm/cow-race screening, civil on-site screening, topsoil/landscaping, showroom viewing.
 4. Encourage reviews that name specific services, materials, and towns; reuse that language on `/for/*` pages (do not invent reviews).

@@ -5,7 +5,7 @@ export const forFarmersHtml = `<!-- Farmers lead page -->
       <h1>Farm gravel screener NZ — cow race filling</h1>
       <p class="lead-hero-sub">Farm river screening in New Zealand — make cow race filling from rounded riverbed stone already on the property.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
       </div>
     </div>
@@ -64,7 +64,7 @@ export const forFarmersHtml = `<!-- Farmers lead page -->
       <h2>See it at Nelson, supply nationwide</h2>
       <p>Tell us what you are screening and which loader or excavator you run. We will quote 100 mm mesh plus a filling screen, from the Site Machinery NZ showroom in Nelson — supply nationwide. Prefer to view machines first? <a href="/for/nelson-nationwide" style="color:#b34700;font-weight:600;">Nelson showroom details</a>.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
         <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
       </div>

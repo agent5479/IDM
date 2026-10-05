@@ -5,7 +5,7 @@ export const forCivilHtml = `<!-- Civil contractors lead page -->
       <h1>Soil screener for civil contractors NZ</h1>
       <p class="lead-hero-sub">On-site soil screening for subdivisions, building works and retaining-wall fill — without buying every cubic metre in.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
       </div>
     </div>
@@ -64,7 +64,7 @@ export const forCivilHtml = `<!-- Civil contractors lead page -->
       <h2>See it at Nelson, supply nationwide</h2>
       <p>Tell us the job — subdivision fill on-site, retaining walls, civil fill — and the loader or skid steer on site. We will match 100 mm plus a filling screen from Site Machinery NZ in Nelson, supply nationwide. <a href="/for/nelson-nationwide" style="color:#b34700;font-weight:600;">Showroom &amp; nationwide supply</a>.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
         <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
       </div>

@@ -37,7 +37,7 @@ Custom domain: `https://sitemachinery.nz`
 
 ## Contact
 
-Phone: **+64 3 970 7602**  
+Phone: **027 521 2126**  
 Email: info@sitemachinery.nz  
 Showroom: 105 Pascoe Street, Nelson
 

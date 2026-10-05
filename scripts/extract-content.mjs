@@ -77,27 +77,27 @@ function rewrite(html, fromProducts) {
     out = out.replace(re, rep)
   }
 
-  // Phone number unification: +64 3 970 7602
-  out = out.replace(/href=(["'])tel:0800212126\1/g, 'href=$1tel:+6439707602$1')
-  out = out.replace(/href=(["'])tel:039707602\1/g, 'href=$1tel:+6439707602$1')
-  out = out.replace(/📞\s*0800\s*21\s*21\s*26/g, '📞 +64 3 970 7602')
-  out = out.replace(/Call 0800 21 21 26/g, 'Call +64 3 970 7602')
-  out = out.replace(/Call 03 970 7602/g, 'Call +64 3 970 7602')
-  out = out.replace(/>0800 21 21 26</g, '>+64 3 970 7602<')
-  out = out.replace(/>03 970 7602</g, '>+64 3 970 7602<')
-  out = out.replace(/Phone:\s*03 970 7602/g, 'Phone: +64 3 970 7602')
-  out = out.replace(/Toll Free:\s*0800 21 21 26/g, 'Phone: +64 3 970 7602')
+  // Phone number unification: 027 521 2126
+  out = out.replace(/href=(["'])tel:0800212126\1/g, 'href=$1tel:+64275212126$1')
+  out = out.replace(/href=(["'])tel:039707602\1/g, 'href=$1tel:+64275212126$1')
+  out = out.replace(/📞\s*0800\s*21\s*21\s*26/g, '📞 027 521 2126')
+  out = out.replace(/Call 0800 21 21 26/g, 'Call 027 521 2126')
+  out = out.replace(/Call 03 970 7602/g, 'Call 027 521 2126')
+  out = out.replace(/>0800 21 21 26</g, '>027 521 2126<')
+  out = out.replace(/>03 970 7602</g, '>027 521 2126<')
+  out = out.replace(/Phone:\s*03 970 7602/g, 'Phone: 027 521 2126')
+  out = out.replace(/Toll Free:\s*0800 21 21 26/g, 'Phone: 027 521 2126')
   out = out.replace(/<p[^>]*>\s*Toll Free\s*<\/p>/gi, '')
   out = out.replace(/<p[^>]*>\s*Direct Line\s*<\/p>/gi, '<p style="color: #ccc;">Phone</p>')
 
   // Collapse duplicate phone displays/CTAs after unification
   out = out.replace(
-    /(<p style="font-size: 1\.3rem; color: #ffa500; font-weight: 700; margin-bottom: 10px;">\s*<a href="tel:\+6439707602"[^>]*>\+64 3 970 7602<\/a>\s*<\/p>\s*){2}/g,
-    '<p style="font-size: 1.3rem; color: #ffa500; font-weight: 700; margin-bottom: 10px;"><a href="tel:+6439707602" style="color: #ffa500; text-decoration: none;">+64 3 970 7602</a></p>',
+    /(<p style="font-size: 1\.3rem; color: #ffa500; font-weight: 700; margin-bottom: 10px;">\s*<a href="tel:\+64275212126"[^>]*>027 521 2126<\/a>\s*<\/p>\s*){2}/g,
+    '<p style="font-size: 1.3rem; color: #ffa500; font-weight: 700; margin-bottom: 10px;"><a href="tel:+64275212126" style="color: #ffa500; text-decoration: none;">027 521 2126</a></p>',
   )
   out = out.replace(
-    /<a href="tel:\+6439707602" class="cta-primary">Call \+64 3 970 7602<\/a>\s*<a href="tel:\+6439707602" class="cta-(?:primary|secondary)">Call \+64 3 970 7602<\/a>/g,
-    '<a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>',
+    /<a href="tel:\+64275212126" class="cta-primary">Call 027 521 2126<\/a>\s*<a href="tel:\+64275212126" class="cta-(?:primary|secondary)">Call 027 521 2126<\/a>/g,
+    '<a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>',
   )
 
   // onerror inline handlers are fine in HTML strings

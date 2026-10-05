@@ -5,7 +5,7 @@ export const forAggregateRoadMetalHtml = `<!-- Aggregate & road metal lead page 
       <h1>Gravel and aggregate screening equipment NZ</h1>
       <p class="lead-hero-sub">On-site aggregate screening — oversize out, saleable grades in, less haulage both ways.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
       </div>
     </div>
@@ -56,7 +56,7 @@ export const forAggregateRoadMetalHtml = `<!-- Aggregate & road metal lead page 
       <h2>Quote mesh and model for your feed</h2>
       <p>Tell us river gravel, crushed concrete, road metal or drainage stone — and the carrier on site. Site Machinery NZ will match openings and machine from the Nelson showroom, supply nationwide.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Contact Us</a>
         <a href="/screening-recommendation#aggregates" class="cta-secondary">Mesh guide</a>
       </div>

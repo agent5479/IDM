@@ -5,7 +5,7 @@ export const forNelsonNationwideHtml = `<!-- Nelson showroom & nationwide supply
       <h1>Nelson screening equipment showroom</h1>
       <p class="lead-hero-sub">View DeSite screeners at 105 Pascoe Street, Nelson — then specify mesh and machine for delivery anywhere in NZ, including Tasman and the South Island.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="/contact" class="cta-secondary">Book a viewing</a>
       </div>
     </div>
@@ -18,7 +18,7 @@ export const forNelsonNationwideHtml = `<!-- Nelson showroom & nationwide supply
       <img src="/images/SLG108VFRB.jpg" alt="DeSite screening equipment at Site Machinery Nelson showroom">
       <div class="lead-split-copy">
         <h2>See the machines before you buy</h2>
-        <p>Arrange a showroom viewing to check deck size, mesh changeover and bucket compatibility against the loader or skid steer you already run. Phone <a href="tel:+6439707602" style="color:#b34700;font-weight:600;">+64 3 970 7602</a> or email <a href="mailto:info@sitemachinery.nz" style="color:#b34700;font-weight:600;">info@sitemachinery.nz</a> to book.</p>
+        <p>Arrange a showroom viewing to check deck size, mesh changeover and bucket compatibility against the loader or skid steer you already run. Phone <a href="tel:+64275212126" style="color:#b34700;font-weight:600;">027 521 2126</a> or email <a href="mailto:info@sitemachinery.nz" style="color:#b34700;font-weight:600;">info@sitemachinery.nz</a> to book.</p>
         <p class="lead-note">Hours: Monday–Friday 8:00–17:00 · 105 Pascoe Street, Nelson 7011</p>
       </div>
     </div>
@@ -62,7 +62,7 @@ export const forNelsonNationwideHtml = `<!-- Nelson showroom & nationwide supply
       <h2>Contact Site Machinery NZ</h2>
       <p>Exclusive New Zealand specialist supplier of DeSite small and medium soil, gravel and aggregate screeners. View in Nelson — supply nationwide.</p>
       <div class="cta-buttons lead-cta">
-        <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+        <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
         <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
         <a href="/contact" class="cta-secondary">Contact page</a>
       </div>

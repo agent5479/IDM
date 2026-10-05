@@ -247,7 +247,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
   </div>
 
   <div class="cta-buttons" style="margin-top: 60px;">
-    <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+    <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
     <a href="mailto:info@sitemachinery.nz" class="cta-secondary">Email Us</a>
   </div>
 </section>`

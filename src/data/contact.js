@@ -1,6 +1,6 @@
 export const contact = {
-  phoneDisplay: '+64 3 970 7602',
-  phoneTel: '+6439707602',
+  phoneDisplay: '027 521 2126',
+  phoneTel: '+64275212126',
   email: 'info@sitemachinery.nz',
   showroom: '105 Pascoe Street, Nelson',
   mailing: '105 Pascoe St, Nelson 7011',

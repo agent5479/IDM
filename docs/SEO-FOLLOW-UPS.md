@@ -4,7 +4,7 @@ Operator and content work that remains after the Aug 2026 remediation (crawlable
 
 ## Local / Google Business Profile
 
-- [ ] Audit GBP name, address, phone, and website against the site: **Site Machinery NZ**, 105 Pascoe Street, Nelson 7011, `+64 3 970 7602`, `https://sitemachinery.nz`
+- [ ] Audit GBP name, address, phone, and website against the site: **Site Machinery NZ**, 105 Pascoe Street, Nelson 7011, `027 521 2126`, `https://sitemachinery.nz`
 - [ ] Align GBP hours with schema: Monday–Friday 08:00–17:00
 - [ ] Mirror site services in GBP categories: soil / gravel / aggregate screeners, static grizzly, telehandler bins, farm / cow-race screening, civil on-site screening, topsoil / landscaping, showroom viewing
 - [ ] Encourage customer reviews that name specific services, materials, and towns; reuse that language on `/for/*` pages (never invent reviews)

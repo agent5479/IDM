@@ -660,7 +660,7 @@ function meshGuideJsonLd(route) {
             '@type': 'HowToStep',
             position: 4,
             name: 'Confirm mesh and machine with Site Machinery NZ',
-            text: 'Match mesh and ProScreen or Static Grizzly to the carrier you already run. Call +64 3 970 7602 or visit the Nelson showroom.',
+            text: 'Match mesh and ProScreen or Static Grizzly to the carrier you already run. Call 027 521 2126 or visit the Nelson showroom.',
           },
         ],
       },

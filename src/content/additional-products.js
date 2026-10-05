@@ -196,7 +196,7 @@ export const additionalProductsHtml = `<!-- Page Content -->
     </p>
     <div class="cta-buttons">
       <a href="/contact" class="cta-primary">Contact Us</a>
-      <a href="tel:+6439707602" class="cta-primary">Call +64 3 970 7602</a>
+      <a href="tel:+64275212126" class="cta-primary">Call 027 521 2126</a>
     </div>
   </div>
 
