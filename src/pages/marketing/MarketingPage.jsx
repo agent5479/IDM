@@ -93,6 +93,29 @@ function people(amount) {
   return amount.toLocaleString('en-NZ')
 }
 
+const SOURCE_FILMS = [
+  {
+    code: 'DbkToXKs-Et',
+    title: 'Mule bin',
+    note: 'The most-watched reel on the account. Cut it for a container item, and only where the site already says next shipment.',
+  },
+  {
+    code: 'DbkQnNzsOP3',
+    title: 'SLG-78 grizzly',
+    note: 'The grizzly under a load. This is the “no engine” film. Keep that line on the grizzly.',
+  },
+  {
+    code: 'DbelrH5MsX4',
+    title: 'A skip through the 78 grizzly',
+    note: 'A full skip going through the machine. His caption times the job. That timing stays out of the New Zealand ad.',
+  },
+  {
+    code: 'DS1PjVPjFJI',
+    title: 'A buyer beside an SLG-78',
+    note: 'A person in frame, so the size is obvious. He quotes an Australian price on camera. That price comes out of the edit.',
+  },
+]
+
 export default function MarketingPage() {
   return (
     <div className="mkt">
@@ -144,6 +167,21 @@ export default function MarketingPage() {
               <dd>{nz(AREA_APPROVAL)}</dd>
             </div>
           </dl>
+        </div>
+
+        <nav className="mkt-jump" aria-label="Brief sections">
+          <a href="#part-decide"><span>01</span>Decide</a>
+          <a href="#part-weeks"><span>02</span>The weeks</a>
+          <a href="#part-setup"><span>03</span>Set up</a>
+          <a href="#part-judge"><span>04</span>Judge</a>
+        </nav>
+
+        <div className="mkt-part" id="part-decide">
+          <span>01</span>
+          <div>
+            <strong>Decide</strong>
+            <p>Sign one path before any money is spent.</p>
+          </div>
         </div>
 
         <section id="paths" className="mkt-section">
@@ -218,6 +256,14 @@ export default function MarketingPage() {
           </div>
         </section>
 
+        <div className="mkt-part" id="part-weeks">
+          <span>02</span>
+          <div>
+            <strong>The three weeks</strong>
+            <p>Show the machines, count real interest, then decide the container.</p>
+          </div>
+        </div>
+
         <section id="strategy" className="mkt-section">
           <p className="mkt-index">The test</p>
           <h2>What the three weeks are for</h2>
@@ -245,20 +291,13 @@ export default function MarketingPage() {
           </ol>
         </section>
 
-        <nav className="mkt-jump" aria-label="Brief sections">
-          <a href="#paths">The decision</a>
-          <a href="#strategy">The test</a>
-          <a href="#money">Money</a>
-          <a href="#where">Regions</a>
-          <a href="#who">Audience</a>
-          <a href="#channels">Channels</a>
-          <a href="#ads">Three ads</a>
-          <a href="#meta">When data arrives</a>
-          <a href="#outside">Outside the ads</a>
-          <a href="#container">The container</a>
-          <a href="#decision">Go / hold / stop</a>
-          <a href="#calendar">Calendar</a>
-        </nav>
+        <div className="mkt-part" id="part-setup">
+          <span>03</span>
+          <div>
+            <strong>Set up the test</strong>
+            <p>Cost, the five markets, the people, the channels, the source films, and the three ads.</p>
+          </div>
+        </div>
 
         <section id="money" className="mkt-section">
           <p className="mkt-index">01 · Money</p>
@@ -580,17 +619,22 @@ export default function MarketingPage() {
           <div className="mkt-channels">
             <article>
               <p className="mkt-panel-label">Find new buyers</p>
-              <h3>Meta · Facebook and Instagram</h3>
+              <h3>Facebook page, and an Instagram still to create</h3>
+              <p>
+                The Facebook page is already live at{' '}
+                <a href="https://www.facebook.com/sitemachinery">facebook.com/sitemachinery</a>.
+                There is no Site Machinery Instagram. Create one and connect it to that page before
+                any Instagram placement spends. Until then, the edited films can still run on the
+                Facebook page.
+              </p>
               <p>
                 Three advertisements. Path 1 runs them nationally for the first week, then in the
                 areas that responded. Path 2 runs them in the five areas from day one. Show them in
-                Facebook Feed, Facebook Reels, Instagram Feed, Instagram Reels and Stories.
-              </p>
-              <p>
-                Facebook is where the older farm owner and the earthmoving director still scroll.
-                Instagram Reels and Stories are where a vertical clip of dirt actually sorting
-                reaches a younger operator or a landscaper. Same budget. The placement report says
-                which one earned the click.
+                Facebook Feed, Facebook Reels, and, once the account exists, Instagram Feed, Reels
+                and Stories. Facebook is where the farm owner and the earthmoving director still
+                scroll. Instagram, once it exists, is where a vertical clip of dirt sorting reaches
+                a younger operator or a landscaper. Same budget. The placement report says which
+                one earned the click.
               </p>
               <p className="mkt-cost">
                 Path 1 {nz(META_DAILY)} a day · Path 2 {nz(ORIGINAL_DAILY)} a day drafted
@@ -629,8 +673,42 @@ export default function MarketingPage() {
           </div>
         </section>
 
+        <section id="films" className="mkt-section">
+          <p className="mkt-index">05 · Source films</p>
+          <h2>Rob’s Proscreen Australia reels, recut for New Zealand</h2>
+          <p>
+            Rob, who runs{' '}
+            <a href="https://proscreenaustralia.com.au">proscreenaustralia.com.au</a>, has given
+            permission to use the videos he makes and posts on{' '}
+            <a href="https://www.instagram.com/proscreen_australia/">@proscreen_australia</a>.
+            His profile already groups them as SLG 68, SLG 78, SLG 108, the grizzly, and the mule
+            bin. The four below are the ones to start from. Edit them so a New Zealand operator
+            hears a New Zealand offer: local captions, the Nelson phone number, and none of the
+            Australian prices or “in stock now” lines.
+          </p>
+          <div className="mkt-films">
+            {SOURCE_FILMS.map((film) => (
+              <figure key={film.code}>
+                <iframe
+                  title={film.title}
+                  src={`https://www.instagram.com/reel/${film.code}/embed`}
+                  loading="lazy"
+                  allow="encrypted-media; clipboard-write"
+                />
+                <figcaption>
+                  <strong>{film.title}</strong>
+                  <span>{film.note}</span>
+                  <a href={`https://www.instagram.com/proscreen_australia/reel/${film.code}/`}>
+                    Open the reel
+                  </a>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
         <section id="ads" className="mkt-section">
-          <p className="mkt-index">05 · Creative</p>
+          <p className="mkt-index">06 · Creative</p>
           <h2>Three advertisements, made before the map is chosen</h2>
           <div className="mkt-callout">
             <h3>Same three films on either spend</h3>
@@ -665,9 +743,10 @@ export default function MarketingPage() {
               <h3>Watch it run.</h3>
               <p className="mkt-ad-shot">15–20 seconds. Machine running, carrier loading it. Land on the farmers page.</p>
               <p>
-                Cut it from footage you already have — YouTube if that is where the job films are,
-                or the films already on the product pages. Vertical 9:16, captions on, hook in the
-                first two seconds, a bucket or a person in frame for scale.
+                Cut 15–20 seconds from Rob’s Proscreen Australia reels, then caption them for New
+                Zealand. Vertical 9:16, hook in the first two seconds, a bucket or a person in
+                frame for scale. The skip-through-the-grizzly reel and the buyer-beside-the-78
+                reel are the starting points for this ad.
               </p>
               <p className="mkt-hold">
                 The 68V is bucket-fed. Do not show it towed behind a ute. The “no engine” line stays
@@ -734,7 +813,7 @@ export default function MarketingPage() {
           <div className="mkt-rules">
             <article>
               <h3>Footage</h3>
-              <p>Real job footage only. A bucket or a person in frame for scale. No stock clip of a different machine.</p>
+              <p>Start from Rob’s reels. Take out Australian prices, Australian stock lines, and any place name that is not in New Zealand. A bucket or a person stays in frame for scale.</p>
             </article>
             <article>
               <h3>Shape</h3>
@@ -747,8 +826,16 @@ export default function MarketingPage() {
           </div>
         </section>
 
+        <div className="mkt-part" id="part-judge">
+          <span>04</span>
+          <div>
+            <strong>Judge the container</strong>
+            <p>Read the weeks, count the enquiries, and order only if the bar is met.</p>
+          </div>
+        </div>
+
         <section id="meta" className="mkt-section">
-          <p className="mkt-index">06 · When the numbers arrive</p>
+          <p className="mkt-index">07 · When the numbers arrive</p>
           <h2>Day 4 tunes the ads. Day 7 sets the map. Day 21 decides the container.</h2>
           <p>
             Pull the same report on day 4, day 7, day 10 and day 21. Count link clicks: people who
@@ -862,7 +949,7 @@ export default function MarketingPage() {
         </section>
 
         <section id="outside" className="mkt-section">
-          <p className="mkt-index">07 · Outside the ads</p>
+          <p className="mkt-index">08 · Outside the ads</p>
           <h2>Calls count toward the same decision</h2>
           <p>
             Three weeks of ads will miss buyers who take months to decide. Phone 20–30 hire yards,
@@ -887,7 +974,7 @@ export default function MarketingPage() {
         </section>
 
         <section id="container" className="mkt-section">
-          <p className="mkt-index">08 · The container</p>
+          <p className="mkt-index">09 · The container</p>
           <h2>Interest has to land in time to be useful</h2>
           <p>
             It is spring, so demand should be building, and contractors wind down before Christmas.
@@ -913,7 +1000,7 @@ export default function MarketingPage() {
         </section>
 
         <section id="decision" className="mkt-section">
-          <p className="mkt-index">09 · Decision</p>
+          <p className="mkt-index">10 · Decision</p>
           <h2>The bar for ordering the container</h2>
           <p>
             Set this before the first dollar is spent. Deposits and pre-orders count most, then
@@ -964,7 +1051,7 @@ export default function MarketingPage() {
         </section>
 
         <section id="calendar" className="mkt-section">
-          <p className="mkt-index">10 · Calendar</p>
+          <p className="mkt-index">11 · Calendar</p>
           <h2>How the three weeks run</h2>
           <ol className="mkt-track" aria-hidden="true">
             {Array.from({ length: DAYS }, (_, index) => {
@@ -982,9 +1069,10 @@ export default function MarketingPage() {
               <h3>Day 0</h3>
               <p>
                 Install the Meta pixel before any spend. Track clicks on 027 521 2126 and contact
-                form submits. Finish the three ads, each with its own landing page and link tags.
-                The executive path is already chosen. Draft one Trade Me listing per model. Agree
-                the code words. Start the call list.
+                form submits. Create the Site Machinery Instagram and connect it to the Facebook
+                page. Cut the three ads from Rob’s Proscreen Australia reels, each to its own
+                landing page, with link tags. The executive path is already chosen. Draft one
+                Trade Me listing per model. Agree the code words. Start the call list.
               </p>
             </article>
             <article>
@@ -1054,7 +1142,7 @@ export default function MarketingPage() {
         </section>
 
         <section id="ask" className="mkt-section">
-          <p className="mkt-index">11 · The ask</p>
+          <p className="mkt-index">12 · The ask</p>
           <h2>What needs a decision</h2>
           <div className="mkt-close">
             <article>

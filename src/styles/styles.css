@@ -3169,22 +3169,45 @@ textarea:focus-visible {
 }
 
 .mkt-jump {
-  display: flex;
-  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  margin: 8px 0 36px;
+  margin: 8px -24px 28px;
+  padding: 12px 24px;
+  background: rgba(243, 239, 230, 0.94);
+  border-top: 1px solid var(--mkt-line);
+  border-bottom: 1px solid var(--mkt-line);
+  backdrop-filter: blur(8px);
 }
 
 .mkt-jump a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-family: 'Segoe UI', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--mkt-ink);
   text-decoration: none;
-  border: 1px solid var(--mkt-line);
   background: var(--mkt-card);
-  border-radius: 999px;
-  padding: 6px 12px;
+  border: 1px solid var(--mkt-line);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.mkt-jump a span {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--mkt-ink);
+  color: #fffdf8;
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
 }
 
 .mkt-jump a:hover {
@@ -3192,18 +3215,126 @@ textarea:focus-visible {
   color: var(--mkt-amber);
 }
 
+.mkt-part {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  margin: 8px 0 14px;
+  scroll-margin-top: 88px;
+}
+
+.mkt-part span {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--mkt-ink);
+  color: #fffdf8;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.mkt-part strong {
+  display: block;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.05rem;
+}
+
+.mkt-part p {
+  margin: 2px 0 0;
+  color: var(--mkt-muted);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.92rem;
+}
+
 .mkt-section {
-  margin: 0 0 56px;
-  scroll-margin-top: 18px;
+  background: var(--mkt-card);
+  border: 1px solid var(--mkt-line);
+  border-radius: 20px;
+  padding: 26px 26px 18px;
+  margin: 0 0 18px;
+  scroll-margin-top: 88px;
 }
 
 .mkt-index {
-  margin: 0 0 6px;
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--mkt-amber-soft);
   color: var(--mkt-amber);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.mkt-section .mkt-panel,
+.mkt-section .mkt-channels article,
+.mkt-section .mkt-ad,
+.mkt-section .mkt-gate,
+.mkt-section .mkt-days article,
+.mkt-section .mkt-region,
+.mkt-section .mkt-rules article {
+  background: #f7f3ea;
+}
+
+.mkt-films {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.mkt-films figure {
+  margin: 0;
+  background: #f7f3ea;
+  border: 1px solid var(--mkt-line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mkt-films iframe {
+  display: block;
+  width: 100%;
+  height: 480px;
+  border: 0;
+  background: #1c1915;
+}
+
+.mkt-films figcaption {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px 14px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.88rem;
+}
+
+.mkt-films figcaption strong {
+  font-size: 0.95rem;
+}
+
+.mkt-films figcaption span {
+  color: var(--mkt-muted);
+  line-height: 1.45;
+}
+
+.mkt-films a,
+.mkt-channels a,
+.mkt-section > p a {
+  color: var(--mkt-amber);
+  font-weight: 700;
+}
+
+.mkt-choice {
+  border-top: 4px solid var(--mkt-ink);
+}
+
+.mkt-split .mkt-choice + .mkt-choice {
+  border-top-color: var(--mkt-teal);
 }
 
 .mkt h2 {
@@ -3650,7 +3781,7 @@ textarea:focus-visible {
 .mkt-flow {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin: 18px 0;
   padding: 0;
@@ -4011,6 +4142,8 @@ textarea:focus-visible {
 }
 
 @media (max-width: 900px) {
+  .mkt-jump,
+  .mkt-films,
   .mkt-hero,
   .mkt-split,
   .mkt-two,
@@ -4044,6 +4177,12 @@ textarea:focus-visible {
 
   .mkt-top-meta {
     text-align: left;
+  }
+}
+
+@media (max-width: 900px) {
+  .mkt-jump {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
