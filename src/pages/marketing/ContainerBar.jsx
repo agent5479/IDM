@@ -9,13 +9,14 @@ export default function ContainerBar() {
   return (
     <div className="mkt-desk">
       <p className="mkt-panel-label">Set the enquiry bar</p>
-      <h3>Units to break even, divided by the close rate</h3>
+      <h3>How many enquiries justify the container</h3>
       <p className="mkt-fine">
-        High-ticket plant often closes on about 5–15% of real enquiries. The cautious number is the
-        5% line. Clicks do not go in this count.
+        Enter how many machines this container must sell to cover its cost. High-ticket plant often
+        closes on about 5–15% of real enquiries. The cautious number is the 5% line. Clicks are
+        not part of this count.
       </p>
       <label className="mkt-freq">
-        Units the container must sell to break even
+        Machines this container must sell to cover its cost
         <input
           inputMode="numeric"
           aria-label="Break-even units"
@@ -39,7 +40,7 @@ export default function ContainerBar() {
           </li>
         </ul>
       ) : (
-        <p>Enter the break-even unit count. Four units at 10% would be 40 enquiries. That four is an example, not your container.</p>
+        <p>Enter that machine count. Four machines at a 10% close rate would mean 40 enquiries. Four is only an example.</p>
       )}
     </div>
   )

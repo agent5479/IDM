@@ -3656,6 +3656,10 @@ textarea:focus-visible {
   padding: 0;
 }
 
+.mkt-flow.mkt-spine {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .mkt-flow li {
   background: var(--mkt-card);
   border: 1px solid var(--mkt-line);

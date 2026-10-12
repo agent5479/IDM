@@ -4,15 +4,17 @@ import MarketingReadout from './MarketingReadout'
 import ContainerBar from './ContainerBar'
 
 const DAYS = 21
+const WEEK = 7
 const META_DAILY = 36
 const META_TOTAL = META_DAILY * DAYS
+const NATION_WEEK = META_DAILY * WEEK
+const NATION_FOLLOW = META_DAILY * (DAYS - WEEK)
 const TRADEME_LISTING = 99
 const TRADEME_COUNT = 3
 const TRADEME_BASELINE = TRADEME_LISTING * TRADEME_COUNT
 const APPROVAL = META_TOTAL + TRADEME_BASELINE
 const ORIGINAL_DAILY = 45
 const ORIGINAL_TOTAL = ORIGINAL_DAILY * DAYS
-const ORIGINAL_REGION = 189
 const AREA_APPROVAL = ORIGINAL_TOTAL + TRADEME_BASELINE
 const CELL_TOTAL = 3 * DAYS
 const LEARN_DAILY = META_DAILY * 5
@@ -110,19 +112,18 @@ export default function MarketingPage() {
 
       <main className="mkt-main">
         <p className="mkt-answer">
-          Cut the three ads now. The buy is still open: one nationwide campaign at {nz(META_DAILY)} a
-          day ({nz(APPROVAL)} with Trade Me), or the five areas already mapped, drafted at {nz(3)} a
-          day per ad ({nz(AREA_APPROVAL)} with Trade Me). Trade Me is {nz(TRADEME_BASELINE)} either
-          way. The container mix follows the carriers people name.
+          Management chooses the path before any money is spent. Either run one national campaign
+          for the first week and then follow the areas that responded, or skip that week and open
+          regional campaigns on day one. Deposits, quotes and calls are what can justify the container.
         </p>
 
         <div className="mkt-hero">
           <div>
-            <h1>21 days to decide on the next container from China</h1>
+            <h1>Three weeks to test demand before a container order</h1>
             <p className="mkt-lede">
-              This test asks whether New Zealand operators will pay attention to DeSite screeners
-              before Site Machinery places another stock order. It does not put a container on the
-              water. The clock starts the day the ads go live. The order decision is day {DAYS}.
+              Site Machinery will show DeSite screeners to New Zealand operators, then decide
+              whether the interest is strong enough to place another stock order. The three weeks
+              gather that evidence. They do not, by themselves, put a container on the water.
             </p>
           </div>
           <dl className="mkt-kpis">
@@ -131,21 +132,122 @@ export default function MarketingPage() {
               <dd>{DAYS} days</dd>
             </div>
             <div>
-              <dt>Ads to cut</dt>
+              <dt>Advertisements</dt>
               <dd>3</dd>
             </div>
             <div>
-              <dt>Nationwide + Trade Me</dt>
+              <dt>National week, then follow</dt>
               <dd>{nz(APPROVAL)}</dd>
             </div>
             <div>
-              <dt>Five areas + Trade Me</dt>
+              <dt>Regions from day one</dt>
               <dd>{nz(AREA_APPROVAL)}</dd>
             </div>
           </dl>
         </div>
 
+        <section id="paths" className="mkt-section">
+          <p className="mkt-index">Executive decision</p>
+          <h2>Two paths. One of them has to be chosen before launch.</h2>
+          <p>
+            The three advertisements are the same on both paths. What changes is whether the first
+            week is allowed to draw the map, or the five areas below are the map from the first
+            day. Staff can prepare either. Only management can sign it.
+          </p>
+          <div className="mkt-split">
+            <article className="mkt-panel mkt-choice">
+              <p className="mkt-panel-label">Path 1 · National first week</p>
+              <h3>Then follow the response</h3>
+              <ul className="mkt-ledger">
+                <li>
+                  <span>Days 1–7 · all of New Zealand · {nz(META_DAILY)}/day</span>
+                  <strong>{nz(NATION_WEEK)}</strong>
+                </li>
+                <li>
+                  <span>Days 8–21 · same daily rate, only where people responded</span>
+                  <strong>{nz(NATION_FOLLOW)}</strong>
+                </li>
+              </ul>
+              <h4 className="mkt-for">What this path is for</h4>
+              <ul>
+                <li>Week one is one campaign. Day 7 reads where the clicks and calls came from, including places outside the five areas.</li>
+                <li>From day 8 the {nz(META_DAILY)} a day moves into separate campaigns for the areas that responded. A silent area comes off. A place that showed up, and was not on the original five, can be added.</li>
+                <li>Facebook and Instagram stay {nz(META_TOTAL)} if the daily rate stays {nz(META_DAILY)}. With Trade Me the ceiling is {nz(APPROVAL)}.</li>
+              </ul>
+              <h4 className="mkt-against">What you give up</h4>
+              <ul>
+                <li>Auckland and Northland hold about half the people in the five areas, so most of week one will land there. Nelson and the south can look quiet because they were rarely shown the ad.</li>
+                <li>The regional campaigns start on day 8, so they have 14 days to gather a readable sample, not 21.</li>
+              </ul>
+            </article>
+            <article className="mkt-panel mkt-choice">
+              <p className="mkt-panel-label">Path 2 · Regions from day one</p>
+              <h3>Adapt inside that map</h3>
+              <ul className="mkt-ledger">
+                <li>
+                  <span>Five campaigns from day 1 · {nz(3)} per ad · {nz(ORIGINAL_DAILY)}/day × {DAYS}</span>
+                  <strong>{nz(ORIGINAL_TOTAL)}</strong>
+                </li>
+                <li>
+                  <span>Trade Me on either path</span>
+                  <strong>{nz(TRADEME_BASELINE)}</strong>
+                </li>
+              </ul>
+              <h4 className="mkt-for">What this path is for</h4>
+              <ul>
+                <li>Skip the national week. Waikato, Canterbury, Auckland, Otago and Nelson are shown the machines for all {DAYS} days, and the ad can match the machine that area needs.</li>
+                <li>Day 4 and day 10 move money toward the areas and the ads that produce enquiries. Adapting means shifting the budget, not discovering a new map.</li>
+                <li>With Trade Me the drafted total is {nz(AREA_APPROVAL)}.</li>
+              </ul>
+              <h4 className="mkt-against">What you give up</h4>
+              <ul>
+                <li>Hawke’s Bay, Wellington, Taranaki and the rest never see the ads, so a strong pocket outside the five stays invisible.</li>
+                <li>At {nz(CELL_TOTAL)} per ad per area, day 4 often arrives before 1,000 people have seen the ad. Judging each area properly, at {nz(META_DAILY)} a day in each, is {nz(LEARN_TOTAL)} on Facebook and Instagram.</li>
+              </ul>
+            </article>
+          </div>
+          <div className="mkt-callout">
+            <h3>Why this cannot be left to the ads</h3>
+            <p>
+              Choose the national week if the map should be a result, including places that were
+              not pre-selected. Choose the regions from day one if those five markets are already
+              the commercial bet, Nelson included, and the three weeks should be spent there
+              rather than on learning a map you already intend to use. That is a judgment about
+              the business. The click report cannot make it.
+            </p>
+          </div>
+        </section>
+
+        <section id="strategy" className="mkt-section">
+          <p className="mkt-index">The test</p>
+          <h2>What the three weeks are for</h2>
+          <ol className="mkt-flow mkt-spine">
+            <li>
+              <span>1</span>
+              <h3>Show the machines</h3>
+              <p>Three ads on Facebook and Instagram, a Trade Me listing for each core model, and calls to 20–30 yards and contractors.</p>
+            </li>
+            <li>
+              <span>2</span>
+              <h3>Count real interest</h3>
+              <p>A deposit, a quote, or a call that names a machine, a material and a date. A click only says the ad was opened.</p>
+            </li>
+            <li>
+              <span>3</span>
+              <h3>Adjust twice</h3>
+              <p>On day 4, pause a weak ad. On the national path, day 7 is when the live areas are chosen. Day 10 adapts inside whichever campaigns are then running.</p>
+            </li>
+            <li>
+              <span>4</span>
+              <h3>Decide the container</h3>
+              <p>On day 21, order only if enquiries reach the break-even line and point to a clear mix of machines.</p>
+            </li>
+          </ol>
+        </section>
+
         <nav className="mkt-jump" aria-label="Brief sections">
+          <a href="#paths">The decision</a>
+          <a href="#strategy">The test</a>
           <a href="#money">Money</a>
           <a href="#where">Regions</a>
           <a href="#who">Audience</a>
@@ -160,47 +262,43 @@ export default function MarketingPage() {
 
         <section id="money" className="mkt-section">
           <p className="mkt-index">01 · Money</p>
-          <h2>Two buys. The same three ads.</h2>
+          <h2>What the chosen path costs</h2>
           <p>
-            Facebook and Instagram share whichever budget is signed. The open question is whether
-            that budget is one New Zealand auction, with region read afterwards, or five campaigns
-            on the areas already mapped. Both can be the right call. The edit does not wait on it.
+            These are the same two paths as the decision above, in dollars. Facebook and Instagram
+            carry the advertisements. Trade Me is {nz(TRADEME_BASELINE)} on both, for people already
+            looking for a machine. A larger regional budget is a separate approval, not a silent upgrade.
           </p>
 
           <div className="mkt-split">
             <article className="mkt-panel mkt-choice">
-              <p className="mkt-panel-label">Buy A · Nationwide</p>
+              <p className="mkt-panel-label">Path 1 · if the daily rate stays {nz(META_DAILY)}</p>
               <h3>{nz(APPROVAL)}</h3>
               <ul className="mkt-ledger">
                 <li>
-                  <span>One campaign · {nz(META_DAILY)}/day × {DAYS}</span>
-                  <strong>{nz(META_TOTAL)}</strong>
+                  <span>Days 1–7 · national · {nz(META_DAILY)} × {WEEK}</span>
+                  <strong>{nz(NATION_WEEK)}</strong>
+                </li>
+                <li>
+                  <span>Days 8–21 · follow the response · {nz(META_DAILY)} × {DAYS - WEEK}</span>
+                  <strong>{nz(NATION_FOLLOW)}</strong>
                 </li>
                 <li>
                   <span>Trade Me · {TRADEME_COUNT} × {nz(TRADEME_LISTING)}</span>
                   <strong>{nz(TRADEME_BASELINE)}</strong>
                 </li>
               </ul>
-              <h4 className="mkt-for">For</h4>
-              <ul>
-                <li>One auction can move money onto the ad people click. Day 4 and day 10 have a real chance of 1,000 impressions.</li>
-                <li>Region, age and placement still come back as a breakdown, and so does the rest of the country.</li>
-                <li>The Meta line is {nz(META_TOTAL)}. The five-area draft is {nz(ORIGINAL_TOTAL)}. Giving every area this same daily rate is {nz(LEARN_TOTAL)}.</li>
-              </ul>
-              <h4 className="mkt-against">Against</h4>
-              <ul>
-                <li>Auckland and Northland are about half the people in the five areas. The auction spends where the people are, so Nelson, Otago and parts of the south can stay too thin to read.</li>
-                <li>The 68, the 78 and the grizzly compete in one auction. An area that wanted a different machine only shows up afterwards.</li>
-                <li>A quiet area is ambiguous. It can mean few buyers, or that the national auction rarely showed them the ad.</li>
-              </ul>
+              <p className="mkt-fine">
+                The second fortnight uses the same {nz(META_DAILY)} a day, split only across the
+                areas that responded. It does not become {nz(META_DAILY)} a day in every area.
+              </p>
             </article>
 
             <article className="mkt-panel mkt-choice">
-              <p className="mkt-panel-label">Buy B · Five areas</p>
+              <p className="mkt-panel-label">Path 2 · drafted regional start</p>
               <h3>{nz(AREA_APPROVAL)}</h3>
               <ul className="mkt-ledger">
                 <li>
-                  <span>Five areas · {nz(3)} per ad per day · {nz(ORIGINAL_DAILY)}/day × {DAYS}</span>
+                  <span>Five areas from day 1 · {nz(ORIGINAL_DAILY)}/day × {DAYS}</span>
                   <strong>{nz(ORIGINAL_TOTAL)}</strong>
                 </li>
                 <li>
@@ -208,25 +306,18 @@ export default function MarketingPage() {
                   <strong>{nz(TRADEME_BASELINE)}</strong>
                 </li>
               </ul>
-              <h4 className="mkt-for">For</h4>
-              <ul>
-                <li>Every mapped area is shown the ads, including the Nelson showroom and Otago / Southland.</li>
-                <li>The machine and the line can follow the card already written for that area.</li>
-                <li>A quiet area was shown the work and stayed quiet. That is a cleaner container signal than a national average.</li>
-              </ul>
-              <h4 className="mkt-against">Against</h4>
-              <ul>
-                <li>Each ad in each area is {nz(CELL_TOTAL)} over the {DAYS} days. That often stays inside Meta’s learning phase. Under 1,000 impressions the ad is not ranked, and several cells can still be there on day 21.</li>
-                <li>Fifteen thin cells make a day-4 pause a guess. A handful of clicks is not a result.</li>
-                <li>A split that can learn is {nz(META_DAILY)} a day in each area: {nz(LEARN_DAILY)} a day, {nz(LEARN_TOTAL)} over {DAYS} days. Splitting the nationwide {nz(META_DAILY)} five ways is about {nz(7)} a day per area, which keeps the smaller bill and drops the learning.</li>
-              </ul>
+              <p className="mkt-fine">
+                Each ad in each area is {nz(CELL_TOTAL)}. To give every area the national daily
+                rate for all {DAYS} days is {nz(LEARN_DAILY)} a day, {nz(LEARN_TOTAL)} on Facebook
+                and Instagram, plus the same Trade Me. That larger figure needs its own signature.
+              </p>
             </article>
           </div>
 
           <div className="mkt-bars" aria-label="Spend comparison">
             <div>
               <div className="mkt-bar-label">
-                <span>Buy A · nationwide Meta</span>
+                <span>Path 1 · national week, then follow</span>
                 <strong>{nz(META_TOTAL)}</strong>
               </div>
               <div className="mkt-bar">
@@ -235,7 +326,7 @@ export default function MarketingPage() {
             </div>
             <div>
               <div className="mkt-bar-label">
-                <span>Trade Me baseline</span>
+                <span>Trade Me, either option</span>
                 <strong>{nz(TRADEME_BASELINE)}</strong>
               </div>
               <div className="mkt-bar mkt-bar-teal">
@@ -244,7 +335,7 @@ export default function MarketingPage() {
             </div>
             <div>
               <div className="mkt-bar-label">
-                <span>Buy B · five-area Meta</span>
+                <span>Path 2 · regions from day one</span>
                 <strong>{nz(ORIGINAL_TOTAL)}</strong>
               </div>
               <div className="mkt-bar mkt-bar-mute">
@@ -253,18 +344,18 @@ export default function MarketingPage() {
             </div>
           </div>
 
-          <h3 className="mkt-subhead">Trade Me is a baseline funnel, not the study</h3>
+          <h3 className="mkt-subhead">Trade Me finds people already shopping</h3>
           <p>
-            List three machines as classifieds and buy nothing else. No feature, no super feature,
-            no subtitle. A classified has no success fee. The listing runs 14 days and the relist
-            on day 14 is free, so the 21-day window does not buy the ad twice. The planning band is
-            an asking price of $10,000–$24,999, which is a {nz(TRADEME_LISTING)} listing fee.
+            List three machines as ordinary classifieds. Skip bold titles, features and other
+            extras. A classified has no success fee. Each listing runs 14 days, and renewing it on
+            day 14 is free, so the three weeks pay the listing fee once. Plan on an asking price of
+            $10,000–$24,999, which is a {nz(TRADEME_LISTING)} fee per machine.
           </p>
           <div className="mkt-table-wrap">
             <table className="mkt-table">
               <caption>
-                Plain classified fee, Trade Me Motors “all other vehicles”. The highlighted row is
-                the plan. Higher rows are only if the asking price forces them. Promos stay off.
+                Plain classified fee, Trade Me Motors “all other vehicles”. Use the highlighted
+                row unless the asking price falls in a higher band. Leave promotional extras off.
               </caption>
               <thead>
                 <tr>
@@ -279,7 +370,7 @@ export default function MarketingPage() {
                   <td>$10,000 – $24,999</td>
                   <td>$99</td>
                   <td>$297</td>
-                  <td>Baseline</td>
+                  <td>Use this</td>
                 </tr>
                 <tr>
                   <td>$25,000 – $49,999</td>
@@ -297,35 +388,36 @@ export default function MarketingPage() {
             </table>
           </div>
           <p className="mkt-fine">
-            A shown from-price, ex GST and ex freight, can sit on one core listing and “contact for
-            price” on another. That test stays. A shown price usually means fewer, tighter
-            enquiries. The number has to be one management signs. Watchlists and questions are
-            logged per listing. They do not choose the age or the region. That still comes from
-            Meta. Extra container items beyond the three core models each add another listing fee
-            from the same table, still with no promo.
+            One listing can show a from-price, ex GST and ex freight. Another can say “contact for
+            price”. A shown price usually brings fewer enquiries, and tighter ones. The price has
+            to be a figure management signs. Watchlists and questions are recorded per listing.
+            They help the container decision. They do not choose the age group or the region — that
+            comes from the Facebook and Instagram report. Any extra container item beyond the three
+            core models adds another fee from the same table, still with no extras.
           </p>
 
           <div className="mkt-callout">
-            <h3>What either Meta line can prove</h3>
+            <h3>What the advertising spend can tell us</h3>
             <p>
-              If a click costs about {nz(2)}, the nationwide {nz(META_TOTAL)} buys on the order of
-              380 site visits, and the five-area {nz(ORIGINAL_TOTAL)} buys on the order of 470,
-              spread across 15 cells. That is an illustration, not a quote. It can show which ad
-              people stop for. It is not a forecast of how many screeners a container will sell.
-              Capital equipment is often researched for months, so this window will undercount.
+              If a click costs about {nz(2)}, the national campaign’s {nz(META_TOTAL)} brings on the
+              order of 380 visits, and the five-area {nz(ORIGINAL_TOTAL)} brings on the order of
+              470, split across the five areas. That is an illustration, not a quote. It is enough
+              to see which advertisement people stop for. It is not a forecast of how many
+              screeners a container will sell. Buyers of this plant often take months, so three
+              weeks will miss some of them. That is why deposits, quotes and the phone round sit
+              beside the clicks.
             </p>
           </div>
         </section>
 
         <section id="where" className="mkt-section">
           <p className="mkt-index">02 · Geography</p>
-          <h2>Five areas. The buy, or the breakdown.</h2>
+          <h2>Five markets the container has to serve</h2>
           <p>
-            These five areas are already the reading frame. In Buy A they are how a single New
-            Zealand export is grouped, plus a sixth bucket for everywhere else. In Buy B they are
-            five campaigns, and the rest of the country is outside the paid delivery.
-            Manawatū–Whanganui, Hawke’s Bay, Taranaki, Wellington, the West Coast and Gisborne see
-            the ads only if the nationwide buy is the one that runs.
+            These are the places a response would change what goes in the container. On the
+            national path they are how week one is read, plus everywhere else, and from day 8 only
+            the areas that responded keep a campaign. On the regional path they are five campaigns
+            from day one, and Hawke’s Bay, Wellington, Taranaki and the rest never see a paid ad.
           </p>
 
           <div className="mkt-geo">
@@ -356,7 +448,7 @@ export default function MarketingPage() {
               <h3>Estimated residents, 30 June 2024</h3>
               <p className="mkt-fine">
                 Stats NZ provisional subnational estimates. About 4.12 million people live in the
-                five reading areas. Length of bar is population, not buyer density.
+                five areas. The length of each bar is population, not the number of likely buyers.
               </p>
               <ul>
                 {regions.map((region) => (
@@ -378,8 +470,9 @@ export default function MarketingPage() {
                 ))}
               </ul>
               <p className="mkt-fine">
-                Auckland and Northland are the longest bar. A nationwide auction delivers there
-                first. Buy B spends only the budget reserved for area 3.
+                Auckland and Northland are the longest bar. On the national first week, more of
+                the ads will show here because more people live here. On the regional path, this
+                area spends only its own share.
               </p>
             </div>
           </div>
@@ -416,13 +509,6 @@ export default function MarketingPage() {
                     <dt>Machines</dt>
                     <dd>{region.machines}</dd>
                   </div>
-                  <div>
-                    <dt>If this area is its own buy</dt>
-                    <dd>
-                      {nz(ORIGINAL_REGION)} at {nz(3)} a day across the three ads
-                      <span>{nz(META_TOTAL)} if this area is given the nationwide daily rate</span>
-                    </dd>
-                  </div>
                 </dl>
               </article>
             ))}
@@ -431,7 +517,7 @@ export default function MarketingPage() {
 
         <section id="who" className="mkt-section">
           <p className="mkt-index">03 · Audience</p>
-          <h2>Write for these people. Target interests, not job titles.</h2>
+          <h2>The people who would buy a screener</h2>
           <div className="mkt-two">
             <article className="mkt-panel">
               <h3>Who the ad is for</h3>
@@ -461,7 +547,7 @@ export default function MarketingPage() {
                 </div>
                 <div>
                   <dt>Location</dt>
-                  <dd>All of New Zealand, or these five areas as five locations. The three ads are the same either way.</dd>
+                  <dd>All of New Zealand for week one, then the areas that responded. Or the five areas above from day one.</dd>
                 </div>
                 <div>
                   <dt>Interests</dt>
@@ -473,9 +559,10 @@ export default function MarketingPage() {
                 <div>
                   <dt>Structure</dt>
                   <dd>
-                    Still open. One ad set at {nz(META_DAILY)} a day, or five area campaigns at the
-                    drafted {nz(3)} a day per ad. Interests stay one list on either buy. A
-                    civil-versus-farm split is a third cut, and it is not part of this test.
+                    The path is the executive decision at the top of this brief. Path 1 is one
+                    campaign at {nz(META_DAILY)} a day for seven days, then separate campaigns only
+                    where people responded. Path 2 is five area campaigns from day one. Use the
+                    same interest list on either path.
                   </dd>
                 </div>
                 <div>
@@ -489,15 +576,15 @@ export default function MarketingPage() {
 
         <section id="channels" className="mkt-section">
           <p className="mkt-index">04 · Channels</p>
-          <h2>Two systems. Page placements only.</h2>
+          <h2>Facebook, Instagram, and Trade Me</h2>
           <div className="mkt-channels">
             <article>
-              <p className="mkt-panel-label">Demand</p>
+              <p className="mkt-panel-label">Find new buyers</p>
               <h3>Meta · Facebook and Instagram</h3>
               <p>
-                Three ads, bought as one New Zealand campaign or as the five areas in Geography.
-                Placements: Facebook Feed, Facebook Reels, Instagram Feed, Instagram Reels and
-                Stories.
+                Three advertisements. Path 1 runs them nationally for the first week, then in the
+                areas that responded. Path 2 runs them in the five areas from day one. Show them in
+                Facebook Feed, Facebook Reels, Instagram Feed, Instagram Reels and Stories.
               </p>
               <p>
                 Facebook is where the older farm owner and the earthmoving director still scroll.
@@ -506,16 +593,16 @@ export default function MarketingPage() {
                 which one earned the click.
               </p>
               <p className="mkt-cost">
-                Buy A {nz(META_DAILY)} a day · Buy B {nz(ORIGINAL_DAILY)} a day
+                Path 1 {nz(META_DAILY)} a day · Path 2 {nz(ORIGINAL_DAILY)} a day drafted
               </p>
             </article>
             <article>
-              <p className="mkt-panel-label">Baseline funnel</p>
+              <p className="mkt-panel-label">Catch existing shoppers</p>
               <h3>Trade Me classifieds</h3>
               <p>
-                People already looking for plant can still find a listing. That is the whole job of
-                this channel in the test. Questions and phone calls join the inquiry sheet. They
-                do not pick the demographic.
+                Someone already searching for plant can still find a listing. Questions and phone
+                calls from those listings join the enquiry count. They are evidence for the
+                container. They are not how we learn which age group responded.
               </p>
               <p>
                 One plain classified per model, or per container item. No bold title, no feature,
@@ -535,9 +622,8 @@ export default function MarketingPage() {
               <p className="mkt-panel-label">Leave off</p>
               <h3>Messenger, WhatsApp, Audience Network</h3>
               <p>
-                The brief is a Page, not a chat thread. Turn off Messenger, WhatsApp and Audience
-                Network so the daily budget stays on the feeds and Reels where the footage can be
-                seen.
+                The brief is the Facebook Page and Instagram, not a chat thread. Leave Messenger,
+                WhatsApp and Audience Network off so the budget stays where the footage can be seen.
               </p>
             </article>
           </div>
@@ -545,12 +631,12 @@ export default function MarketingPage() {
 
         <section id="ads" className="mkt-section">
           <p className="mkt-index">05 · Creative</p>
-          <h2>Cut the three ads now.</h2>
+          <h2>Three advertisements, made before the map is chosen</h2>
           <div className="mkt-callout">
-            <h3>The geography can wait. The edit cannot.</h3>
+            <h3>Same three films on either spend</h3>
             <p>
-              Buy A and Buy B use the same three films, the same landing pages and the same UTMs.
-              Ads Manager structure is the only step that changes once management signs a buy.
+              Both paths use the same films, the same landing pages and the same links. The executive
+              choice is which campaign structure those films go into. It is made before launch.
             </p>
             <ol>
               <li>Cost-saving. Tip fees and trucking, then the calculator. Land on /#equipment. utm_content=cost.</li>
@@ -663,43 +749,44 @@ export default function MarketingPage() {
 
         <section id="meta" className="mkt-section">
           <p className="mkt-index">06 · When the numbers arrive</p>
-          <h2>Meta writes the next campaign. Inquiries write the container.</h2>
+          <h2>Day 4 tunes the ads. Day 7 sets the map. Day 21 decides the container.</h2>
           <p>
-            Export on day 4, day 10 and day 21. Use link clicks. “All clicks” counts people who
-            opened a comment or a photo and never reached the site. The campaign objective is
-            landing page views, or a phone click and a form submit. Not post engagement.
+            Pull the same report on day 4, day 7, day 10 and day 21. Count link clicks: people who
+            reached the site. Ignore “all clicks”, which includes people who only opened a comment
+            or a photo. Aim the campaign at landing-page views, or at a phone click and a form
+            submit. Likes and comments are not the goal.
           </p>
 
           <ol className="mkt-flow">
             <li>
               <span>1</span>
-              <h3>Export</h3>
-              <p>Impressions, reach, frequency, link clicks, link CTR, link CPC, amount spent.</p>
+              <h3>Pull the report</h3>
+              <p>Views, people reached, repeat views, link clicks, click rate, cost per click, amount spent.</p>
             </li>
             <li>
               <span>2</span>
-              <h3>Sample</h3>
-              <p>An ad under 1,000 impressions is not ranked. On the five-area draft, several cells can still be under that line on day 21.</p>
+              <h3>Wait for a real sample</h3>
+              <p>Leave an ad unscored until 1,000 people have seen it. On the five-area option, some areas may still be short of that on day 21.</p>
             </li>
             <li>
               <span>3</span>
               <h3>Rank the ads</h3>
-              <p>Keep 1.5% link CTR and above. Pause a clear loser. Hold the middle.</p>
+              <p>Keep an ad at 1.5% link click-through or better. Pause a clear loser. Leave the middle running.</p>
             </li>
             <li>
               <span>4</span>
-              <h3>Read the breakdowns</h3>
-              <p>Age, region, placement, then gender. Gender is recorded. It does not become a filter.</p>
+              <h3>Note who responded</h3>
+              <p>Age, region, and whether Feed or Reels earned the click. Record gender. Leave the audience open to women and men.</p>
             </li>
             <li>
               <span>5</span>
-              <h3>Recalibrate</h3>
-              <p>Day 4 and day 10 pause a clear loser inside the buy that was signed. A reservation keeps the reserve ad. The geography is not redrawn on these days.</p>
+              <h3>Move the budget</h3>
+              <p>On day 4 and day 10, pause a clear loser and leave the money on the ads people open. A reservation keeps the reserve ad. On the national path, day 7 is the handoff to the areas that responded. On the regional path, the five campaigns stay the map.</p>
             </li>
             <li>
               <span>6</span>
               <h3>Decide stock</h3>
-              <p>Day 21 weighs deposits, then quotes and calls, then Trade Me questions. This desk does not order the container.</p>
+              <p>Weigh deposits, then quotes and calls, then Trade Me questions. The click report shows which ad worked. The enquiry count decides the container.</p>
             </li>
           </ol>
 
@@ -707,43 +794,42 @@ export default function MarketingPage() {
             <article>
               <h3>Impressions and frequency</h3>
               <p>
-                Impressions say whether the ad was delivered. Frequency says whether the same people
-                are seeing it again. If frequency is 2.5 or higher before day 10, the audience is
-                too tight. Add one related interest — skid steer, excavator, heavy equipment or farming.
-                Do not raise the {nz(META_DAILY)} daily cap to force delivery.
+                Views say whether the ad was shown. Frequency says whether the same people are seeing
+                it again. If frequency is 2.5 or higher before day 10, the audience is too small.
+                Add one related interest — skid steer, excavator, heavy equipment or farming. Keep
+                the daily budget where it was set.
               </p>
               <p>
-                If an ad set spends under about 70% of its daily budget for three days, the interest
-                list is too narrow. Broaden it before judging the creative.
+                If a campaign spends under about 70% of its daily budget for three days, the interest
+                list is too narrow. Broaden it before judging the advertisement.
               </p>
             </article>
             <article>
               <h3>Clicks, CTR and CPC</h3>
               <p>
-                Link CTR is clicks divided by impressions. At or above 1.5% after 1,000 impressions,
-                the ad stays. Between 0.8% and 1.5%, it stays but does not lead. Under 0.8%, and
-                another ad in the same set is at or above 1.5%, pause it.
+                Link click-through is clicks divided by views. At or above 1.5% after 1,000 views,
+                the ad stays. Between 0.8% and 1.5%, it stays and does not lead. Under 0.8%, while
+                another ad in the same campaign is at or above 1.5%, pause it.
               </p>
               <p>
-                Link CPC is spend divided by link clicks. If an ad’s CPC is more than double another
-                ad in the same set, and both have at least 30 link clicks, pause the expensive one
-                even when its CTR looks acceptable.
+                Cost per link click is spend divided by link clicks. If one ad costs more than twice
+                another, and both have at least 30 link clicks, pause the expensive one.
               </p>
             </article>
             <article>
               <h3>Age, region, placement</h3>
               <p>
-                Narrow age on the next flight only when one band has at least 40% of link clicks,
-                its own CTR is at least 1.3× the campaign, and the band itself has 800 impressions.
-                That check is day 14 at the earliest.
+                Narrow the age range on a later campaign only when one band has at least 40% of link
+                clicks, its own click-through is at least 1.3× the campaign, and that band has 800
+                views. Make that call on day 10 at the earliest.
               </p>
               <p>
-                An area with 150 link clicks, or three qualified inquiries, leads the container mix
-                and the next opening line. On Buy A that is a breakdown, and this test does not
-                then open a new area campaign. On Buy B that area already has its budget; move
-                delivery toward the winning ad inside it. A placement comes off at day 14 only if
-                its link CTR is under 0.4% after 1,500 impressions. If Reels CTR is at least 1.5×
-                Feed, the next edit opens in the first three seconds.
+                An area with 150 link clicks, or three qualified enquiries, leads the next sales
+                line and the container mix. On the national path, day 7 is when that area either
+                keeps a campaign or comes off. On the regional path, that area already has a
+                campaign, so move the money toward the winning ad inside it. Drop a placement on
+                day 14 only if its link click-through is under 0.4% after 1,500 views. If Reels
+                perform at least 1.5× Feed, the next edit opens in the first three seconds.
               </p>
             </article>
           </div>
@@ -759,34 +845,35 @@ export default function MarketingPage() {
             <li>Amount spent</li>
           </ul>
           <p className="mkt-fine">
-            Run the breakdown four times on the same date range: by ad, by age, by region, by
-            placement. On Buy B, do that inside each area. Compare day 1–4 with day 1–10, not a
-            fresh three-day slice with a fortnight. Install the pixel before the first dollar so
-            landing-page views, phone clicks and form submits are the record. Link clicks plus the
-            call sheet cover the gap until that pixel is live.
+            Pull the report four ways on the same dates: by ad, by age, by region, and by Feed
+            versus Reels. On the regional path, and after day 7 on the national path, do that
+            inside each live area. Compare day 1–4 with day 1–7 and day 1–10, using the same start
+            date. Install the Meta pixel before the first dollar so landing-page views, phone
+            clicks and form submits are recorded. Until that pixel is live, link clicks plus the
+            call sheet are the record.
           </p>
 
           <h3 className="mkt-subhead">Readout desk</h3>
           <p>
-            Enter the export. The desk applies the rules for the checkpoint you select. It will not
-            order a container. That decision stays with the inquiry count.
+            Type the report in below. The desk applies the day-4, day-10 or day-21 rules. It shows
+            which advertisement to keep. The container decision stays with the enquiry count.
           </p>
           <MarketingReadout />
         </section>
 
         <section id="outside" className="mkt-section">
           <p className="mkt-index">07 · Outside the ads</p>
-          <h2>A phone call can outrank a click</h2>
+          <h2>Calls count toward the same decision</h2>
           <p>
-            Three weeks of ads will undercount a purchase people research for months. Run a cheap
-            test beside the campaign. Phone 20–30 hire yards, landscaping suppliers and earthmoving
-            firms across the five areas and ask for a pre-order or a deposit. A deposit, with the
-            carrier named, is a stronger container signal than any click-through rate.
+            Three weeks of ads will miss buyers who take months to decide. Phone 20–30 hire yards,
+            landscaping suppliers and earthmoving firms across the five areas and ask for a
+            pre-order or a deposit. A deposit, with the machine they run named, is stronger
+            evidence for a container than any click rate.
           </p>
           <div className="mkt-rules">
             <article>
               <h3>Who to call</h3>
-              <p>Hire yards, landscaping suppliers, earthmoving firms. Spread the 20–30 calls across the five reading areas, not only Nelson.</p>
+              <p>Hire yards, landscaping suppliers, earthmoving firms. Spread the 20–30 calls across the five areas, including places outside Nelson.</p>
             </article>
             <article>
               <h3>What to ask</h3>
@@ -801,7 +888,7 @@ export default function MarketingPage() {
 
         <section id="container" className="mkt-section">
           <p className="mkt-index">08 · The container</p>
-          <h2>Decide the box with the arrival date in mind</h2>
+          <h2>Interest has to land in time to be useful</h2>
           <p>
             It is spring, so demand should be building, and contractors wind down before Christmas.
             If this test starts now it ends in early November. An order placed then still has sea
@@ -811,8 +898,8 @@ export default function MarketingPage() {
           </p>
           <div className="mkt-rules">
             <article>
-              <h3>Do not fill the box blind</h3>
-              <p>Ask about a part container or consolidated shipping, and whether the mix can be weighted to the carriers the enquiries actually name.</p>
+              <h3>Match the box to the enquiries</h3>
+              <p>Ask about a part container or consolidated shipping. Weight the mix to the machines people actually named.</p>
             </article>
             <article>
               <h3>Landed margin</h3>
@@ -820,24 +907,24 @@ export default function MarketingPage() {
             </article>
             <article>
               <h3>If units sit</h3>
-              <p>The fallback for unsold machines is a Trade Me auction, so a weak result is not a cash-flow trap. Auctions are the exit. The test itself stays on plain classifieds.</p>
+              <p>If machines are still unsold after they land, a Trade Me auction is how to clear them. The three-week test itself uses ordinary classifieds.</p>
             </article>
           </div>
         </section>
 
         <section id="decision" className="mkt-section">
           <p className="mkt-index">09 · Decision</p>
-          <h2>Order the container on the weighted signals.</h2>
+          <h2>The bar for ordering the container</h2>
           <p>
-            Set the enquiry bar before the first dollar. Deposits and pre-orders count most, then
-            quotes and calls, then Trade Me questions and watchlists. Clicks are last. A like is
+            Set this before the first dollar is spent. Deposits and pre-orders count most, then
+            quotes and calls, then Trade Me questions and watchlists. Clicks come last. A like is
             not on the list.
           </p>
           <ol className="mkt-weight">
             <li><strong>Deposits and pre-orders</strong><span>Can clear the bar on their own when the carrier and the date are named.</span></li>
             <li><strong>Quotes and calls</strong><span>A person who names a carrier, a material and a timeline.</span></li>
-            <li><strong>Trade Me questions and watchlists</strong><span>Per listing. Close to an intention to buy. Not the demographic read.</span></li>
-            <li><strong>Clicks</strong><span>Tell you which ad to keep. They do not order the container.</span></li>
+            <li><strong>Trade Me questions and watchlists</strong><span>Recorded per listing. Close to someone intending to buy.</span></li>
+            <li><strong>Clicks</strong><span>Show which advertisement to keep running. They do not, on their own, justify the container.</span></li>
           </ol>
           <ContainerBar />
           <div className="mkt-gates">
@@ -856,12 +943,12 @@ export default function MarketingPage() {
               <ul>
                 <li>Best ad at or above 1.5% click-through after 1,000 impressions</li>
                 <li>Enquiries are real, and still short of the break-even line</li>
-                <li>Extra spend stays inside the buy that was signed</li>
+                <li>Further spend stays inside the option already chosen</li>
               </ul>
             </article>
             <article className="mkt-gate mkt-gate-stop">
-              <h3>Do not order</h3>
-              <p>The test found attention too thin to justify stock.</p>
+              <h3>Stop</h3>
+              <p>The three weeks did not find enough interest to justify stock.</p>
               <ul>
                 <li>0 or 1 qualified inquiry after the full spend</li>
                 <li>Or every ad under 0.8% click-through after 1,000 impressions</li>
@@ -870,19 +957,19 @@ export default function MarketingPage() {
             </article>
           </div>
           <p className="mkt-fine">
-            These gates are the rule for this test. They are not a historical benchmark. The
-            enquiry line is break-even units divided by a 5–15% close rate. One real buyer asking
-            to view a machine in Nelson outweighs a strong click-through rate.
+            Order, hold, or stop using this bar. It is the rule for these three weeks. The enquiry
+            line is the number of machines the container must sell, divided by a 5–15% close rate.
+            One buyer asking to view a machine in Nelson outweighs a strong click rate.
           </p>
         </section>
 
         <section id="calendar" className="mkt-section">
           <p className="mkt-index">10 · Calendar</p>
-          <h2>Day 0 through day 21</h2>
+          <h2>How the three weeks run</h2>
           <ol className="mkt-track" aria-hidden="true">
             {Array.from({ length: DAYS }, (_, index) => {
               const day = index + 1
-              const mark = day === 4 || day === 10 || day === 14 || day === 21
+              const mark = day === 4 || day === 7 || day === 10 || day === 14 || day === 21
               return (
                 <li key={day} className={mark ? 'is-mark' : undefined}>
                   {mark ? day : ''}
@@ -895,39 +982,51 @@ export default function MarketingPage() {
               <h3>Day 0</h3>
               <p>
                 Install the Meta pixel before any spend. Track clicks on 027 521 2126 and contact
-                form submits. Cut the three ads, each to its own landing page, with UTMs. That cut
-                starts before the nationwide-or-areas choice is signed. Draft one Trade Me listing
-                per model. Agree the code words. Start the call list.
+                form submits. Finish the three ads, each with its own landing page and link tags.
+                The executive path is already chosen. Draft one Trade Me listing per model. Agree
+                the code words. Start the call list.
               </p>
             </article>
             <article>
               <h3>Day 4</h3>
               <p>
-                First export. Pause an ad only when it has 1,000 impressions and is a clear loser.
-                On Buy A that concentrates the {nz(META_DAILY)}. On Buy B it concentrates that
-                area’s own budget. Keep the reserve ad if it has reservation requests. Leave the
-                signed geography as it is.
+                First look at the report. Pause an ad only when 1,000 people have seen it and it is
+                clearly behind the others. On the national path, stay national until day 7. On the
+                regional path, move that area’s money toward the ads people open. Keep the reserve
+                ad if people have asked to reserve a machine.
+              </p>
+            </article>
+            <article>
+              <h3>Day 7</h3>
+              <p>
+                On the national path, this is the handoff. Areas with clicks or enquiries become
+                the campaigns for the next two weeks, and the {nz(META_DAILY)} a day moves onto
+                them. A silent area comes off. On the regional path, day 7 is another look inside
+                the five campaigns, not a new map.
               </p>
             </article>
             <article>
               <h3>Day 10</h3>
               <p>
-                Second export. Pause whatever is still clearly last inside the approved buy. Mark
-                the leading age and area. Buy A stays one campaign. Buy B stays five.
+                Adapt inside the campaigns that are now live. Pause whatever is still clearly last.
+                Note the leading age and the areas still running. Those areas are the container mix
+                to watch.
               </p>
             </article>
             <article>
               <h3>Day 14</h3>
               <p>
-                Relist the Trade Me classifieds at no charge. Compare watchlists and questions per
-                listing, and the priced listing against the unpriced one. Do not add a promo.
+                Renew the Trade Me classifieds at no charge. Compare watchlists and questions on
+                each listing, and the priced listing with the unpriced one. Leave promotional
+                extras off.
               </p>
             </article>
             <article>
               <h3>Day 21</h3>
               <p>
-                Apply the weighted bar. The carriers people named are the container mix. The Meta
-                card — winning ad, area, age, placement, CPC — is what the next campaign opens with.
+                Apply the bar above. The machines people named are the container mix. The report —
+                winning ad, area, age, Feed or Reels, and cost per click — is what a follow-up
+                campaign would open with.
               </p>
             </article>
           </div>
@@ -935,9 +1034,9 @@ export default function MarketingPage() {
           <h3 className="mkt-subhead">Set this up before the first dollar</h3>
           <p>
             The site has no Meta pixel today. Install it, and the two events below, before any ad
-            spends. Also capture an email where someone will leave one. The pixel does not make
-            the container decision. Buying a screener often takes months, so the pixel and the
-            email list are how people who are still looking are not lost after day 21.
+            spends. Also keep an email where someone will leave one. The pixel records interest. The
+            container decision still uses deposits, quotes and calls, because buying a screener
+            often takes longer than three weeks.
           </p>
           <p>
             Someone answers 027 521 2126 the same day, and asks where the caller heard of you. A
@@ -956,33 +1055,36 @@ export default function MarketingPage() {
 
         <section id="ask" className="mkt-section">
           <p className="mkt-index">11 · The ask</p>
-          <h2>What management is approving</h2>
+          <h2>What needs a decision</h2>
           <div className="mkt-close">
             <article>
-              <p className="mkt-panel-label">Spend</p>
-              <h3>The choice</h3>
+              <p className="mkt-panel-label">Decision</p>
+              <h3>Sign one path</h3>
               <p>
-                Buy A is {nz(APPROVAL)}. Buy B, at the drafted {nz(3)} a day, is {nz(AREA_APPROVAL)}.
-                A five-area buy thick enough to learn is {nz(LEARN_TOTAL)} of Meta plus the same{' '}
-                {nz(TRADEME_BASELINE)} of Trade Me. The three ads are cut on either signature.
+                Path 1, a national week then follow the response, is {nz(APPROVAL)} if the daily
+                rate stays {nz(META_DAILY)}. Path 2, regions from day one at the drafted rate, is{' '}
+                {nz(AREA_APPROVAL)}. Judging every area at the national daily rate is {nz(LEARN_TOTAL)}{' '}
+                on Facebook and Instagram, plus the same {nz(TRADEME_BASELINE)} on Trade Me, and
+                that larger number needs its own signature.
               </p>
             </article>
             <article>
               <p className="mkt-panel-label">Returns</p>
-              <h3>Two answers</h3>
+              <h3>A yes, a wait, or a no</h3>
               <p>
-                A container decision from deposits, quotes and the carriers people run, plus a
-                Meta card: which of the three ads, which area, which age, which placement, and
-                what a click cost. The phone round can move the container even when the ads are
-                still quiet.
+                On day 21 the enquiry count either justifies a container, says wait another two
+                weeks, or says leave the order. Alongside that: which ad worked, which area and age
+                responded, and which machines people asked for. The phone round can justify the
+                container even when the ads are still quiet.
               </p>
             </article>
             <article>
               <p className="mkt-panel-label">Rule</p>
-              <h3>No fourth strategy</h3>
+              <h3>Stay on the signed path</h3>
               <p>
-                Recalibration pauses a weak ad inside the buy that was signed. It does not invent
-                the other geography on day 10. The films are already cut by then.
+                Day 4 pauses a weak ad. Day 7, on the national path only, is the planned handoff to
+                the areas that responded. Day 10 adapts inside the campaigns that are live. None of
+                those days is a moment to invent a third path. The films are already made.
               </p>
             </article>
           </div>

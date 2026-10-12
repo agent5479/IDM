@@ -176,7 +176,7 @@ export default function MarketingReadout() {
     <div className="mkt-desk">
       <div className="mkt-desk-bar">
         <div className="mkt-checkpoint" role="group" aria-label="Which readout this is">
-          {['4', '10', '21'].map((day) => (
+          {['4', '7', '10', '21'].map((day) => (
             <button
               key={day}
               type="button"
@@ -198,8 +198,8 @@ export default function MarketingReadout() {
       </div>
       <p className="mkt-fine">
         {mode === 'sample'
-          ? 'These figures are an illustration so the rules are visible. Replace them with the Ads Manager export. A five-area buy is pasted one area at a time.'
-          : 'Paste impressions, link clicks and amount spent from Ads Manager. Link clicks, not all clicks. A nationwide buy is one paste. A five-area buy is one area at a time.'}
+          ? 'These figures are an illustration so the rules are visible. Replace them with the Facebook report. After day 7 on the national path, and from day one on the regional path, enter one area at a time.'
+          : 'Paste views, link clicks and amount spent. Count link clicks, not every click. Week one of the national path is a single paste. Regional campaigns are entered one area at a time.'}
       </p>
 
       <div className="mkt-sets">
@@ -366,9 +366,9 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint, reserves })
       ready: false,
       title: 'Waiting on the export',
       lines: [
-        'Nothing is ranked until an ad has 1,000 impressions.',
-        'Day 4 and day 10 can pause a clear loser so the daily budget concentrates on the ads that are working. The nationwide-or-areas choice is made before launch.',
-        'A reservation request keeps the reserve ad even when its click-through is weak. Day 21 still decides the container from deposits, quotes and calls, not from this desk.',
+        'An ad stays unscored until 1,000 people have seen it.',
+        'Day 4 and day 10 pause a clear loser so the daily budget stays on the ads people open. On the national path, day 7 is the handoff to the areas that responded.',
+        'A reservation request keeps the reserve ad even when few people click it. Day 21 decides the container from deposits, quotes and calls.',
       ],
     }
   }
@@ -395,7 +395,7 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint, reserves })
       }
     }
     const freq = num(frequency[set.id])
-    if ((checkpoint === '4' || checkpoint === '10') && freq >= 2.5) {
+    if ((checkpoint === '4' || checkpoint === '7' || checkpoint === '10') && freq >= 2.5) {
       lines.push(
         `${set.name} frequency is ${freq.toFixed(1)} before day 10. The audience is repeating. Add one related interest. Do not raise the daily budget.`,
       )
@@ -405,19 +405,23 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint, reserves })
   ranked.sort((a, b) => b.rate - a.rate)
   if (ranked[0]) {
     lines.unshift(
-      `Lead creative is ${ranked[0].name.toLowerCase()} at ${pct(ranked[0].rate)} link CTR. Keep it inside the buy that was signed.`,
+      `The leading ad is ${ranked[0].name.toLowerCase()} at ${pct(ranked[0].rate)} link click-through. Keep it in the campaign you started.`,
     )
   } else if (anyNumbers) {
-    lines.unshift('No ad has cleared 1.5% link CTR on 1,000 impressions yet. Keep the flight as it is.')
+    lines.unshift('No ad has reached 1.5% link click-through on 1,000 views yet. Leave the flight as it is.')
   }
 
   if (checkpoint === '4') {
     lines.push(
-      'Day 4 concentrates this buy’s daily budget on the ads you keep. It does not redraw the geography, and it does not narrow age.',
+      'Day 4 pauses a weak ad. On the national path the campaign stays national until day 7. Leave the age range as it is.',
+    )
+  } else if (checkpoint === '7') {
+    lines.push(
+      'Day 7 on the national path moves the daily budget onto the areas with clicks or enquiries. A silent area comes off. On the regional path, keep adapting inside the five campaigns.',
     )
   } else if (anyNumbers) {
     lines.push(
-      'Pause weak ads so the budget moves to the winners inside the signed buy. Age stays a breakdown.',
+      'Pause weak ads so the budget moves to the ones people open. Age stays a report, not a new target.',
     )
   }
 
@@ -425,11 +429,15 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint, reserves })
   if (regionTotal > 0 && regionLeader) {
     if (regionLeader.clicks >= 150 && checkpoint !== '4') {
       lines.push(
-        `${regionLeader.name} has ${regionLeader.clicks.toLocaleString('en-NZ')} link clicks. That area leads the next opening line and the container mix. On a nationwide buy this is a breakdown. On a five-area buy this area already has its budget.`,
+        `${regionLeader.name} has ${regionLeader.clicks.toLocaleString('en-NZ')} link clicks. That area leads the next sales line and the container mix. On the national path it is a campaign from day 8. On the regional path it already has one.`,
+      )
+    } else if (checkpoint === '7') {
+      lines.push(
+        `${regionLeader.name} leads on link clicks (${regionLeader.clicks.toLocaleString('en-NZ')}). On the national path, areas with clicks or enquiries continue and a silent area comes off.`,
       )
     } else {
       lines.push(
-        `${regionLeader.name} leads on link clicks (${regionLeader.clicks.toLocaleString('en-NZ')}). No area has 150 yet, so the geography signed on day 0 stays as it is.`,
+        `${regionLeader.name} leads on link clicks (${regionLeader.clicks.toLocaleString('en-NZ')}). No area has 150 yet.`,
       )
     }
   }
@@ -439,18 +447,18 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint, reserves })
     const share = Math.round((ageLeader.clicks / ageTotal) * 100)
     if (checkpoint === '4') {
       lines.push(
-        `${ageLeader.name} has ${share}% of the age-band clicks. Record it. Do not narrow the target at day 4. On day 10, narrow only if that band’s own CTR is at least 1.3× the campaign and the band has 800 impressions.`,
+        `${ageLeader.name} has ${share}% of the age-band clicks. Note it. Leave the age range unchanged on day 4. On day 10, narrow it only if that band’s own click-through is at least 1.3× the campaign and the band has 800 views.`,
       )
     } else {
       lines.push(
-        `${ageLeader.name} has ${share}% of the age-band clicks. Narrow the next flight to that band only after the age breakdown shows its CTR at least 1.3× the campaign and 800 impressions inside the band.`,
+        `${ageLeader.name} has ${share}% of the age-band clicks. Narrow a later campaign to that band only after its click-through is at least 1.3× the campaign and the band has 800 views.`,
       )
     }
   }
 
   if (checkpoint === '21') {
     lines.push(
-      'Day 21 does not order the container from this desk. Take the winning angle, area and age into the meeting with the inquiry sheet, including the carriers people named.',
+      'Day 21 uses this desk to name the winning ad, area and age. The container decision uses the enquiry sheet, including the machines people named.',
     )
   }
 
