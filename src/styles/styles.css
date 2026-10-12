@@ -3574,7 +3574,7 @@ textarea:focus-visible {
 }
 
 .mkt-days {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .mkt-ad-shot {
@@ -3697,6 +3697,40 @@ textarea:focus-visible {
   margin-top: 8px;
 }
 
+.mkt-choice h4 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 16px 0 6px;
+}
+
+.mkt-choice .mkt-for {
+  color: #3f6212;
+}
+
+.mkt-choice .mkt-against {
+  color: var(--mkt-amber);
+}
+
+.mkt-choice ul:not(.mkt-ledger) {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.mkt-choice ul:not(.mkt-ledger) li + li {
+  margin-top: 6px;
+}
+
+.mkt-callout ol {
+  margin: 10px 0 0;
+  padding-left: 1.2rem;
+}
+
+.mkt-callout li + li {
+  margin-top: 6px;
+}
+
 .mkt-rules article,
 .mkt-close article {
   background: var(--mkt-card);
@@ -3784,7 +3818,7 @@ textarea:focus-visible {
 }
 
 .mkt-sets {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .mkt-set,
@@ -3929,8 +3963,47 @@ textarea:focus-visible {
   color: var(--mkt-ink);
 }
 
-.mkt-close {
-  margin-top: 14px;
+.mkt-weight {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 0;
+  counter-reset: weight;
+}
+
+.mkt-weight li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  align-items: baseline;
+  background: var(--mkt-card);
+  border: 1px solid var(--mkt-line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  counter-increment: weight;
+}
+
+.mkt-weight li::before {
+  content: counter(weight);
+  grid-row: span 2;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--mkt-ink);
+  color: #fffdf8;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.mkt-weight span {
+  display: block;
+  color: var(--mkt-muted);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.88rem;
 }
 
 @media (max-width: 900px) {

@@ -1,15 +1,12 @@
 import { useMemo, useState } from 'react'
 
 const ANGLES = [
-  { id: 'cost', name: 'Cost' },
-  { id: 'reliability', name: 'Reliability' },
-  { id: 'compact', name: 'Compact' },
+  { id: 'cost', name: 'Cost-saving' },
+  { id: 'demo', name: 'Demo' },
+  { id: 'reserve', name: 'Reserve' },
 ]
 
-const SETS = [
-  { id: 'civil', name: 'Civil and earthmoving', daily: 18 },
-  { id: 'farm', name: 'Farm, station and landscaping', daily: 18 },
-]
+const SETS = [{ id: 'nz', name: 'The three ads' }]
 
 const REGIONS = [
   { id: 'waikato', name: 'Waikato / BOP' },
@@ -41,18 +38,13 @@ function blankMap(items) {
 
 const ILLUSTRATION = {
   cells: {
-    civil: {
-      cost: { impressions: '5000', clicks: '90', spend: '158' },
-      reliability: { impressions: '4000', clicks: '18', spend: '72' },
-      compact: { impressions: '2500', clicks: '36', spend: '79' },
-    },
-    farm: {
-      cost: { impressions: '4500', clicks: '40', spend: '92' },
-      reliability: { impressions: '5600', clicks: '140', spend: '196' },
-      compact: { impressions: '2000', clicks: '12', spend: '48' },
+    nz: {
+      cost: { impressions: '5000', clicks: '110', spend: '165' },
+      demo: { impressions: '4800', clicks: '86', spend: '172' },
+      reserve: { impressions: '2600', clicks: '14', spend: '70' },
     },
   },
-  frequency: { civil: '1.4', farm: '1.6' },
+  frequency: { nz: '1.5' },
   regions: {
     waikato: '80',
     canterbury: '46',
@@ -137,7 +129,8 @@ function judgeRow(row, siblings) {
 }
 
 export default function MarketingReadout() {
-  const [checkpoint, setCheckpoint] = useState('14')
+  const [checkpoint, setCheckpoint] = useState('10')
+  const [reserves, setReserves] = useState('')
   const [cells, setCells] = useState(blankCells)
   const [frequency, setFrequency] = useState(blankMap(SETS))
   const [regions, setRegions] = useState(blankMap(REGIONS))
@@ -145,8 +138,8 @@ export default function MarketingReadout() {
   const [mode, setMode] = useState('empty')
 
   const readout = useMemo(
-    () => buildReadout({ cells, frequency, regions, ages, checkpoint }),
-    [cells, frequency, regions, ages, checkpoint],
+    () => buildReadout({ cells, frequency, regions, ages, checkpoint, reserves }),
+    [cells, frequency, regions, ages, checkpoint, reserves],
   )
 
   function loadIllustration() {
@@ -154,7 +147,8 @@ export default function MarketingReadout() {
     setFrequency(ILLUSTRATION.frequency)
     setRegions(ILLUSTRATION.regions)
     setAges(ILLUSTRATION.ages)
-    setCheckpoint('14')
+    setCheckpoint('10')
+    setReserves('2')
     setMode('sample')
   }
 
@@ -163,6 +157,7 @@ export default function MarketingReadout() {
     setFrequency(blankMap(SETS))
     setRegions(blankMap(REGIONS))
     setAges(blankMap(AGES))
+    setReserves('')
     setMode('empty')
   }
 
@@ -181,7 +176,7 @@ export default function MarketingReadout() {
     <div className="mkt-desk">
       <div className="mkt-desk-bar">
         <div className="mkt-checkpoint" role="group" aria-label="Which readout this is">
-          {['7', '14', '21'].map((day) => (
+          {['4', '10', '21'].map((day) => (
             <button
               key={day}
               type="button"
@@ -203,8 +198,8 @@ export default function MarketingReadout() {
       </div>
       <p className="mkt-fine">
         {mode === 'sample'
-          ? 'These figures are an illustration so the rules are visible. Replace them with the Ads Manager export.'
-          : 'Paste impressions, link clicks and amount spent from Ads Manager. Link clicks, not all clicks.'}
+          ? 'These figures are an illustration so the rules are visible. Replace them with the Ads Manager export. A five-area buy is pasted one area at a time.'
+          : 'Paste impressions, link clicks and amount spent from Ads Manager. Link clicks, not all clicks. A nationwide buy is one paste. A five-area buy is one area at a time.'}
       </p>
 
       <div className="mkt-sets">
@@ -230,7 +225,7 @@ export default function MarketingReadout() {
               {ANGLES.map((angle) => {
                 const cell = cells[set.id][angle.id]
                 const row = rows.find((item) => item.id === angle.id)
-                const verdict = judgeRow(row, rows)
+                const verdict = applyReserve(judgeRow(row, rows), angle.id, reserves)
                 const ctr = rateOf(row)
                 const cpc = row.clicks > 0 ? row.spend / row.clicks : null
                 return (
@@ -265,6 +260,18 @@ export default function MarketingReadout() {
                   </div>
                 )
               })}
+              <label className="mkt-freq">
+                Reservation requests on the reserve ad
+                <input
+                  aria-label="Reservation requests"
+                  inputMode="numeric"
+                  value={reserves}
+                  onChange={(event) => {
+                    setMode('live')
+                    setReserves(event.target.value)
+                  }}
+                />
+              </label>
               <label className="mkt-freq">
                 Frequency
                 <input
@@ -336,7 +343,18 @@ export default function MarketingReadout() {
   )
 }
 
-function buildReadout({ cells, frequency, regions, ages, checkpoint }) {
+function applyReserve(verdict, angleId, reserves) {
+  if (angleId === 'reserve' && num(reserves) > 0 && verdict.tone === 'pause') {
+    return {
+      tone: 'keep',
+      label: 'Keep',
+      detail: `${num(reserves)} reservation request${num(reserves) === 1 ? '' : 's'}. That outranks a weak click-through.`,
+    }
+  }
+  return verdict
+}
+
+function buildReadout({ cells, frequency, regions, ages, checkpoint, reserves }) {
   const totals = Object.fromEntries(SETS.map((set) => [set.id, sumSet(cells, set.id)]))
   const anyNumbers = SETS.some((set) => totals[set.id].impressions > 0)
   const regionClicks = REGIONS.map((region) => ({ ...region, clicks: num(regions[region.id]) }))
@@ -349,8 +367,8 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint }) {
       title: 'Waiting on the export',
       lines: [
         'Nothing is ranked until an ad has 1,000 impressions.',
-        'Day 7 can pause a clear loser. It does not move budget or narrow age.',
-        'Day 14 is the recalibration. Day 21 writes the container decision from inquiries, and the next campaign from this desk.',
+        'Day 4 and day 10 can pause a clear loser so the daily budget concentrates on the ads that are working. The nationwide-or-areas choice is made before launch.',
+        'A reservation request keeps the reserve ad even when its click-through is weak. Day 21 still decides the container from deposits, quotes and calls, not from this desk.',
       ],
     }
   }
@@ -361,6 +379,7 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint }) {
     const rows = ANGLES.map((angle) => {
       const cell = cells[set.id][angle.id]
       return {
+        id: angle.id,
         set: set.name,
         name: angle.name,
         impressions: num(cell.impressions),
@@ -369,14 +388,14 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint }) {
       }
     })
     for (const row of rows) {
-      const verdict = judgeRow(row, rows)
+      const verdict = applyReserve(judgeRow(row, rows), row.id, reserves)
       if (verdict.tone === 'keep') ranked.push({ ...row, rate: row.clicks / row.impressions })
       if (verdict.tone === 'pause') {
-        lines.push(`Pause ${row.name.toLowerCase()} inside ${set.name.toLowerCase()}. ${verdict.detail}`)
+        lines.push(`Pause the ${row.name.toLowerCase()} ad. ${verdict.detail}`)
       }
     }
     const freq = num(frequency[set.id])
-    if (checkpoint === '7' && freq >= 2.5) {
+    if ((checkpoint === '4' || checkpoint === '10') && freq >= 2.5) {
       lines.push(
         `${set.name} frequency is ${freq.toFixed(1)} before day 10. The audience is repeating. Add one related interest. Do not raise the daily budget.`,
       )
@@ -386,43 +405,31 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint }) {
   ranked.sort((a, b) => b.rate - a.rate)
   if (ranked[0]) {
     lines.unshift(
-      `Lead creative is ${ranked[0].name.toLowerCase()} for ${ranked[0].set.toLowerCase()} at ${pct(ranked[0].rate)} link CTR.`,
+      `Lead creative is ${ranked[0].name.toLowerCase()} at ${pct(ranked[0].rate)} link CTR. Keep it inside the buy that was signed.`,
     )
   } else if (anyNumbers) {
     lines.unshift('No ad has cleared 1.5% link CTR on 1,000 impressions yet. Keep the flight as it is.')
   }
 
-  const civil = totals.civil
-  const farm = totals.farm
-  if (checkpoint === '7') {
-    lines.push('Day 7 leaves the NZ$18 / NZ$18 split in place. Regions and age bands are a note, not a new target.')
-  } else if (civil.impressions >= 3000 && farm.impressions >= 3000) {
-    const civilRate = civil.clicks / civil.impressions
-    const farmRate = farm.clicks / farm.impressions
-    if (civilRate < farmRate * 0.6) {
-      lines.push(
-        'Farm and station is the clearer audience. Move daily budget toward it and keep at least NZ$10 a day on civil so the comparison stays valid.',
-      )
-    } else if (farmRate < civilRate * 0.6) {
-      lines.push(
-        'Civil and earthmoving is the clearer audience. Move daily budget toward it and keep at least NZ$10 a day on farm.',
-      )
-    } else {
-      lines.push('The two audiences are close. Keep NZ$18 a day on each.')
-    }
+  if (checkpoint === '4') {
+    lines.push(
+      'Day 4 concentrates this buy’s daily budget on the ads you keep. It does not redraw the geography, and it does not narrow age.',
+    )
   } else if (anyNumbers) {
-    lines.push('Wait for about 3,000 impressions in each audience before moving budget between them.')
+    lines.push(
+      'Pause weak ads so the budget moves to the winners inside the signed buy. Age stays a breakdown.',
+    )
   }
 
   const regionLeader = [...regionClicks].sort((a, b) => b.clicks - a.clicks)[0]
   if (regionTotal > 0 && regionLeader) {
-    if (regionLeader.clicks >= 150 && checkpoint !== '7') {
+    if (regionLeader.clicks >= 150 && checkpoint !== '4') {
       lines.push(
-        `${regionLeader.name} has ${regionLeader.clicks.toLocaleString('en-NZ')} link clicks. That area leads the next opening line and the container mix. It still does not get its own ad set in this test.`,
+        `${regionLeader.name} has ${regionLeader.clicks.toLocaleString('en-NZ')} link clicks. That area leads the next opening line and the container mix. On a nationwide buy this is a breakdown. On a five-area buy this area already has its budget.`,
       )
     } else {
       lines.push(
-        `${regionLeader.name} leads on link clicks (${regionLeader.clicks.toLocaleString('en-NZ')}). No area has 150 yet, so no area earns its own budget.`,
+        `${regionLeader.name} leads on link clicks (${regionLeader.clicks.toLocaleString('en-NZ')}). No area has 150 yet, so the geography signed on day 0 stays as it is.`,
       )
     }
   }
@@ -430,9 +437,9 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint }) {
   const ageLeader = [...ageClicks].sort((a, b) => b.clicks - a.clicks)[0]
   if (ageTotal > 0 && ageLeader && ageLeader.clicks / ageTotal >= 0.4) {
     const share = Math.round((ageLeader.clicks / ageTotal) * 100)
-    if (checkpoint === '7') {
+    if (checkpoint === '4') {
       lines.push(
-        `${ageLeader.name} has ${share}% of the age-band clicks. Record it. Do not narrow the target until day 14, and only if that band’s own CTR is at least 1.3× the campaign with 800 impressions in the band.`,
+        `${ageLeader.name} has ${share}% of the age-band clicks. Record it. Do not narrow the target at day 4. On day 10, narrow only if that band’s own CTR is at least 1.3× the campaign and the band has 800 impressions.`,
       )
     } else {
       lines.push(
@@ -443,7 +450,7 @@ function buildReadout({ cells, frequency, regions, ages, checkpoint }) {
 
   if (checkpoint === '21') {
     lines.push(
-      'Day 21 does not order the container from this desk. Take the winning angle, audience, area and age into the meeting, and apply the inquiry rule separately.',
+      'Day 21 does not order the container from this desk. Take the winning angle, area and age into the meeting with the inquiry sheet, including the carriers people named.',
     )
   }
 
