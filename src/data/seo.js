@@ -382,6 +382,17 @@ export const routes = [
     includeInSitemap: false,
   },
   {
+    path: '/marketing',
+    file: 'marketing/index.html',
+    title: `21-day demand test | ${siteName}`,
+    description:
+      'Internal brief for a 21-day New Zealand demand test before the next container order. Unlisted.',
+    keywords: 'Site Machinery marketing brief',
+    canonical: `${contact.siteUrl}/marketing`,
+    robots: 'noindex, nofollow',
+    includeInSitemap: false,
+  },
+  {
     path: '/idm/prospects',
     file: 'idm/prospects/index.html',
     title: `Prospect List | Office Workspace | ${siteName}`,

@@ -19,6 +19,7 @@ import { forNelsonNationwideHtml } from '../content/for-nelson-nationwide'
 import { productsHubHtml } from '../content/products-hub'
 import ScreeningRecommendationPage from './ScreeningRecommendationPage'
 import ImageCatalogPage from './ImageCatalogPage'
+import MarketingPage from './marketing/MarketingPage'
 import ProspectsPage from './office/ProspectsPage'
 import CommercialsHubPage from './commercials/CommercialsHubPage'
 import GrizzlyCommercialPage from './commercials/GrizzlyCommercialPage'
@@ -59,4 +60,5 @@ export {
   GrizzlyCommercialPage,
   VibratoryCommercialPage,
   ProspectsPage,
+  MarketingPage,
 }

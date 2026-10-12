@@ -55,6 +55,18 @@ export default function CommercialsHubPage() {
         </p>
       </div>
 
+      <h2 className="commercials-section-label">Management brief</h2>
+      <div className="commercials-grid commercials-grid-compact">
+        <article className="commercials-card is-active">
+          <div className="commercials-card-status">Unlisted · /marketing</div>
+          <h2>21-day container test</h2>
+          <p>Spend, regions, ad angles and the order / hold / stop rule for the China shipment.</p>
+          <Link to="/marketing" className="equipment-cta">
+            Open brief
+          </Link>
+        </article>
+      </div>
+
       <h2 className="commercials-section-label">Promo drafts</h2>
       <div className="commercials-grid commercials-grid-compact">
         {promos.map((promo) => (

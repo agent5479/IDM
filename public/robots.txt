@@ -30,6 +30,7 @@ Allow: /
 
 # Keep internal drafts and archive content out of search results
 Disallow: /idm/
+Disallow: /marketing
 Disallow: /legacy/
 Disallow: /drafts/
 

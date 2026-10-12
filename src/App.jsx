@@ -24,6 +24,7 @@ import {
   Slg78Page,
   StaticGrizzlyPage,
   TelehandlerBinsPage,
+  MarketingPage,
   VibratoryCommercialPage,
   VideosPage,
 } from './pages'
@@ -51,6 +52,7 @@ export default function App() {
     <BrowserRouter>
       <ScrollManager />
       <Routes>
+        <Route path="/marketing" element={<MarketingPage />} />
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
