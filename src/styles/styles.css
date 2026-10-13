@@ -3173,7 +3173,7 @@ textarea:focus-visible {
   top: 0;
   z-index: 4;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr) auto;
   gap: 8px;
   margin: 8px -24px 28px;
   padding: 12px 24px;
@@ -3213,6 +3213,89 @@ textarea:focus-visible {
 .mkt-jump a:hover {
   border-color: var(--mkt-amber);
   color: var(--mkt-amber);
+}
+
+.mkt-toggle-all {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--mkt-amber);
+  background: var(--mkt-amber-soft);
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mkt-toggle-all:hover {
+  border-color: var(--mkt-amber);
+}
+
+.mkt-gist {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  margin: 10px 0 0;
+}
+
+.mkt-more {
+  margin-top: 14px;
+  border-top: 1px dashed var(--mkt-line);
+}
+
+.mkt-more > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 4px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--mkt-amber);
+  cursor: pointer;
+  list-style: none;
+}
+
+.mkt-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.mkt-more > summary::before {
+  content: '+';
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: var(--mkt-amber-soft);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.mkt-more[open] > summary::before {
+  content: '−';
+}
+
+.mkt-more > summary:hover {
+  text-decoration: underline;
+}
+
+.mkt-more-body {
+  padding-top: 8px;
+}
+
+.mkt-more-body > :first-child {
+  margin-top: 0;
+}
+
+.mkt-days .mkt-more,
+.mkt-ad .mkt-more {
+  margin-top: 8px;
+}
+
+.mkt-sources .mkt-more {
+  border-top: 0;
 }
 
 .mkt-part {
@@ -3705,7 +3788,8 @@ textarea:focus-visible {
 }
 
 .mkt-days {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
 }
 
 .mkt-ad-shot {
@@ -4183,6 +4267,10 @@ textarea:focus-visible {
 @media (max-width: 900px) {
   .mkt-jump {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .mkt-toggle-all {
+    grid-column: 1 / -1;
   }
 }
 

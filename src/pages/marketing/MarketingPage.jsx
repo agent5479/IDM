@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SEO from '../../components/SEO'
 import MarketingReadout from './MarketingReadout'
@@ -93,6 +94,21 @@ function people(amount) {
   return amount.toLocaleString('en-NZ')
 }
 
+function More({ label, children }) {
+  return (
+    <details className="mkt-more">
+      <summary>{label}</summary>
+      <div className="mkt-more-body">{children}</div>
+    </details>
+  )
+}
+
+function setAllPanels(open) {
+  document.querySelectorAll('.mkt details.mkt-more').forEach((panel) => {
+    panel.open = open
+  })
+}
+
 const SOURCE_FILMS = [
   {
     code: 'DbkToXKs-Et',
@@ -117,6 +133,21 @@ const SOURCE_FILMS = [
 ]
 
 export default function MarketingPage() {
+  const [allOpen, setAllOpen] = useState(false)
+
+  useEffect(() => {
+    const openForPrint = () => setAllPanels(true)
+    window.addEventListener('beforeprint', openForPrint)
+    return () => window.removeEventListener('beforeprint', openForPrint)
+  }, [])
+
+  function toggleAll() {
+    const panels = [...document.querySelectorAll('.mkt details.mkt-more')]
+    const next = !panels.every((panel) => panel.open)
+    setAllPanels(next)
+    setAllOpen(next)
+  }
+
   return (
     <div className="mkt">
       <SEO pathname="/marketing" />
@@ -174,6 +205,9 @@ export default function MarketingPage() {
           <a href="#part-weeks"><span>02</span>The weeks</a>
           <a href="#part-setup"><span>03</span>Set up</a>
           <a href="#part-judge"><span>04</span>Judge</a>
+          <button type="button" className="mkt-toggle-all" onClick={toggleAll}>
+            {allOpen ? 'Close all detail' : 'Open all detail'}
+          </button>
         </nav>
 
         <div className="mkt-part" id="part-decide">
@@ -206,17 +240,20 @@ export default function MarketingPage() {
                   <strong>{nz(NATION_FOLLOW)}</strong>
                 </li>
               </ul>
-              <h4 className="mkt-for">What this path is for</h4>
-              <ul>
-                <li>Week one is one campaign. Day 7 reads where the clicks and calls came from, including places outside the five areas.</li>
-                <li>From day 8 the {nz(META_DAILY)} a day moves into separate campaigns for the areas that responded. A silent area comes off. A place that showed up, and was not on the original five, can be added.</li>
-                <li>Facebook and Instagram stay {nz(META_TOTAL)} if the daily rate stays {nz(META_DAILY)}. With Trade Me the ceiling is {nz(APPROVAL)}.</li>
-              </ul>
-              <h4 className="mkt-against">What you give up</h4>
-              <ul>
-                <li>Auckland and Northland hold about half the people in the five areas, so most of week one will land there. Nelson and the south can look quiet because they were rarely shown the ad.</li>
-                <li>The regional campaigns start on day 8, so they have 14 days to gather a readable sample, not 21.</li>
-              </ul>
+              <p className="mkt-gist">The map is a result. Week one finds where interest is, including places outside the five areas.</p>
+              <More label="What it is for, and what it gives up">
+                <h4 className="mkt-for">What this path is for</h4>
+                <ul>
+                  <li>Week one is one campaign. Day 7 reads where the clicks and calls came from, including places outside the five areas.</li>
+                  <li>From day 8 the {nz(META_DAILY)} a day moves into separate campaigns for the areas that responded. A silent area comes off. A place that showed up, and was not on the original five, can be added.</li>
+                  <li>Facebook and Instagram stay {nz(META_TOTAL)} if the daily rate stays {nz(META_DAILY)}. With Trade Me the ceiling is {nz(APPROVAL)}.</li>
+                </ul>
+                <h4 className="mkt-against">What you give up</h4>
+                <ul>
+                  <li>Auckland and Northland hold about half the people in the five areas, so most of week one will land there. Nelson and the south can look quiet because they were rarely shown the ad.</li>
+                  <li>The regional campaigns start on day 8, so they have 14 days to gather a readable sample, not 21.</li>
+                </ul>
+              </More>
             </article>
             <article className="mkt-panel mkt-choice">
               <p className="mkt-panel-label">Path 2 · Regions from day one</p>
@@ -231,17 +268,20 @@ export default function MarketingPage() {
                   <strong>{nz(TRADEME_BASELINE)}</strong>
                 </li>
               </ul>
-              <h4 className="mkt-for">What this path is for</h4>
-              <ul>
-                <li>Skip the national week. Waikato, Canterbury, Auckland, Otago and Nelson are shown the machines for all {DAYS} days, and the ad can match the machine that area needs.</li>
-                <li>Day 4 and day 10 move money toward the areas and the ads that produce enquiries. Adapting means shifting the budget, not discovering a new map.</li>
-                <li>With Trade Me the drafted total is {nz(AREA_APPROVAL)}.</li>
-              </ul>
-              <h4 className="mkt-against">What you give up</h4>
-              <ul>
-                <li>Hawke’s Bay, Wellington, Taranaki and the rest never see the ads, so a strong pocket outside the five stays invisible.</li>
-                <li>At {nz(CELL_TOTAL)} per ad per area, day 4 often arrives before 1,000 people have seen the ad. Judging each area properly, at {nz(META_DAILY)} a day in each, is {nz(LEARN_TOTAL)} on Facebook and Instagram.</li>
-              </ul>
+              <p className="mkt-gist">The map is the bet. All {DAYS} days go into the five markets, Nelson included.</p>
+              <More label="What it is for, and what it gives up">
+                <h4 className="mkt-for">What this path is for</h4>
+                <ul>
+                  <li>Skip the national week. Waikato, Canterbury, Auckland, Otago and Nelson are shown the machines for all {DAYS} days, and the ad can match the machine that area needs.</li>
+                  <li>Day 4 and day 10 move money toward the areas and the ads that produce enquiries. Adapting means shifting the budget, not discovering a new map.</li>
+                  <li>With Trade Me the drafted total is {nz(AREA_APPROVAL)}.</li>
+                </ul>
+                <h4 className="mkt-against">What you give up</h4>
+                <ul>
+                  <li>Hawke’s Bay, Wellington, Taranaki and the rest never see the ads, so a strong pocket outside the five stays invisible.</li>
+                  <li>At {nz(CELL_TOTAL)} per ad per area, day 4 often arrives before 1,000 people have seen the ad. Judging each area properly, at {nz(META_DAILY)} a day in each, is {nz(LEARN_TOTAL)} on Facebook and Instagram.</li>
+                </ul>
+              </More>
             </article>
           </div>
           <div className="mkt-callout">
@@ -383,7 +423,7 @@ export default function MarketingPage() {
             </div>
           </div>
 
-          <h3 className="mkt-subhead">Trade Me finds people already shopping</h3>
+          <More label={`Trade Me: ${nz(TRADEME_BASELINE)} of listings, fee bands, and the price test`}>
           <p>
             List three machines as ordinary classifieds. Skip bold titles, features and other
             extras. A classified has no success fee. Each listing runs 14 days, and renewing it on
@@ -434,9 +474,9 @@ export default function MarketingPage() {
             comes from the Facebook and Instagram report. Any extra container item beyond the three
             core models adds another fee from the same table, still with no extras.
           </p>
+          </More>
 
-          <div className="mkt-callout">
-            <h3>What the advertising spend can tell us</h3>
+          <More label="What the advertising spend can, and cannot, tell us">
             <p>
               If a click costs about {nz(2)}, the national campaign’s {nz(META_TOTAL)} brings on the
               order of 380 visits, and the five-area {nz(ORIGINAL_TOTAL)} brings on the order of
@@ -446,7 +486,7 @@ export default function MarketingPage() {
               weeks will miss some of them. That is why deposits, quotes and the phone round sit
               beside the clicks.
             </p>
-          </div>
+          </More>
         </section>
 
         <section id="where" className="mkt-section">
@@ -516,6 +556,7 @@ export default function MarketingPage() {
             </div>
           </div>
 
+          <More label="Area by area: who works there, the pitch, and the machine">
           <div className="mkt-regions">
             {regions.map((region) => (
               <article key={region.id} className={`mkt-region mkt-region-${region.id}`}>
@@ -552,6 +593,7 @@ export default function MarketingPage() {
               </article>
             ))}
           </div>
+          </More>
         </section>
 
         <section id="who" className="mkt-section">
@@ -575,6 +617,8 @@ export default function MarketingPage() {
             </article>
             <article className="mkt-panel">
               <h3>What to enter in Meta</h3>
+              <p className="mkt-gist">Age 25–64, gender open, trade interests, and the location the signed path sets.</p>
+              <More label="Full Meta settings">
               <dl className="mkt-specs">
                 <div>
                   <dt>Age</dt>
@@ -609,6 +653,7 @@ export default function MarketingPage() {
                   <dd>Use them in the copy. Meta’s job-title match in New Zealand is too thin to be the target.</dd>
                 </div>
               </dl>
+              </More>
             </article>
           </div>
         </section>
@@ -627,6 +672,7 @@ export default function MarketingPage() {
                 any Instagram placement spends. Until then, the edited films can still run on the
                 Facebook page.
               </p>
+              <More label="Placements and why both apps">
               <p>
                 Three advertisements. Path 1 runs them nationally for the first week, then in the
                 areas that responded. Path 2 runs them in the five areas from day one. Show them in
@@ -636,6 +682,7 @@ export default function MarketingPage() {
                 a younger operator or a landscaper. Same budget. The placement report says which
                 one earned the click.
               </p>
+              </More>
               <p className="mkt-cost">
                 Path 1 {nz(META_DAILY)} a day · Path 2 {nz(ORIGINAL_DAILY)} a day drafted
               </p>
@@ -648,6 +695,7 @@ export default function MarketingPage() {
                 calls from those listings join the enquiry count. They are evidence for the
                 container. They are not how we learn which age group responded.
               </p>
+              <More label="How to list">
               <p>
                 One plain classified per model, or per container item. No bold title, no feature,
                 no super feature. Read views, watchlist adds and questions on each listing.
@@ -660,6 +708,7 @@ export default function MarketingPage() {
                 items the site already describes that way, the listing says “next container,
                 reserve now”.
               </p>
+              </More>
               <p className="mkt-cost">{nz(TRADEME_BASELINE)} for three core models · listing fees only</p>
             </article>
             <article className="mkt-channel-off">
@@ -727,6 +776,7 @@ export default function MarketingPage() {
               <p className="mkt-ad-index">Cost-saving · civil and landscaping</p>
               <h3>Stop paying the tip and the truck.</h3>
               <p className="mkt-ad-shot">Spoil on site, then screened product. Land on the homepage calculator.</p>
+              <More label="Copy and limits">
               <p>
                 Lead with tip fees and trucking. The only dollar-per-cubic-metre figure on the site
                 is the profit calculator: saleable product at NZ$20–$45/m³, opening at NZ$32, with
@@ -737,11 +787,13 @@ export default function MarketingPage() {
                 Do not say the machine pays for itself in two or three jobs. The site does not show
                 that, and a savings claim you cannot substantiate is a Fair Trading Act problem.
               </p>
+              </More>
             </article>
             <article className="mkt-ad">
               <p className="mkt-ad-index">Demo · farmers</p>
               <h3>Watch it run.</h3>
               <p className="mkt-ad-shot">15–20 seconds. Machine running, carrier loading it. Land on the farmers page.</p>
+              <More label="Copy and limits">
               <p>
                 Cut 15–20 seconds from Rob’s Proscreen Australia reels, then caption them for New
                 Zealand. Vertical 9:16, hook in the first two seconds, a bucket or a person in
@@ -752,11 +804,13 @@ export default function MarketingPage() {
                 The 68V is bucket-fed. Do not show it towed behind a ute. The “no engine” line stays
                 on the grizzly, not on a Proscreen.
               </p>
+              </More>
             </article>
             <article className="mkt-ad">
               <p className="mkt-ad-index">Reserve · container items</p>
               <h3>Next shipment. Reserve one.</h3>
               <p className="mkt-ad-shot">The machine, the arrival, and a way to reserve. Land on the next-container page.</p>
+              <More label="Copy and limits">
               <p>
                 Use this only for items the site already puts on the next container. The additional
                 range says that today. The homepage machines are the in-stock range, so do not tell
@@ -767,9 +821,11 @@ export default function MarketingPage() {
                 Rates in any of the three ads: 68V 15–20, 78 15–25, 108 25–40 m³/hour. High output
                 is the 108 only.
               </p>
+              </More>
             </article>
           </div>
 
+          <More label="Rates to claim, footage rules, and what not to show">
           <div className="mkt-table-wrap">
             <table className="mkt-table">
               <caption>Rates to use in the ads. Cubic metres per hour, by model.</caption>
@@ -824,6 +880,7 @@ export default function MarketingPage() {
               <p>The 68V is not a ute-tow shot. The “no engine” line is the grizzly, not a Proscreen. High output is the 108 only.</p>
             </article>
           </div>
+          </More>
         </section>
 
         <div className="mkt-part" id="part-judge">
@@ -877,6 +934,7 @@ export default function MarketingPage() {
             </li>
           </ol>
 
+          <More label="The thresholds: frequency, click-through, cost per click, age and area">
           <div className="mkt-rules">
             <article>
               <h3>Impressions and frequency</h3>
@@ -920,7 +978,9 @@ export default function MarketingPage() {
               </p>
             </article>
           </div>
+          </More>
 
+          <More label="Ads Manager columns, and how to pull the report">
           <h3 className="mkt-subhead">Columns to turn on in Ads Manager</h3>
           <ul className="mkt-chips">
             <li>Impressions</li>
@@ -939,13 +999,15 @@ export default function MarketingPage() {
             clicks and form submits are recorded. Until that pixel is live, link clicks plus the
             call sheet are the record.
           </p>
+          </More>
 
-          <h3 className="mkt-subhead">Readout desk</h3>
+          <More label="Readout desk: type the report in, get keep, hold or pause">
           <p>
-            Type the report in below. The desk applies the day-4, day-10 or day-21 rules. It shows
-            which advertisement to keep. The container decision stays with the enquiry count.
+            The desk applies the day-4, day-7, day-10 or day-21 rules. It shows which
+            advertisement to keep. The container decision stays with the enquiry count.
           </p>
           <MarketingReadout />
+          </More>
         </section>
 
         <section id="outside" className="mkt-section">
@@ -957,6 +1019,7 @@ export default function MarketingPage() {
             pre-order or a deposit. A deposit, with the machine they run named, is stronger
             evidence for a container than any click rate.
           </p>
+          <More label="Who to call, what to ask, and free group posts">
           <div className="mkt-rules">
             <article>
               <h3>Who to call</h3>
@@ -971,6 +1034,7 @@ export default function MarketingPage() {
               <p>Facebook buy-and-sell and contractor groups are worth a post where the group rules allow a commercial listing. Same footage. Code word SM-GRP. No paid boost.</p>
             </article>
           </div>
+          </More>
         </section>
 
         <section id="container" className="mkt-section">
@@ -983,6 +1047,7 @@ export default function MarketingPage() {
             transit time before anyone assumes the machines make the pre-Christmas season. The
             meeting question is whether stock landing in January or February is still a useful buy.
           </p>
+          <More label="Box size, landed margin, and units that sit">
           <div className="mkt-rules">
             <article>
               <h3>Match the box to the enquiries</h3>
@@ -997,6 +1062,7 @@ export default function MarketingPage() {
               <p>If machines are still unsold after they land, a Trade Me auction is how to clear them. The three-week test itself uses ordinary classifieds.</p>
             </article>
           </div>
+          </More>
         </section>
 
         <section id="decision" className="mkt-section">
@@ -1067,6 +1133,8 @@ export default function MarketingPage() {
           <div className="mkt-days">
             <article>
               <h3>Day 0</h3>
+              <p className="mkt-gist">Sign the path, install tracking, cut the ads.</p>
+              <More label="Detail">
               <p>
                 Install the Meta pixel before any spend. Track clicks on 027 521 2126 and contact
                 form submits. Create the Site Machinery Instagram and connect it to the Facebook
@@ -1074,52 +1142,68 @@ export default function MarketingPage() {
                 landing page, with link tags. The executive path is already chosen. Draft one
                 Trade Me listing per model. Agree the code words. Start the call list.
               </p>
+              </More>
             </article>
             <article>
               <h3>Day 4</h3>
+              <p className="mkt-gist">First report. Pause a clear loser.</p>
+              <More label="Detail">
               <p>
                 First look at the report. Pause an ad only when 1,000 people have seen it and it is
                 clearly behind the others. On the national path, stay national until day 7. On the
                 regional path, move that area’s money toward the ads people open. Keep the reserve
                 ad if people have asked to reserve a machine.
               </p>
+              </More>
             </article>
             <article>
               <h3>Day 7</h3>
+              <p className="mkt-gist">Path 1 hands off to the areas that responded.</p>
+              <More label="Detail">
               <p>
                 On the national path, this is the handoff. Areas with clicks or enquiries become
                 the campaigns for the next two weeks, and the {nz(META_DAILY)} a day moves onto
                 them. A silent area comes off. On the regional path, day 7 is another look inside
                 the five campaigns, not a new map.
               </p>
+              </More>
             </article>
             <article>
               <h3>Day 10</h3>
+              <p className="mkt-gist">Adapt inside the live campaigns.</p>
+              <More label="Detail">
               <p>
                 Adapt inside the campaigns that are now live. Pause whatever is still clearly last.
                 Note the leading age and the areas still running. Those areas are the container mix
                 to watch.
               </p>
+              </More>
             </article>
             <article>
               <h3>Day 14</h3>
+              <p className="mkt-gist">Renew Trade Me free. Compare listings.</p>
+              <More label="Detail">
               <p>
                 Renew the Trade Me classifieds at no charge. Compare watchlists and questions on
                 each listing, and the priced listing with the unpriced one. Leave promotional
                 extras off.
               </p>
+              </More>
             </article>
             <article>
               <h3>Day 21</h3>
+              <p className="mkt-gist">Apply the bar. Order, hold, or stop.</p>
+              <More label="Detail">
               <p>
                 Apply the bar above. The machines people named are the container mix. The report —
                 winning ad, area, age, Feed or Reels, and cost per click — is what a follow-up
                 campaign would open with.
               </p>
+              </More>
             </article>
           </div>
 
-          <h3 className="mkt-subhead">Set this up before the first dollar</h3>
+          <More label="Set this up before the first dollar: pixel, phone, landing pages, code words">
           <p>
             The site has no Meta pixel today. Install it, and the two events below, before any ad
             spends. Also keep an email where someone will leave one. The pixel records interest. The
@@ -1139,6 +1223,7 @@ export default function MarketingPage() {
             <li>Meta ads say “mention SM-FB” and use utm_source=meta plus utm_content for the ad</li>
             <li>Trade Me says “mention SM-TM”. The phone round is SM-PH. Group posts, where the rules allow, are SM-GRP</li>
           </ul>
+          </More>
         </section>
 
         <section id="ask" className="mkt-section">
@@ -1179,7 +1264,7 @@ export default function MarketingPage() {
         </section>
 
         <footer className="mkt-sources">
-          <h2>Sources</h2>
+          <More label="Sources">
           <ul>
             <li>
               Population and the cited growth rates: Stats NZ, Subnational population estimates at
@@ -1194,6 +1279,7 @@ export default function MarketingPage() {
               the homepage profit calculator (saleable price NZ$20–$45/m³, opening at NZ$32).
             </li>
           </ul>
+          </More>
           <p>
             <Link to="/">Public site</Link>
             <Link to="/idm/commercials">Commercials workspace</Link>
