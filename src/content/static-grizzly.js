@@ -18,8 +18,25 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
 
   <div style="margin: 40px 0; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 20px;">
     <h2 style="color: #b34700; margin-bottom: 20px; text-align: center;">See It In Action</h2>
-    <div class="video-container" style="max-width: 800px; margin: 0 auto;">
-      <iframe src="https://player.vimeo.com/video/1129896297" width="100%" height="450" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="border-radius: 12px;"></iframe>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+      <div>
+        <div class="video-container">
+          <iframe src="https://player.vimeo.com/video/1129896297" width="100%" height="280" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="SLG-78 Static Grizzly screening" style="border-radius: 12px;"></iframe>
+        </div>
+        <p style="color: #555555; margin-top: 12px; text-align: center;">SLG-78 Static Grizzly screening dirt</p>
+      </div>
+      <div>
+        <div class="video-container">
+          <iframe src="https://player.vimeo.com/video/1123779281" width="100%" height="280" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="SLG-78 Grizzly" style="border-radius: 12px;"></iframe>
+        </div>
+        <p style="color: #555555; margin-top: 12px; text-align: center;">SLG-78 Grizzly on the job</p>
+      </div>
+      <div>
+        <div class="video-container">
+          <iframe src="https://player.vimeo.com/video/1130937806" width="100%" height="280" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="SLG-108 Grizzly with excavator" style="border-radius: 12px;"></iframe>
+        </div>
+        <p style="color: #555555; margin-top: 12px; text-align: center;">SLG-108 Grizzly with excavator</p>
+      </div>
     </div>
   </div>
 

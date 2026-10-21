@@ -47,8 +47,10 @@ export const additionalProductsHtml = `<!-- Page Content -->
     <h2 style="color: #b34700; margin-bottom: 10px;">Grizzly bar</h2>
     <p style="color: #555555; margin-bottom: 24px;">Bar-style oversize separation — not the mesh SLG-78 / SLG-108 Static Grizzlies already advertised.</p>
     <div class="catalog-sku-card catalog-sku-wide">
-      <div class="catalog-sku-media">
-        <img src="/images/grizzly2.jpg" alt="DeSite grizzly screening equipment">
+      <div class="product-gallery" style="margin-bottom: 20px;">
+        <img src="/images/catalog/grizzly-bar.webp" alt="DeSite grizzly bar">
+        <img src="/images/catalog/grizzly-bar-action.webp" alt="DeSite grizzly bar screening oversize">
+        <img src="/images/catalog/grizzly-bar-main.webp" alt="DeSite grizzly bar on site">
       </div>
       <p style="color: #b34700; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
       <h3 style="color: #b34700; margin-bottom: 12px;">DeSite Grizzly Bar</h3>
@@ -102,7 +104,7 @@ export const additionalProductsHtml = `<!-- Page Content -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
       <div class="catalog-sku-card">
         <div class="catalog-sku-media">
-          <img src="/images/catalog/xd-35.webp" alt="DeSite Xtreme Duty dump trailer XD 35">
+          <img src="/images/catalog/xd-35-in-action.webp" alt="DeSite XD 35 dump trailer in action">
         </div>
         <p style="color: #b34700; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
         <h3 style="color: #b34700; margin-bottom: 12px;">XD 35</h3>
@@ -111,7 +113,7 @@ export const additionalProductsHtml = `<!-- Page Content -->
       </div>
       <div class="catalog-sku-card">
         <div class="catalog-sku-media">
-          <img src="/images/catalog/xd-55.webp" alt="DeSite Xtreme Duty dump trailer XD 55">
+          <img src="/images/catalog/xd-55-in-action.webp" alt="DeSite XD 55 dump trailer in action">
         </div>
         <p style="color: #b34700; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
         <h3 style="color: #b34700; margin-bottom: 12px;">XD 55</h3>
@@ -120,7 +122,7 @@ export const additionalProductsHtml = `<!-- Page Content -->
       </div>
       <div class="catalog-sku-card">
         <div class="catalog-sku-media">
-          <img src="/images/catalog/xd-80.webp" alt="DeSite Xtreme Duty dump trailer XD 80">
+          <img src="/images/catalog/xd-80-in-action.webp" alt="DeSite XD 80 dump trailer in action">
         </div>
         <p style="color: #b34700; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
         <h3 style="color: #b34700; margin-bottom: 12px;">XD 80</h3>
@@ -154,7 +156,7 @@ export const additionalProductsHtml = `<!-- Page Content -->
       </div>
       <div class="catalog-sku-card">
         <div class="catalog-sku-media">
-          <img src="/images/catalog/bin-1yd.webp" alt="DeSite 1 yard construction bin">
+          <img src="/images/catalog/bin-1-in-action.webp" alt="DeSite 1 yard bin in action">
         </div>
         <p style="color: #b34700; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px;">Available to order</p>
         <h3 style="color: #b34700; margin-bottom: 12px;">1 yard bin</h3>
@@ -185,6 +187,37 @@ export const additionalProductsHtml = `<!-- Page Content -->
         <h3 style="color: #b34700; margin-bottom: 12px;">Bucket Transport Lugs</h3>
         <p style="color: #2c2c2c; line-height: 1.8; margin-bottom: 16px;">Move the screener around the job with the carrier bucket — no wheels, axle or hitch. Optional on Proscreen and Static Grizzly models.</p>
         <p style="color: #555555; font-size: 0.95rem; font-style: italic;">Available to order for next shipment</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 50px;">
+    <h2 style="color: #b34700; margin-bottom: 10px; text-align: center;">Orderable range in action</h2>
+    <p style="color: #555555; margin-bottom: 24px; text-align: center;">Manufacturer footage of the attachments and minis we can put on the next container.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+      <div>
+        <div class="video-container">
+          <iframe src="https://player.vimeo.com/video/1147327954" width="100%" height="260" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="Mule bin in action" style="border-radius: 12px;"></iframe>
+        </div>
+        <p style="color: #555555; margin-top: 12px; text-align: center;">Mule bin</p>
+      </div>
+      <div>
+        <div class="video-container">
+          <iframe src="https://player.vimeo.com/video/1050890237" width="100%" height="260" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="SR-2 ripper" style="border-radius: 12px;"></iframe>
+        </div>
+        <p style="color: #555555; margin-top: 12px; text-align: center;">SR-2 ripper</p>
+      </div>
+      <div>
+        <div class="video-container">
+          <iframe src="https://player.vimeo.com/video/975747519" width="100%" height="260" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="SR-3 ripper" style="border-radius: 12px;"></iframe>
+        </div>
+        <p style="color: #555555; margin-top: 12px; text-align: center;">SR-3 ripper</p>
+      </div>
+      <div>
+        <div class="video-container">
+          <iframe src="https://player.vimeo.com/video/1006286529" width="100%" height="260" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" title="SLG-56 mini" style="border-radius: 12px;"></iframe>
+        </div>
+        <p style="color: #555555; margin-top: 12px; text-align: center;">SLG-56 mini</p>
       </div>
     </div>
   </div>

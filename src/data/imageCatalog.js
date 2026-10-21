@@ -122,15 +122,23 @@ const localBins = [
 const localAdditional = [
   img('/images/catalog/slg-56.webp', 'DeSite SLG-56 Mini screener'),
   img('/images/catalog/slg-48.webp', 'DeSite SLG-48 Mini screener'),
+  img('/images/catalog/grizzly-bar.webp', 'DeSite grizzly bar'),
+  img('/images/catalog/grizzly-bar-action.webp', 'DeSite grizzly bar screening oversize'),
+  img('/images/catalog/grizzly-bar-main.webp', 'DeSite grizzly bar on site'),
   img('/images/catalog/mule-bin.webp', 'DeSite mule bin'),
   img('/images/catalog/sr2.webp', 'DeSite SR-2 skid-steer ripper'),
   img('/images/catalog/sr3.webp', 'DeSite SR-3 skid-steer ripper'),
   img('/images/catalog/xd-35.webp', 'DeSite Xtreme Duty dump trailer XD 35'),
+  img('/images/catalog/xd-35-in-action.webp', 'DeSite XD 35 dump trailer in action'),
   img('/images/catalog/xd-55.webp', 'DeSite Xtreme Duty dump trailer XD 55'),
+  img('/images/catalog/xd-55-in-action.webp', 'DeSite XD 55 dump trailer in action'),
   img('/images/catalog/xd-80.webp', 'DeSite Xtreme Duty dump trailer XD 80'),
+  img('/images/catalog/xd-80-in-action.webp', 'DeSite XD 80 dump trailer in action'),
+  img('/images/catalog/xd-80-main.webp', 'DeSite XD 80 dump trailer'),
   img('/images/catalog/tb-475.png', 'DeSite TB 4.75 yard construction bin'),
   img('/images/catalog/bin-2yd.webp', 'DeSite 2 yard construction bin'),
   img('/images/catalog/bin-1yd.webp', 'DeSite 1 yard construction bin'),
+  img('/images/catalog/bin-1-in-action.webp', 'DeSite 1 yard bin in action'),
 ]
 
 const localAccessories = [
@@ -144,6 +152,11 @@ const localInAction = [
   img('/images/screen8.jpg', 'Material being screened'),
   img('/images/screen9.jpg', 'Screened material output'),
   img('/images/screen10.jpg', 'Equipment on worksite'),
+  img('/images/catalog/grizzly-bar-action.webp', 'DeSite grizzly bar screening oversize'),
+  img('/images/catalog/xd-80-in-action.webp', 'DeSite XD 80 dump trailer in action'),
+  img('/images/catalog/xd-55-in-action.webp', 'DeSite XD 55 dump trailer in action'),
+  img('/images/catalog/xd-35-in-action.webp', 'DeSite XD 35 dump trailer in action'),
+  img('/images/catalog/bin-1-in-action.webp', 'DeSite 1 yard bin in action'),
 ]
 
 /** @type {{ id: string, title: string, href: string | null, images: { src: string, alt: string }[] }[]} */
