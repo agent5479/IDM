@@ -70,6 +70,7 @@ ${bodyHtml}
       <a href="/about">About Us</a>
       <a href="/photos">Photos</a>
       <a href="/image-catalog">Image Catalog</a>
+      <a href="/advertising-catalog">Advertising Catalog</a>
       <a href="/videos">Videos</a>
       <a href="/contact">Contact Us</a>
     </div>

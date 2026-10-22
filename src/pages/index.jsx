@@ -19,6 +19,7 @@ import { forAggregateRoadMetalHtml } from '../content/for-aggregate-and-road-met
 import { forNelsonNationwideHtml } from '../content/for-nelson-nationwide'
 import { productsHubHtml } from '../content/products-hub'
 import ScreeningRecommendationPage from './ScreeningRecommendationPage'
+import AdCatalogPage from './AdCatalogPage'
 import ImageCatalogPage from './ImageCatalogPage'
 import MarketingPage from './marketing/MarketingPage'
 import ProspectsPage from './office/ProspectsPage'
@@ -70,6 +71,7 @@ export const ForAggregateRoadMetalPage = () => <Page html={forAggregateRoadMetal
 export const ForNelsonNationwidePage = () => <Page html={forNelsonNationwideHtml} />
 export {
   ScreeningRecommendationPage,
+  AdCatalogPage,
   ImageCatalogPage,
   CommercialsHubPage,
   GrizzlyCommercialPage,

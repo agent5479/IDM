@@ -17,6 +17,7 @@ import { staticGrizzlyHtml } from '../content/static-grizzly.js'
 import { telehandlerBinsHtml } from '../content/telehandler-bins.js'
 import { videosHtml } from '../content/videos.js'
 import { buildMeshGuideHtml } from './meshGuideHtml.js'
+import { buildAdCatalogHtml } from './adCatalogHtml.js'
 import { buildImageCatalogHtml } from './imageCatalogHtml.js'
 import { buildStaticChrome } from './staticChrome.js'
 import { renderTestimonialsSection } from './testimonials.js'
@@ -88,6 +89,8 @@ export function getStaticPageHtml(pathname) {
     body = buildMeshGuideHtml()
   } else if (pathname === '/image-catalog') {
     body = buildImageCatalogHtml()
+  } else if (pathname === '/advertising-catalog') {
+    body = buildAdCatalogHtml()
   } else {
     body = pageBodies[pathname]
   }

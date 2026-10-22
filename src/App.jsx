@@ -13,6 +13,7 @@ import {
   ForAggregateRoadMetalPage,
   ForNelsonNationwidePage,
   HomePage,
+  AdCatalogPage,
   ImageCatalogPage,
   PhotosPage,
   ProductsHubPage,
@@ -59,6 +60,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/photos" element={<PhotosPage />} />
           <Route path="/image-catalog" element={<ImageCatalogPage />} />
+          <Route path="/advertising-catalog" element={<AdCatalogPage />} />
           <Route path="/prospects" element={<ProspectsPage />} />
           <Route path="/videos" element={<VideosPage />} />
           <Route path="/screening-recommendation" element={<ScreeningRecommendationPage />} />

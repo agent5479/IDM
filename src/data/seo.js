@@ -10,6 +10,7 @@ const ogImageSizes = {
   [`${contact.siteUrl}/images/Proscreen_68.jpg`]: { width: 300, height: 300 },
   [`${contact.siteUrl}/images/Proscreen78-flow-control.jpg`]: { width: 768, height: 435 },
   [`${contact.siteUrl}/images/grizzly3.jpg`]: { width: 1808, height: 1408 },
+  [`${contact.siteUrl}/ads/grizzly-vf-preorder.jpg`]: { width: 1080, height: 1350 },
   [`${contact.siteUrl}/images/farmers-hero.jpg`]: { width: 1920, height: 1280 },
   [`${contact.siteUrl}/images/Telehandler-bin_site_machinery.jpg`]: { width: 500, height: 327 },
 }
@@ -89,6 +90,20 @@ export const routes = [
     changefreq: 'monthly',
     priority: '0.7',
     schemaType: 'webPage',
+  },
+  {
+    path: '/advertising-catalog',
+    file: 'advertising-catalog/index.html',
+    title: `Advertising Catalog | 10% Pre-order | ${siteName}`,
+    description:
+      'Pre-order Site Machinery screeners landing in New Zealand and save 10%. SLG-78 Grizzly with riser box, or the vibrating feeder with flow control flaps.',
+    keywords:
+      'screener pre-order NZ, SLG-78 Grizzly, vibrating feeder, flow control flaps, 10% off screener, Site Machinery NZ',
+    canonical: `${contact.siteUrl}/advertising-catalog`,
+    changefreq: 'weekly',
+    priority: '0.8',
+    schemaType: 'webPage',
+    ogImage: `${contact.siteUrl}/ads/grizzly-vf-preorder.jpg`,
   },
   {
     path: '/videos',

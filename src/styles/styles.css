@@ -2997,6 +2997,35 @@ img[data-image-loaded="true"] {
   object-fit: cover;
 }
 
+.ad-catalog-video {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.ad-catalog-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  background: #111;
+}
+
+.ad-catalog-section p {
+  max-width: 720px;
+  color: #2c2c2c;
+  line-height: 1.7;
+}
+
+.ad-catalog-kicker {
+  color: #b34700;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.ad-catalog-offer {
+  background: rgba(179, 71, 0, 0.12);
+}
+
 .image-catalog-cta {
   margin-top: 40px;
 }

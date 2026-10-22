@@ -32,3 +32,7 @@ build/
 # Archive directory (contains backed up files)
 archive/
 
+# Local marketing source footage (large binaries, not for the site repo)
+marketing/preorder-30s/
+marketing/*.mp4
+
