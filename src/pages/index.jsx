@@ -1,5 +1,6 @@
 import HomeHero from '../components/HomeHero'
 import HtmlContent from '../components/HtmlContent'
+import TestimonialsSection from '../components/TestimonialsSection'
 import { homeHtml } from '../content/home'
 import { contactHtml } from '../content/contact'
 import { photosHtml } from '../content/photos'
@@ -26,8 +27,20 @@ import GrizzlyCommercialPage from './commercials/GrizzlyCommercialPage'
 import VibratoryCommercialPage from './commercials/VibratoryCommercialPage'
 import AboutPage from './AboutPage'
 
-function Page({ html }) {
-  return <HtmlContent html={html} />
+function Page({ html, testimonialsPage, testimonialsLimit = 4 }) {
+  return (
+    <>
+      <HtmlContent html={html} />
+      {testimonialsPage ? (
+        <TestimonialsSection
+          page={testimonialsPage}
+          limit={testimonialsLimit}
+          heading="Operator feedback"
+          intro="DeSite operators on machine performance and build — not NZ freight or list pricing."
+        />
+      ) : null}
+    </>
+  )
 }
 
 export { AboutPage }
@@ -41,11 +54,13 @@ export const ContactPage = () => <Page html={contactHtml} />
 export const PhotosPage = () => <Page html={photosHtml} />
 export const VideosPage = () => <Page html={videosHtml} />
 export const ProductsHubPage = () => <Page html={productsHubHtml} />
-export const Slg108Page = () => <Page html={slg108Html} />
-export const Slg78Page = () => <Page html={slg78Html} />
-export const Slg78FlowPage = () => <Page html={slg78FlowHtml} />
-export const Slg68Page = () => <Page html={slg68Html} />
-export const StaticGrizzlyPage = () => <Page html={staticGrizzlyHtml} />
+export const Slg108Page = () => <Page html={slg108Html} testimonialsPage="slg-108vfrb" />
+export const Slg78Page = () => <Page html={slg78Html} testimonialsPage="slg-78vf" />
+export const Slg78FlowPage = () => <Page html={slg78FlowHtml} testimonialsPage="slg-78vf-flow" />
+export const Slg68Page = () => <Page html={slg68Html} testimonialsPage="slg-68v" />
+export const StaticGrizzlyPage = () => (
+  <Page html={staticGrizzlyHtml} testimonialsPage="static-grizzly" />
+)
 export const TelehandlerBinsPage = () => <Page html={telehandlerBinsHtml} />
 export const AdditionalProductsPage = () => <Page html={additionalProductsHtml} />
 export const ForFarmersPage = () => <Page html={forFarmersHtml} />

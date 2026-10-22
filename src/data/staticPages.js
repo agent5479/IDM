@@ -19,6 +19,18 @@ import { videosHtml } from '../content/videos.js'
 import { buildMeshGuideHtml } from './meshGuideHtml.js'
 import { buildImageCatalogHtml } from './imageCatalogHtml.js'
 import { buildStaticChrome } from './staticChrome.js'
+import { renderTestimonialsSection } from './testimonials.js'
+
+function withTestimonials(html, page, limit = 4) {
+  const block = renderTestimonialsSection({
+    page,
+    limit,
+    heading: 'Operator feedback',
+    intro:
+      'DeSite operators on machine performance and build — not NZ freight or list pricing.',
+  })
+  return block ? `${html}\n${block}` : html
+}
 
 /** Crawlable hero (matches HomeHero copy). Video stays client-only. */
 const homeHeroHtml = `<section class="hero">
@@ -50,11 +62,11 @@ const pageBodies = {
   '/photos': photosHtml,
   '/videos': videosHtml,
   '/products': productsHubHtml,
-  '/products/slg-108vfrb': slg108Html,
-  '/products/slg-78vf': slg78Html,
-  '/products/slg-78vf-flow': slg78FlowHtml,
-  '/products/slg-68v': slg68Html,
-  '/products/static-grizzly': staticGrizzlyHtml,
+  '/products/slg-108vfrb': withTestimonials(slg108Html, 'slg-108vfrb'),
+  '/products/slg-78vf': withTestimonials(slg78Html, 'slg-78vf'),
+  '/products/slg-78vf-flow': withTestimonials(slg78FlowHtml, 'slg-78vf-flow'),
+  '/products/slg-68v': withTestimonials(slg68Html, 'slg-68v'),
+  '/products/static-grizzly': withTestimonials(staticGrizzlyHtml, 'static-grizzly'),
   '/products/telehandler-bins': telehandlerBinsHtml,
   '/products/additional-products': additionalProductsHtml,
   '/for/farmers': forFarmersHtml,

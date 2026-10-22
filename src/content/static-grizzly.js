@@ -220,16 +220,24 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
   </div>
 
   <div class="product-pricing">
-    <h2>Pricing (Estimates)</h2>
-    <div class="price-main">Contact Us for Current Pricing</div>
-    <p class="price-note">SLG-78 or SLG-108 Static Grizzly. Ex Nelson. Price does not include shipping or delivery. Delivery will be arranged with the purchaser and additional charges may apply depending on location.</p>
-    <h3 style="color: #b34700; margin-top: 30px; margin-bottom: 15px;">Additional Options:</h3>
+    <h2>Package pricing</h2>
+    <div class="price-packages">
+      <div class="price-package-row">
+        <div class="price-package-name">SLG-78 Static Grizzly with riser box</div>
+        <div class="price-package-amount">$12,571.44</div>
+      </div>
+      <div class="price-package-row">
+        <div class="price-package-name">SLG-108 Static Grizzly with riser box</div>
+        <div class="price-package-amount">$31,414.09</div>
+      </div>
+    </div>
+    <p class="price-note">NZD excluding GST. List price before any discount. Ex Nelson — shipping and delivery not included.</p>
+    <h3 style="color: #b34700; margin-top: 30px; margin-bottom: 15px;">Additional options</h3>
     <ul style="color: #2c2c2c; text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8;">
-      <li>Additional Grizzly Mesh</li>
-      <li>Riser Box</li>
-      <li>Bucket Transport Lugs</li>
+      <li>Additional grizzly mesh</li>
+      <li>Bucket transport lugs</li>
     </ul>
-    <p style="color: #555555; font-size: 0.9rem; margin-top: 20px; text-align: center; font-style: italic;">Please contact us for current pricing and delivery options to your location.</p>
+    <p style="color: #555555; font-size: 0.9rem; margin-top: 20px; text-align: center; font-style: italic;">Contact us for discounts, extras and delivery to your location.</p>
   </div>
 
   <div class="product-description" style="margin-top: 40px;">

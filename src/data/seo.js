@@ -1,4 +1,5 @@
 import { contact } from './contact.js'
+import { formatOfferPrice, packages, pricingDisclaimer } from './pricing.js'
 
 const siteName = 'Site Machinery NZ'
 const defaultOgImage = `${contact.siteUrl}/images/SLG108VFRB.jpg`
@@ -131,6 +132,7 @@ export const routes = [
       name: 'DeSite SLG-108VFRB heavy-duty soil and gravel screener',
       image: `${contact.siteUrl}/images/SLG108VFRB.jpg`,
       sku: 'SLG-108VFRB',
+      price: packages.slg108,
     },
   },
   {
@@ -149,6 +151,7 @@ export const routes = [
       name: 'DeSite SLG-78VF portable soil and gravel screener',
       image: `${contact.siteUrl}/images/Proscreen_SLG78VFII_home.jpg`,
       sku: 'SLG-78VF',
+      price: packages.slg78,
     },
   },
   {
@@ -185,6 +188,7 @@ export const routes = [
       name: 'DeSite SLG-68V compact soil and gravel screener',
       image: `${contact.siteUrl}/images/Proscreen_68.jpg`,
       sku: 'SLG-68V',
+      price: packages.slg68,
     },
   },
   {
@@ -203,6 +207,8 @@ export const routes = [
       name: 'DeSite Static Grizzly SLG-78 & SLG-108 no-power screener',
       image: `${contact.siteUrl}/images/grizzly3.jpg`,
       sku: 'STATIC-GRIZZLY',
+      priceLow: packages.grizzly78,
+      priceHigh: packages.grizzly108,
     },
   },
   {
@@ -575,6 +581,43 @@ function providerRef() {
 
 function productJsonLd(route) {
   const p = route.product
+  const offerBase = {
+    url: route.canonical,
+    priceCurrency: 'NZD',
+    availability: 'https://schema.org/InStock',
+    seller: providerRef(),
+    areaServed: {
+      '@type': 'Country',
+      name: 'New Zealand',
+    },
+    description: pricingDisclaimer,
+  }
+
+  let offers
+  if (p.price) {
+    offers = {
+      '@type': 'Offer',
+      ...offerBase,
+      name: p.price.packageLabel,
+      price: formatOfferPrice(p.price.amount),
+    }
+  } else if (p.priceLow && p.priceHigh) {
+    offers = {
+      '@type': 'AggregateOffer',
+      ...offerBase,
+      lowPrice: formatOfferPrice(p.priceLow.amount),
+      highPrice: formatOfferPrice(p.priceHigh.amount),
+      offerCount: 2,
+    }
+  } else {
+    offers = {
+      '@type': 'Offer',
+      ...offerBase,
+      description:
+        'Contact Site Machinery NZ for current pricing. Ex Nelson; freight arranged with purchaser.',
+    }
+  }
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -587,18 +630,7 @@ function productJsonLd(route) {
       name: 'DeSite',
     },
     url: route.canonical,
-    offers: {
-      '@type': 'Offer',
-      url: route.canonical,
-      priceCurrency: 'NZD',
-      availability: 'https://schema.org/InStock',
-      seller: providerRef(),
-      areaServed: {
-        '@type': 'Country',
-        name: 'New Zealand',
-      },
-      description: 'Contact Site Machinery NZ for current pricing. Ex Nelson; freight arranged with purchaser.',
-    },
+    offers,
   }
 }
 
