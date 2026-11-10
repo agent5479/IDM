@@ -1,3 +1,9 @@
+import {
+  containerPromo,
+  packagePriceRowsHtml,
+  packages,
+} from '../data/pricing.js'
+
 export const staticGrizzlyHtml = `<!-- Product Detail -->
 <section class="product-detail">
   <div class="product-gallery">
@@ -221,17 +227,12 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
 
   <div class="product-pricing">
     <h2>Package pricing</h2>
-    <div class="price-packages">
-      <div class="price-package-row">
-        <div class="price-package-name">SLG-78 Static Grizzly with riser box</div>
-        <div class="price-package-amount">$12,571.44</div>
-      </div>
-      <div class="price-package-row">
-        <div class="price-package-name">SLG-108 Static Grizzly with riser box</div>
-        <div class="price-package-amount">$31,414.09</div>
-      </div>
-    </div>
-    <p class="price-note">NZD excluding GST. List price before any discount. Ex Nelson — shipping and delivery not included.</p>
+    <p class="price-package">${packages.grizzly78.packageLabel}</p>
+    ${packagePriceRowsHtml(packages.grizzly78)}
+    <p class="price-package" style="margin-top:24px;">${packages.grizzly108.packageLabel}</p>
+    ${packagePriceRowsHtml(packages.grizzly108)}
+    <p class="price-promo-banner">${containerPromo.headline}. ${containerPromo.shortLine}</p>
+    <p class="price-note">${containerPromo.note}</p>
     <h3 style="color: #b34700; margin-top: 30px; margin-bottom: 15px;">Additional options</h3>
     <ul style="color: #2c2c2c; text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8;">
       <li>Additional grizzly mesh</li>

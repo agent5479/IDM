@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { containerPromo } from '../data/pricing.js'
 
 /** Public DeSite Products hero clip — same footage as desiteproducts.com. */
 const HERO_VIMEO_ID = '1217443504'
@@ -117,16 +118,23 @@ export default function HomeHero() {
           Portable screening machines for earthmoving, civil, farming and landscaping — from Nelson,
           nationwide
         </p>
+        <div className="hero-promo">
+          <p className="hero-promo-kicker">Container pre-order · save 10%</p>
+          <p className="hero-promo-title">{containerPromo.headline}</p>
+          <p className="hero-promo-body">
+            Pre-order now and save 10%. Offer ends {containerPromo.validUntilDisplay}.
+          </p>
+        </div>
         <p className="hero-note">
           Also used to reduce buy-in costs, skip unnecessary tip fees, and create saleable product
           from material already on site.
         </p>
-    <p className="hero-location">
-      Order directly from Site Machinery NZ — your New Zealand DeSite supplier
-    </p>
-    <a href="/products" className="hero-cta">
-      View Our Screening Equipment
-    </a>
+        <p className="hero-location">
+          Order directly from Site Machinery NZ — your New Zealand DeSite supplier
+        </p>
+        <a href="/products" className="hero-cta">
+          Pre-order screening equipment · 10% off
+        </a>
       </div>
 
       {!reduceMotion && (

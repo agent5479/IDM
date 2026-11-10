@@ -1,5 +1,10 @@
 import { contact } from './contact.js'
-import { formatOfferPrice, packages, pricingDisclaimer } from './pricing.js'
+import {
+  containerPromo,
+  formatOfferPrice,
+  packages,
+  pricingDisclaimer,
+} from './pricing.js'
 
 const siteName = 'Site Machinery NZ'
 const defaultOgImage = `${contact.siteUrl}/images/SLG108VFRB.jpg`
@@ -614,15 +619,19 @@ function productJsonLd(route) {
       '@type': 'Offer',
       ...offerBase,
       name: p.price.packageLabel,
-      price: formatOfferPrice(p.price.amount),
+      price: formatOfferPrice(p.price.preorderAmount ?? p.price.amount),
+      priceValidUntil: containerPromo.validUntil,
+      description: `${pricingDisclaimer} ${containerPromo.shortLine}`,
     }
   } else if (p.priceLow && p.priceHigh) {
     offers = {
       '@type': 'AggregateOffer',
       ...offerBase,
-      lowPrice: formatOfferPrice(p.priceLow.amount),
-      highPrice: formatOfferPrice(p.priceHigh.amount),
+      lowPrice: formatOfferPrice(p.priceLow.preorderAmount ?? p.priceLow.amount),
+      highPrice: formatOfferPrice(p.priceHigh.preorderAmount ?? p.priceHigh.amount),
       offerCount: 2,
+      priceValidUntil: containerPromo.validUntil,
+      description: `${pricingDisclaimer} ${containerPromo.shortLine}`,
     }
   } else {
     offers = {

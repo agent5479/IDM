@@ -5,6 +5,7 @@ import {
   adCatalogVideo,
   adPriceNote,
 } from './adCatalog.js'
+import { containerPromo } from './pricing.js'
 
 function escapeHtml(str) {
   return String(str)
@@ -21,7 +22,7 @@ function priceRows(offer) {
     <div class="price-package-amount">${escapeHtml(offer.standard)} + GST</div>
   </div>
   <div class="price-package-row ad-catalog-offer">
-    <div class="price-package-name">Pre-order price · 10% off</div>
+    <div class="price-package-name">Pre-order price · 10% off · to ${escapeHtml(containerPromo.validUntilDisplay)}</div>
     <div class="price-package-amount">${escapeHtml(offer.preorder)} + GST</div>
   </div>
 </div>
@@ -32,6 +33,7 @@ function offerSection(offer) {
   const kicker = offer.kicker
     ? `<p class="ad-catalog-kicker"><span aria-hidden="true">${escapeHtml(offer.kickerEmoji)} </span>${escapeHtml(offer.kicker)}</p>`
     : ''
+  const riser = offer.riserNote ? `<p>${escapeHtml(offer.riserNote)}</p>` : ''
   return `<section id="${escapeHtml(offer.id)}" class="image-catalog-section ad-catalog-section">
   ${kicker}
   <div class="image-catalog-section-head">
@@ -39,6 +41,7 @@ function offerSection(offer) {
     <a href="${escapeHtml(offer.href)}" class="image-catalog-product-link">${escapeHtml(offer.productLabel)}</a>
   </div>
   <p>${escapeHtml(offer.body)}</p>
+  ${riser}
   ${priceRows(offer)}
 </section>`
 }
@@ -58,7 +61,7 @@ export function buildAdCatalogHtml() {
   <div class="image-catalog-hero">
     <h1>Advertising Catalog</h1>
     <p>Got a loader? Put your downtime to work.</p>
-    <p>A container of Site Machinery screeners is landing in New Zealand. Pre-order now and save 10%.</p>
+    <p>A container of Site Machinery screeners is landing in New Zealand. Pre-order now and save 10%. Offer ends ${escapeHtml(containerPromo.validUntilDisplay)}.</p>
     <p class="image-catalog-hero-links">
       <a href="/image-catalog">Image catalog</a>
       · <a href="/videos">Videos</a>
@@ -87,8 +90,7 @@ export function buildAdCatalogHtml() {
   <div class="product-description image-catalog-cta" id="pre-order">
     <h2>Ready to gain a foothold in the soil screening industry?</h2>
     <p>Use loader downtime to stay productive, turn available material into a saleable product, and open up another potential revenue stream.</p>
-    <p>The included riser box raises the screen so you can process more material before moving the screened pile.</p>
-    <p><strong>Pre-order now and save 10%.</strong></p>
+    <p><strong>Pre-order now and save 10%. Offer ends ${escapeHtml(containerPromo.validUntilDisplay)}.</strong></p>
     <p><a href="https://sitemachinery.nz/">sitemachinery.nz</a></p>
     <div class="cta-buttons">
       <a href="tel:${contact.phoneTel}" class="cta-primary">Call ${escapeHtml(contact.phoneDisplay)}</a>

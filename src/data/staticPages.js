@@ -45,6 +45,13 @@ const homeHeroHtml = `<section class="hero">
       Portable screening machines for earthmoving, civil, farming and landscaping — from Nelson,
       nationwide
     </p>
+    <div class="hero-promo">
+      <p class="hero-promo-kicker">Container pre-order · save 10%</p>
+      <p class="hero-promo-title">A container of screeners is landing in New Zealand</p>
+      <p class="hero-promo-body">
+        Pre-order now and save 10%. Offer ends 31 December 2026.
+      </p>
+    </div>
     <p class="hero-note">
       Also used to reduce buy-in costs, skip unnecessary tip fees, and create saleable product
       from material already on site.
@@ -52,7 +59,7 @@ const homeHeroHtml = `<section class="hero">
     <p class="hero-location">
       Order directly from Site Machinery NZ — your New Zealand DeSite supplier
     </p>
-    <a href="/products" class="hero-cta">View Our Screening Equipment</a>
+    <a href="/products" class="hero-cta">Pre-order screening equipment · 10% off</a>
   </div>
 </section>`
 

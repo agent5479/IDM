@@ -5,6 +5,7 @@ import {
   adCatalogVideo,
   adPriceNote,
 } from '../data/adCatalog'
+import { containerPromo } from '../data/pricing.js'
 import { contact, emailHref, phoneHref } from '../data/contact'
 
 function PriceRows({ offer }) {
@@ -16,7 +17,9 @@ function PriceRows({ offer }) {
           <div className="price-package-amount">{offer.standard} + GST</div>
         </div>
         <div className="price-package-row ad-catalog-offer">
-          <div className="price-package-name">Pre-order price · 10% off</div>
+          <div className="price-package-name">
+            Pre-order price · 10% off · to {containerPromo.validUntilDisplay}
+          </div>
           <div className="price-package-amount">{offer.preorder} + GST</div>
         </div>
       </div>
@@ -33,7 +36,7 @@ export default function AdCatalogPage() {
         <p>Got a loader? Put your downtime to work.</p>
         <p>
           A container of Site Machinery screeners is landing in New Zealand.
-          Pre-order now and save 10%.
+          Pre-order now and save 10%. Offer ends {containerPromo.validUntilDisplay}.
         </p>
         <p className="image-catalog-hero-links">
           <Link to="/image-catalog">Image catalog</Link>
@@ -95,6 +98,7 @@ export default function AdCatalogPage() {
             </Link>
           </div>
           <p>{offer.body}</p>
+          {offer.riserNote ? <p>{offer.riserNote}</p> : null}
           <PriceRows offer={offer} />
         </section>
       ))}
@@ -106,11 +110,9 @@ export default function AdCatalogPage() {
           saleable product, and open up another potential revenue stream.
         </p>
         <p>
-          The included riser box raises the screen so you can process more
-          material before moving the screened pile.
-        </p>
-        <p>
-          <strong>Pre-order now and save 10%.</strong>
+          <strong>
+            Pre-order now and save 10%. Offer ends {containerPromo.validUntilDisplay}.
+          </strong>
         </p>
         <p>
           <a href="https://sitemachinery.nz/">sitemachinery.nz</a>

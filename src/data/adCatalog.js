@@ -1,5 +1,7 @@
 /** Pre-order advertising catalog. Prices are NZD and exclude GST. */
 
+import { containerPromo, packages } from './pricing.js'
+
 export const adCatalogVideo = {
   src: '/ads/grizzly-vf-preorder.mp4',
   poster: '/ads/grizzly-vf-preorder.jpg',
@@ -20,8 +22,10 @@ export const adCatalogOffers = [
     emoji: '💪',
     title: 'SLG 78 Grizzly with Riser Box',
     body: 'Built tough for bucket-operated screening. Jostle it with your bucket, choose the screen for your required grade, and get processing.',
-    standard: '$18,857',
-    preorder: '$16,971.30',
+    riserNote:
+      'The riser box raises the screen so you can process more material before moving the screened pile.',
+    standard: packages.grizzly78.display,
+    preorder: packages.grizzly78.preorderDisplay,
     href: '/products/static-grizzly',
     productLabel: 'View the Static Grizzly',
   },
@@ -30,14 +34,15 @@ export const adCatalogOffers = [
     emoji: '💪',
     kicker: 'Want more control over your grading?',
     kickerEmoji: '⚙️',
-    title: 'SLG 78 Vibrating Feeder with Flow Control Flaps',
+    title: 'Vibrating Feeder with Flow Control Flaps',
     body: 'Simply dump your bucket into the feeder and let vibration do the work. Reduce bucket jiggling while gaining greater control over material flow and screening different grades.',
-    standard: '$27,582.84',
-    preorder: '$24,824.56',
+    riserNote:
+      'The riser box and lift extensions help you make the most of your screening setup.',
+    standard: packages.slg78.display,
+    preorder: packages.slg78.preorderDisplay,
     href: '/products/slg-78vf-flow',
     productLabel: 'View the 78 with flow control',
   },
 ]
 
-export const adPriceNote =
-  'NZD, plus GST. Ex Nelson — shipping and delivery not included.'
+export const adPriceNote = `NZD, plus GST. Ex Nelson — shipping and delivery not included. ${containerPromo.shortLine}`
