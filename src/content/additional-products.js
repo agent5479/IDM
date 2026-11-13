@@ -224,8 +224,11 @@ export const additionalProductsHtml = `<!-- Page Content -->
 
   <div style="background: rgba(255,102,0,0.15); border: 2px solid #ff6600; border-radius: 16px; padding: 40px; margin-bottom: 40px; text-align: center;">
     <h2 style="color: #b34700; margin-bottom: 20px; font-size: 1.8rem;">Want any of these on the next container?</h2>
-    <p style="color: #2c2c2c; font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
-      Contact Site Machinery with the model and carrier you run. We will quote current DeSite pricing and hold a place on the next shipment from Nelson supply.
+    <p style="color: #2c2c2c; font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      Contact Site Machinery with the model and carrier you run. We will quote current DeSite pricing, confirm custom mesh requirements, and hold a place on the next container landing in New Zealand.
+    </p>
+    <p style="color: #b34700; font-weight: 700; font-size: 1rem; margin-bottom: 25px;">
+      ⏱️ Lead time: Safe bet is 2 months · 📍 Shipping: Ex Nelson showroom, calculated based on your NZ location
     </p>
     <div class="cta-buttons">
       <a href="/contact" class="cta-primary">Contact Us</a>

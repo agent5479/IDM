@@ -48,6 +48,48 @@ export const gradeGallery = [
 
 export const meshSections = [
   {
+    id: 'customization',
+    title: 'Customizing Your Screener with Different Mesh Sizes',
+    intro:
+      'Can I customize my screener with different screens? Absolutely! Screens are fully interchangeable and can be swapped out and re-tensioned as needed. It is a straightforward 10–15 minute process: undo approximately 10 nuts using a deep socket, slide the existing mesh out, fit the replacement and re-tension it. We supply screens to suit whatever finished grade you want to achieve.',
+    tables: [
+      {
+        title: 'Standard Screens by Model & 8% Incline Rule',
+        note: 'DeSite screen decks are inclined (30° to 45°). Due to the angle of material travel, the effective sizing is approximately 8% smaller than the actual mesh aperture (e.g. 20mm vertical opening produces 18mm gravel).',
+        headers: ['Model Type', 'Standard Mesh Fitted', 'Effective Finished Product', 'Operation Style'],
+        rows: [
+          [
+            'Static Grizzly (78" & 108")',
+            '100mm × 100mm (4" × 4") Square',
+            '~92mm minus (scalping oversize rock & cobbles)',
+            'Agitated / jiggled by loader bucket (no electrics)',
+          ],
+          [
+            'Vibrating ProScreen (78" & 108")',
+            '20mm vertical × 100mm horizontal Elongated',
+            '~18mm gravel / road metal',
+            'Drop the load and go (dual electric vibratory motors)',
+          ],
+          [
+            'SLG-68V Compact ProScreen',
+            'Elongated soil mesh',
+            '~10mm to ~18mm topsoil / fines',
+            'Drop the load and go (subcompact carrier)',
+          ],
+        ],
+      },
+      {
+        title: 'Dual Machine Workflow Example (Client Case Note)',
+        note: 'Real client application: One New Zealand client purchased two 78" vibrating feeders with riser boxes — fitting a 100mm × 100mm square mesh on the first unit to scalp off cobbles and oversize, and the default 20mm × 100mm elongated mesh on the second unit to produce clean 18mm gravel with zero bucket jiggling.',
+        headers: ['Stage', 'Machine Fitted', 'Mesh Size', 'Finished Material Produced'],
+        rows: [
+          ['Primary Pass', '78" Vibrating Feeder', '100mm × 100mm Square', 'Scalps cobbles & oversize; passes ~92mm feed'],
+          ['Secondary Pass', '78" Vibrating Feeder', '20mm × 100mm Elongated', 'Produces clean 18mm gravel product'],
+        ],
+      },
+    ],
+  },
+  {
     id: 'charts',
     title: 'Base Mesh Charts',
     intro:
@@ -294,6 +336,7 @@ export const meshSections = [
 ]
 
 export const meshNav = [
+  { id: 'customization', label: 'Screen customization & FAQs' },
   { id: 'metric-openings', label: 'Metric openings' },
   { id: 'charts', label: 'Charts' },
   { id: 'topsoil', label: 'Topsoil' },

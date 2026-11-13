@@ -18,6 +18,15 @@ export const containerPromo = {
   headline: 'A container of screeners is landing in New Zealand',
   shortLine: 'Pre-order from this container and save 10%. Offer ends 31 December 2026.',
   note: '10% off list for this container. Offer ends 31 December 2026. NZD excluding GST. Ex Nelson — shipping and delivery not included.',
+  leadTime: 'Safe bet is 2 months for container pre-orders landing in NZ.',
+  shippingNote:
+    'Ex Nelson showroom (105 Pascoe Street). Freight is calculated based on where in NZ you are based to keep shipping costs clear and accurate.',
+  riserBoxBenefit:
+    'Both Grizzly and ProScreen packages include riser boxes so they sit higher — requiring clearing the screened material less often.',
+  screenChangeTime:
+    'Interchangeable screens swap in 10–15 minutes: undo approx. 10 nuts with a deep socket, slide existing mesh out, fit replacement and re-tension.',
+  inclineReductionNote:
+    'Because these are inclined screen decks, effective material sizing is approximately 8% smaller than actual mesh aperture (e.g. 20mm vertical aperture produces 18mm gravel).',
 }
 
 /** @typedef {{ id: string, name: string, display: string, amount: number, preorderDisplay: string, preorderAmount: number, packageLabel: string, includes: string }} PricePackage */
@@ -103,6 +112,32 @@ export function packagePriceRowsHtml(pkg) {
   <div class="price-package-row price-package-promo">
     <div class="price-package-name">Pre-order · 10% off · to ${containerPromo.validUntilDisplay}</div>
     <div class="price-package-amount">${pkg.preorderDisplay}</div>
+  </div>
+</div>`
+}
+
+/** HTML for the prominent top pricing callout block on product pages. */
+export function productTopPricingHtml({
+  pkg,
+  operationBadge = '',
+  standardMesh = '',
+  effectiveProduct = '',
+}) {
+  return `<div class="product-top-pricing">
+  <div class="product-top-pricing-grid">
+    <span class="product-top-pricing-badge">10% Pre-Order Discount</span>
+    <span class="product-top-pricing-amount">${pkg.preorderDisplay} <small style="font-size:0.6em;color:#2c2c2c;font-weight:600;">+GST</small></span>
+    <span class="product-top-pricing-was">Standard ${pkg.display} +GST</span>
+  </div>
+  <p class="product-top-pricing-meta">
+    <strong>${pkg.packageLabel}</strong> — Includes riser box (sits higher so you clear screened material less often).
+  </p>
+  <div class="product-top-pricing-bullets">
+    <span>⏱️ <strong>Lead time:</strong> Safe bet is 2 months (container landing in NZ)</span>
+    <span>📍 <strong>Shipping:</strong> Ex Nelson showroom · calculated based on your NZ location</span>
+    ${operationBadge ? `<span>⚙️ <strong>Operation:</strong> ${operationBadge}</span>` : ''}
+    ${standardMesh ? `<span>📐 <strong>Standard screen:</strong> ${standardMesh}${effectiveProduct ? ` (effective product: ~${effectiveProduct})` : ''}</span>` : ''}
+    <span>🔄 <strong>Screen swap:</strong> 10–15 mins with deep socket (~10 nuts)</span>
   </div>
 </div>`
 }
