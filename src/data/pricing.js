@@ -27,6 +27,18 @@ export const containerPromo = {
     'Interchangeable screens swap in 10–15 minutes: undo approx. 10 nuts with a deep socket, slide existing mesh out, fit replacement and re-tension.',
   inclineReductionNote:
     'Because these are inclined screen decks, effective material sizing is approximately 8% smaller than actual mesh aperture (e.g. 20mm vertical aperture produces 18mm gravel).',
+  warranty:
+    '5 years on the structural frame, 1 year on electrics (fair wear and tear expected).',
+  grizzlyWarranty:
+    '5 years on the structural frame (fair wear and tear expected; no electrics on static models).',
+}
+
+export const warrantyTerms = {
+  frame: '5 years on the structural frame',
+  electrics: '1 year on electrical components',
+  terms: 'Fair wear and tear expected',
+  summary: '5-year frame warranty · 1-year electrical warranty (fair wear & tear expected)',
+  grizzlySummary: '5-year frame warranty (fair wear & tear expected)',
 }
 
 /** @typedef {{ id: string, name: string, display: string, amount: number, preorderDisplay: string, preorderAmount: number, packageLabel: string, includes: string }} PricePackage */
@@ -122,6 +134,7 @@ export function productTopPricingHtml({
   operationBadge = '',
   standardMesh = '',
   effectiveProduct = '',
+  warranty = '5-yr frame · 1-yr electrics (fair wear & tear)',
 }) {
   return `<div class="product-top-pricing">
   <div class="product-top-pricing-grid">
@@ -138,6 +151,7 @@ export function productTopPricingHtml({
     ${operationBadge ? `<span>⚙️ <strong>Operation:</strong> ${operationBadge}</span>` : ''}
     ${standardMesh ? `<span>📐 <strong>Standard screen:</strong> ${standardMesh}${effectiveProduct ? ` (effective product: ~${effectiveProduct})` : ''}</span>` : ''}
     <span>🔄 <strong>Screen swap:</strong> 10–15 mins with deep socket (~10 nuts)</span>
+    <span>🛡️ <strong>Warranty:</strong> ${warranty}</span>
   </div>
 </div>`
 }

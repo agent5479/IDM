@@ -173,6 +173,15 @@ export const slg108Html = `<!-- Product Detail -->
           <li>The SLG-108 comes assembled</li>
         </ul>
       </div>
+
+      <div class="spec-group">
+        <h3>Warranty</h3>
+        <ul class="spec-list">
+          <li><strong>Structural Frame:</strong> 5-year warranty</li>
+          <li><strong>Electrics:</strong> 1-year warranty on electrical components</li>
+          <li><strong>Terms:</strong> Fair wear and tear expected</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -247,6 +256,7 @@ export const slg108Html = `<!-- Product Detail -->
         <li><strong>Operation:</strong> Drop the load and go with dual high-power vibratory packs.</li>
         <li><strong>Screen interchangeability:</strong> Swap screens in 10–15 minutes (undo ~10 nuts using a deep socket).</li>
         <li><strong>Inclined screen sizing:</strong> Effective sizing is approximately 8% smaller than mesh aperture (standard 20×100mm produces 18mm gravel).</li>
+        <li><strong>Warranty coverage:</strong> 5 years on the structural frame, 1 year on electrics (fair wear and tear expected).</li>
       </ul>
     </div>
 
@@ -281,6 +291,13 @@ export const slg108Html = `<!-- Product Detail -->
       <div class="buyer-faq-card">
         <h3>📐 What mesh comes standard and what size does it produce?</h3>
         <p>Supplied standard with <strong>20mm vertical × 100mm horizontal elongated mesh</strong>, producing clean <strong>18mm gravel</strong>. Effective sizing is approximately <strong>8% smaller</strong> than actual aperture due to the inclined deck.</p>
+      </div>
+      <div class="buyer-faq-card">
+        <h3>🛡️ What is the warranty coverage?</h3>
+        <p>The SLG-108VFRB includes comprehensive heavy-duty warranty protection:</p>
+        <p>• <strong>5 years on the structural frame</strong></p>
+        <p>• <strong>1 year on electrics</strong> (vibratory drive system &amp; electrical components)</p>
+        <p>Fair wear and tear is expected under standard operating conditions.</p>
       </div>
     </div>
   </section>

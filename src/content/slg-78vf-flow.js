@@ -141,6 +141,15 @@ export const slg78FlowHtml = `<!-- Product Detail -->
           <li>The SLG-78 VF with Flow Control comes assembled</li>
         </ul>
       </div>
+
+      <div class="spec-group">
+        <h3>Warranty</h3>
+        <ul class="spec-list">
+          <li><strong>Structural Frame:</strong> 5-year warranty</li>
+          <li><strong>Electrics:</strong> 1-year warranty on electrical components</li>
+          <li><strong>Terms:</strong> Fair wear and tear expected</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -231,6 +240,7 @@ export const slg78FlowHtml = `<!-- Product Detail -->
         <li><strong>Riser box benefit:</strong> Sits higher so you clear screened material less often.</li>
         <li><strong>Screen interchangeability:</strong> Swap screens in 10–15 minutes (undo ~10 nuts using a deep socket).</li>
         <li><strong>Inclined screen sizing:</strong> Effective sizing is approximately 8% smaller than mesh aperture (standard 20×100mm produces 18mm gravel).</li>
+        <li><strong>Warranty coverage:</strong> 5 years on the structural frame, 1 year on electrics (fair wear and tear expected).</li>
       </ul>
     </div>
 
@@ -271,6 +281,13 @@ export const slg78FlowHtml = `<!-- Product Detail -->
       <div class="buyer-faq-card">
         <h3>✌️ Can I run a dual vibrating feeder setup?</h3>
         <p>Yes! Clients frequently run two vibrating feeders together: fitting <strong>100mm × 100mm mesh on the first unit</strong> to scalp cobbles and oversize, and the default <strong>20mm × 100mm mesh on the second</strong> to produce clean 18mm gravel.</p>
+      </div>
+      <div class="buyer-faq-card">
+        <h3>🛡️ What is the warranty coverage?</h3>
+        <p>The 78" Vibrating Feeder with Flow Control includes comprehensive warranty protection:</p>
+        <p>• <strong>5 years on the structural frame</strong></p>
+        <p>• <strong>1 year on electrics</strong> (vibratory system &amp; electrical components)</p>
+        <p>Fair wear and tear is expected under normal operating conditions.</p>
       </div>
     </div>
   </section>

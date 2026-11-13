@@ -46,6 +46,7 @@ export const contactHtml = `<!-- Page Content -->
       <li><strong style="color: #b34700;">Shipping calculation:</strong> Ex Nelson showroom. Delivery is arranged directly with the purchaser — tell us where in NZ you are based so we can calculate exact freight costs.</li>
       <li><strong style="color: #b34700;">Packages include riser boxes:</strong> Both Grizzly and ProScreen packages include riser boxes so they sit higher — requiring clearing the screened material less often.</li>
       <li><strong style="color: #b34700;">Screen customization:</strong> Interchangeable screens swap out in 10–15 minutes (undo ~10 nuts with a deep socket). We supply mesh to suit your target grade.</li>
+      <li><strong style="color: #b34700;">Warranty coverage:</strong> 5 years on the structural frame, 1 year on electrics — with fair wear and tear expected.</li>
       <li><strong style="color: #b34700;">10% pre-order discount:</strong> 78" Static Grizzly is $12,985 + GST; 78" Vibrating Feeder with flaps is $28,517 + GST (both with 10% discount applied).</li>
     </ul>
   </div>

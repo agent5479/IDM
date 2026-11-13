@@ -19,7 +19,7 @@ const phrases = {
     'Lead with 4″ / ~100 mm class for the hardest oversize work, then step down to 3″ or 2″ when the product size tightens.',
   ],
   durability: [
-    'Rugged static grizzly design — no power required, spring suspension to reduce clogging, tilting deck for control, 3-year structural warranty.',
+    'Rugged static grizzly design — no power required, spring suspension to reduce clogging, tilting deck for control, 5-year frame warranty (fair wear and tear expected).',
     'Durability first: heavy build, low maintenance, and a tilting deck that keeps material moving when traditional bars bind up.',
     'No engine, no electrics, no babysitting. Suspension + tilt deliver grizzly toughness with cleaner flow than fixed bars.',
   ],

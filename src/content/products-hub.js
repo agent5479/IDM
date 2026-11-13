@@ -151,6 +151,13 @@ export const productsHubHtml = `<!-- Products hub — portable / DeSite screenin
           <h3>✌️ Can I run two vibrating feeders together?</h3>
           <p><strong>Yes!</strong> A popular high-production setup used by our clients is running two vibrating feeders: fitting a <strong>100mm × 100mm mesh on the first unit</strong> to scalp cobbles and oversize, and the default <strong>20mm × 100mm mesh on the second unit</strong> to produce finished 18mm gravel.</p>
         </div>
+        <div class="buyer-faq-card">
+          <h3>🛡️ What is the warranty coverage?</h3>
+          <p>All DeSite screeners supplied by Site Machinery NZ come with strong manufacturer warranty protection:</p>
+          <p>• <strong>5 years on the structural frame</strong></p>
+          <p>• <strong>1 year on electrics</strong> (for vibrating/powered models; Grizzlies require no electrics)</p>
+          <p>Fair wear and tear is expected under standard operating conditions.</p>
+        </div>
       </div>
     </section>
 

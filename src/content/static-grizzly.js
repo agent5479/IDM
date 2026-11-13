@@ -38,6 +38,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
       <span>📍 <strong>Shipping:</strong> Ex Nelson showroom · freight calculated to your NZ location</span>
       <span>📐 <strong>Standard screen:</strong> 100mm square openings (ideal for scalping oversize rock)</span>
       <span>🔄 <strong>Screen swap:</strong> 10–15 mins with deep socket (~10 nuts)</span>
+      <span>🛡️ <strong>Warranty:</strong> 5-yr frame warranty (fair wear &amp; tear expected; no electrics)</span>
     </div>
   </div>
 
@@ -70,7 +71,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
       <h2>Product Description</h2>
       <p>Static Grizzlies are built for tough oversize work: river gravel, rock, landscape stone, erosion rock and civil fill. Mesh screening on a rugged frame gives a cleaner product than fixed bars, with no electrical power required.</p>
       <p>Both models share a tilting screen deck, spring suspension to reduce clogging, and interchangeable square mesh. The unit is agitated by the loader bucket during screening. Standard screen is 100mm (4″) square openings for scalping off larger rocks and oversize material, with 50mm (2″) and 75mm (3″) mesh available for filling material.</p>
-      <p>Low maintenance, 3-year structural warranty, included riser box so you clear screened material less often, and optional bucket transport lugs.</p>
+      <p>Low maintenance, 5-year structural frame warranty (fair wear and tear expected), included riser box so you clear screened material less often, and optional bucket transport lugs.</p>
 
       <h3 style="color: #b34700; margin-top: 30px; margin-bottom: 15px;">Key Features:</h3>
       <ul style="color: #2c2c2c; line-height: 1.8;">
@@ -82,7 +83,7 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
         <li>Spring suspension system helps prevent rock wedging and clogging</li>
         <li>Two sizes: SLG-78 (mid-size) and SLG-108 (full-size)</li>
         <li>Comes with riser box included for extra material clearance beneath deck</li>
-        <li>3-year structural warranty</li>
+        <li>5-year structural frame warranty (fair wear and tear expected)</li>
       </ul>
     </div>
 
@@ -102,9 +103,10 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
       <div class="spec-group">
         <h3>Warranty</h3>
         <ul class="spec-list">
-          <li><strong>Structural Warranty:</strong> 3 years</li>
-          <li>Parts at no cost during warranty</li>
-          <li>Customer installs parts and covers shipping</li>
+          <li><strong>Structural Frame:</strong> 5 years</li>
+          <li><strong>Electrics:</strong> None required (no-power static design)</li>
+          <li><strong>Terms:</strong> Fair wear and tear expected</li>
+          <li>Parts at no cost during warranty (customer installs parts and covers shipping)</li>
         </ul>
       </div>
     </div>
@@ -303,6 +305,10 @@ export const staticGrizzlyHtml = `<!-- Product Detail -->
       <div class="buyer-faq-card">
         <h3>⚡ Static Grizzly vs Vibrating Feeder — which is faster?</h3>
         <p>The Static Grizzly gets jiggled with the loader bucket and needs no electrics. The Vibrating Feeder ($28,517 + GST) is faster to use as you <strong>drop the load and go</strong> with twin vibratory motors doing the work.</p>
+      </div>
+      <div class="buyer-faq-card">
+        <h3>🛡️ What is the warranty on the Static Grizzly?</h3>
+        <p>The Static Grizzly comes with a <strong>5-year structural frame warranty</strong> (with fair wear and tear expected). Because it is a static unit agitated by the loader bucket, there are <strong>no electrics or motors to maintain or fail</strong>.</p>
       </div>
     </div>
   </section>

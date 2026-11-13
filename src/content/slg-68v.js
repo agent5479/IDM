@@ -162,6 +162,15 @@ export const slg68Html = `<!-- Product Detail -->
           <li>Comes assembled and ready to use</li>
         </ul>
       </div>
+
+      <div class="spec-group">
+        <h3>Warranty</h3>
+        <ul class="spec-list">
+          <li><strong>Structural Frame:</strong> 5-year warranty</li>
+          <li><strong>Electrics:</strong> 1-year warranty on electrical components</li>
+          <li><strong>Terms:</strong> Fair wear and tear expected</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -234,6 +243,7 @@ export const slg68Html = `<!-- Product Detail -->
         <li><strong>Operation:</strong> Drop the load and go with dual vibratory motors.</li>
         <li><strong>Screen interchangeability:</strong> Swap screens in 10–15 minutes (undo ~10 nuts using a deep socket).</li>
         <li><strong>Inclined screen sizing:</strong> Effective sizing is approximately 8% smaller than mesh aperture.</li>
+        <li><strong>Warranty coverage:</strong> 5 years on the structural frame, 1 year on electrics (fair wear and tear expected).</li>
       </ul>
     </div>
 
@@ -268,6 +278,13 @@ export const slg68Html = `<!-- Product Detail -->
       <div class="buyer-faq-card">
         <h3>📐 Why is finished product ~8% smaller than mesh aperture?</h3>
         <p>Because the deck is inclined (30° to 45°), gravity and incline cause the effective aperture to be approximately <strong>8% smaller</strong> than the nominal mesh opening.</p>
+      </div>
+      <div class="buyer-faq-card">
+        <h3>🛡️ What is the warranty coverage?</h3>
+        <p>The SLG-68V includes comprehensive warranty coverage:</p>
+        <p>• <strong>5 years on the structural frame</strong></p>
+        <p>• <strong>1 year on electrics</strong> (vibratory system &amp; electrical components)</p>
+        <p>Fair wear and tear is expected under standard operating conditions.</p>
       </div>
     </div>
   </section>
